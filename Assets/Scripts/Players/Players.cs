@@ -1,8 +1,9 @@
 using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Players : MonoBehaviour
+public class Players : NetworkBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 3f;
@@ -18,6 +19,11 @@ public class Players : MonoBehaviour
 
     private void Start()
     {
+        if (IsServer)
+        {
+            GameManager.Instance.RegisterPlayer(this);
+        }
+
         if (GameObject.FindGameObjectWithTag("Player House")?.TryGetComponent(out houseTilemap) == true)
         {
             transform.position = houseTilemap.GetCellCenterWorld(homeCellPosition);
@@ -67,9 +73,9 @@ public class Players : MonoBehaviour
         }
         transform.position = target;
     }
+
     public void SetCurrentIndex(int index)
     {
         currentIndex = Mathf.Clamp(index, 0, BoardManager.tilePositions.Count - 1);
     }
-
 }

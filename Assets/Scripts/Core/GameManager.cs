@@ -1,95 +1,133 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     [Header("References")]
-    public GameObject PlayerPrefab;
-    public LevelSettingsScriptableObject[] Levels;
-    public QuizManager quizManager;
+    public static GameManager Instance;
+    public LevelSettingsScriptableObject[] TotalLevelsList;
+    public QuizManager QuizManager;
 
-    [Header("Player Settings")]
-    [SerializeField] private int numberOfPlayers = 2;
-    [SerializeField] private Players[] TotalPlayers;
+    [Header("Players State")]
+    public List<Players> TotalPlayers = new List<Players>();
+    private NetworkList<ulong> playerClientIds = new NetworkList<ulong>();
+    private NetworkVariable<int> currentPlayerIndex = new NetworkVariable<int>(0);
 
     [Header("Game State")]
     public int CurrentLevelIndex = 0;
-    private int currentPlayerIndex = 0;
-    private bool canPlayTurn = true;
-
-    private List<QuizQuestionData> quizList;
-    private Dictionary<Difficulty, Vector2Int> difficultyStepMap;
-    private BoardScriptableObect snakeAndLadderJoints;
-
-    private QuizQuestionData currentQuestion;
-    private float currentTimeTaken;
-    private Difficulty currentDifficulty;
-
-    // 🏁 WIN STATE
+    private bool gameStarted = false;
     private List<Players> finishOrder = new List<Players>();
     private int winningTileIndex => BoardManager.tilePositions.Count - 1;
 
-    private void Start()
+    [Header("Quiz Questions State")]
+    private List<QuizQuestionData> quizQuestionsList;
+    private Dictionary<Difficulty, Vector2Int> difficultyStepMap;
+    private QuizQuestionData currentQuizQuestion;
+    private float currentTimeTaken;
+    private Difficulty currentDifficulty;
+
+    [Header("Board Data")]
+    private BoardScriptableObect snakeAndLadderJoints;
+
+    private void Awake()
     {
-        InitPlayers();
-        CacheQuizData();
-        CacheStepData();
-        StartQuizTurn();
+        if (Instance == null) Instance = this;
     }
 
-    private void InitPlayers()
+    private void Start()
     {
-        TotalPlayers = new Players[numberOfPlayers];
+        CacheQuizData();
+        CacheStepData();
+    }
 
-        for (int i = 0; i < numberOfPlayers; i++)
+    private void Update()
+    {
+        if (IsServer && !gameStarted && Input.GetKeyDown(KeyCode.S))
         {
-            GameObject playerObj = Instantiate(PlayerPrefab);
-            playerObj.name = $"Player{i + 1}";
-            TotalPlayers[i] = playerObj.GetComponent<Players>();
+            SyncPlayerListClientRpc(); // Sync player list before game starts
+            StartGame();
         }
+    }
+
+    private void StartGame()
+    {
+        gameStarted = true;
+        StartQuizTurnServerRpc();
     }
 
     private void CacheQuizData()
     {
-        quizList = Levels[CurrentLevelIndex].LevelQuizSCO.questions;
-        snakeAndLadderJoints = Levels[CurrentLevelIndex].BoardJointsSCO;
+        quizQuestionsList = TotalLevelsList[CurrentLevelIndex].LevelQuizSCO.questions;
+        snakeAndLadderJoints = TotalLevelsList[CurrentLevelIndex].BoardJointsSCO;
     }
 
     private void CacheStepData()
     {
-        difficultyStepMap = Levels[CurrentLevelIndex].DiceRollRangePerQuizDifficulty;
+        difficultyStepMap = TotalLevelsList[CurrentLevelIndex].DiceRollRangePerQuizDifficulty;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void StartQuizTurnServerRpc()
+    {
+        StartQuizTurn();
     }
 
     private void StartQuizTurn()
     {
-        if (!canPlayTurn) return;
-
-        if (quizList == null || quizList.Count == 0)
+        if (quizQuestionsList == null || quizQuestionsList.Count == 0)
         {
             Debug.LogWarning("No quiz data found for current level.");
             return;
         }
 
-        // ⏭️ Skip if player already finished
-        while (finishOrder.Contains(TotalPlayers[currentPlayerIndex]))
+        while (finishOrder.Contains(TotalPlayers[currentPlayerIndex.Value]))
         {
-            currentPlayerIndex = (currentPlayerIndex + 1) % TotalPlayers.Length;
+            currentPlayerIndex.Value = (currentPlayerIndex.Value + 1) % TotalPlayers.Count;
         }
 
-        int randomIndex = Random.Range(0, quizList.Count);
-        currentQuestion = quizList[randomIndex];
-        Players currentPlayer = TotalPlayers[currentPlayerIndex];
+        int randomIndex = Random.Range(0, quizQuestionsList.Count);
+        currentQuizQuestion = quizQuestionsList[randomIndex];
 
-        quizManager.ShowQuiz(currentQuestion, currentPlayer, OnQuizAnswered);
+        Players currentPlayer = TotalPlayers[currentPlayerIndex.Value];
+        ShowQuizClientRpc(randomIndex, currentPlayer.OwnerClientId);
+    }
+
+    [ClientRpc]
+    private void ShowQuizClientRpc(int questionIndex, ulong targetClientId)
+    {
+        if (NetworkManager.Singleton.LocalClientId == targetClientId)
+        {
+            var question = TotalLevelsList[CurrentLevelIndex].LevelQuizSCO.questions[questionIndex];
+            Players currentPlayer = GetMyPlayerInstance();
+            QuizManager.ShowQuiz(question, currentPlayer, OnQuizAnswered);
+        }
+    }
+
+    private Players GetMyPlayerInstance()
+    {
+        ulong localId = NetworkManager.Singleton.LocalClientId;
+        foreach (var player in TotalPlayers)
+        {
+            if (player.OwnerClientId == localId)
+                return player;
+        }
+        return null;
     }
 
     private void OnQuizAnswered(bool isCorrect, Difficulty difficulty, float timeTaken)
     {
+        SubmitAnswerServerRpc(isCorrect, difficulty, timeTaken);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SubmitAnswerServerRpc(bool isCorrect, Difficulty difficulty, float timeTaken)
+    {
         currentTimeTaken = timeTaken;
         currentDifficulty = difficulty;
 
-        Players player = TotalPlayers[currentPlayerIndex];
+        Players player = TotalPlayers[currentPlayerIndex.Value];
         StartCoroutine(HandlePostQuizMovement(player, isCorrect));
     }
 
@@ -155,10 +193,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator EndTurnAfterDelay()
     {
         yield return new WaitForSeconds(0.5f);
+        currentPlayerIndex.Value = (currentPlayerIndex.Value + 1) % TotalPlayers.Count;
 
-        currentPlayerIndex = (currentPlayerIndex + 1) % TotalPlayers.Length;
-
-        if (finishOrder.Count == numberOfPlayers)
+        if (finishOrder.Count == TotalPlayers.Count)
         {
             Debug.Log("🏁 All players finished!");
             for (int i = 0; i < finishOrder.Count; i++)
@@ -176,9 +213,44 @@ public class GameManager : MonoBehaviour
     {
         if (player.CurrentIndex >= winningTileIndex && !finishOrder.Contains(player))
         {
-            player.SetCurrentIndex(winningTileIndex); // ✅ Fix: update using setter
+            player.SetCurrentIndex(winningTileIndex);
             finishOrder.Add(player);
             Debug.Log($"🎉 {player.name} has finished!");
         }
+    }
+
+    public void RegisterPlayer(Players player)
+    {
+        if (!TotalPlayers.Contains(player))
+        {
+            TotalPlayers.Add(player);
+
+            if (IsServer)
+            {
+                playerClientIds.Add(player.OwnerClientId);
+            }
+        }
+    }
+
+    [ClientRpc]
+    private void SyncPlayerListClientRpc()
+    {
+        TotalPlayers.Clear();
+        Players[] allPlayers = FindObjectsByType<Players>(FindObjectsSortMode.None);
+
+
+        foreach (ulong id in playerClientIds)
+        {
+            foreach (var player in allPlayers)
+            {
+                if (player.OwnerClientId == id)
+                {
+                    TotalPlayers.Add(player);
+                    break;
+                }
+            }
+        }
+
+        Debug.Log($"[Client {NetworkManager.Singleton.LocalClientId}] Player list synced. Count: {TotalPlayers.Count}");
     }
 }
