@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477c2df526a3a364da7dbf6c80da1d44, type: 3}
+  m_Name: Level 2 Quiz
+  m_EditorClassIdentifier: 
+  questions:
+  - question: Sample Question 1
+    options:
+    - Correct
+    - ASDFASFFAS
+    - ASFASFA
+    - ASFASDFADS
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 1
+    timeLimit: 20
+  - question: Sample Question 2
+    options:
+    - ASDJNASJD
+    - ASDFASFFAS
+    - ASFASFA
+    - Corect
+    correctAnswerIndex: 3
+    difficulty: 1
+    isHintAllowed: 1
+    timeLimit: 20
+  - question: Sample Question 3
+    options:
+    - ASDJNASJD
+    - Correct
+    - ASFASFA
+    - ASFASDFADS
+    correctAnswerIndex: 1
+    difficulty: 2
+    isHintAllowed: 1
+    timeLimit: 20

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f1692471c6e7f44dba09408d78625d0, type: 3}
-  m_Name: Level 1
+  m_Name: Level 5
   m_EditorClassIdentifier: 
-  LevelNummber: 1
+  LevelNumber: 0
   LevelName: Intro
   LevelStars: 0
   LevelPoints: 0
-  isLevelUnlocked: 1
+  isLevelUnlocked: 0
   RequiredPointsToUnlockLevel: 0
+  isLevelCompleted: 0
   LevelQuizSCO: {fileID: 11400000, guid: cae429450dc6eec488696c0583fd2279, type: 2}
   BoardJointsSCO: {fileID: 11400000, guid: bab76a64fcb19b04bbfa6893547eab22, type: 2}
   DiceRollRangePerQuizDifficulty:

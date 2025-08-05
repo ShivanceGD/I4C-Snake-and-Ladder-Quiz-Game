@@ -8,28 +8,29 @@ public class CharacterMovement : MonoBehaviour
     public PathMaps pathMap;
     public float moveDuration = 2f;
     public bool startAtUnlockedLevel = true;
-
+    public static int currentIndex = 0;
     [Header("Level Progress")]
     public int unlockedLevel =0;
 
     private void Start()
     {
-        if (startAtUnlockedLevel)
+       /* if (startAtUnlockedLevel)
         {
             // Move to current unlocked level on start
             transform.position = pathMap.Waypoints[unlockedLevel].position;
-        }
+        }*/
     }
 
-    public void CompleteLevel()
+    
+    public void CompleteLevel(int num)
     {
-        unlockedLevel++;
-        MoveTo(unlockedLevel);
+        
+        MoveTo(num);
     }
 
     public void MoveTo(int targetIndex)
     {
-        int currentIndex = GetClosestWaypointIndex();
+         currentIndex = GetClosestWaypointIndex();
 
         if (targetIndex >= pathMap.Waypoints.Count || targetIndex == currentIndex)
             return;

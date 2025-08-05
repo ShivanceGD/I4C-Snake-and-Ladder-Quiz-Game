@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1692471c6e7f44dba09408d78625d0, type: 3}
+  m_Name: Level 4
+  m_EditorClassIdentifier: 
+  LevelNumber: 0
+  LevelName: Intro
+  LevelStars: 0
+  LevelPoints: 0
+  isLevelUnlocked: 0
+  RequiredPointsToUnlockLevel: 0
+  isLevelCompleted: 0
+  LevelQuizSCO: {fileID: 11400000, guid: cae429450dc6eec488696c0583fd2279, type: 2}
+  BoardJointsSCO: {fileID: 11400000, guid: bab76a64fcb19b04bbfa6893547eab22, type: 2}
+  DiceRollRangePerQuizDifficulty:
+    _serializedList:
+    - Key: 0
+      Value: {x: 1, y: 2}
+    - Key: 1
+      Value: {x: 3, y: 4}
+    - Key: 2
+      Value: {x: 50, y: 99}
