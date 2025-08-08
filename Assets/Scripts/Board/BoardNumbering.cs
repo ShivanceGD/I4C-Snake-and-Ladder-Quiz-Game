@@ -24,9 +24,9 @@ public class BoardNumbering : MonoBehaviour
 
     private void GenerateAndPlaceTilesNumbers()
     {
-        for (int i = 0; i < BoardManager.tilePositions.Count; i++)
+        for (int i = 0; i < BoardManager.TilePositions.Count; i++)
         {
-            Vector3 worldPos = BoardManager.tilePositions[i];
+            Vector3 worldPos = BoardManager.TilePositions[i];
             worldPos.z = zLocationOfText;
 
             GameObject label = Instantiate(numberPrefab.gameObject, worldPos, Quaternion.identity, transform);

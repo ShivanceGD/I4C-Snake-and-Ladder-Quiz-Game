@@ -8,22 +8,21 @@ public class GameManager : NetworkBehaviour
     [Header("References")]
     public static GameManager Instance;
     public LevelSettingsScriptableObject[] TotalLevelsList;
-    public QuizManager QuizManager;
 
     [Header("Players State")]
-    public List<Players> TotalPlayers = new List<Players>();
-    private NetworkList<ulong> playerClientIds = new NetworkList<ulong>();
-    private NetworkVariable<int> currentPlayerIndex = new NetworkVariable<int>(0);
+    public List<PlayerManager> TotalPlayers = new();
+    public readonly NetworkList<ulong> playerClientIds = new();
+    private readonly NetworkVariable<int> currentPlayerIndex = new(0);
 
     [Header("Game State")]
     public int CurrentLevelIndex = 0;
     private bool gameStarted = false;
-    private List<Players> finishOrder = new List<Players>();
-    private int winningTileIndex => BoardManager.tilePositions.Count - 1;
+    private readonly List<PlayerManager> finishOrder = new();
+
 
     [Header("Quiz Questions State")]
     private List<QuizQuestionData> quizQuestionsList;
-    private Dictionary<Difficulty, Vector2Int> difficultyStepMap;
+    private Dictionary<Difficulty, Vector2Int> stepsPerDifficulty;
     private QuizQuestionData currentQuizQuestion;
     private float currentTimeTaken;
     private Difficulty currentDifficulty;
@@ -38,15 +37,14 @@ public class GameManager : NetworkBehaviour
 
     private void Start()
     {
-        CacheQuizData();
-        CacheStepData();
+        CacheQuizAndStepData();
     }
 
     private void Update()
     {
         if (IsServer && !gameStarted && Input.GetKeyDown(KeyCode.S))
         {
-            SyncPlayerListClientRpc(); // Sync player list before game starts
+            SyncPlayerListClientRpc();
             StartGame();
         }
     }
@@ -57,55 +55,29 @@ public class GameManager : NetworkBehaviour
         StartQuizTurnServerRpc();
     }
 
-    private void CacheQuizData()
+    private void CacheQuizAndStepData()
     {
         quizQuestionsList = TotalLevelsList[CurrentLevelIndex].LevelQuizSCO.questions;
         snakeAndLadderJoints = TotalLevelsList[CurrentLevelIndex].BoardJointsSCO;
+        stepsPerDifficulty = TotalLevelsList[CurrentLevelIndex].DiceRollRangePerQuizDifficulty;
     }
 
-    private void CacheStepData()
+    private int GenerateRandomQuestion()
     {
-        difficultyStepMap = TotalLevelsList[CurrentLevelIndex].DiceRollRangePerQuizDifficulty;
+        int questionIndex = Random.Range(0, quizQuestionsList.Count);
+        currentQuizQuestion = quizQuestionsList[questionIndex];
+        return questionIndex;
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void StartQuizTurnServerRpc()
+    private void SkipTurnIfPlayerFinished()
     {
-        StartQuizTurn();
-    }
-
-    private void StartQuizTurn()
-    {
-        if (quizQuestionsList == null || quizQuestionsList.Count == 0)
-        {
-            Debug.LogWarning("No quiz data found for current level.");
-            return;
-        }
-
         while (finishOrder.Contains(TotalPlayers[currentPlayerIndex.Value]))
         {
             currentPlayerIndex.Value = (currentPlayerIndex.Value + 1) % TotalPlayers.Count;
         }
-
-        int randomIndex = Random.Range(0, quizQuestionsList.Count);
-        currentQuizQuestion = quizQuestionsList[randomIndex];
-
-        Players currentPlayer = TotalPlayers[currentPlayerIndex.Value];
-        ShowQuizClientRpc(randomIndex, currentPlayer.OwnerClientId);
     }
 
-    [ClientRpc]
-    private void ShowQuizClientRpc(int questionIndex, ulong targetClientId)
-    {
-        if (NetworkManager.Singleton.LocalClientId == targetClientId)
-        {
-            var question = TotalLevelsList[CurrentLevelIndex].LevelQuizSCO.questions[questionIndex];
-            Players currentPlayer = GetMyPlayerInstance();
-            QuizManager.ShowQuiz(question, currentPlayer, OnQuizAnswered);
-        }
-    }
-
-    private Players GetMyPlayerInstance()
+    private PlayerManager GetMyPlayerInstance()
     {
         ulong localId = NetworkManager.Singleton.LocalClientId;
         foreach (var player in TotalPlayers)
@@ -121,17 +93,7 @@ public class GameManager : NetworkBehaviour
         SubmitAnswerServerRpc(isCorrect, difficulty, timeTaken);
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void SubmitAnswerServerRpc(bool isCorrect, Difficulty difficulty, float timeTaken)
-    {
-        currentTimeTaken = timeTaken;
-        currentDifficulty = difficulty;
-
-        Players player = TotalPlayers[currentPlayerIndex.Value];
-        StartCoroutine(HandlePostQuizMovement(player, isCorrect));
-    }
-
-    private IEnumerator HandlePostQuizMovement(Players player, bool isCorrect)
+    private IEnumerator HandlePostQuizMovement(PlayerManager player, bool isCorrect)
     {
         int currentTile = player.CurrentIndex;
 
@@ -141,8 +103,8 @@ public class GameManager : NetworkBehaviour
             {
                 if (ladder.Key > currentTile && ladder.Key - currentTile <= 5)
                 {
-                    yield return player.MovePlayerToDestinationTile(ladder.Key - currentTile);
-                    yield return player.MovePlayerToExactIndex(ladder.Value);
+                    yield return player.MovePlayerTileByTile(ladder.Key - currentTile);
+                    yield return player.MovePlayerDirectlyToTile(ladder.Value);
                     CheckWin(player);
                     yield return EndTurnAfterDelay();
                     yield break;
@@ -153,10 +115,10 @@ public class GameManager : NetworkBehaviour
         {
             foreach (var snake in snakeAndLadderJoints.Snakes)
             {
-                if (snake.Key > currentTile && snake.Key - currentTile <= 5)
+                if (snake.Key >= currentTile && snake.Key - currentTile <= 5)
                 {
-                    yield return player.MovePlayerToDestinationTile(snake.Key - currentTile);
-                    yield return player.MovePlayerToExactIndex(snake.Value);
+                    yield return player.MovePlayerTileByTile(snake.Key - currentTile);
+                    yield return player.MovePlayerDirectlyToTile(snake.Value);
                     CheckWin(player);
                     yield return EndTurnAfterDelay();
                     yield break;
@@ -167,7 +129,7 @@ public class GameManager : NetworkBehaviour
         if (isCorrect)
         {
             int steps = GetSteps(isCorrect, currentDifficulty, currentTimeTaken);
-            yield return player.MovePlayerToDestinationTile(steps);
+            yield return player.MovePlayerTileByTile(steps);
             CheckWin(player);
         }
 
@@ -178,7 +140,7 @@ public class GameManager : NetworkBehaviour
     {
         if (!correct) return 0;
 
-        if (!difficultyStepMap.TryGetValue(difficulty, out Vector2Int range))
+        if (!stepsPerDifficulty.TryGetValue(difficulty, out Vector2Int range))
         {
             Debug.LogWarning($"Missing step range for difficulty {difficulty}. Using default.");
             return 1;
@@ -195,9 +157,9 @@ public class GameManager : NetworkBehaviour
         yield return new WaitForSeconds(0.5f);
         currentPlayerIndex.Value = (currentPlayerIndex.Value + 1) % TotalPlayers.Count;
 
-        if (finishOrder.Count == TotalPlayers.Count)
+        if (CheckAllPlayersFinished())
         {
-            Debug.Log("🏁 All players finished!");
+            Debug.Log("All players finished!");
             for (int i = 0; i < finishOrder.Count; i++)
             {
                 Debug.Log($"{i + 1} - {finishOrder[i].name}");
@@ -205,30 +167,55 @@ public class GameManager : NetworkBehaviour
         }
         else
         {
-            StartQuizTurn();
+            StartQuizTurnServerRpc();
         }
     }
-
-    private void CheckWin(Players player)
+    private bool CheckAllPlayersFinished()
     {
-        if (player.CurrentIndex >= winningTileIndex && !finishOrder.Contains(player))
+        return finishOrder.Count == TotalPlayers.Count;
+    }
+
+    private void CheckWin(PlayerManager player)
+    {
+        if (player.CurrentIndex >= BoardManager.WinningTileIndex && !finishOrder.Contains(player))
         {
-            player.SetCurrentIndex(winningTileIndex);
+            player.SetCurrentIndex(BoardManager.WinningTileIndex);
             finishOrder.Add(player);
             Debug.Log($"🎉 {player.name} has finished!");
         }
     }
 
-    public void RegisterPlayer(Players player)
+    #region NetworkCalls
+    [ServerRpc(RequireOwnership = false)]
+    private void StartQuizTurnServerRpc()
     {
-        if (!TotalPlayers.Contains(player))
-        {
-            TotalPlayers.Add(player);
+        if (quizQuestionsList == null || quizQuestionsList.Count == 0) return;
 
-            if (IsServer)
-            {
-                playerClientIds.Add(player.OwnerClientId);
-            }
+        SkipTurnIfPlayerFinished();
+        int questionIndex = GenerateRandomQuestion();
+
+        PlayerManager currentPlayer = TotalPlayers[currentPlayerIndex.Value];
+        ShowQuizClientRpc(currentPlayer.OwnerClientId, questionIndex);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SubmitAnswerServerRpc(bool isCorrect, Difficulty difficulty, float timeTaken)
+    {
+        currentTimeTaken = timeTaken;
+        currentDifficulty = difficulty;
+
+        PlayerManager player = TotalPlayers[currentPlayerIndex.Value];
+        StartCoroutine(HandlePostQuizMovement(player, isCorrect));
+    }
+
+    [ClientRpc]
+    private void ShowQuizClientRpc(ulong targetClientId, int questionIndex)
+    {
+        if (NetworkManager.Singleton.LocalClientId == targetClientId)
+        {
+            PlayerManager currentPlayer = GetMyPlayerInstance();
+
+            QuizManager.Instance.ShowQuiz(quizQuestionsList[questionIndex], currentPlayer, OnQuizAnswered);
         }
     }
 
@@ -236,8 +223,7 @@ public class GameManager : NetworkBehaviour
     private void SyncPlayerListClientRpc()
     {
         TotalPlayers.Clear();
-        Players[] allPlayers = FindObjectsByType<Players>(FindObjectsSortMode.None);
-
+        PlayerManager[] allPlayers = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
 
         foreach (ulong id in playerClientIds)
         {
@@ -250,7 +236,7 @@ public class GameManager : NetworkBehaviour
                 }
             }
         }
-
         Debug.Log($"[Client {NetworkManager.Singleton.LocalClientId}] Player list synced. Count: {TotalPlayers.Count}");
     }
+    #endregion
 }

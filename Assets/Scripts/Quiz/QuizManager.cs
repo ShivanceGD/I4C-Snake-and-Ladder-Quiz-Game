@@ -2,138 +2,141 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
-using System.Collections;
-using Random = UnityEngine.Random;
 
 public class QuizManager : MonoBehaviour
 {
-    [Header("UI References")]
+    public static QuizManager Instance;
+
+    [Header("References")]
+    [SerializeField] private QuizTimer quizTimer;
+    [SerializeField] private QuizHint quizHint;
+
+    [Header("UI")]
     [SerializeField] private GameObject quizPanel;
     [SerializeField] private TMP_Text questionText;
-    [SerializeField] private Button[] optionButtons;
-    [SerializeField] private TMP_Text timerText;
+    public TMP_Text timerText;
     [SerializeField] private Button hintButton;
+    [SerializeField] private Button[] optionButtons;
 
     [Header("Hint Settings")]
-    [SerializeField] private Difficulty difficultyLevelForNoHints;
-    [SerializeField] private int wrongAnswersToRemoveForHint = 2;
+    [SerializeField] private Difficulty noHintDifficulty;
+    [SerializeField] private int wrongAnswersToRemove = 2;
 
     private QuizQuestionData currentQuestion;
+    public PlayerManager currentPlayer;
     private Action<bool, Difficulty, float> onQuizComplete;
-    private Coroutine timerCoroutine;
+
     private bool isQuizActive = false;
     private bool hintUsed = false;
-    private Players currentPlayer;
 
     private void Awake()
     {
-        SetupListeners();
+        if (Instance == null) Instance = this;
+        if (quizTimer == null) quizTimer = GetComponent<QuizTimer>();
+        if (quizHint == null) quizHint = GetComponent<QuizHint>();
+
         quizPanel.SetActive(false);
+        SetupUIListeners();
     }
 
-    private void SetupListeners()
+    #region UI Setup & Input Handling
+    private void SetupUIListeners()
     {
-        foreach (Button btn in optionButtons)
-            btn.onClick.AddListener(() => OnOptionSelected(btn));
+        for (int i = 0; i < optionButtons.Length; i++)
+        {
+            int index = i;
+            optionButtons[i].onClick.AddListener(() => HandleOptionSelected(index));
+        }
 
-        hintButton.onClick.AddListener(UseHint);
+        hintButton.onClick.AddListener(Hint);
     }
 
-    public void ShowQuiz(QuizQuestionData questionData, Players player, Action<bool, Difficulty, float> onComplete)
+    private void SetupQuestionUI()
     {
-        currentQuestion = questionData;
-        currentPlayer = player;
-        onQuizComplete = onComplete;
-        isQuizActive = true;
-        hintUsed = false;
-
-        DisplayQuestionUI();
-        StartTimer(currentQuestion.timeLimit);
-    }
-
-    private void DisplayQuestionUI()
-    {
-        quizPanel.SetActive(true);
         questionText.text = currentQuestion.question;
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
             optionButtons[i].gameObject.SetActive(true);
-            optionButtons[i].interactable = true;
-            optionButtons[i].GetComponentInChildren<TMP_Text>().text = currentQuestion.options[i];
-        }
-
-        bool canUseHint = currentQuestion.isHintAllowed
-                          && currentQuestion.difficulty != difficultyLevelForNoHints
-                          && currentPlayer.CanUseHint();
-
-        hintButton.gameObject.SetActive(true); // Always visible
-        hintButton.interactable = canUseHint;  // Only interactable if eligible
-    }
-
-
-    private void StartTimer(float timeLimit)
-    {
-        if (timerCoroutine != null)
-        {
-            StopCoroutine(timerCoroutine);
-        }
-        timerCoroutine = StartCoroutine(QuizTimer(timeLimit));
-    }
-
-    private IEnumerator QuizTimer(float timeLimit)
-    {
-        float timer = 0f;
-        while (timer < timeLimit && isQuizActive)
-        {
-            timer += Time.deltaTime;
-            timerText.text = $"Time: {timer:F1}s";
-            yield return null;
-        }
-
-        if (isQuizActive)
-        {
-            EndQuiz(false, timer);
-        }
-    }
-
-    private void OnOptionSelected(Button selectedButton)
-    {
-        if (!isQuizActive) return;
-
-        int selectedIndex = Array.FindIndex(optionButtons, btn => btn == selectedButton);
-        bool isCorrect = selectedIndex == currentQuestion.correctAnswerIndex;
-
-        EndQuiz(isCorrect, float.Parse(timerText.text.Replace("Time: ", "").Replace("s", "")));
-    }
-
-    private void UseHint()
-    {
-        if (!currentQuestion.isHintAllowed || hintUsed || !currentPlayer.CanUseHint()) return;
-
-        int removed = 0;
-        int attempts = 0;
-
-        while (removed < wrongAnswersToRemoveForHint && attempts < 100)
-        {
-            int randIndex = Random.Range(0, optionButtons.Length);
-            if (randIndex != currentQuestion.correctAnswerIndex && optionButtons[randIndex].gameObject.activeSelf)
+            TMP_Text btnText = optionButtons[i].GetComponentInChildren<TMP_Text>();
+            if (btnText != null)
             {
-                optionButtons[randIndex].gameObject.SetActive(false);
-                removed++;
+                btnText.text = currentQuestion.options[i];
             }
-            attempts++;
         }
+    }
 
-        currentPlayer.UseHint();
+    private void HandleOptionSelected(int selectedIndex)
+    {
+        if (!isQuizActive || currentQuestion == null)
+            return;
+
+        bool isCorrect = selectedIndex == currentQuestion.correctAnswerIndex;
+        EndQuiz(isCorrect, quizTimer.ElapsedTime);
+    }
+    #endregion
+
+    #region Quiz Lifecycle
+    public void ShowQuiz(QuizQuestionData question, PlayerManager player, Action<bool, Difficulty, float> onComplete)
+    {
+        currentQuestion = question;
+        currentPlayer = player;
+        onQuizComplete = onComplete;
+
+        isQuizActive = true;
+        hintUsed = false;
+
+        quizPanel.SetActive(true);
+        SetupQuestionUI();
+        SetupHintAvailability();
+        StartTimer(currentQuestion.timeLimit);
+    }
+
+    private void SetupHintAvailability()
+    {
+        hintButton.interactable = CanUseHint();
+    }
+
+    public bool CanUseHint()
+    {
+        return !hintUsed && currentQuestion.difficulty != noHintDifficulty && currentPlayer != null && currentPlayer.HasHints();
+    }
+
+    public void OnHintUsed()
+    {
         hintUsed = true;
         hintButton.interactable = false;
+    }
+
+    private void OnTimerFinished(float elapsedTime)
+    {
+        if (isQuizActive)
+        {
+            EndQuiz(false, elapsedTime);
+        }
     }
 
     private void EndQuiz(bool isCorrect, float timeTaken)
     {
         isQuizActive = false;
+        quizTimer.StopTimer();
         quizPanel.SetActive(false);
+
         onQuizComplete?.Invoke(isCorrect, currentQuestion.difficulty, timeTaken);
     }
+    #endregion
+
+    #region Delegated Calls
+    private void StartTimer(float timeLimit)
+    {
+        quizTimer.OnTimeUp.RemoveAllListeners();
+        quizTimer.OnTimeUp.AddListener(OnTimerFinished);
+        quizTimer.StartTimerWithLimit(timeLimit);
+    }
+
+    private void Hint()
+    {
+        quizHint.UseHint(wrongAnswersToRemove, currentQuestion, currentPlayer, optionButtons, CanUseHint(), OnHintUsed);
+    }
+    #endregion
 }
