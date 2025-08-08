@@ -706,7 +706,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1299144694902653417}
+    m_TransformParent: {fileID: 3562339924234481601}
     m_Modifications:
     - target: {fileID: 2942954171890366800, guid: ed74bf280a4994f858a71852c4429959, type: 3}
       propertyPath: m_Name
@@ -1795,7 +1795,6 @@ RectTransform:
   m_Children:
   - {fileID: 3562339924234481601}
   - {fileID: 245379394278619691}
-  - {fileID: 869537360}
   m_Father: {fileID: 98274343337140913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -2313,6 +2312,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3702414695212657107}
+  - {fileID: 869537360}
   m_Father: {fileID: 1299144694902653417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
