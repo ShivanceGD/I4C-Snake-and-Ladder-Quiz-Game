@@ -842,8 +842,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Snake and Ladder I4C
-  metroPackageVersion: 
+  metroPackageName: SnakeandLadderI4C
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -851,7 +851,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Snake and Ladder I4C
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Snake and Ladder I4C
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
