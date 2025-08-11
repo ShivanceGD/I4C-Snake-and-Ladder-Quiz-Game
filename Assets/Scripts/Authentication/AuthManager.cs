@@ -43,4 +43,5 @@ public class AuthManager : MonoBehaviour
         Username.text = AuthExtensions.GetCachedPlayerName();
         UID.text = AuthExtensions.GetPlayerID();
     }
+    
 }
