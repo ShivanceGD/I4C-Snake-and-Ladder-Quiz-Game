@@ -1,8 +1,7 @@
-using TMPro;
-using Unity.Services.Authentication;
-using Unity.Services.Core;
 using UnityEngine;
+using Unity.Services.Core;
 using UnityEngine.Events;
+using TMPro;
 using UnityEngine.UI;
 
 public class AuthManager : MonoBehaviour
@@ -30,6 +29,8 @@ public class AuthManager : MonoBehaviour
     {
         await UnityServices.InitializeAsync();
         AuthExtensions.RegisterEvents(OnSignedIn, onExpired, onSignedOut);
+
+        if (Unity.Services.Authentication.AuthenticationService.Instance.IsSignedIn) return;
         await AuthExtensions.SignInCachedOrAnonymousAsync();
     }
 
@@ -43,5 +44,4 @@ public class AuthManager : MonoBehaviour
         Username.text = AuthExtensions.GetCachedPlayerName();
         UID.text = AuthExtensions.GetPlayerID();
     }
-    
 }

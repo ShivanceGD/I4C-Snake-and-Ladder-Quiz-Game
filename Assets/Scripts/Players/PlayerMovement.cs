@@ -4,19 +4,19 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerManager))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Refrences")]
+    [Header("References")]
     [SerializeField] private PlayerManager playerManager;
 
     [Header("Player Movement Settings")]
     [SerializeField] private float moveSpeed = 3f;
 
-    private int totalTilesCount;
+    private int totalTilesCount => BoardManager.TilePositions.Count;
 
     private void OnEnable()
     {
         playerManager = gameObject.GetComponent<PlayerManager>();
-        totalTilesCount = BoardManager.TilePositions.Count;
     }
+
     public IEnumerator MovePlayerTileByTileCO(int steps, int currentIndex)
     {
         WaitForSeconds delay = new(0.1f);

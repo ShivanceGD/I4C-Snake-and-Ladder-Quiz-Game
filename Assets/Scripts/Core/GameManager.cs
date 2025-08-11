@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Multiplayer.Widgets;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -33,6 +34,7 @@ public class GameManager : NetworkBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -47,6 +49,18 @@ public class GameManager : NetworkBehaviour
             SyncPlayerListClientRpc();
             StartGame();
         }
+    }
+
+    [ContextMenu("Init")]
+    public void InitializeWidgetsService()
+    {
+        WidgetServiceInitialization.ServicesInitialized();
+    }
+
+    [ContextMenu("Start Scene")]
+    public void LoadScene()
+    {
+        NetworkManager.SceneManager.LoadScene("Multiplayer_Level", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     private void StartGame()
@@ -95,7 +109,7 @@ public class GameManager : NetworkBehaviour
 
     private IEnumerator HandlePostQuizMovement(PlayerManager player, bool isCorrect)
     {
-        int currentTile = player.CurrentIndex;
+        int currentTile = player.currentIndex;
 
         if (isCorrect)
         {
@@ -177,7 +191,7 @@ public class GameManager : NetworkBehaviour
 
     private void CheckWin(PlayerManager player)
     {
-        if (player.CurrentIndex >= BoardManager.WinningTileIndex && !finishOrder.Contains(player))
+        if (player.currentIndex >= BoardManager.WinningTileIndex && !finishOrder.Contains(player))
         {
             player.SetCurrentIndex(BoardManager.WinningTileIndex);
             finishOrder.Add(player);

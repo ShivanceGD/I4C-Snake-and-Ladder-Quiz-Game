@@ -6,17 +6,18 @@ using UnityEngine.Tilemaps;
 
 public class PlayerManager : NetworkBehaviour
 {
-    [Header("Movement")]
+    [Header("References")]
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Vector3Int homeCellPosition;
-    public int currentIndex = -1;
+    [SerializeField] private Tilemap houseTilemap;
+
 
     [Header("Player Stats")]
     public int RemainingHints = 3;
+    public int currentIndex = -1;
 
-    private Tilemap houseTilemap;
-
-    public int CurrentIndex => currentIndex;
+    public bool HasHints() => RemainingHints > 0;
+    public void UseHint() => RemainingHints = Mathf.Max(0, RemainingHints - 1);
 
     private void Start()
     {
@@ -24,12 +25,13 @@ public class PlayerManager : NetworkBehaviour
         {
             RegisterPlayer(this);
         }
-        SetPlayerInitialHomePos();
     }
 
-
-    public bool HasHints() => RemainingHints > 0;
-    public void UseHint() => RemainingHints = Mathf.Max(0, RemainingHints - 1);
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+        SetPlayerInitialHomePos();
+    }
 
     public void RegisterPlayer(PlayerManager player)
     {
@@ -44,7 +46,8 @@ public class PlayerManager : NetworkBehaviour
         }
     }
 
-    private void SetPlayerInitialHomePos()
+    [ContextMenu("Set Home Position")]
+    public void SetPlayerInitialHomePos()
     {
         GameObject house = GameObject.FindGameObjectWithTag("Player House");
 
@@ -56,8 +59,7 @@ public class PlayerManager : NetworkBehaviour
 
     public IEnumerator MovePlayerTileByTile(int stepsToMove)
     {
-        Debug.Log(CurrentIndex);
-        return playerMovement.MovePlayerTileByTileCO(stepsToMove, CurrentIndex);
+        return playerMovement.MovePlayerTileByTileCO(stepsToMove, currentIndex);
     }
     public IEnumerator MovePlayerDirectlyToTile(int stepsToMove)
     {

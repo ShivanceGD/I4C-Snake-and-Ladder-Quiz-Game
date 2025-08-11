@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2043843553593230571}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49, y: 0.482, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -177,8 +177,9 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   playerMovement: {fileID: 5280283651728082607}
   homeCellPosition: {x: -1, y: 0, z: 0}
-  currentIndex: -1
+  houseTilemap: {fileID: 0}
   RemainingHints: 3
+  currentIndex: -1
 --- !u!114 &5280283651728082607
 MonoBehaviour:
   m_ObjectHideFlags: 0
