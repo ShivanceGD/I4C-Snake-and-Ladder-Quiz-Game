@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Board
   - Player House
+  - House
   layers:
   - Default
   - TransparentFX

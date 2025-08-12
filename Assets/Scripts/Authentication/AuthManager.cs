@@ -3,6 +3,7 @@ using Unity.Services.Core;
 using UnityEngine.Events;
 using TMPro;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 public class AuthManager : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class AuthManager : MonoBehaviour
     public TMP_Text UID;
 
     [Header("Username Password")]
-    public TMP_Text Username;
-    public TMP_Text Password;
+    public TMP_InputField Username;
+    public TMP_InputField Password;
     public Button UsernameSignUpButton, UsernameSignInButton;
 
     [Header("Logout")]
@@ -43,5 +44,17 @@ public class AuthManager : MonoBehaviour
     {
         Username.text = AuthExtensions.GetCachedPlayerName();
         UID.text = AuthExtensions.GetPlayerID();
+    }
+    public async void SignUpButton()
+    {
+        await AuthExtensions.SignUpWithUsernamePasswordAsync(Username.text, Password.text);
+    }
+    public async void SignInButton()
+    {
+        await AuthExtensions.SignInWithUsernamePasswordAsync(Username.text, Password.text);
+    }
+    public void SignOutButton()
+    {
+         AuthExtensions.SignOut();
     }
 }

@@ -49,10 +49,11 @@ public class PlayerManager : NetworkBehaviour
     [ContextMenu("Set Home Position")]
     public void SetPlayerInitialHomePos()
     {
-        GameObject house = GameObject.FindGameObjectWithTag("Player House");
-
+        GameObject house = GameObject.FindGameObjectWithTag("House");
+        
         if (house != null && house.TryGetComponent(out houseTilemap))
         {
+            Debug.Log("House Found");
             transform.position = houseTilemap.GetCellCenterWorld(homeCellPosition);
         }
     }

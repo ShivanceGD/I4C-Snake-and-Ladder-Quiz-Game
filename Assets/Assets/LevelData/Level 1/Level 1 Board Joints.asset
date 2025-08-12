@@ -14,37 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Snakes:
     _serializedList:
-    - Key: 30
+    - Key: 31
       Value: 8
-    - Key: 39
-      Value: 2
-    - Key: 45
+    - Key: 35
       Value: 14
+    - Key: 41
+      Value: 19
+    - Key: 45
+      Value: 24
+    - Key: 63
+      Value: 44
     - Key: 67
-      Value: 32
-    - Key: 80
-      Value: 42
+      Value: 27
+    - Key: 87
+      Value: 68
     - Key: 91
       Value: 68
-    - Key: 95
-      Value: 64
+    - Key: 97
+      Value: 65
     - Key: 99
-      Value: 23
+      Value: 22
   Ladders:
     _serializedList:
-    - Key: 3
-      Value: 24
+    - Key: 2
+      Value: 23
     - Key: 7
-      Value: 27
-    - Key: 12
-      Value: 33
-    - Key: 22
-      Value: 41
-    - Key: 44
+      Value: 28
+    - Key: 16
       Value: 65
+    - Key: 22
+      Value: 43
+    - Key: 47
+      Value: 66
     - Key: 52
       Value: 71
-    - Key: 74
-      Value: 93
-    - Key: 76
-      Value: 98
+    - Key: 60
+      Value: 79
+    - Key: 64
+      Value: 83
+    - Key: 75
+      Value: 94
