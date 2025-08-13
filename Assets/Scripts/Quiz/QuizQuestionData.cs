@@ -9,6 +9,7 @@ public class QuizQuestionData
     public Difficulty difficulty;
     public bool isHintAllowed;
     public float timeLimit;
+    public bool isAnonymous;
 }
 
 public enum Difficulty

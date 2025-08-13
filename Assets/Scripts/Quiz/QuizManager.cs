@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public class QuizManager : MonoBehaviour
 {
@@ -10,13 +11,19 @@ public class QuizManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private QuizTimer quizTimer;
     [SerializeField] private QuizHint quizHint;
+    [SerializeField] private  CharacterSCO character;
 
-    [Header("UI")]
+    [Header("QuizUI")]
     [SerializeField] private GameObject quizPanel;
     [SerializeField] private TMP_Text questionText;
     public TMP_Text timerText;
     [SerializeField] private Button hintButton;
     [SerializeField] private Button[] optionButtons;
+    [Header("CharacterUI")]
+    [SerializeField] private Image Character_Image;
+    [SerializeField] private Image CharacterBackground_Image;
+    [SerializeField] private TMP_Text CharacterName_text;
+    [SerializeField] private TMP_Text CharacterInfo_text;
 
     [Header("Hint Settings")]
     [SerializeField] private Difficulty noHintDifficulty;
@@ -65,6 +72,34 @@ public class QuizManager : MonoBehaviour
             }
         }
     }
+    private void SetupCharacterUI()
+    {
+        CharacterBackground_Image.color = RandomCharacterInfo<Color>(character.BGColor);
+        
+        if(currentQuestion.isAnonymous)
+        {
+            Character_Image.sprite = character.Anonymous_icon;
+            CharacterName_text.text = character.Anonymous_Name;
+            CharacterInfo_text.text = character.Anonymous_Name;
+        }
+        else
+        {
+            int gender = UnityEngine.Random.Range(0, 2);
+            if (gender == 0)
+            {
+                Character_Image.sprite = RandomCharacterInfo<Sprite>(character.FemaleCharacters_Icons);
+                CharacterName_text.text = RandomCharacterInfo<string>(character.FemaleCharacters_Names);
+        }
+            else
+            {
+                Character_Image.sprite = RandomCharacterInfo<Sprite>(character.MaleCharacters_Icons);
+                CharacterName_text.text = RandomCharacterInfo<string>(character.MaleCharacters_Names);
+            }
+            CharacterInfo_text.text = RandomCharacterInfo<string>(character.JobDescription);
+        }
+        
+        
+    }
 
     private void HandleOptionSelected(int selectedIndex)
     {
@@ -88,6 +123,7 @@ public class QuizManager : MonoBehaviour
 
         quizPanel.SetActive(true);
         SetupQuestionUI();
+        SetupCharacterUI();
         SetupHintAvailability();
         StartTimer(currentQuestion.timeLimit);
     }
@@ -139,4 +175,12 @@ public class QuizManager : MonoBehaviour
         quizHint.UseHint(wrongAnswersToRemove, currentQuestion, currentPlayer, optionButtons, CanUseHint(), OnHintUsed);
     }
     #endregion
+    #region Generic Function
+    private  T RandomCharacterInfo<T>(List<T> list)
+    {
+        int num = UnityEngine.Random.Range(0, list.Count);
+        return list[num];
+    }
+    #endregion
+
 }
