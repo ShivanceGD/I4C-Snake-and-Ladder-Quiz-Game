@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5253332047603503746}
   - component: {fileID: 3337634842265874309}
   - component: {fileID: -1721204326653055818}
-  - component: {fileID: 7638864127463708953}
-  - component: {fileID: 5280283651728082607}
+  - component: {fileID: 5500455971009631932}
+  - component: {fileID: 4267328496052221226}
+  - component: {fileID: 860533678248975462}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &7638864127463708953
+--- !u!114 &5500455971009631932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,16 +172,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043843553593230571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e547c9dbd3107641aa74bef5ac0a877, type: 3}
+  m_Script: {fileID: 11500000, guid: 03a227c6bc82765488eb80526566d147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+--- !u!114 &4267328496052221226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043843553593230571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7400737155b42644b39cbf5b5919794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  playerMovement: {fileID: 5280283651728082607}
+  playerMovement: {fileID: 860533678248975462}
   homeCellPosition: {x: -1, y: 0, z: 0}
   houseTilemap: {fileID: 0}
-  RemainingHints: 3
-  currentIndex: -1
---- !u!114 &5280283651728082607
+  startingHints: 3
+--- !u!114 &860533678248975462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,8 +202,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043843553593230571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941a8543e69b66345b2185f16168b5ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 03a227c6bc82765488eb80526566d147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
   moveSpeed: 3

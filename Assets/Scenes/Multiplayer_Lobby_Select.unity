@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &73264461
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,7 +3894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1112274405}
   - component: {fileID: 1112274403}
-  - component: {fileID: 1112274404}
+  - component: {fileID: 1112274406}
   m_Layer: 0
   m_Name: Start Game
   m_TagString: Untagged
@@ -3927,25 +3927,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &1112274404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112274402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f68b0bafee001840ae8912579457bd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  onCannotStartGame:
-    m_PersistentCalls:
-      m_Calls: []
-  multiplayerSceneName: Multiplayer_Level
-  minimumClients: 2
-  startButton: {fileID: 1779217128}
 --- !u!4 &1112274405
 Transform:
   m_ObjectHideFlags: 0
@@ -3961,6 +3942,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112274406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112274402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7159c52b06e13449ae58b0cd855bd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  onCannotStartGame:
+    m_PersistentCalls:
+      m_Calls: []
+  multiplayerSceneName: Multiplayer_Level
+  minimumClients: 2
+  startButton: {fileID: 1779217131}
 --- !u!1 &1126043008
 GameObject:
   m_ObjectHideFlags: 0
@@ -5732,7 +5732,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2864486697453313632, guid: beacd15a131834893afe77890d8c73e9, type: 3}
   m_PrefabInstance: {fileID: 1779217126}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1779217128 stripped
+--- !u!114 &1779217131 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5585583631189188578, guid: beacd15a131834893afe77890d8c73e9, type: 3}
   m_PrefabInstance: {fileID: 1779217126}

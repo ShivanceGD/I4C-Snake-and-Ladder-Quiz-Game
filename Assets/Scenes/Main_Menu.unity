@@ -261,20 +261,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 59292557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7addf1b489353d94db0341399aeb10a5, type: 3}
+  m_Script: {fileID: 11500000, guid: fdfd20c89e906b24c8df655db7525a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  TotalLevelsList:
-  - {fileID: 11400000, guid: 70935ba0c40d45b4198c41ea7af0706e, type: 2}
-  - {fileID: 11400000, guid: 19400cbc4f645e0479a937bcc48fc9c7, type: 2}
-  - {fileID: 11400000, guid: aaafccec41be72744b4521966145abf4, type: 2}
-  - {fileID: 11400000, guid: 97be020ee0fe7e94aa0b19d281dbe1d8, type: 2}
-  - {fileID: 11400000, guid: ffd6fb16eb3b7ad468868d814d58a12e, type: 2}
-  - {fileID: 11400000, guid: 77b7e6d9520f29d4888a0413c575611f, type: 2}
-  - {fileID: 11400000, guid: ff16a75ea3fb2734499beb36e0357db4, type: 2}
-  TotalPlayers: []
-  CurrentLevelIndex: 0
+  levelManager: {fileID: 0}
+  quizManager: {fileID: 0}
+  turnManager: {fileID: 0}
+  movementManager: {fileID: 0}
+  netFlow: {fileID: 0}
+  autoStartOnHost: 1
 --- !u!1 &66310918
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +772,7 @@ PrefabInstance:
     - target: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 397948431}
+      objectReference: {fileID: 0}
     - target: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1626,7 +1622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397948432}
-  - component: {fileID: 397948431}
+  - component: {fileID: 397948433}
   m_Layer: 0
   m_Name: Authentication Manager
   m_TagString: Untagged
@@ -1634,60 +1630,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &397948431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397948430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6a7a0d814a9674eb300aa2f3983d68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AuthenticationPannel: {fileID: 1881443369}
-  SuccessFailPannel: {fileID: 958393141}
-  UserName: {fileID: 5194687243551594087}
-  UID: {fileID: 8840050517602308202}
-  Username: {fileID: 5034601548085070919}
-  Password: {fileID: 7859990637214423566}
-  UsernameSignUpButton: {fileID: 4872555796598835910}
-  UsernameSignInButton: {fileID: 3971613658847548122}
-  Logout: {fileID: 1908574941}
-  OnSignedIn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 397948431}
-        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: GetUserName
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 958393141}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onExpired:
-    m_PersistentCalls:
-      m_Calls: []
-  onSignedOut:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &397948432
 Transform:
   m_ObjectHideFlags: 0
@@ -1703,6 +1645,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &397948433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397948430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc97ee4e4a6df44d8022c9108266991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AuthenticationPannel: {fileID: 0}
+  SuccessFailPannel: {fileID: 0}
+  UserName: {fileID: 0}
+  UID: {fileID: 0}
+  Username: {fileID: 0}
+  Password: {fileID: 0}
+  UsernameSignUpButton: {fileID: 0}
+  UsernameSignInButton: {fileID: 0}
+  Logout: {fileID: 0}
+  OnSignedIn:
+    m_PersistentCalls:
+      m_Calls: []
+  onExpired:
+    m_PersistentCalls:
+      m_Calls: []
+  onSignedOut:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &426091374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2607,7 +2579,7 @@ PrefabInstance:
     - target: {fileID: 5585583631189188578, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 59292560}
+      objectReference: {fileID: 0}
     - target: {fileID: 5585583631189188578, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -5551,17 +5523,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2567828311121327449, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
   m_PrefabInstance: {fileID: 1908574935}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1908574941 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5323690165911041243, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
-  m_PrefabInstance: {fileID: 1908574935}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1947104784
 GameObject:
   m_ObjectHideFlags: 0
@@ -18681,7 +18642,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 397948431}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
         m_MethodName: SignInButton
         m_Mode: 1
@@ -21745,7 +21706,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 397948431}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
         m_MethodName: LinkProfileToIDP
         m_Mode: 1
