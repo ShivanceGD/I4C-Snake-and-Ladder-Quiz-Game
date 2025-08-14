@@ -10,14 +10,20 @@ public class MovementManager : NetworkBehaviour
     [Header("Settings")]
     public float endTurnDelay = 0.5f;
 
-    // Server entry
+    // Server entry (MP)
     public void ProcessPostQuizMovementServer(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken)
     {
         if (!IsServer) { Debug.LogWarning("Call on server only."); return; }
-        StartCoroutine(MoveCoroutine(player, isCorrect, difficulty, timeTaken));
+        StartCoroutine(MoveCoroutine(player, isCorrect, difficulty, timeTaken, offline: false));
     }
 
-    private IEnumerator MoveCoroutine(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken)
+    // Offline single-player entry (NEW)
+    public void ProcessPostQuizMovementOffline(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken)
+    {
+        StartCoroutine(MoveCoroutine(player, isCorrect, difficulty, timeTaken, offline: true));
+    }
+
+    private IEnumerator MoveCoroutine(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken, bool offline)
     {
         if (player == null) yield break;
         var board = LevelManager.Instance.CurrentLevel.BoardJointsSCO;
@@ -33,7 +39,7 @@ public class MovementManager : NetworkBehaviour
                     yield return player.MovePlayerDirectlyToTile(ladder.Value - 1);
                     CheckWin(player);
                     yield return new WaitForSeconds(endTurnDelay);
-                    turnManager.ServerAdvanceTurn();
+                    if (offline) turnManager.AdvanceLocalTurn(); else turnManager.ServerAdvanceTurn();
                     yield break;
                 }
             }
@@ -48,7 +54,7 @@ public class MovementManager : NetworkBehaviour
                     yield return player.MovePlayerDirectlyToTile(snake.Value - 1);
                     CheckWin(player);
                     yield return new WaitForSeconds(endTurnDelay);
-                    turnManager.ServerAdvanceTurn();
+                    if (offline) turnManager.AdvanceLocalTurn(); else turnManager.ServerAdvanceTurn();
                     yield break;
                 }
             }
@@ -62,7 +68,7 @@ public class MovementManager : NetworkBehaviour
         }
 
         yield return new WaitForSeconds(endTurnDelay);
-        turnManager.ServerAdvanceTurn();
+        if (offline) turnManager.AdvanceLocalTurn(); else turnManager.ServerAdvanceTurn();
     }
 
     private void CheckWin(PlayerManager player)

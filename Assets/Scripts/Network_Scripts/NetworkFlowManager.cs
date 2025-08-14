@@ -30,5 +30,4 @@ public class NetworkFlowManager : NetworkBehaviour
         if (QuizManager.Instance != null)
             QuizManager.Instance.OnQuizCompleted?.Invoke(player, isCorrect, difficulty, timeTaken);
     }
-
 }

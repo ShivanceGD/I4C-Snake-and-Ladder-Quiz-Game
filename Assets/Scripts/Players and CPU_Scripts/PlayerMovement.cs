@@ -43,10 +43,13 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
         transform.position = target;
-        // update tile index server-authoritatively by asking server to set (server will set network var)
-        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
+
+        // Update tile index:
+        // - server (MP), or
+        // - offline (no NetworkManager or GameManager.isOfflineMode)
+        bool offline = (NetworkManager.Singleton == null) || (GameManager.Instance != null && GameManager.Instance.isOfflineMode);
+        if (offline || (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer))
         {
-            // This code runs on server Coroutines already invoked server-side in MovementManager
             var pmComp = GetComponent<PlayerManager>();
             pmComp.SetPlayerTileIndex(indexNow);
         }

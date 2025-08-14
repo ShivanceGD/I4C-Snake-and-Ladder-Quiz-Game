@@ -14,9 +14,9 @@ public class PlayerManager : NetworkBehaviour
     [Header("Stats")]
     public int startingHints = 3;
 
-    // network-synced tile index (server authoritative writes)
-
-    [SerializeField]private NetworkVariable<int> networkTileIndex = new NetworkVariable<int>(-1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    [SerializeField]
+    private NetworkVariable<int> networkTileIndex = new NetworkVariable<int>(
+        -1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     private int localHints;
 
@@ -36,21 +36,18 @@ public class PlayerManager : NetworkBehaviour
         SetPlayerInitialHomePos();
     }
 
-
     [ContextMenu("Register Player")]
     public void RegsiterPlayer()
     {
         GameManager.Instance?.RegisterPlayer(this);
-
-        if (!IsOwner && NetworkManager.Singleton != null && NetworkManager.Singleton.IsClient)
-        {
-            // clients may rely on server updates to tileIndex; subscribe if needed
-        }
     }
 
     public void SetPlayerTileIndex(int idx)
     {
-        if (IsServer)
+        // Allow local write when there is no NetworkManager (offline)
+        bool offline = (NetworkManager.Singleton == null) || (GameManager.Instance != null && GameManager.Instance.isOfflineMode);
+
+        if (IsServer || offline)
         {
             int clamped = Mathf.Clamp(idx, 0, BoardManager.TilePositions.Count - 1);
             networkTileIndex.Value = clamped;

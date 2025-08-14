@@ -272,6 +272,13 @@ MonoBehaviour:
   netFlow: {fileID: 0}
   autoStartOnHost: 1
   playerWaitTimeout: 8
+  isOfflineMode: 0
+  offlinePlayerPrefab: {fileID: 0}
+  offlineCpuPrefab: {fileID: 0}
+  offlineSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  autoStartOffline: 1
 --- !u!1 &66310918
 GameObject:
   m_ObjectHideFlags: 0

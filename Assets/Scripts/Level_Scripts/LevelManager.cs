@@ -19,14 +19,14 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        SetPlayersNames();
+        //SetPlayersNames();
     }
     public void CacheCurrentLevelIfNeeded()
     {
         if (currentLevel == null) Debug.LogError("LevelManager: CurrentLevel not assigned.");
         // other caching if needed
     }
-    public void SetPlayersNames()
+    /*public void SetPlayersNames()
     {
         for(int i = 0;i<turn.players.Count;i++)
         {
@@ -34,5 +34,5 @@ public class LevelManager : MonoBehaviour
             obj.GetComponentInChildren<TMP_Text>().text = turn.players[i].name;
             obj.transform.GetChild(0).GetChild(2).GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
         }
-    }
+    }*/
 }

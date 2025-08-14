@@ -59,10 +59,6 @@ public class QuizManager : MonoBehaviour
         if (questions.Count == 0) Debug.LogWarning("QuizManager: No questions found in current level.");
     }
 
-    /// <summary>
-    /// Called by NetworkFlowManager on the target client to open the quiz UI
-    /// with a specific question index and the local player.
-    /// </summary>
     public void ShowQuizFromServerIndex(int questionIndex, PlayerManager localPlayer)
     {
         if (questions == null || questions.Count == 0) CacheQuestionsFromLevel();
@@ -76,9 +72,6 @@ public class QuizManager : MonoBehaviour
         ShowQuiz(q, localPlayer);
     }
 
-    /// <summary>
-    /// Optional direct-show method (also used internally).
-    /// </summary>
     public void ShowQuiz(QuizQuestionData question, PlayerManager player)
     {
         if (question == null || player == null)
@@ -112,7 +105,6 @@ public class QuizManager : MonoBehaviour
     {
         if (!CanUseHint()) return;
 
-        // Your original HintSystem signature uses its own serialized QuizUI
         hintSystem.RemoveWrongAnswers(wrongAnswersToRemove, currentQuestion, quizUI);
 
         hintUsed = true;
@@ -142,7 +134,7 @@ public class QuizManager : MonoBehaviour
         float timeTaken = quizTimer != null ? quizTimer.ElapsedTime : 0f;
 
         // Multiplayer path: send result to server so movement/turn advance happens server-side
-        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsClient)
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsClient && !IsOffline())
         {
             ulong localId = NetworkManager.Singleton.LocalClientId;
 
@@ -162,9 +154,14 @@ public class QuizManager : MonoBehaviour
             timeTaken);
     }
 
+    private bool IsOffline()
+    {
+        return GameManager.Instance != null && GameManager.Instance.isOfflineMode;
+    }
+
     #endregion
 
-    #region Helpers (optional but handy)
+    #region Helpers
 
     public int GetRandomQuestionIndex()
     {

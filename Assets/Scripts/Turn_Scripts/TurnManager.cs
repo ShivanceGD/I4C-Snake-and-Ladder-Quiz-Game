@@ -7,16 +7,14 @@ public class TurnManager : NetworkBehaviour
 {
     public event Action<PlayerManager> OnTurnStarted;
 
-    public readonly List<PlayerManager> players = new();
+    private readonly List<PlayerManager> players = new();
     private readonly HashSet<PlayerManager> finished = new HashSet<PlayerManager>();
     private int currentIndex = 0;
 
-    
     public void RegisterPlayer(PlayerManager p)
     {
         if (p == null || players.Contains(p)) return;
         players.Add(p);
-        
     }
 
     public void InitializeFromScenePlayersServer()
@@ -28,9 +26,29 @@ public class TurnManager : NetworkBehaviour
         currentIndex = 0;
     }
 
+    // NEW: Local initialization (offline)
+    public void InitializeFromScenePlayersLocal()
+    {
+        players.Clear();
+        var all = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
+        foreach (var p in all) players.Add(p);
+        currentIndex = 0;
+    }
+
     public void ServerStartTurns()
     {
         if (!IsServer || players.Count == 0) return;
+        SkipFinished();
+        OnTurnStarted?.Invoke(players[currentIndex]);
+    }
+
+    // NEW: Local start (offline)
+    public void StartLocalTurns()
+    {
+        if (players.Count == 0)
+            InitializeFromScenePlayersLocal();
+        if (players.Count == 0) return;
+
         SkipFinished();
         OnTurnStarted?.Invoke(players[currentIndex]);
     }
