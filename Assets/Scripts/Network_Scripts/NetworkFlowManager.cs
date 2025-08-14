@@ -1,12 +1,7 @@
 using Unity.Netcode;
-using UnityEngine;
 
-/// <summary>
-/// Mediates server/client RPCs: server requests client to show quiz and receives quiz result (server authoritative).
-/// </summary>
 public class NetworkFlowManager : NetworkBehaviour
 {
-    // Server: request client to show quiz for clientId
     [ServerRpc(RequireOwnership = false)]
     public void RequestQuizServerRpc(ulong clientId)
     {
@@ -15,7 +10,6 @@ public class NetworkFlowManager : NetworkBehaviour
         ShowQuizClientRpc(idx, clientId);
     }
 
-    // ClientRpc: targeted
     [ClientRpc]
     private void ShowQuizClientRpc(int questionIndex, ulong targetClientId)
     {
@@ -26,8 +20,6 @@ public class NetworkFlowManager : NetworkBehaviour
         QuizManager.Instance.ShowQuizFromServerIndex(questionIndex, localPlayer);
     }
 
-    // Client -> Server: send result
-    // Inside NetworkFlowManager on the server:
     [ServerRpc(RequireOwnership = false)]
     public void SendQuizResultServerRpc(ulong clientId, bool isCorrect, Difficulty difficulty, float timeTaken)
     {

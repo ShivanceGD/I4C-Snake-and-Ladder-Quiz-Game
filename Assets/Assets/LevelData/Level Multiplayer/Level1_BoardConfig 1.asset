@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a493202b5d4b5b445aeceff5da4f6038, type: 3}
-  m_Name: Level Multiplayer Board Joints
+  m_Script: {fileID: 11500000, guid: bac19286a61a4824081ce74dc0c206b8, type: 3}
+  m_Name: Level1_BoardConfig 1
   m_EditorClassIdentifier: 
   Snakes:
     _serializedList:
-    - Key: 24
-      Value: 2
+    - Key: 21
+      Value: 55
   Ladders:
     _serializedList:
-    - Key: 10
+    - Key: 1
       Value: 20

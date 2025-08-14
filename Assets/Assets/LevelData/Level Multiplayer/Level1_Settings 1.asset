@@ -9,23 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f1692471c6e7f44dba09408d78625d0, type: 3}
-  m_Name: Level 5
+  m_Script: {fileID: 11500000, guid: 3cba3198441e8b443a0d36e5a25e9057, type: 3}
+  m_Name: Level1_Settings 1
   m_EditorClassIdentifier: 
   LevelNumber: 0
-  LevelName: Intro
+  LevelName: 
   LevelStars: 0
   LevelPoints: 0
-  isLevelUnlocked: 0
+  isLevelUnlocked: 1
   RequiredPointsToUnlockLevel: 0
   isLevelCompleted: 0
-  LevelQuizSCO: {fileID: 11400000, guid: cae429450dc6eec488696c0583fd2279, type: 2}
-  BoardJointsSCO: {fileID: 11400000, guid: bab76a64fcb19b04bbfa6893547eab22, type: 2}
+  LevelQuizSCO: {fileID: 11400000, guid: 9b21e18e42e16d7458de50a009fb8b57, type: 2}
+  BoardJointsSCO: {fileID: 11400000, guid: f9ddf6ce0a738fa419baac78f80ae291, type: 2}
   DiceRollRangePerQuizDifficulty:
     _serializedList:
     - Key: 0
-      Value: {x: 1, y: 2}
+      Value: {x: 1, y: 1}
     - Key: 1
-      Value: {x: 3, y: 4}
+      Value: {x: 1, y: 1}
     - Key: 2
-      Value: {x: 50, y: 99}
+      Value: {x: 1, y: 1}

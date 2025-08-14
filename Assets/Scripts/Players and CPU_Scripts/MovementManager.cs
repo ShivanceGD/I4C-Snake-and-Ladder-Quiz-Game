@@ -29,8 +29,8 @@ public class MovementManager : NetworkBehaviour
             {
                 if (ladder.Key > currentTile && ladder.Key - currentTile <= 5)
                 {
-                    yield return player.MovePlayerTileByTile(ladder.Key - currentTile);
-                    yield return player.MovePlayerDirectlyToTile(ladder.Value);
+                    yield return player.MovePlayerTileByTile((ladder.Key - 1) - currentTile);
+                    yield return player.MovePlayerDirectlyToTile(ladder.Value - 1);
                     CheckWin(player);
                     yield return new WaitForSeconds(endTurnDelay);
                     turnManager.ServerAdvanceTurn();
@@ -44,8 +44,8 @@ public class MovementManager : NetworkBehaviour
             {
                 if (snake.Key >= currentTile && snake.Key - currentTile <= 5)
                 {
-                    yield return player.MovePlayerTileByTile(snake.Key - currentTile);
-                    yield return player.MovePlayerDirectlyToTile(snake.Value);
+                    yield return player.MovePlayerTileByTile((snake.Key - 1) - currentTile);
+                    yield return player.MovePlayerDirectlyToTile(snake.Value - 1);
                     CheckWin(player);
                     yield return new WaitForSeconds(endTurnDelay);
                     turnManager.ServerAdvanceTurn();

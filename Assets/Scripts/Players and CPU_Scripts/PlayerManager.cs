@@ -15,10 +15,8 @@ public class PlayerManager : NetworkBehaviour
     public int startingHints = 3;
 
     // network-synced tile index (server authoritative writes)
-    private NetworkVariable<int> networkTileIndex = new NetworkVariable<int>(
-        0,
-        NetworkVariableReadPermission.Everyone,
-        NetworkVariableWritePermission.Server);
+
+    [SerializeField]private NetworkVariable<int> networkTileIndex = new NetworkVariable<int>(-1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     private int localHints;
 
@@ -29,11 +27,15 @@ public class PlayerManager : NetworkBehaviour
         base.OnNetworkSpawn();
         localHints = startingHints;
 
-        // register with GameManager (server & local)
-        //RegsiterPlayer();
+        // Register with GameManager on the server (server should own the authoritative player list)
+        if (IsServer)
+        {
+            RegsiterPlayer(); // your existing method, calls GameManager.Instance?.RegisterPlayer(this)
+        }
 
         SetPlayerInitialHomePos();
     }
+
 
     [ContextMenu("Register Player")]
     public void RegsiterPlayer()
@@ -55,7 +57,6 @@ public class PlayerManager : NetworkBehaviour
         }
         else
         {
-            // request server to set (optional): for simplicity server control only
             Debug.LogWarning("Client attempted to set tile index directly; operation is server-only.");
         }
     }
@@ -78,7 +79,6 @@ public class PlayerManager : NetworkBehaviour
         }
     }
 
-    // Helpers used by NetworkFlowManager
     public static PlayerManager GetLocalPlayer()
     {
         if (NetworkManager.Singleton == null)
