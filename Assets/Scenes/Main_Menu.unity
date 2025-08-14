@@ -772,14 +772,14 @@ PrefabInstance:
     - target: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 397948433}
     - target: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SignOutButton
+      value: SignoutButton
       objectReference: {fileID: 0}
     - target: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -799,6 +799,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2864486697453313632, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
   m_PrefabInstance: {fileID: 171099128}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &171099130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
+  m_PrefabInstance: {fileID: 171099128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &194233639 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4835658423302709099, guid: 21b729d6d03734632b580817a5589b60, type: 3}
@@ -1657,15 +1668,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc97ee4e4a6df44d8022c9108266991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AuthenticationPannel: {fileID: 0}
-  SuccessFailPannel: {fileID: 0}
-  UserName: {fileID: 0}
-  UID: {fileID: 0}
-  Username: {fileID: 0}
-  Password: {fileID: 0}
-  UsernameSignUpButton: {fileID: 0}
-  UsernameSignInButton: {fileID: 0}
-  Logout: {fileID: 0}
+  SuccessFailPannel: {fileID: 958393141}
+  UserName: {fileID: 5194687243551594087}
+  UID: {fileID: 8840050517602308202}
+  Username: {fileID: 5034601548085070919}
+  Password: {fileID: 7859990637214423566}
+  UsernameSignUpButton: {fileID: 4872555796598835910}
+  UsernameSignInButton: {fileID: 3971613658847548122}
+  Logout: {fileID: 171099130}
   OnSignedIn:
     m_PersistentCalls:
       m_Calls: []
@@ -4527,7 +4537,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -234}
-  m_SizeDelta: {x: 500, y: 1.5}
+  m_SizeDelta: {x: 500, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578509016
 MonoBehaviour:
@@ -4542,7 +4552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0.33333334}
+  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18642,7 +18652,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 397948433}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
         m_MethodName: SignInButton
         m_Mode: 1
@@ -21706,7 +21716,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 397948433}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
         m_MethodName: LinkProfileToIDP
         m_Mode: 1

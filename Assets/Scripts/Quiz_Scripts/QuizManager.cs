@@ -92,6 +92,7 @@ public class QuizManager : MonoBehaviour
         hintUsed = false;
 
         quizUI.ShowQuestion(question);
+        quizUI.ShowCharacter(question);
         quizUI.SetHintButtonState(CanUseHint());
         quizTimer.StartTimer(question.timeLimit, quizUI.UpdateTimerDisplay);
     }

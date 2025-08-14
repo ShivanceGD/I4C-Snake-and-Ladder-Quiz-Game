@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class AuthManager : MonoBehaviour
 {
     [Header("Pannels")]
-    public GameObject AuthenticationPannel;
+    //public GameObject AuthenticationPannel;
     public GameObject SuccessFailPannel;
 
     [Header("Profile")]
@@ -15,8 +15,8 @@ public class AuthManager : MonoBehaviour
     public TMP_Text UID;
 
     [Header("Username Password")]
-    public TMP_Text Username;
-    public TMP_Text Password;
+    public TMP_InputField Username;
+    public TMP_InputField Password;
     public Button UsernameSignUpButton, UsernameSignInButton;
 
     [Header("Logout")]
@@ -37,12 +37,20 @@ public class AuthManager : MonoBehaviour
     [ContextMenu("lINK")]
     public async void LinkProfileToIDP()
     {
-        await AuthExtensions.LinkUsernamePasswordAsync("Akash12", "Akash@12");
+        await AuthExtensions.LinkUsernamePasswordAsync(Username.text,Password.text);
     }
 
     public void GetUserName()
     {
         Username.text = AuthExtensions.GetCachedPlayerName();
         UID.text = AuthExtensions.GetPlayerID();
+    }
+    public async void SignInButton()
+    {
+      await  AuthExtensions.SignInWithUsernamePasswordAsync(Username.text, Password.text);
+    }
+    public void SignoutButton()
+    {
+        AuthExtensions.SignOut();
     }
 }
