@@ -9,6 +9,7 @@ public class AuthManager : MonoBehaviour
     [Header("Pannels")]
     //public GameObject AuthenticationPannel;
     public GameObject SuccessFailPannel;
+    public TMP_Text SuccessFail_text;
 
     [Header("Profile")]
     public TMP_Text UserName;
@@ -34,7 +35,7 @@ public class AuthManager : MonoBehaviour
         await AuthExtensions.SignInCachedOrAnonymousAsync();
     }
 
-    [ContextMenu("lINK")]
+    [ContextMenu("LINK")]
     public async void LinkProfileToIDP()
     {
         await AuthExtensions.LinkUsernamePasswordAsync(Username.text,Password.text);
@@ -48,6 +49,10 @@ public class AuthManager : MonoBehaviour
     public async void SignInButton()
     {
       await  AuthExtensions.SignInWithUsernamePasswordAsync(Username.text, Password.text);
+    }
+    public void UpdateText(string txt)
+    {
+        SuccessFail_text.text = txt;
     }
     public void SignoutButton()
     {

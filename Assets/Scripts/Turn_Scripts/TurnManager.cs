@@ -7,14 +7,16 @@ public class TurnManager : NetworkBehaviour
 {
     public event Action<PlayerManager> OnTurnStarted;
 
-    private readonly List<PlayerManager> players = new();
+    public readonly List<PlayerManager> players = new();
     private readonly HashSet<PlayerManager> finished = new HashSet<PlayerManager>();
     private int currentIndex = 0;
 
+    
     public void RegisterPlayer(PlayerManager p)
     {
         if (p == null || players.Contains(p)) return;
         players.Add(p);
+        
     }
 
     public void InitializeFromScenePlayersServer()

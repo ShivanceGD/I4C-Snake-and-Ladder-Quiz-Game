@@ -1670,6 +1670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SuccessFailPannel: {fileID: 958393141}
+  SuccessFail_text: {fileID: 958393142}
   UserName: {fileID: 5194687243551594087}
   UID: {fileID: 8840050517602308202}
   Username: {fileID: 5034601548085070919}
@@ -1679,13 +1680,85 @@ MonoBehaviour:
   Logout: {fileID: 171099130}
   OnSignedIn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 397948433}
+        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Successfully Signed In
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 958393141}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Successfully Signed In
+          m_BoolArgument: 1
+        m_CallState: 2
   onExpired:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 397948433}
+        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Session Token Expired. Please Login Again
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 958393141}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onSignedOut:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 397948433}
+        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
+        m_MethodName: UpdateText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Successfully Signed Out
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 958393141}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Successfully Signed Out
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &426091374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2867,7 +2940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 178356, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22412598, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_Pivot.x
@@ -2985,6 +3058,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4131572706565545705, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795669187200698342, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7539471988505645628, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 440.28
@@ -3017,6 +3098,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 178356, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
   m_PrefabInstance: {fileID: 958393139}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &958393142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2652707691964294623, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
+  m_PrefabInstance: {fileID: 958393139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &980756221
 GameObject:
   m_ObjectHideFlags: 0
