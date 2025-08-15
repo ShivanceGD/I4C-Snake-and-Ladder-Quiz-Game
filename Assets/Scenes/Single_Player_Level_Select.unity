@@ -1348,8 +1348,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -3106,8 +3106,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8856711388907585118, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7827197665204426655}
+    - targetCorrespondingSourceObject: {fileID: 8856711388907585118, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7827197665204426656}
   m_SourcePrefab: {fileID: 100100000, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+--- !u!1 &5846672009478403513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8856711388907585118, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+  m_PrefabInstance: {fileID: 5846672009478403512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5846672009478403514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8402599888104510487, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+  m_PrefabInstance: {fileID: 5846672009478403512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846672009478403513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5917206641198051241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3563,6 +3585,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1799552965584223601, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
   m_PrefabInstance: {fileID: 5846672009478403512}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7827197665204426655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846672009478403513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3475553358
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!114 &7827197665204426656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846672009478403513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7159c52b06e13449ae58b0cd855bd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  onCannotStartGame:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneName: Multiplayer_Level
+  minimumClients: 0
+  startButton: {fileID: 5846672009478403514}
+  isOffline: 1
 --- !u!95 &7998981734834396510
 Animator:
   serializedVersion: 7

@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Dark_Oracle_Walking_017_0: 4019206970528775924
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

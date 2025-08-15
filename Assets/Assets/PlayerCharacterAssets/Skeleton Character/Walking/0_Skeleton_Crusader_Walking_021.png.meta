@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Skeleton_Crusader_Walking_021_0: -4181365225611160269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

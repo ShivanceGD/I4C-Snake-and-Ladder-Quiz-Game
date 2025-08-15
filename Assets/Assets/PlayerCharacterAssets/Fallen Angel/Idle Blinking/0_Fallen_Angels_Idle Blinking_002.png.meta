@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Fallen_Angels_Idle Blinking_002_0: -2732473869548009758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

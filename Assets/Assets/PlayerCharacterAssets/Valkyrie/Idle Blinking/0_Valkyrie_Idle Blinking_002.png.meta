@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Valkyrie_Idle Blinking_002_0: -663253248138448280
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

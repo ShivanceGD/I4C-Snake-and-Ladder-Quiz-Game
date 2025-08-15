@@ -2,10 +2,14 @@ using System;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
     public static QuizManager Instance;
+
+    public GameObject starGamePannel;
+    public Button startGame;
 
     [Header("Systems")]
     [SerializeField] private QuizUI quizUI;

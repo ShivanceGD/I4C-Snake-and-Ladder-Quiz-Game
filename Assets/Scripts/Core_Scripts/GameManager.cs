@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : NetworkBehaviour
 {
@@ -89,6 +90,12 @@ public class GameManager : NetworkBehaviour
                 // Start local turns: first player in list goes first
                 turnManager.StartLocalTurns();
             }
+            if (!autoStartOffline)
+            {
+                Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
+                startButton.onClick.AddListener(() => turnManager.StartLocalTurns());
+                startButton.transform.parent.gameObject.SetActive(false); //@krithik
+            }
             return;
         }
 
@@ -105,6 +112,12 @@ public class GameManager : NetworkBehaviour
         if (autoStartOnHost)
         {
             turnManager.ServerStartTurns();
+        }
+        if(!autoStartOnHost)
+        {
+            Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
+            startButton.onClick.AddListener(()=> turnManager.ServerStartTurns());
+            startButton.transform.parent.gameObject.SetActive(false); //@krithik
         }
     }
 
@@ -148,8 +161,8 @@ public class GameManager : NetworkBehaviour
             levelManager = FindFirstObjectByType<LevelManager>();
             movementManager = FindFirstObjectByType<MovementManager>();
             netFlow = FindFirstObjectByType<NetworkFlowManager>();
-
-            await Task.Yield(); // wait next frame
+            // wait next frame
+            await Task.Yield();
         }
     }
 

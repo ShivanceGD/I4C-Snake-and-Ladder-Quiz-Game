@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Dark_Oracle_Falling Down_003_0: 329513185954617351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

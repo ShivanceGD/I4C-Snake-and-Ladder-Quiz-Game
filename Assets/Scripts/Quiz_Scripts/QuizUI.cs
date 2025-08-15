@@ -13,11 +13,13 @@ public class QuizUI : MonoBehaviour
     public TMP_Text timerText;
     public Button hintButton;
     public Button[] optionButtons;
+
     [Header("Character Panel UI")]
     public Image Character_Icon;
     public Image CharacterBackground_Icon;
     public TMP_Text CharacterName_text;
     public TMP_Text CharacterInfo_text;
+
     [Header("Characters Reference")]
     public CharacterSCO chars;
     public event Action<int> OnOptionSelected;

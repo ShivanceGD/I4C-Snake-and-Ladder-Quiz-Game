@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Dark_Oracle_Jump Loop_002_0: 4092207962731284664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Fallen_Angels_Jump Loop_005_0: -4524523269598364639
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

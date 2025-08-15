@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Skeleton_Crusader_Falling Down_002_0: 7082984527869521626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3544,7 +3544,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -3958,9 +3958,10 @@ MonoBehaviour:
   onCannotStartGame:
     m_PersistentCalls:
       m_Calls: []
-  multiplayerSceneName: Multiplayer_Level
+  sceneName: 
   minimumClients: 2
   startButton: {fileID: 1779217131}
+  isOffline: 0
 --- !u!1 &1126043008
 GameObject:
   m_ObjectHideFlags: 0

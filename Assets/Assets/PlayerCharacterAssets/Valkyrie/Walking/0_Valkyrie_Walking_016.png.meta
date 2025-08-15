@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Valkyrie_Walking_016_0: -2438696718108497468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

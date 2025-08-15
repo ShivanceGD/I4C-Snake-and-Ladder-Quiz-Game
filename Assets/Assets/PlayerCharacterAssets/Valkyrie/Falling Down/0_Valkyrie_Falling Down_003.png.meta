@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Valkyrie_Falling Down_003_0: 6326534684703950296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

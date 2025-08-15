@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Fallen_Angels_Walking_014_0: -2158486052583486949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

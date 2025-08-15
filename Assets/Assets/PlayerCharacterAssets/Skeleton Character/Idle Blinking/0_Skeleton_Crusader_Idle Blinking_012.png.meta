@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Skeleton_Crusader_Idle Blinking_012_0: -4759516704459850869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

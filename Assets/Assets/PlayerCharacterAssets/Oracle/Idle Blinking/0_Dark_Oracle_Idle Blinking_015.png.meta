@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Dark_Oracle_Idle Blinking_015_0: 2807827573090826600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Valkyrie_Jump Loop_004_0: -2605930624414725238
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

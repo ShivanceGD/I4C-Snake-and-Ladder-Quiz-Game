@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      0_Skeleton_Crusader_Jump Loop_000_0: -1863820219637216129
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
