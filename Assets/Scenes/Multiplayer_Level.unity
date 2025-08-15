@@ -8037,21 +8037,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &977314038649660690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991667002156575710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7941af9e9e242ab4494b413422e827d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: {x: 0.3, y: 0.3}
-  infiniteHorizontal: 1
-  infiniteVertical: 0
 --- !u!114 &981337377696285069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8447,7 +8432,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2994696466572002448}
   - component: {fileID: 5343511744971725896}
-  - component: {fileID: 1975609140629045210}
   m_Layer: 0
   m_Name: rocks_2
   m_TagString: Untagged
@@ -8582,7 +8566,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1091465611918217646}
   - component: {fileID: 725790054300386010}
-  - component: {fileID: 2213632816037660193}
   m_Layer: 0
   m_Name: clouds_2
   m_TagString: Untagged
@@ -8711,21 +8694,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1975609140629045210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587389999264395667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7941af9e9e242ab4494b413422e827d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: {x: 0.1, y: 0.1}
-  infiniteHorizontal: 1
-  infiniteVertical: 0
 --- !u!212 &1989984729368142731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8791,7 +8759,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9189319155404505208}
   - component: {fileID: 639062743743212059}
-  - component: {fileID: 977314038649660690}
   m_Layer: 0
   m_Name: rocks_1
   m_TagString: Untagged
@@ -8879,7 +8846,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3431321038466739029}
   - component: {fileID: 883213196878425303}
-  - component: {fileID: 8889947874434857576}
   m_Layer: 0
   m_Name: clouds_1
   m_TagString: Untagged
@@ -8967,21 +8933,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2213632816037660193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854265518601650998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7941af9e9e242ab4494b413422e827d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: {x: 0.3, y: 0.3}
-  infiniteHorizontal: 1
-  infiniteVertical: 0
 --- !u!1 &2240375441230706620
 GameObject:
   m_ObjectHideFlags: 0
@@ -11925,21 +11876,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5472875491718570851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9067904717543577617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7941af9e9e242ab4494b413422e827d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: {x: 0.1, y: 0.1}
-  infiniteHorizontal: 1
-  infiniteVertical: 0
 --- !u!1 &5480553309090960422
 GameObject:
   m_ObjectHideFlags: 0
@@ -16272,21 +16208,6 @@ RectTransform:
   m_AnchoredPosition: {x: -16.4, y: -20}
   m_SizeDelta: {x: 20, y: -40}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &8889947874434857576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043105061259313591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7941af9e9e242ab4494b413422e827d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: {x: 0.5, y: 0.5}
-  infiniteHorizontal: 1
-  infiniteVertical: 0
 --- !u!224 &8955741795578251368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16400,7 +16321,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2008958876995060047}
   - component: {fileID: 1989984729368142731}
-  - component: {fileID: 5472875491718570851}
   m_Layer: 0
   m_Name: clouds_3
   m_TagString: Untagged
