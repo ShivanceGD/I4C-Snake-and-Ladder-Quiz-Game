@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.U2D.IK;
 using UnityEngine.UI;
 
 public class QuizUI : MonoBehaviour
@@ -19,11 +20,17 @@ public class QuizUI : MonoBehaviour
     public Image CharacterBackground_Icon;
     public TMP_Text CharacterName_text;
     public TMP_Text CharacterInfo_text;
+    public TMP_Text Difficulty_text;
+    [Header("Misc")]
+    [SerializeField] Color Easy;
+    [SerializeField] Color Medium;
+    [SerializeField] Color Hard;
 
     [Header("Characters Reference")]
     public CharacterSCO chars;
     public event Action<int> OnOptionSelected;
     public event Action OnHintRequested;
+    
 
     private void Start()
     {
@@ -72,9 +79,24 @@ public class QuizUI : MonoBehaviour
             }
             CharacterInfo_text.text = RandomInfo<string>(chars.JobDescription);
         }
+        if(q.difficulty == Difficulty.Easy)
+        {
+            Difficulty_text.text = "Easy";
+            Difficulty_text.color = Easy;
+        }
+        else if(q.difficulty == Difficulty.Medium)
+        {
+            Difficulty_text.text = "Medium";
+            Difficulty_text.color = Medium;
+        }
+        else if(q.difficulty == Difficulty.Hard)
+        {
+            Difficulty_text.text = "Hard";
+            Difficulty_text.color = Hard;
+        }
     }
 
-    public void UpdateTimerDisplay(float t) { if (timerText) timerText.text = $"Time: {t:F1}s"; }
+    public void UpdateTimerDisplay(float t) { if (timerText) timerText.text = $"{t:F1}s"; }
     public void SetHintButtonState(bool active) { if (hintButton) hintButton.interactable = active; }
     public void RemoveOption(int index) { if (index >= 0 && index < optionButtons.Length) optionButtons[index].gameObject.SetActive(false); }
     public void HideQuizPannel() { if (quizPanel) quizPanel.SetActive(false); }
