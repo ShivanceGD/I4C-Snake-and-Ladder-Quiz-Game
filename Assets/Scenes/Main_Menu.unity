@@ -1698,18 +1698,6 @@ MonoBehaviour:
           m_StringArgument: Successfully Signed In
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 958393141}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Successfully Signed In
-          m_BoolArgument: 1
-        m_CallState: 2
   onExpired:
     m_PersistentCalls:
       m_Calls:
@@ -1723,18 +1711,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Session Token Expired. Please Login Again
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 958393141}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
   onSignedOut:
@@ -2007,11 +1983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567828311121327449, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -55
       objectReference: {fileID: 0}
     - target: {fileID: 2567828311121327449, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2567828311121327449, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5539,11 +5515,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567828311121327449, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2567828311121327449, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2567828311121327449, guid: 6b43e6b57154041f6835dc5fabd07224, type: 3}
       propertyPath: m_LocalPosition.z

@@ -15,6 +15,7 @@ public class TurnManager : NetworkBehaviour
     {
         if (p == null || players.Contains(p)) return;
         players.Add(p);
+       
     }
 
     public void InitializeFromScenePlayersServer()
@@ -22,7 +23,11 @@ public class TurnManager : NetworkBehaviour
         if (!IsServer) return;
         players.Clear();
         var all = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
-        foreach (var p in all) players.Add(p);
+        foreach (var p in all)
+        {
+            players.Add(p);
+            p.SetPlayerInitialHomePos();
+        }
         currentIndex = 0;
     }
 
@@ -31,8 +36,12 @@ public class TurnManager : NetworkBehaviour
     {
         players.Clear();
         var all = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
-        foreach (var p in all) players.Add(p);
-        currentIndex = 0;
+        foreach (var p in all)
+        {
+            players.Add(p);
+            p.SetPlayerInitialHomePos();
+        }
+            currentIndex = 0;
     }
 
     public void ServerStartTurns()

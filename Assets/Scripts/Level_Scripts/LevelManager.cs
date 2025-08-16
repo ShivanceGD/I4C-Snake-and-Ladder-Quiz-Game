@@ -17,22 +17,19 @@ public class LevelManager : MonoBehaviour
     {
         if (Instance == null) Instance = this; else Destroy(gameObject);
     }
-    private void Start()
-    {
-        SetPlayersNames();
-    }
+    
     public void CacheCurrentLevelIfNeeded()
     {
         if (currentLevel == null) Debug.LogError("LevelManager: CurrentLevel not assigned.");
         // other caching if needed
     }
-    public void SetPlayersNames()
+    /*public void SetPlayersNames()
     {
         for(int i = 0;i<turn.players.Count;i++)
         {
             GameObject obj = Instantiate(PlayerPrefab, PlayerPanelTransform);
-            obj.GetComponentInChildren<TMP_Text>().text = turn.players[i].name;
+            obj.transform.GetChild(1).GetComponent<TMP_Text>().text = turn.players[i].name;
             obj.transform.GetChild(0).GetChild(2).GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
         }
-    }
+    }*/
 }

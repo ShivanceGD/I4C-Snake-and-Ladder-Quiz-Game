@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerManager : NetworkBehaviour
 {
+    
     [Header("References")]
     public PlayerMovement playerMovement;
     public Vector3Int homeCellPosition;
@@ -69,7 +70,7 @@ public class PlayerManager : NetworkBehaviour
     [ContextMenu("Set Home Position")]
     public void SetPlayerInitialHomePos()
     {
-        GameObject house = GameObject.FindGameObjectWithTag("Player House");
+        GameObject house = GameObject.FindGameObjectWithTag("House");
         if (house != null && house.TryGetComponent(out houseTilemap))
         {
             transform.position = houseTilemap.GetCellCenterWorld(homeCellPosition);

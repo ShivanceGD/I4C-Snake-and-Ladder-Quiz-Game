@@ -23,7 +23,7 @@ public class GameManager : NetworkBehaviour
 
     [Header("Offline Mode")]
     [Tooltip("Enable to run single-player vs CPU without any RPCs/networking.")]
-    public bool isOfflineMode = true;
+    public bool isOfflineMode = false;
     [Tooltip("Player prefab (must have PlayerManager). Used only in offline mode.")]
     public PlayerManager offlinePlayerPrefab;
     [Tooltip("CPU prefab (must have PlayerManager). Used only in offline mode.")]
@@ -113,11 +113,13 @@ public class GameManager : NetworkBehaviour
         {
             turnManager.ServerStartTurns();
         }
-        if(!autoStartOnHost)
+        if(!autoStartOnHost && IsServer)
         {
+            QuizManager.Instance.starGamePannel.SetActive(true);
             Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
+            //startButton.transform.parent.gameObject.SetActive(true);
             startButton.onClick.AddListener(()=> turnManager.ServerStartTurns());
-            startButton.transform.parent.gameObject.SetActive(false); //@krithik
+            //startButton.transform.parent.gameObject.SetActive(false); //@krithik
         }
     }
 

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -1721204326653055818}
   - component: {fileID: 5500455971009631932}
   - component: {fileID: 4267328496052221226}
-  - component: {fileID: 860533678248975462}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -189,20 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  playerMovement: {fileID: 860533678248975462}
+  playerMovement: {fileID: 5500455971009631932}
   homeCellPosition: {x: -1, y: 0, z: 0}
   houseTilemap: {fileID: 0}
   startingHints: 3
---- !u!114 &860533678248975462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043843553593230571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a227c6bc82765488eb80526566d147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
+  networkTileIndex:
+    m_InternalValue: -1

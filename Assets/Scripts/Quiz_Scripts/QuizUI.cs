@@ -48,6 +48,8 @@ public class QuizUI : MonoBehaviour
     }
     public void ShowCharacter(QuizQuestionData q)
     {
+        
+
         CharacterBackground_Icon.color = RandomInfo<Color>(chars.BGColor);
         if(q.isAnonymous)
         {
