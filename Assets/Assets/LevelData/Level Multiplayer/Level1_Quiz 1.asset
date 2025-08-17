@@ -91,6 +91,82 @@ MonoBehaviour:
     CharName: Umang
     CharInfo: Telegram Guide
     isMale: 1
+  - question: 'Meera promotes a cryptocurrency promising 10x growth in one month.
+      What is the best action?
+
+'
+    options:
+    - Invest
+    - Ignore
+    - Follow
+    - Share
+    correctAnswerIndex: 3
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Meera
+    CharInfo: Social Media Influencer
+    isMale: 0
+  - question: "EBI\u2019s Investor Protection Fund is designed to:\r\n"
+    options:
+    - Safeguard
+    - Promote
+    - Advertise
+    - Scam
+    correctAnswerIndex: 3
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: 'A common red flag of an online investment scam is:'
+    options:
+    - Ads
+    - Emails
+    - Friends
+    - Unrealistic Returns
+    correctAnswerIndex: 3
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: 'Raj says he invested in a scheme and got double returns in one week.
+      He pressures you to join. What should you do?
+
+'
+    options:
+    - Decline
+    - Try
+    - Copy
+    - Join
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Raj
+    CharInfo: College Student
+    isMale: 1
+  - question: Which official website should you check before investing?
+    options:
+    - 'Twitter '
+    - Facebook
+    - SEBI
+    - Youtube
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Raj
+    CharInfo: College Student
+    isMale: 1
   - question: Kavya offers mutual funds but insists payment be made directly to her
       personal wallet. What is correct?
     options:
@@ -169,11 +245,11 @@ MonoBehaviour:
   - question: "Ankit says his uncle\u2019s company provides \u201Cguaranteed 50%
       profit monthly\u201D and urges you to invest. What\u2019s correct?"
     options:
+    - Avoid
+    - Apply
+    - Trust
     - Join
-    - Pay
-    - Refuse
-    - Accept
-    correctAnswerIndex: 0
+    correctAnswerIndex: 2
     difficulty: 0
     isHintAllowed: 0
     timeLimit: 20
@@ -183,10 +259,10 @@ MonoBehaviour:
     isMale: 0
   - question: 'Investment fraud online can be punished under:'
     options:
-    - GST
-    - IT Act
-    - Shops
-    - Traffic
+    - 1992
+    - 2000
+    - 2010
+    - 2005
     correctAnswerIndex: 1
     difficulty: 2
     isHintAllowed: 0
@@ -198,10 +274,10 @@ MonoBehaviour:
   - question: Sneha adds you to a WhatsApp group with fake screenshots of profits.
       Correct reaction?
     options:
+    - Support
+    - Warn
     - Invest
-    - Believe
-    - Trust
-    - Exit
+    - Join
     correctAnswerIndex: 3
     difficulty: 2
     isHintAllowed: 0
@@ -232,10 +308,170 @@ MonoBehaviour:
     - Agree
     - Pay
     correctAnswerIndex: 0
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Rohan
+    CharInfo: Bank Officer
+    isMale: 1
+  - question: "Priya says she doubled her money with a \u201Ccommunity scheme\u201D
+      and invites you. Best decision?"
+    options:
+    - Decline
+    - Pay
+    - Join
+    - Agree
+    correctAnswerIndex: 0
     difficulty: 0
     isHintAllowed: 0
     timeLimit: 20
     isAnonymous: 0
-    CharName: Riya
-    CharInfo: Bank Officer
+    CharName: Raj
+    CharInfo: College Student
+    isMale: 1
+  - question: ' SEBI mandates that only registered individuals can be called:'
+    options:
+    - Friend
+    - Advisor
+    - Broker
+    - Leadeer
+    correctAnswerIndex: 0
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Raj
+    CharInfo: College Student
+    isMale: 1
+  - question: "Aarav uploads \u201Csecret stock tips\u201D and asks for money in
+      advance. Best response?"
+    options:
+    - Avoid
+    - Send
+    - Pay
+    - Trust
+    correctAnswerIndex: 0
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Aarav
+    CharInfo: YouTube Expert
+    isMale: 1
+  - question: "Investment returns guaranteed with \u201Cno risk\u201D should be seen
+      as:"
+    options:
+    - Safe
+    - Legal
+    - Trusted
+    - Fraud
+    correctAnswerIndex: 0
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: "SEBI\u2019s investor education campaigns are run under:"
+    options:
+    - Scam
+    - Awareness
+    - Fraud
+    - Fake
+    correctAnswerIndex: 1
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: "Divya says her NGO collects money to invest for \u201Csocial growth
+      funds.\u201D What should you do?"
+    options:
+    - Donate
+    - Verify
+    - Trust
+    - Support
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Raj
+    CharInfo: College Student
+    isMale: 1
+  - question: 'Cross-border online scams are monitored by:'
+    options:
+    - Local
+    - Shops
+    - Banks
+    - Interpol
+    correctAnswerIndex: 3
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: "nanya tells you she found an \u201Cinvestment job\u201D where you
+      pay first to earn later. Best response?"
+    options:
+    - Local
+    - Shops
+    - Banks
+    - Interpol
+    correctAnswerIndex: 0
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Ananya
+    CharInfo: Job Seeker
+    isMale: 0
+  - question: 'The SEBI Act was introduced in:'
+    options:
+    - Local
+    - Shops
+    - Banks
+    - Interpol
+    correctAnswerIndex: 3
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: " Manish says he lost pension savings to a scheme but now trusts another
+      \u201Csure-shot profit\u201D company. What should you do?"
+    options:
+    - Local
+    - Shops
+    - Banks
+    - Interpol
+    correctAnswerIndex: 3
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: 'The national portal for reporting financial cybercrimes in India is:'
+    options:
+    - 1930
+    - 100
+    - 101
+    - 1309
+    correctAnswerIndex: 0
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
     isMale: 0

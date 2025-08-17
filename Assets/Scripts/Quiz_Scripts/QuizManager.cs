@@ -22,6 +22,7 @@ public class QuizManager : MonoBehaviour
 
     // Raised on the SERVER to drive movement/turn advance (GameManager subscribes)
     public Action<PlayerManager, bool, Difficulty, float> OnQuizCompleted;
+    private int lastQuestionIndex;
 
     // Cached from LevelManager
     private List<QuizQuestionData> questions = new();
@@ -167,11 +168,25 @@ public class QuizManager : MonoBehaviour
 
     #region Helpers
 
-    public int GetRandomQuestionIndex()
+    /*public int GetRandomQuestionIndex()
     {
         if (questions == null || questions.Count == 0) CacheQuestionsFromLevel();
         if (questions == null || questions.Count == 0) return -1;
         return UnityEngine.Random.Range(0, questions.Count);
+    }*/
+    public int GetRandomQuestionIndex()
+    {
+        if (questions == null || questions.Count == 0) CacheQuestionsFromLevel();
+        if (questions == null || questions.Count == 0) return -1;
+
+        int newIndex;
+        do
+        {
+            newIndex = UnityEngine.Random.Range(0, questions.Count);
+        } while (questions.Count > 1 && newIndex == lastQuestionIndex);
+
+        lastQuestionIndex = newIndex;
+        return newIndex;
     }
 
     public QuizQuestionData GetQuestionByIndex(int idx)
