@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
@@ -15,7 +15,6 @@ public class TurnManager : NetworkBehaviour
     {
         if (p == null || players.Contains(p)) return;
         players.Add(p);
-       
     }
 
     public void InitializeFromScenePlayersServer()
@@ -31,7 +30,7 @@ public class TurnManager : NetworkBehaviour
         currentIndex = 0;
     }
 
-    // NEW: Local initialization (offline)
+    // Local init (offline)
     public void InitializeFromScenePlayersLocal()
     {
         players.Clear();
@@ -41,22 +40,21 @@ public class TurnManager : NetworkBehaviour
             players.Add(p);
             p.SetPlayerInitialHomePos();
         }
-            currentIndex = 0;
+        currentIndex = 0;
     }
 
     public void ServerStartTurns()
     {
-        if (!IsServer || players.Count == 0) return;
+        if (!IsServer || players.Count == 0 || IsGameOver()) return;
         SkipFinished();
         OnTurnStarted?.Invoke(players[currentIndex]);
     }
 
-    // NEW: Local start (offline)
     public void StartLocalTurns()
     {
         if (players.Count == 0)
             InitializeFromScenePlayersLocal();
-        if (players.Count == 0) return;
+        if (players.Count == 0 || IsGameOver()) return;
 
         SkipFinished();
         OnTurnStarted?.Invoke(players[currentIndex]);
@@ -64,18 +62,20 @@ public class TurnManager : NetworkBehaviour
 
     public void ServerAdvanceTurn()
     {
-        if (!IsServer || players.Count == 0) return;
+        if (!IsServer || players.Count == 0 || IsGameOver()) return;
         currentIndex = (currentIndex + 1) % players.Count;
         SkipFinished();
-        OnTurnStarted?.Invoke(players[currentIndex]);
+        if (!IsGameOver())
+            OnTurnStarted?.Invoke(players[currentIndex]);
     }
 
     public void AdvanceLocalTurn()
     {
-        if (players.Count == 0) return;
+        if (players.Count == 0 || IsGameOver()) return;
         currentIndex = (currentIndex + 1) % players.Count;
         SkipFinished();
-        OnTurnStarted?.Invoke(players[currentIndex]);
+        if (!IsGameOver())
+            OnTurnStarted?.Invoke(players[currentIndex]);
     }
 
     private void SkipFinished()
@@ -87,6 +87,34 @@ public class TurnManager : NetworkBehaviour
         }
     }
 
-    public void MarkPlayerFinished(PlayerManager p) { if (p != null) finished.Add(p); }
+    public void MarkPlayerFinished(PlayerManager p)
+    {
+        if (p != null && !finished.Contains(p))
+        {
+            finished.Add(p);
+            Debug.Log($"✅ {p.name} finished. Place: {finished.Count}");
+
+            // If all players are done → show leaderboard
+            if (finished.Count >= players.Count)
+            {
+                ShowLeaderboard();
+            }
+        }
+    }
+
+    private void ShowLeaderboard()
+    {
+        Debug.Log("=== 🏆 Leaderboard ===");
+        int rank = 1;
+        foreach (var p in finished)
+        {
+            Debug.Log($"{rank}. {p.name}");
+            rank++;
+        }
+        Debug.Log("=== Game Over ===");
+    }
+
+    private bool IsGameOver() => finished.Count >= players.Count;
+
     public bool IsPlayerFinished(PlayerManager p) => finished.Contains(p);
 }

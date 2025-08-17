@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator MoveToTileCO(Vector3 target, int indexNow)
     {
+        var anim = GetComponent<PlayerAnimation>();
+        //if (anim != null) anim.SetPlayerAnimation(PlayerAnimation.PlayerState.Walking, indexNow);
+
         bool soundPlayed = false;
         while (Vector3.Distance(transform.position, target) > 0.01f)
         {
@@ -44,9 +47,10 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.position = target;
 
-        // Update tile index:
-        // - server (MP), or
-        // - offline (no NetworkManager or GameManager.isOfflineMode)
+        // stop walking → idle
+        //if (anim != null) anim.SetPlayerAnimation(PlayerAnimation.PlayerState.Idle, indexNow);
+
+        // Update tile index
         bool offline = (NetworkManager.Singleton == null) || (GameManager.Instance != null && GameManager.Instance.isOfflineMode);
         if (offline || (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer))
         {
@@ -54,4 +58,5 @@ public class PlayerMovement : MonoBehaviour
             pmComp.SetPlayerTileIndex(indexNow);
         }
     }
+
 }

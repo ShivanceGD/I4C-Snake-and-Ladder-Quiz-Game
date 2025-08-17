@@ -92,9 +92,11 @@ public class GameManager : NetworkBehaviour
             }
             if (!autoStartOffline)
             {
+                QuizManager.Instance.starGamePannel.SetActive(true);
                 Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
+                //startButton.transform.parent.gameObject.SetActive(true);
                 startButton.onClick.AddListener(() => turnManager.StartLocalTurns());
-                startButton.transform.parent.gameObject.SetActive(false); //@krithik
+                //startButton.transform.parent.gameObject.SetActive(false); //@krithik
             }
             return;
         }
