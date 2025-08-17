@@ -10,6 +10,9 @@ public class QuizQuestionData
     public bool isHintAllowed;
     public float timeLimit;
     public bool isAnonymous;
+    public string CharName;
+    public string CharInfo;
+    public bool isMale;
 }
 
 public enum Difficulty

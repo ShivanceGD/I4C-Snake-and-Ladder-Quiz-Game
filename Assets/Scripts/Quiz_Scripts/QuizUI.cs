@@ -66,18 +66,18 @@ public class QuizUI : MonoBehaviour
         }
         else
         {
-            int gender = UnityEngine.Random.Range(0, 2);
-            if(gender==0)
+           
+            if(!q.isMale)
             {
-                CharacterName_text.text = RandomInfo<string>(chars.FemaleCharacters_Names);
+                CharacterName_text.text = q.CharName;
                 Character_Icon.sprite = RandomInfo<Sprite>(chars.FemaleCharacters_Icons);
             }
             else
             {
-                CharacterName_text.text = RandomInfo<string>(chars.MaleCharacters_Names);
+                CharacterName_text.text = q.CharName;
                 Character_Icon.sprite = RandomInfo<Sprite>(chars.MaleCharacters_Icons);
             }
-            CharacterInfo_text.text = RandomInfo<string>(chars.JobDescription);
+            CharacterInfo_text.text = q.CharInfo;
         }
         if(q.difficulty == Difficulty.Easy)
         {

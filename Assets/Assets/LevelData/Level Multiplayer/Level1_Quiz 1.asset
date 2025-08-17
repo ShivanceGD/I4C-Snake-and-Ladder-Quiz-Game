@@ -13,23 +13,229 @@ MonoBehaviour:
   m_Name: Level1_Quiz 1
   m_EditorClassIdentifier: 
   questions:
-  - question: Q1
+  - question: According to SEBI regulations, which of the following entities are
+      legally authorized to provide investment advice in India?
     options:
-    - asdas
-    - correct
-    - dasd
-    - dsad
+    - Friends
+    - Telegram
+    - WhatsApp
+    - SEBI Advisor
+    correctAnswerIndex: 3
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: 'Arnav introduces himself as an authorized SEBI agent and asks you
+      to invest in XYZ company through his personal account. What should you do?
+
+'
+    options:
+    - Invest
+    - 'Verify '
+    - Trust
+    - Ignore
+    correctAnswerIndex: 1
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Arnav
+    CharInfo: SEBI Agent
+    isMale: 1
+  - question: "Riya, claiming to be a bank officer, asks you to transfer money to
+      a \u201Cspecial investment account\u201D for double returns. What is the right
+      action?"
+    options:
+    - 'Report '
+    - Comply
+    - Delay
+    - Transfer
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Riya
+    CharInfo: Bank Officer
+    isMale: 0
+  - question: RBI issues guidelines for which type of financial entities to prevent
+      scams?
+    options:
+    - Shops
+    - NGOs
+    - 'Banks '
+    - Brokers
+    correctAnswerIndex: 2
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: "Umang runs a Telegram channel with \u201Cguaranteed profit schemes.\u201D
+      What is the safest response?"
+    options:
+    - Avoid
+    - Trust
+    - Invest
+    - Join
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Umang
+    CharInfo: Telegram Guide
+    isMale: 1
+  - question: Kavya offers mutual funds but insists payment be made directly to her
+      personal wallet. What is correct?
+    options:
+    - Pay
+    - 'Refuse '
+    - Agree
+    - Trust
     correctAnswerIndex: 1
     difficulty: 1
     isHintAllowed: 0
     timeLimit: 20
-  - question: Q2
+    isAnonymous: 0
+    CharName: Kavya
+    CharInfo: Mutual Fund Seller
+    isMale: 0
+  - question: 'A Ponzi scheme primarily relies on:
+
+'
     options:
-    - DASDAS
-    - CORRECT
-    - ASDAD
-    - ASDA
+    - Stocks
+    - Gold
+    - New Investors
+    - Crypto
+    correctAnswerIndex: 2
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: "Neeraj calls, offering a \u201Cgovernment-approved\u201D scheme and
+      asks for Aadhaar + PAN. Correct response?"
+    options:
+    - Decline
+    - Share
+    - Send
+    - Provide
+    correctAnswerIndex: 0
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Neeraj
+    CharInfo: Phone Caller
+    isMale: 1
+  - question: 'RBI issues scam alerts mainly for:'
+    options:
+    - Schools
+    - Banks
+    - Temples
+    - Shops
+    correctAnswerIndex: 1
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: "Priya says she doubled her money with a \u201Ccommunity scheme\u201D
+      and invites you. Best decision?"
+    options:
+    - Join
+    - Pay
+    - Decline
+    - Agree
+    correctAnswerIndex: 2
+    difficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Priya
+    CharInfo: Neighbor
+    isMale: 0
+  - question: "Ankit says his uncle\u2019s company provides \u201Cguaranteed 50%
+      profit monthly\u201D and urges you to invest. What\u2019s correct?"
+    options:
+    - Join
+    - Pay
+    - Refuse
+    - Accept
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Riya
+    CharInfo: Bank Officer
+    isMale: 0
+  - question: 'Investment fraud online can be punished under:'
+    options:
+    - GST
+    - IT Act
+    - Shops
+    - Traffic
     correctAnswerIndex: 1
     difficulty: 2
     isHintAllowed: 0
     timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: Sneha adds you to a WhatsApp group with fake screenshots of profits.
+      Correct reaction?
+    options:
+    - Invest
+    - Believe
+    - Trust
+    - Exit
+    correctAnswerIndex: 3
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Sneha
+    CharInfo: WhatsApp Promoter
+    isMale: 0
+  - question: 'Fake investment channels may also violate:'
+    options:
+    - PMLA
+    - GST
+    - IT
+    - Shops
+    correctAnswerIndex: 0
+    difficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 1
+    CharName: 
+    CharInfo: 
+    isMale: 0
+  - question: "Rohan claims he invested \u20B950,000 and got \u20B91 lakh back instantly.
+      He wants you to join. Best choice?"
+    options:
+    - Join
+    - Decline
+    - Agree
+    - Pay
+    correctAnswerIndex: 0
+    difficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    isAnonymous: 0
+    CharName: Riya
+    CharInfo: Bank Officer
+    isMale: 0
