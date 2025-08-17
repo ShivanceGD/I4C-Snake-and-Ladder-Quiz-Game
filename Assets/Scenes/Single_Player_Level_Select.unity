@@ -1284,6 +1284,7 @@ GameObject:
   - component: {fileID: 1538839106}
   - component: {fileID: 1538839105}
   - component: {fileID: 1538839109}
+  - component: {fileID: 1538839110}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1400,6 +1401,18 @@ MonoBehaviour:
   IsCurved: 1
   GizmosColor: {r: 0, g: 0, b: 0, a: 1}
   GizmosRadius: 10
+--- !u!114 &1538839110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538839104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398b1158b58a11744ae2bd6e73b91389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1570458777 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 153872524604761578, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
