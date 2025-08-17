@@ -1349,7 +1349,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2687,7 +2687,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 98274343337140913}
-  - component: {fileID: 5917206641198051241}
   - component: {fileID: 5540300934376969801}
   m_Layer: 5
   m_Name: Level Map
@@ -3015,6 +3014,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 155
       objectReference: {fileID: 0}
+    - target: {fileID: 882298908661995367, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+      propertyPath: LevelSCO
+      value: 
+      objectReference: {fileID: 11400000, guid: 374c7815719c8904590325f1bd64490c, type: 2}
     - target: {fileID: 1799552965584223601, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3095,6 +3098,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8402599888104510487, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402599888104510487, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5846672009478403513}
+    - target: {fileID: 8402599888104510487, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8856711388907585118, guid: 43cff5a7b4e840b409cbc4e8f8147681, type: 3}
       propertyPath: m_Name
       value: Level Button
@@ -3130,19 +3145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5917206641198051241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4438741822502413972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2a7ab2f10d6468fbe16cf5e22c72f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0.6}
 --- !u!222 &5919928573674731217
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3534,7 +3536,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5917206641198051241}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: Close
         m_Mode: 1

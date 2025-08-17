@@ -8,6 +8,7 @@ public class TurnManager : NetworkBehaviour
     public event Action<PlayerManager> OnTurnStarted;
 
     public readonly List<PlayerManager> players = new();
+    public List<Color> PlayerColors = new List<Color>();
     private readonly HashSet<PlayerManager> finished = new HashSet<PlayerManager>();
     private int currentIndex = 0;
 
@@ -22,10 +23,13 @@ public class TurnManager : NetworkBehaviour
         if (!IsServer) return;
         players.Clear();
         var all = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
+        int i = 0;
         foreach (var p in all)
         {
             players.Add(p);
             p.SetPlayerInitialHomePos();
+            p.transform.gameObject.GetComponent<SpriteRenderer>().color = PlayerColors[i];
+            i++;
         }
         currentIndex = 0;
     }
@@ -35,10 +39,13 @@ public class TurnManager : NetworkBehaviour
     {
         players.Clear();
         var all = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
+        int i = 0;
         foreach (var p in all)
         {
             players.Add(p);
             p.SetPlayerInitialHomePos();
+            p.transform.gameObject.GetComponent<SpriteRenderer>().color = PlayerColors[i];
+            i++;
         }
         currentIndex = 0;
     }

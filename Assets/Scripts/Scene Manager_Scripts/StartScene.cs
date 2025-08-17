@@ -42,7 +42,8 @@ public class StartScene : NetworkBehaviour
             onCannotStartGame?.Invoke();
         }
     }
-    private void StartOfflineSceneGame(string sceneName)
+   
+    public void StartOfflineSceneGame(string sceneName)
     {
         if(this.sceneName != null)
         {
