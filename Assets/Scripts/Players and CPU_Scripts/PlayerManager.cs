@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerManager : NetworkBehaviour
 {
-    
     [Header("References")]
     public PlayerMovement playerMovement;
     public Vector3Int homeCellPosition;
@@ -19,22 +18,45 @@ public class PlayerManager : NetworkBehaviour
     private NetworkVariable<int> networkTileIndex = new NetworkVariable<int>(
         -1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
-    private int localHints;
+    // ✅ Network synced player color
+    public NetworkVariable<Color> PlayerColor = new NetworkVariable<Color>(
+        Color.white, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
-    private void Awake() { if (playerMovement == null) playerMovement = GetComponent<PlayerMovement>(); }
+    private int localHints;
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        if (playerMovement == null) playerMovement = GetComponent<PlayerMovement>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         localHints = startingHints;
 
-        // Register with GameManager on the server (server should own the authoritative player list)
+        // Apply initial color (sync across clients automatically via callback)
+        PlayerColor.OnValueChanged += OnColorChanged;
+        OnColorChanged(Color.white, PlayerColor.Value);
+
         if (IsServer)
         {
-            RegsiterPlayer(); // your existing method, calls GameManager.Instance?.RegisterPlayer(this)
+            RegsiterPlayer(); // Register with GameManager
         }
 
         SetPlayerInitialHomePos();
+    }
+
+    private void OnDestroy()
+    {
+        PlayerColor.OnValueChanged -= OnColorChanged;
+    }
+
+    private void OnColorChanged(Color oldColor, Color newColor)
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.color = newColor;
     }
 
     [ContextMenu("Register Player")]
@@ -45,7 +67,6 @@ public class PlayerManager : NetworkBehaviour
 
     public void SetPlayerTileIndex(int idx)
     {
-        // Allow local write when there is no NetworkManager (offline)
         bool offline = (NetworkManager.Singleton == null) || (GameManager.Instance != null && GameManager.Instance.isOfflineMode);
 
         if (IsServer || offline)

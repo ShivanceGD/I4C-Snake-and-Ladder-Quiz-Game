@@ -28,11 +28,15 @@ public class TurnManager : NetworkBehaviour
         {
             players.Add(p);
             p.SetPlayerInitialHomePos();
-            p.transform.gameObject.GetComponent<SpriteRenderer>().color = PlayerColors[i];
+
+            if (i < PlayerColors.Count)
+                p.PlayerColor.Value = PlayerColors[i]; // ✅ syncs automatically
+
             i++;
         }
         currentIndex = 0;
     }
+
 
     // Local init (offline)
     public void InitializeFromScenePlayersLocal()
@@ -44,7 +48,7 @@ public class TurnManager : NetworkBehaviour
         {
             players.Add(p);
             p.SetPlayerInitialHomePos();
-            p.transform.gameObject.GetComponent<SpriteRenderer>().color = PlayerColors[i];
+            p.GetComponent<SpriteRenderer>().color = PlayerColors[i];
             i++;
         }
         currentIndex = 0;
