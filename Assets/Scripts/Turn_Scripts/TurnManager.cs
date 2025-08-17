@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TurnManager : NetworkBehaviour
 {
     public event Action<PlayerManager> OnTurnStarted;
-
+    public GameObject RankingPrefab;
+    public Transform Leaderboard_Transform;
+    public GameObject Leaderboard;
     public readonly List<PlayerManager> players = new();
     public List<Color> PlayerColors = new List<Color>();
     private readonly HashSet<PlayerManager> finished = new HashSet<PlayerManager>();
@@ -108,6 +112,7 @@ public class TurnManager : NetworkBehaviour
             // If all players are done → show leaderboard
             if (finished.Count >= players.Count)
             {
+                Leaderboard.SetActive(true);
                 ShowLeaderboard();
             }
         }
@@ -120,6 +125,9 @@ public class TurnManager : NetworkBehaviour
         foreach (var p in finished)
         {
             Debug.Log($"{rank}. {p.name}");
+            GameObject obj = Instantiate(RankingPrefab, Leaderboard_Transform);
+            obj.GetComponentInChildren<TMP_Text>().text = p.NetworkManager.name;
+            obj.transform.GetChild(3).GetComponentInChildren<TMP_Text>().text = $"#{rank}";
             rank++;
         }
         Debug.Log("=== Game Over ===");
