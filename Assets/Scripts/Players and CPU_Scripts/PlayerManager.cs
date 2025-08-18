@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -13,7 +15,7 @@ public class PlayerManager : NetworkBehaviour
 
     [Header("Stats")]
     public int startingHints = 3;
-
+    public List<QuizQuestionData> QuestionsList = new List<QuizQuestionData>();
     [SerializeField]
     private NetworkVariable<int> networkTileIndex = new NetworkVariable<int>(
         -1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);

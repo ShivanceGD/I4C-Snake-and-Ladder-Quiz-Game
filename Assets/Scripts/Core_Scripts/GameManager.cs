@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Threading.Tasks;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -97,7 +98,8 @@ public class GameManager : NetworkBehaviour
             }
             if (!autoStartOffline)
             {
-                QuizManager.Instance.starGamePannel.SetActive(true);
+                //Display Rules For the games
+                QuizManager.Instance.startGamePannel.SetActive(true);
                 Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
                 //startButton.transform.parent.gameObject.SetActive(true);
                 startButton.onClick.AddListener(() => turnManager.StartLocalTurns());
@@ -122,7 +124,8 @@ public class GameManager : NetworkBehaviour
         }
         if(!autoStartOnHost && IsServer)
         {
-            QuizManager.Instance.starGamePannel.SetActive(true);
+            //Display Rules For the games
+            QuizManager.Instance.startGamePannel.SetActive(true);
             Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
             //startButton.transform.parent.gameObject.SetActive(true);
             startButton.onClick.AddListener(()=> turnManager.ServerStartTurns());
