@@ -32,6 +32,8 @@ public class QuizManager : MonoBehaviour
     private PlayerManager currentPlayer;
     private bool hintUsed;
 
+    public Sprite correctButton, IncorrectButton;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -120,9 +122,19 @@ public class QuizManager : MonoBehaviour
     private void HandleOptionSelected(int selectedIndex)
     {
         if (currentQuestion == null) return;
+
         bool isCorrect = selectedIndex == currentQuestion.correctAnswerIndex;
+
+        // Get the clicked button
+        var clickedButton = quizUI.optionButtons[selectedIndex];
+        if (clickedButton != null && clickedButton.image != null)
+        {
+            clickedButton.image.sprite = isCorrect ? correctButton : IncorrectButton;
+        }
+
         EndQuiz(isCorrect);
     }
+
 
     private void HandleHintRequest() => UseHint();
 

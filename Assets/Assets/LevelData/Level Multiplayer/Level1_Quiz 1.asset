@@ -64,10 +64,10 @@ MonoBehaviour:
   - question: RBI issues guidelines for which type of financial entities to prevent
       scams?
     options:
-    - Shops
-    - NGOs
-    - 'Banks '
-    - Brokers
+    - Join
+    - 'Trust '
+    - Avoid
+    - Apply
     correctAnswerIndex: 2
     difficulty: 0
     isHintAllowed: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
     - Ignore
     - Follow
     - Share
-    correctAnswerIndex: 3
+    correctAnswerIndex: 1
     difficulty: 0
     isHintAllowed: 0
     timeLimit: 20
@@ -108,14 +108,14 @@ MonoBehaviour:
     CharName: Meera
     CharInfo: Social Media Influencer
     isMale: 0
-  - question: "EBI\u2019s Investor Protection Fund is designed to:\r\n"
+  - question: "SEBI\u2019s Investor Protection Fund is designed to:\r\n"
     options:
     - Safeguard
+    - Scam
     - Promote
     - Advertise
-    - Scam
-    correctAnswerIndex: 3
-    difficulty: 2
+    correctAnswerIndex: 0
+    difficulty: 0
     isHintAllowed: 0
     timeLimit: 20
     isAnonymous: 1
@@ -159,7 +159,7 @@ MonoBehaviour:
     - Facebook
     - SEBI
     - Youtube
-    correctAnswerIndex: 0
+    correctAnswerIndex: 2
     difficulty: 0
     isHintAllowed: 0
     timeLimit: 20
@@ -249,7 +249,7 @@ MonoBehaviour:
     - Apply
     - Trust
     - Join
-    correctAnswerIndex: 2
+    correctAnswerIndex: 0
     difficulty: 0
     isHintAllowed: 0
     timeLimit: 20
@@ -257,13 +257,13 @@ MonoBehaviour:
     CharName: Riya
     CharInfo: Bank Officer
     isMale: 0
-  - question: 'Investment fraud online can be punished under:'
+  - question: 'The SEBI Act was introduced in:'
     options:
     - 1992
     - 2000
     - 2010
     - 2005
-    correctAnswerIndex: 1
+    correctAnswerIndex: 0
     difficulty: 2
     isHintAllowed: 0
     timeLimit: 20
@@ -278,7 +278,7 @@ MonoBehaviour:
     - Warn
     - Invest
     - Join
-    correctAnswerIndex: 3
+    correctAnswerIndex: 1
     difficulty: 2
     isHintAllowed: 0
     timeLimit: 20
@@ -307,7 +307,7 @@ MonoBehaviour:
     - Decline
     - Agree
     - Pay
-    correctAnswerIndex: 0
+    correctAnswerIndex: 1
     difficulty: 2
     isHintAllowed: 0
     timeLimit: 20
@@ -335,8 +335,8 @@ MonoBehaviour:
     - Friend
     - Advisor
     - Broker
-    - Leadeer
-    correctAnswerIndex: 0
+    - Leader
+    correctAnswerIndex: 1
     difficulty: 1
     isHintAllowed: 0
     timeLimit: 20
@@ -366,7 +366,7 @@ MonoBehaviour:
     - Legal
     - Trusted
     - Fraud
-    correctAnswerIndex: 0
+    correctAnswerIndex: 3
     difficulty: 1
     isHintAllowed: 0
     timeLimit: 20
@@ -424,27 +424,13 @@ MonoBehaviour:
     - Shops
     - Banks
     - Interpol
-    correctAnswerIndex: 0
+    correctAnswerIndex: 2
     difficulty: 2
     isHintAllowed: 0
     timeLimit: 20
     isAnonymous: 0
     CharName: Ananya
     CharInfo: Job Seeker
-    isMale: 0
-  - question: 'The SEBI Act was introduced in:'
-    options:
-    - Local
-    - Shops
-    - Banks
-    - Interpol
-    correctAnswerIndex: 3
-    difficulty: 2
-    isHintAllowed: 0
-    timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
     isMale: 0
   - question: " Manish says he lost pension savings to a scheme but now trusts another
       \u201Csure-shot profit\u201D company. What should you do?"

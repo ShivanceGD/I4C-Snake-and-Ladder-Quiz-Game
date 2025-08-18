@@ -14,6 +14,7 @@ public class QuizUI : MonoBehaviour
     public TMP_Text timerText;
     public Button hintButton;
     public Button[] optionButtons;
+    public Sprite defaultButtonSprite;
 
     [Header("Character Panel UI")]
     public Image Character_Icon;
@@ -52,6 +53,7 @@ public class QuizUI : MonoBehaviour
             if (i < q.options.Length) { optionButtons[i].gameObject.SetActive(true); var t = optionButtons[i].GetComponentInChildren<TMP_Text>(); if (t) t.text = q.options[i]; }
             else optionButtons[i].gameObject.SetActive(false);
         }
+        ResetOptionSprites();
     }
     public void ShowCharacter(QuizQuestionData q)
     {
@@ -96,6 +98,14 @@ public class QuizUI : MonoBehaviour
         }
     }
 
+    public void ResetOptionSprites()
+    {
+        foreach (var btn in optionButtons)
+        {
+            if (btn != null && btn.image != null)
+                btn.image.sprite = defaultButtonSprite;
+        }
+    }
     public void UpdateTimerDisplay(float t) { if (timerText) timerText.text = $"{t:F1}s"; }
     public void SetHintButtonState(bool active) { if (hintButton) hintButton.interactable = active; }
     public void RemoveOption(int index) { if (index >= 0 && index < optionButtons.Length) optionButtons[index].gameObject.SetActive(false); }
