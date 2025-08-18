@@ -35,6 +35,7 @@ public class MovementManager : NetworkBehaviour
             {
                 if (ladder.Key > currentTile && ladder.Key - currentTile <= 5)
                 {
+                    SoundManager.Instance.PlayLadderSound();
                     yield return player.MovePlayerTileByTile((ladder.Key - 1) - currentTile);
                     yield return player.MovePlayerDirectlyToTile(ladder.Value - 1);
                     CheckWin(player);
@@ -50,7 +51,8 @@ public class MovementManager : NetworkBehaviour
             {
                 if (snake.Key >= currentTile && snake.Key - currentTile <= 5)
                 {
-                    yield return player.MovePlayerTileByTile((snake.Key - 1) - currentTile);
+                    SoundManager.Instance.PlaySnakeSound();
+                    yield return player.MovePlayerTileByTile((snake.Key) - (currentTile+1));
                     yield return player.MovePlayerDirectlyToTile(snake.Value - 1);
                     CheckWin(player);
                     yield return new WaitForSeconds(endTurnDelay);

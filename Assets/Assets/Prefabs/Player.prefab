@@ -195,6 +195,8 @@ MonoBehaviour:
   startingHints: 3
   networkTileIndex:
     m_InternalValue: -1
+  PlayerColor:
+    m_InternalValue: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2228714420010941850
 PrefabInstance:
   m_ObjectHideFlags: 0

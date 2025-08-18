@@ -6546,8 +6546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26c184ac56d1d04586d7ee422a79a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  stepSound: {fileID: 0}
+  audioSource: {fileID: 2049185127}
+  stepSound: {fileID: 8300000, guid: 9cb19eb032d304b07acec596ae2ce4a4, type: 3}
+  LadderSound: {fileID: 8300000, guid: 9d12098ed55364e7e80e277242e2c77e, type: 3}
+  SnakeSound: {fileID: 8300000, guid: 1895f3ad1d5789947ad28bb9224e6cea, type: 3}
 --- !u!1 &2052936915
 GameObject:
   m_ObjectHideFlags: 0

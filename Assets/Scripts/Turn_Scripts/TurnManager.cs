@@ -52,7 +52,8 @@ public class TurnManager : NetworkBehaviour
         {
             players.Add(p);
             p.SetPlayerInitialHomePos();
-            p.GetComponent<SpriteRenderer>().color = PlayerColors[i];
+            if (i < PlayerColors.Count)
+                p.PlayerColor.Value = PlayerColors[i];
             i++;
         }
         currentIndex = 0;

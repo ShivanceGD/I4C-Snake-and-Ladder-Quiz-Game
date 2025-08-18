@@ -7,6 +7,8 @@ public class SoundManager : MonoBehaviour
     [Header("Audio Components")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip stepSound;
+    [SerializeField] private AudioClip LadderSound;
+    [SerializeField] private AudioClip SnakeSound;
 
     private void Awake()
     {
@@ -37,5 +39,13 @@ public class SoundManager : MonoBehaviour
         {
             Debug.LogWarning("Missing AudioSource in SoundManager.");
         }
+    }
+    public void PlayLadderSound()
+    {
+        PlayOneShotAudio(LadderSound);
+    }
+    public void PlaySnakeSound()
+    {
+        PlayOneShotAudio(SnakeSound);
     }
 }

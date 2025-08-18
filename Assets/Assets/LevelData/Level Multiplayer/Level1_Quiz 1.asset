@@ -64,10 +64,10 @@ MonoBehaviour:
   - question: RBI issues guidelines for which type of financial entities to prevent
       scams?
     options:
-    - Join
-    - 'Trust '
-    - Avoid
-    - Apply
+    - Shops
+    - Schools
+    - Banks
+    - I4C
     correctAnswerIndex: 2
     difficulty: 0
     isHintAllowed: 0
@@ -300,8 +300,8 @@ MonoBehaviour:
     CharName: 
     CharInfo: 
     isMale: 0
-  - question: "Rohan claims he invested \u20B950,000 and got \u20B91 lakh back instantly.
-      He wants you to join. Best choice?"
+  - question: Rohan claims he invested Rs 50,000 and got Rs 1 lakh back instantly.
+      He wants you to join. Best choice?
     options:
     - Join
     - Decline
@@ -417,7 +417,7 @@ MonoBehaviour:
     CharName: 
     CharInfo: 
     isMale: 0
-  - question: "nanya tells you she found an \u201Cinvestment job\u201D where you
+  - question: "Ananya tells you she found an \u201Cinvestment job\u201D where you
       pay first to earn later. Best response?"
     options:
     - Join
