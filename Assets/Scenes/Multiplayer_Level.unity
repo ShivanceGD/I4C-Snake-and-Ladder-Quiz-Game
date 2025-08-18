@@ -253,8 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   RankingPrefab: {fileID: 4525370308632934033, guid: 926cb1b80f74a684fbaafd41fe643d50, type: 3}
-  Leaderboard_Transform: {fileID: 0}
-  Leaderboard: {fileID: 556817750784530265}
+  Leaderboard_Transform: {fileID: 556817750784530265}
+  Leaderboard: {fileID: 1094704629}
   PlayerColors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0.86571324, b: 0, a: 1}
@@ -4745,12 +4745,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1334270142}
-  - {fileID: 1080818627}
   - {fileID: 1308287126}
   - {fileID: 1552196088}
   - {fileID: 2086241559}
   - {fileID: 2018234701}
   - {fileID: 2043867899}
+  - {fileID: 1080818627}
   - {fileID: 1353418389}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
