@@ -420,10 +420,10 @@ MonoBehaviour:
   - question: "nanya tells you she found an \u201Cinvestment job\u201D where you
       pay first to earn later. Best response?"
     options:
-    - Local
-    - Shops
-    - Banks
-    - Interpol
+    - Join
+    - Trust
+    - Avoid
+    - Apply
     correctAnswerIndex: 2
     difficulty: 2
     isHintAllowed: 0
@@ -435,10 +435,10 @@ MonoBehaviour:
   - question: " Manish says he lost pension savings to a scheme but now trusts another
       \u201Csure-shot profit\u201D company. What should you do?"
     options:
-    - Local
-    - Shops
-    - Banks
-    - Interpol
+    - Suppot
+    - Invest
+    - Join
+    - Warn
     correctAnswerIndex: 3
     difficulty: 2
     isHintAllowed: 0
