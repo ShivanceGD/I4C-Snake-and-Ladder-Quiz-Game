@@ -122,12 +122,12 @@ public class GameManager : NetworkBehaviour
         {
             turnManager.ServerStartTurns();
         }
+        QuizManager.Instance.startGamePannel.SetActive(true);
         if(!autoStartOnHost && IsServer)
         {
             //Display Rules For the games
-            QuizManager.Instance.startGamePannel.SetActive(true);
             Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
-            //startButton.transform.parent.gameObject.SetActive(true);
+            startButton.transform.parent.gameObject.SetActive(true);
             startButton.onClick.AddListener(()=> turnManager.ServerStartTurns());
             //startButton.transform.parent.gameObject.SetActive(false); //@krithik
         }

@@ -130,7 +130,7 @@ public class QuizManager : MonoBehaviour
         var clickedButton = quizUI.optionButtons[selectedIndex];
         if (clickedButton != null && clickedButton.image != null)
         {
-            clickedButton.image.sprite = isCorrect ? correctButton : IncorrectButton;
+            clickedButton.transform.GetChild(1).GetComponent<Image>().sprite = isCorrect ? correctButton : IncorrectButton;
         }
 
         EndQuiz(isCorrect);

@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class TurnManager : NetworkBehaviour
 {
@@ -13,8 +14,8 @@ public class TurnManager : NetworkBehaviour
     public GameObject Leaderboard;
     public readonly List<PlayerManager> players = new();
     public List<Color> PlayerColors = new List<Color>();
-    public GameObject SummaryPrefab;
-    public Transform SummaryTransform;
+    public GameObject StatisticsPrefab;
+    public Transform StatisticsTransform;
     private readonly HashSet<PlayerManager> finished = new HashSet<PlayerManager>();
     private int currentIndex = 0;
 
@@ -115,6 +116,7 @@ public class TurnManager : NetworkBehaviour
             // If all players are done → show leaderboard
             if (finished.Count >= players.Count - 1)
             {
+                
                 Leaderboard.SetActive(true);
                 ShowLeaderboard();
                 ShowPlayerSummary(p);
@@ -124,11 +126,14 @@ public class TurnManager : NetworkBehaviour
 
     private void ShowPlayerSummary(PlayerManager p)
     {
+        int i = 0;
         foreach(QuizQuestionData ques in p.QuestionsList)
         {
-            GameObject obj = Instantiate(SummaryPrefab, SummaryTransform);
-            obj.GetComponent<TMP_Text>().text = ques.question; // Display Question
-            obj.GetComponentInChildren<TMP_Text>().text = ques.options[ques.correctAnswerIndex]; //Display Correct Answer
+            GameObject obj = Instantiate(StatisticsPrefab, StatisticsTransform);
+            obj.transform.GetChild(3).GetComponent<TMP_Text>().text = ques.question; // Display Question
+            obj.transform.GetChild(2).GetComponent<TMP_Text>().text = $"{i}.";
+            obj.GetComponent<Button>().GetComponentInChildren<TMP_Text>().text = ques.options[ques.correctAnswerIndex]; //Display Correct Answer
+            i++;
         }
     }
     private void ShowLeaderboard()

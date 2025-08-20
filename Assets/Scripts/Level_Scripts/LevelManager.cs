@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : NetworkBehaviour
 {
     public static LevelManager Instance { get; private set; }
 
@@ -11,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public TurnManager turn;
     public GameObject PlayerPrefab;
     public Transform PlayerPanelTransform;
+    
     
 
     private void Awake()
@@ -23,13 +26,27 @@ public class LevelManager : MonoBehaviour
         if (currentLevel == null) Debug.LogError("LevelManager: CurrentLevel not assigned.");
         // other caching if needed
     }
-    /*public void SetPlayersNames()
+    public void SetPlayersNames()
     {
-        for(int i = 0;i<turn.players.Count;i++)
+        int i = 0;
+        foreach(PlayerManager player in turn.players)
         {
+            
             GameObject obj = Instantiate(PlayerPrefab, PlayerPanelTransform);
-            obj.transform.GetChild(1).GetComponent<TMP_Text>().text = turn.players[i].name;
+            obj.GetComponentInChildren<TMP_Text>().text = $"Player {i+1}";
+            obj.transform.GetChild(0).GetComponentInChildren<Image>().color = player.spriteRenderer.color;
             obj.transform.GetChild(0).GetChild(2).GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
+            i++;
         }
-    }*/
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
+
+ 
 }
