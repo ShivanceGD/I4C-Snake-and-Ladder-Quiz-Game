@@ -20,7 +20,10 @@ public class LevelManager : NetworkBehaviour
     {
         if (Instance == null) Instance = this; else Destroy(gameObject);
     }
-    
+    private void Start()
+    {
+        
+    }
     public void CacheCurrentLevelIfNeeded()
     {
         if (currentLevel == null) Debug.LogError("LevelManager: CurrentLevel not assigned.");

@@ -114,21 +114,22 @@ public class GameManager : NetworkBehaviour
         // 3) Wait for PlayerManager objects spawned for connected clients
         await WaitForPlayerManagersAsync(playerWaitTimeout);
 
+        
         // 4) initialize server-side player list (will find PlayerManager instances in scene)
         turnManager.InitializeFromScenePlayersServer();
-
+        
         // 5) start turns if configured
         if (autoStartOnHost)
         {
             turnManager.ServerStartTurns();
         }
-        QuizManager.Instance.startGamePannel.SetActive(true);
         if(!autoStartOnHost && IsServer)
         {
+            //QuizManager.Instance.startGamePannel.SetActive(true);
             //Display Rules For the games
-            Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
-            startButton.transform.parent.gameObject.SetActive(true);
-            startButton.onClick.AddListener(()=> turnManager.ServerStartTurns());
+           
+            QuizManager.Instance.startGame.gameObject.SetActive(true);
+            QuizManager.Instance.startGame.gameObject.GetComponent<Button>().onClick.AddListener(()=> turnManager.ServerStartTurns());
             //startButton.transform.parent.gameObject.SetActive(false); //@krithik
         }
     }
@@ -209,6 +210,7 @@ public class GameManager : NetworkBehaviour
     public void StartGameServerRpc()
     {
         if (!IsServer) return;
+        quizManager.startGamePannel.SetActive(false);
         turnManager.InitializeFromScenePlayersServer();
         turnManager.ServerStartTurns();
     }

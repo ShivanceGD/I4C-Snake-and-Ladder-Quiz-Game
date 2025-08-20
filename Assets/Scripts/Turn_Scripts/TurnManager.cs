@@ -31,6 +31,7 @@ public class TurnManager : NetworkBehaviour
         players.Clear();
         var all = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
         int i = 0;
+        QuizManager.Instance.startGamePannel.SetActive(false);
         foreach (var p in all)
         {
             players.Add(p);
@@ -64,6 +65,7 @@ public class TurnManager : NetworkBehaviour
 
     public void ServerStartTurns()
     {
+        
         if (!IsServer || players.Count == 0 || IsGameOver()) return;
         SkipFinished();
         OnTurnStarted?.Invoke(players[currentIndex]);
