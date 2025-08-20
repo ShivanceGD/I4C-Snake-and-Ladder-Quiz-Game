@@ -13,8 +13,10 @@ public class LevelManager : NetworkBehaviour
     public TurnManager turn;
     public GameObject PlayerPrefab;
     public Transform PlayerPanelTransform;
-    
-    
+
+    public GameObject startGamePannel;
+    public Button startGame;
+    public Button CloseByutton;
 
     private void Awake()
     {
@@ -22,7 +24,7 @@ public class LevelManager : NetworkBehaviour
     }
     private void Start()
     {
-        
+        SetPlayersNames();
     }
     public void CacheCurrentLevelIfNeeded()
     {
@@ -31,25 +33,30 @@ public class LevelManager : NetworkBehaviour
     }
     public void SetPlayersNames()
     {
-        int i = 0;
-        foreach(PlayerManager player in turn.players)
+        int count = turn.players.Count;
+
+        for (int i = 0; i < count; i++)
         {
-            
-            GameObject obj = Instantiate(PlayerPrefab, PlayerPanelTransform);
-            obj.GetComponentInChildren<TMP_Text>().text = $"Player {i+1}";
-            obj.transform.GetChild(0).GetComponentInChildren<Image>().color = player.spriteRenderer.color;
-            obj.transform.GetChild(0).GetChild(2).GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
-            i++;
+            var p = turn.players[i];
+            // send info to all clients
+            SetPlayerNameClientRpc(i, p.spriteRenderer.color);
         }
     }
-    public void PauseGame()
+
+    [ClientRpc]
+    private void SetPlayerNameClientRpc(int playerIndex, Color color)
     {
-        Time.timeScale = 0f;
+        GameObject obj = Instantiate(PlayerPrefab, PlayerPanelTransform);
+        obj.transform.GetChild(1).GetComponent<TMP_Text>().text = $"Player {playerIndex + 1}";
+        obj.transform.GetChild(0).GetComponentInChildren<Image>().color = color;
+        obj.transform.GetChild(0).GetChild(1).GetComponentInChildren<TMP_Text>().text = (playerIndex + 1).ToString();
     }
-    public void ResumeGame()
-    {
-        Time.timeScale = 1f;
-    }
+    public void PauseGame() => Time.timeScale = 0f;
+
+
+
+    public void ResumeGame() => Time.timeScale = 1f;
+    
 
  
 }

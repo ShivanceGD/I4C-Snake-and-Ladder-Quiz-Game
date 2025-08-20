@@ -99,7 +99,8 @@ public class GameManager : NetworkBehaviour
             if (!autoStartOffline)
             {
                 //Display Rules For the games
-                QuizManager.Instance.startGamePannel.SetActive(true);
+
+                LevelManager.Instance.startGamePannel.SetActive(true);
                 Button startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
                 //startButton.transform.parent.gameObject.SetActive(true);
                 startButton.onClick.AddListener(() => turnManager.StartLocalTurns());
@@ -125,11 +126,11 @@ public class GameManager : NetworkBehaviour
         }
         if(!autoStartOnHost && IsServer)
         {
-            //QuizManager.Instance.startGamePannel.SetActive(true);
+            LevelManager.Instance.startGamePannel.SetActive(true);
             //Display Rules For the games
-           
-            QuizManager.Instance.startGame.gameObject.SetActive(true);
-            QuizManager.Instance.startGame.gameObject.GetComponent<Button>().onClick.AddListener(()=> turnManager.ServerStartTurns());
+            LevelManager.Instance.CloseByutton.gameObject.SetActive(false);
+            LevelManager.Instance.startGame.gameObject.SetActive(true);
+            LevelManager.Instance.startGame.gameObject.GetComponent<Button>().onClick.AddListener(()=> turnManager.ServerStartTurns());
             //startButton.transform.parent.gameObject.SetActive(false); //@krithik
         }
     }
@@ -210,10 +211,12 @@ public class GameManager : NetworkBehaviour
     public void StartGameServerRpc()
     {
         if (!IsServer) return;
-        quizManager.startGamePannel.SetActive(false);
+        levelManager.SetPlayersNames();
         turnManager.InitializeFromScenePlayersServer();
         turnManager.ServerStartTurns();
     }
+
+    
 
     private void HandleTurnStarted(PlayerManager p)
     {

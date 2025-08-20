@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class TurnManager : NetworkBehaviour
     public List<Color> PlayerColors = new List<Color>();
     public GameObject StatisticsPrefab;
     public Transform StatisticsTransform;
-    private readonly HashSet<PlayerManager> finished = new HashSet<PlayerManager>();
+    [SerializeField]private readonly HashSet<PlayerManager> finished = new HashSet<PlayerManager>();
     private int currentIndex = 0;
 
     public void RegisterPlayer(PlayerManager p)
@@ -31,7 +32,7 @@ public class TurnManager : NetworkBehaviour
         players.Clear();
         var all = FindObjectsByType<PlayerManager>(FindObjectsSortMode.None);
         int i = 0;
-        QuizManager.Instance.startGamePannel.SetActive(false);
+        LevelManager.Instance.startGamePannel.SetActive(false);
         foreach (var p in all)
         {
             players.Add(p);
@@ -118,28 +119,42 @@ public class TurnManager : NetworkBehaviour
             // If all players are done → show leaderboard
             if (finished.Count >= players.Count - 1)
             {
-                
-                Leaderboard.SetActive(true);
-                ShowLeaderboard();
-                ShowPlayerSummary(p);
+
+                Debug.Log("above");
+                ShowLeaderboardClientRpc();
+                Debug.Log("Middle");
+                var summaryList = p.QuestionsList.Select(q => new QuizQuestionSummary
+                {
+                    Question = q.question,
+                    CorrectAnswer = q.options[q.correctAnswerIndex]
+                }).ToArray();
+                Debug.Log("Middle bot");
+
+                // Send to all clients
+                ShowPlayerSummaryClientRpc(summaryList);
+                Debug.Log(" bot");
             }
         }
     }
 
-    private void ShowPlayerSummary(PlayerManager p)
+    [ClientRpc]
+    private void ShowPlayerSummaryClientRpc(QuizQuestionSummary[] summaryData)
     {
-        int i = 0;
-        foreach(QuizQuestionData ques in p.QuestionsList)
+        Debug.Log("showing Summary");
+        int i = 1;
+        foreach (var data in summaryData)
         {
             GameObject obj = Instantiate(StatisticsPrefab, StatisticsTransform);
-            obj.transform.GetChild(3).GetComponent<TMP_Text>().text = ques.question; // Display Question
-            obj.transform.GetChild(2).GetComponent<TMP_Text>().text = $"{i}.";
-            obj.GetComponent<Button>().GetComponentInChildren<TMP_Text>().text = ques.options[ques.correctAnswerIndex]; //Display Correct Answer
+            obj.transform.GetChild(3).GetComponent<TMP_Text>().text = data.Question.ToString();
+            obj.transform.GetChild(2).GetComponent<TMP_Text>().text = i.ToString();
+            obj.transform.GetChild(1).GetComponentInChildren<TMP_Text>().text = data.CorrectAnswer.ToString();
             i++;
         }
     }
-    private void ShowLeaderboard()
+    [ClientRpc]
+    private void ShowLeaderboardClientRpc()
     {
+        Leaderboard.SetActive(true);
         Debug.Log("=== 🏆 Leaderboard ===");
         int rank = 1;
         foreach (var p in finished)
@@ -153,7 +168,7 @@ public class TurnManager : NetworkBehaviour
         Debug.Log("=== Game Over ===");
     }
 
-    private bool IsGameOver() => finished.Count >= players.Count;
+    private bool IsGameOver() => finished.Count >= players.Count-1;
 
     public bool IsPlayerFinished(PlayerManager p) => finished.Contains(p);
 }

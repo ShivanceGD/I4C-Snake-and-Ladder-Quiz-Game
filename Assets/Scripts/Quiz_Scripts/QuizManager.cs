@@ -8,8 +8,7 @@ public class QuizManager : MonoBehaviour
 {
     public static QuizManager Instance;
 
-    public GameObject startGamePannel;
-    public Button startGame;
+    
 
     [Header("Systems")]
     [SerializeField] private QuizUI quizUI;
@@ -91,7 +90,7 @@ public class QuizManager : MonoBehaviour
         currentPlayer = player;
         hintUsed = false;
 
-        player.QuestionsList.Add(question);
+        currentPlayer.QuestionsList.Add(question);
         quizUI.ShowQuestion(question);
         quizUI.ShowCharacter(question);
         quizUI.SetHintButtonState(CanUseHint());
