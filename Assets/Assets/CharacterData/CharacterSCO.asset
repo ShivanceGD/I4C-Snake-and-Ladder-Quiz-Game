@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3528d1f61f7cf47b9e3bf3c6d170e5, type: 3}
+  m_Name: CharacterSCO
+  m_EditorClassIdentifier: 
+  FemaleCharacters_Icons:
+  - {fileID: 21300000, guid: 6c556649b9e2743ba85b28d56d165aa2, type: 3}
+  - {fileID: 21300000, guid: 4c40c66b34f1f44a09e7275dd7b269a4, type: 3}
+  - {fileID: 21300000, guid: 90fcbbce7125942bd8e00327e9a5f7f3, type: 3}
+  - {fileID: 21300000, guid: 2614b6638b39c461b9c20e54e9a8f33c, type: 3}
+  FemaleCharacters_Names:
+  - Monika
+  - Sunaina
+  - Khushi
+  MaleCharacters_Icons:
+  - {fileID: 21300000, guid: c92f85e24f1a24211ae37e3ed7c51408, type: 3}
+  - {fileID: 21300000, guid: f737600137a804f88a0c47baedd1ff8f, type: 3}
+  - {fileID: 21300000, guid: b671a6842e8c144d2a0d829d543161f3, type: 3}
+  - {fileID: 21300000, guid: cf21c39427c6347bab63ccc24450ae49, type: 3}
+  MaleCharacters_Names:
+  - Vansh
+  - Ajay
+  - Sunny
+  Anonymous_icon: {fileID: 21300000, guid: 19bdc7fc9e4ae4fe9abc7388fc09b1ee, type: 3}
+  Anonymous_Name: ????
+  JobDescription:
+  - Chor
+  - BlackMailer
+  BGColor:
+  - {r: 0.45490196, g: 0.7529412, b: 0.9882353, a: 1}
+  - {r: 0.93333334, g: 0.74509805, b: 0.98039216, a: 1}
+  - {r: 0.4, g: 0.8509804, b: 0.9098039, a: 1}
+  - {r: 0.8156863, g: 0.7490196, b: 1, a: 1}
+  - {r: 1, g: 0.8784314, b: 0.4, a: 1}
+  - {r: 0.80784315, g: 0.83137256, b: 0.85490197, a: 1}

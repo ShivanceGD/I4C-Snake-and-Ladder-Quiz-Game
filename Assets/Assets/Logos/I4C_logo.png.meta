@@ -1,0 +1,1339 @@
+fileFormatVersion: 2
+guid: 41eb31f3a63341b44aa5d3c00c6e5677
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1203747027744261522
+    second: I4C_logo-removebg-preview_0
+  - first:
+      213: 372024515426135334
+    second: I4C_logo-removebg-preview_1
+  - first:
+      213: -2481497597400763461
+    second: I4C_logo-removebg-preview_2
+  - first:
+      213: 1197692348783124101
+    second: I4C_logo-removebg-preview_3
+  - first:
+      213: 3402545883429342758
+    second: I4C_logo-removebg-preview_4
+  - first:
+      213: -5899943098917185705
+    second: I4C_logo-removebg-preview_5
+  - first:
+      213: 2440233632391688363
+    second: I4C_logo-removebg-preview_6
+  - first:
+      213: 7978125091006563160
+    second: I4C_logo-removebg-preview_7
+  - first:
+      213: 983300120143559041
+    second: I4C_logo-removebg-preview_8
+  - first:
+      213: 6979160617107946802
+    second: I4C_logo-removebg-preview_9
+  - first:
+      213: -718457924850520441
+    second: I4C_logo-removebg-preview_10
+  - first:
+      213: 4940872962529834643
+    second: I4C_logo-removebg-preview_11
+  - first:
+      213: -6640210619196437335
+    second: I4C_logo-removebg-preview_12
+  - first:
+      213: -1365207986908659485
+    second: I4C_logo-removebg-preview_13
+  - first:
+      213: 1856840957670754251
+    second: I4C_logo-removebg-preview_14
+  - first:
+      213: -8602177296377292371
+    second: I4C_logo-removebg-preview_15
+  - first:
+      213: 3653834271348965882
+    second: I4C_logo-removebg-preview_16
+  - first:
+      213: 8706714790002018758
+    second: I4C_logo-removebg-preview_17
+  - first:
+      213: 8558593703169561375
+    second: I4C_logo-removebg-preview_18
+  - first:
+      213: -6826822993547904220
+    second: I4C_logo-removebg-preview_19
+  - first:
+      213: 3101012049599753282
+    second: I4C_logo-removebg-preview_20
+  - first:
+      213: -2599757262255715093
+    second: I4C_logo-removebg-preview_21
+  - first:
+      213: 4257996623760312948
+    second: I4C_logo-removebg-preview_22
+  - first:
+      213: -694596420902075880
+    second: I4C_logo-removebg-preview_23
+  - first:
+      213: -3364363854054326662
+    second: I4C_logo-removebg-preview_24
+  - first:
+      213: -1621770223575675313
+    second: I4C_logo-removebg-preview_25
+  - first:
+      213: -2969295005546758981
+    second: I4C_logo-removebg-preview_26
+  - first:
+      213: 3161627445141937621
+    second: I4C_logo-removebg-preview_27
+  - first:
+      213: -1618560787853046162
+    second: I4C_logo-removebg-preview_28
+  - first:
+      213: 9051149720481802935
+    second: I4C_logo-removebg-preview_29
+  - first:
+      213: -3134232513657569227
+    second: I4C_logo-removebg-preview_30
+  - first:
+      213: -7793899159995490477
+    second: I4C_logo-removebg-preview_31
+  - first:
+      213: 8962998791252534184
+    second: I4C_logo-removebg-preview_32
+  - first:
+      213: 7426949155702469936
+    second: I4C_logo-removebg-preview_33
+  - first:
+      213: -6402581430412585017
+    second: I4C_logo-removebg-preview_34
+  - first:
+      213: 2487686917240884055
+    second: I4C_logo-removebg-preview_35
+  - first:
+      213: 6134173536128433471
+    second: I4C_logo-removebg-preview_36
+  - first:
+      213: -3625678929240805610
+    second: I4C_logo-removebg-preview_37
+  - first:
+      213: -697325685190884457
+    second: I4C_logo-removebg-preview_38
+  - first:
+      213: -8221403300957565205
+    second: I4C_logo-removebg-preview_39
+  - first:
+      213: -6626955565328583800
+    second: I4C_logo-removebg-preview_40
+  - first:
+      213: 2957401078052929844
+    second: I4C_logo-removebg-preview_41
+  - first:
+      213: 8850450867027236935
+    second: I4C_logo-removebg-preview_42
+  - first:
+      213: -1737026295227932713
+    second: I4C_logo-removebg-preview_43
+  - first:
+      213: 5684184252882825354
+    second: I4C_logo-removebg-preview_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 117
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29501244b8194b010800000000000000
+      internalID: 1203747027744261522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 105
+        width: 126
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d26b16352b92500800000000000000
+      internalID: 372024515426135334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 255
+        width: 14
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb331fb2513ff8dd0800000000000000
+      internalID: -2481497597400763461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 253
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58edb6778de0f9010800000000000000
+      internalID: 1197692348783124101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 291
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e06c91475483f20800000000000000
+      internalID: 3402545883429342758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 61
+        width: 184
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7571602c2013f1ea0800000000000000
+      internalID: -5899943098917185705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 156
+        width: 137
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0faab4f837dd120800000000000000
+      internalID: 2440233632391688363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 255
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853c317108ef7be60800000000000000
+      internalID: 7978125091006563160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 255
+        width: 9
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18971c0ef3265ad00800000000000000
+      internalID: 983300120143559041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 252
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23d7d15aa95fad060800000000000000
+      internalID: 6979160617107946802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 252
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e683be2568706f0800000000000000
+      internalID: -718457924850520441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1
+        width: 260
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3963ce318c1819440800000000000000
+      internalID: 4940872962529834643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 145
+        width: 207
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac05098f9b39d3a0800000000000000
+      internalID: -6640210619196437335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 190
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e088cfa19ecd0de0800000000000000
+      internalID: -1365207986908659485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 176
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc78c565303d4c910800000000000000
+      internalID: 1856840957670754251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 190
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da95082435dee9880800000000000000
+      internalID: -8602177296377292371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 189
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af147e339e605b230800000000000000
+      internalID: 3653834271348965882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 190
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9c5baa8f674d870800000000000000
+      internalID: 8706714790002018758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 126
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13115ea0ab36c670800000000000000
+      internalID: 8558593703169561375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 164
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42bbb1d48a04241a0800000000000000
+      internalID: -6826822993547904220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 127
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c699c7702090b20800000000000000
+      internalID: 3101012049599753282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 127
+        width: 9
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec81094b8ecbebd0800000000000000
+      internalID: -2599757262255715093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 126
+        width: 54
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47acb069e51771b30800000000000000
+      internalID: 4257996623760312948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 126
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812cfdd3c3c4c56f0800000000000000
+      internalID: -694596420902075880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 63
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e7def56e06f41d0800000000000000
+      internalID: -3364363854054326662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 63
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e477cf2905e79e0800000000000000
+      internalID: -1621770223575675313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 64
+        width: 12
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc3b09ace1fac6d0800000000000000
+      internalID: -2969295005546758981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 63
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd9fcb096b50eb20800000000000000
+      internalID: 3161627445141937621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 101
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e84a8f987b989e0800000000000000
+      internalID: -1618560787853046162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 61
+        width: 9
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7baa13a37b42c9d70800000000000000
+      internalID: 9051149720481802935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 63
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53006fb7228f084d0800000000000000
+      internalID: -3134232513657569227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 63
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35fd041020286d390800000000000000
+      internalID: -7793899159995490477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 63
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3ecd2a9e7f26c70800000000000000
+      internalID: 8962998791252534184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 63
+        width: 9
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 035788e48e2d11760800000000000000
+      internalID: 7426949155702469936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 62
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7deb28c167527a0800000000000000
+      internalID: -6402581430412585017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 61
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b8786221a068220800000000000000
+      internalID: 2487686917240884055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 63
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d7983b456f02550800000000000000
+      internalID: 6134173536128433471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 63
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fabf839300fadc0800000000000000
+      internalID: -3625678929240805610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7930171ebf99256f0800000000000000
+      internalID: -697325685190884457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee4333b145b7ed80800000000000000
+      internalID: -8221403300957565205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 0
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883ba4246035804a0800000000000000
+      internalID: -6626955565328583800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431c3bb8c9cca0920800000000000000
+      internalID: 2957401078052929844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 30
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748d43ffb2e13da70800000000000000
+      internalID: 8850450867027236935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 0
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df1d63a9c7d4e7e0800000000000000
+      internalID: -1737026295227932713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: I4C_logo-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 0
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8033fe367742ee40800000000000000
+      internalID: 5684184252882825354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      I4C_logo-removebg-preview_0: 1203747027744261522
+      I4C_logo-removebg-preview_1: 372024515426135334
+      I4C_logo-removebg-preview_10: -718457924850520441
+      I4C_logo-removebg-preview_11: 4940872962529834643
+      I4C_logo-removebg-preview_12: -6640210619196437335
+      I4C_logo-removebg-preview_13: -1365207986908659485
+      I4C_logo-removebg-preview_14: 1856840957670754251
+      I4C_logo-removebg-preview_15: -8602177296377292371
+      I4C_logo-removebg-preview_16: 3653834271348965882
+      I4C_logo-removebg-preview_17: 8706714790002018758
+      I4C_logo-removebg-preview_18: 8558593703169561375
+      I4C_logo-removebg-preview_19: -6826822993547904220
+      I4C_logo-removebg-preview_2: -2481497597400763461
+      I4C_logo-removebg-preview_20: 3101012049599753282
+      I4C_logo-removebg-preview_21: -2599757262255715093
+      I4C_logo-removebg-preview_22: 4257996623760312948
+      I4C_logo-removebg-preview_23: -694596420902075880
+      I4C_logo-removebg-preview_24: -3364363854054326662
+      I4C_logo-removebg-preview_25: -1621770223575675313
+      I4C_logo-removebg-preview_26: -2969295005546758981
+      I4C_logo-removebg-preview_27: 3161627445141937621
+      I4C_logo-removebg-preview_28: -1618560787853046162
+      I4C_logo-removebg-preview_29: 9051149720481802935
+      I4C_logo-removebg-preview_3: 1197692348783124101
+      I4C_logo-removebg-preview_30: -3134232513657569227
+      I4C_logo-removebg-preview_31: -7793899159995490477
+      I4C_logo-removebg-preview_32: 8962998791252534184
+      I4C_logo-removebg-preview_33: 7426949155702469936
+      I4C_logo-removebg-preview_34: -6402581430412585017
+      I4C_logo-removebg-preview_35: 2487686917240884055
+      I4C_logo-removebg-preview_36: 6134173536128433471
+      I4C_logo-removebg-preview_37: -3625678929240805610
+      I4C_logo-removebg-preview_38: -697325685190884457
+      I4C_logo-removebg-preview_39: -8221403300957565205
+      I4C_logo-removebg-preview_4: 3402545883429342758
+      I4C_logo-removebg-preview_40: -6626955565328583800
+      I4C_logo-removebg-preview_41: 2957401078052929844
+      I4C_logo-removebg-preview_42: 8850450867027236935
+      I4C_logo-removebg-preview_43: -1737026295227932713
+      I4C_logo-removebg-preview_44: 5684184252882825354
+      I4C_logo-removebg-preview_5: -5899943098917185705
+      I4C_logo-removebg-preview_6: 2440233632391688363
+      I4C_logo-removebg-preview_7: 7978125091006563160
+      I4C_logo-removebg-preview_8: 983300120143559041
+      I4C_logo-removebg-preview_9: 6979160617107946802
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

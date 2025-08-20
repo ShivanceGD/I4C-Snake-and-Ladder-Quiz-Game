@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Board
   - Player House
+  - House
+  - StartGameButton
+  - StartGamePanel
   layers:
   - Default
   - TransparentFX

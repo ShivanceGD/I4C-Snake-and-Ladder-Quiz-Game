@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac19286a61a4824081ce74dc0c206b8, type: 3}
+  m_Name: Level1_BoardConfig
+  m_EditorClassIdentifier: 
+  Snakes:
+    _serializedList:
+    - Key: 31
+      Value: 8
+    - Key: 35
+      Value: 14
+    - Key: 41
+      Value: 19
+    - Key: 45
+      Value: 24
+    - Key: 63
+      Value: 44
+    - Key: 67
+      Value: 27
+    - Key: 87
+      Value: 68
+    - Key: 91
+      Value: 68
+    - Key: 97
+      Value: 65
+    - Key: 99
+      Value: 22
+  Ladders:
+    _serializedList:
+    - Key: 7
+      Value: 28
+    - Key: 16
+      Value: 65
+    - Key: 22
+      Value: 43
+    - Key: 47
+      Value: 66
+    - Key: 52
+      Value: 71
+    - Key: 60
+      Value: 79
+    - Key: 64
+      Value: 83
+    - Key: 75
+      Value: 94
