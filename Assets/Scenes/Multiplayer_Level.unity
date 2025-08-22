@@ -462,8 +462,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_text
-      value: "\nLand at the bottom \u2192 climb only if your answer is correct.\nWrong
-        answer \u2192 ladder stays locked."
+      value: "\n\u2022 Climb Ladder \u2192  If answered correct.\n\u2022 Ignore Ladder
+        \u2192 If answered incorrect ."
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_fontSize
@@ -487,7 +487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4291538464
+      value: 4289492527
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -874,7 +874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 408, y: -951}
+  m_AnchoredPosition: {x: 408, y: -750.2}
   m_SizeDelta: {x: 313.9399, y: 55.6749}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317058214
@@ -1268,7 +1268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2438046988045397025, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -720
+      value: -660
       objectReference: {fileID: 0}
     - target: {fileID: 2438046988045397025, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1284,9 +1284,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_text
-      value: "Land on a snake\u2019s head \u2192 gain 1-turn Immunity.\nIf your next
-        answer is wrong, the snake bites.\nIf you are near a snake and answer wrong
-        \u2192 snake pulls and bites immediately."
+      value: "\u2022 Snake Bite \u2192  If answered incorrect.\n\u2022 Ignore  Snake\u2192
+        If answered correct .\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_fontSize
@@ -1310,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4291538464
+      value: 4289492527
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -3746,9 +3745,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nEach turn, answer a question.\nMovement points depend on the difficulty
-    of the question.\nCorrect answer \u2192 move forward.\nWrong answer \u2192 no
-    move.\n"
+  m_text: "\n\u2022 Each turn, answer a question.\n\u2022 Movement \u2192 difficulty
+    of the question.\n\u2022 Correct answer \u2192 move forward.\n\u2022 Wrong answer
+    \u2192 no move.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 015573da50ed04390be9f20287a541d6, type: 2}
   m_sharedMaterial: {fileID: -2237749729835323621, guid: 015573da50ed04390be9f20287a541d6, type: 2}
@@ -5115,7 +5114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2438046988045397025, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1001.67706
+      value: -775.62
       objectReference: {fileID: 0}
     - target: {fileID: 2438046988045397025, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8660,7 +8659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0019142645}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 1500}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1944356118
@@ -21118,7 +21117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.6097107, y: -460}
+  m_AnchoredPosition: {x: -2.6097107, y: -240.1}
   m_SizeDelta: {x: 330, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &6509120298170038781
