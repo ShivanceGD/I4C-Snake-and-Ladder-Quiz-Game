@@ -1,36 +1,25 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 [RequireComponent(typeof(BoardManager))]
 public class BoardNumbering : MonoBehaviour
 {
-    [Header("Prefab Reference")]
-    [SerializeField] private TMP_Text numberPrefab;
+    [SerializeField] private float zLocationOfText = 1f;
 
-    private float zLocationOfText; //Text to show above board as text is 3d elemnent here.
-
-    private void Start()
+    /// <summary>
+    /// Generate numbers one by one on tiles.
+    /// </summary>
+    /// <param name="NumberPrefab"></param>
+    /// <param name="BoardSize"></param>
+    public void GenerateAndPlaceTilesNumbers(GameObject NumberPrefab, int BoardSize)
     {
-        if (!numberPrefab)
-        {
-            Debug.LogError("NumberPrefab not assigned.");
-            return;
-        }
-
-        zLocationOfText = numberPrefab.transform.position.z;
-
-        GenerateAndPlaceTilesNumbers();
-    }
-
-    private void GenerateAndPlaceTilesNumbers()
-    {
-        for (int i = 0; i < BoardManager.TilePositions.Count; i++)
+        for (int i = 1; i < BoardSize; i++)
         {
             Vector3 worldPos = BoardManager.TilePositions[i];
             worldPos.z = zLocationOfText;
 
-            GameObject label = Instantiate(numberPrefab.gameObject, worldPos, Quaternion.identity, transform);
-            label.GetComponent<TMP_Text>().text = (i + 1).ToString();
+            GameObject label = Instantiate(NumberPrefab, worldPos, Quaternion.identity, transform);
+            label.GetComponent<TMP_Text>().text = (i).ToString();
         }
     }
 }

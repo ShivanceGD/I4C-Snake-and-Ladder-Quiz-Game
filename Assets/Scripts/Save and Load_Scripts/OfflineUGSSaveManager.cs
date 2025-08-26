@@ -39,7 +39,7 @@ public static class OfflineUGSSaveManager
         }
     }
 
-    public static async Task<Dictionary<string, object>> LoadBatchAsync(HashSet<string> keys)
+    /*public static async Task<Dictionary<string, object>> LoadBatchAsync(HashSet<string> keys)
     {
         if (Application.internetReachability != NetworkReachability.NotReachable)
         {
@@ -49,6 +49,28 @@ public static class OfflineUGSSaveManager
             foreach (var kvp in result)
             {
                 data[kvp.Key] = kvp.Value.Value;
+            }
+
+            SaveToLocalCache(data);
+            return data;
+        }
+        else
+        {
+            Debug.LogWarning("[UGS] Offline: Loading from local cache.");
+            return LoadFromLocalCache();
+        }
+    }*/
+    public static async Task<Dictionary<string, object>> LoadBatchAsync(HashSet<string> keys)
+    {
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+        {
+            var result = await CloudSaveService.Instance.Data.Player.LoadAsync(keys);
+            var data = new Dictionary<string, object>();
+
+            foreach (var kvp in result)
+            {
+                // Always store as string so we can deserialize later
+                data[kvp.Key] = kvp.Value.Value.GetAsString();
             }
 
             SaveToLocalCache(data);

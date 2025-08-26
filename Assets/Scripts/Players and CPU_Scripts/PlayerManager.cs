@@ -19,7 +19,7 @@ public class PlayerManager : NetworkBehaviour
     
     [SerializeField]
     private NetworkVariable<int> networkTileIndex = new NetworkVariable<int>(
-        -1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+        0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     // ✅ Network synced player color
     public NetworkVariable<Color> PlayerColor = new NetworkVariable<Color>(
@@ -76,6 +76,8 @@ public class PlayerManager : NetworkBehaviour
         {
             int clamped = Mathf.Clamp(idx, 0, BoardManager.TilePositions.Count - 1);
             networkTileIndex.Value = clamped;
+            
+            
         }
         else
         {

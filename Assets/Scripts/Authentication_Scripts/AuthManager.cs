@@ -26,13 +26,10 @@ public class AuthManager : MonoBehaviour
     [Header("Events")]
     public UnityEvent OnSignedIn, onExpired, onSignedOut;
 
-    private async void Awake()
+    public void RegisterAuthEvents()
     {
-        await UnityServices.InitializeAsync();
+        
         AuthExtensions.RegisterEvents(OnSignedIn, onExpired, onSignedOut);
-
-        if (Unity.Services.Authentication.AuthenticationService.Instance.IsSignedIn) return;
-        await AuthExtensions.SignInCachedOrAnonymousAsync();
     }
 
     [ContextMenu("LINK")]

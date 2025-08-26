@@ -1,3 +1,4 @@
+/*
 using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
@@ -10,7 +11,7 @@ public class Lvl : MonoBehaviour
     [Header("Button Settings")]
     
     public string SceneName;
-    public LevelSettingsScriptableObject LevelSCO;
+    public LevelDataSO LevelSCO;
     public GameObject LockImage;
     public GameObject LevelUnlocked;
     public GameObject LevelCompleted;
@@ -33,7 +34,7 @@ public class Lvl : MonoBehaviour
     {
        /* //if Level Completed
         LevelCompleted.gameObject.SetActive(true);
-        LevelButton.interactable = false;*/
+        LevelButton.interactable = false;#1#
         
     }
     private void LevelCheck()
@@ -78,3 +79,4 @@ public class Lvl : MonoBehaviour
 
 
 }
+*/

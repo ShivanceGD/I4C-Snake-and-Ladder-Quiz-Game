@@ -1,19 +1,29 @@
+using System;
+using Ricimi;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartScene : NetworkBehaviour
 {
-    [SerializeField] private UnityEvent onCannotStartGame;
-
+    
+    //[SerializeField] private UnityEvent onCannotStartGame;
+    
     [Header("References and Setting")]
     [SerializeField] private string sceneName;
     [SerializeField] private int minimumClients;
     [SerializeField] private Button startButton;
     [SerializeField] private bool isOffline;
+    
 
+    public float duration = 1.0f;
+    public Color color = Color.black;
+
+    public void PerformTransition(String SceneName)
+    {
+        Transition.LoadLevel(SceneName, duration, color);
+    }
     private void OnEnable()
     {
         if(startButton != null)
@@ -39,7 +49,7 @@ public class StartScene : NetworkBehaviour
         }
         else
         {
-            onCannotStartGame?.Invoke();
+            //onCannotStartGame?.Invoke();
         }
     }
    
@@ -47,7 +57,7 @@ public class StartScene : NetworkBehaviour
     {
         if(this.sceneName != null)
         {
-            SceneManager.LoadScene(sceneName);
+            //SceneManager.LoadScene(sceneName);
             GameManager.Instance.isOfflineMode = isOffline;
         }
         else

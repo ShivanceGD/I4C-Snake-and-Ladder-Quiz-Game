@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Services.RemoteConfig;
+using UnityEngine;
+
+public class RemoteConfigLoadManager : MonoBehaviour
+{
+    public static RemoteConfigLoadManager Instance;
+    [Header("Remote Config Key")]
+    public string DefaultUnlockedLevelKey = "LevelsToBeUnlocked";
+
+    
+    //public List<int> unlockedLevels;
+    //public struct userAttribute { }
+    //public struct appAttribute { }
+
+    private void Start()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+    }
+    /*[ContextMenu("Load Remote Config")]
+    public void OnFetched()
+    {
+        
+        unlockedLevels = GetDefaultUnlockedLevels();
+        Debug.Log("Unlocked Levels: " + string.Join(",", unlockedLevels));
+    }*/
+
+    public async Task<List<int>> GetDefaultUnlockedLevels()
+    {
+        string result = RemoteConfigService.Instance.appConfig.GetJson(DefaultUnlockedLevelKey);
+
+        if (!string.IsNullOrEmpty(result))
+        {
+            // Deserialize JSON into wrapper
+            LevelsToBeUnlockedConfigWrapper wrapper = JsonUtility.FromJson<LevelsToBeUnlockedConfigWrapper>(result);
+            return wrapper.levelNumbersToUnlock;
+        }
+
+        return new List<int>(); // return empty if not found
+    }
+}
+
+[Serializable]
+public class LevelsToBeUnlockedConfigWrapper
+{
+    public List<int> levelNumbersToUnlock = new List<int>();
+}
+

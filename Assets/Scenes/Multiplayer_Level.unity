@@ -487,7 +487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4291538464
+      value: 4289492527
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -1310,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4291538464
+      value: 4289492527
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -5157,7 +5157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4291538464
+      value: 4289492527
       objectReference: {fileID: 0}
     - target: {fileID: 4347005234495330071, guid: a71ae035ce5d0429a9a29210c6f978fb, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -8660,7 +8660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0019142645}
+  m_AnchoredPosition: {x: 0, y: 0.00003867018}
   m_SizeDelta: {x: 0, y: 1500}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1944356118

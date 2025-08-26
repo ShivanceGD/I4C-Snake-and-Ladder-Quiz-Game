@@ -26,7 +26,7 @@ public class MovementManager : NetworkBehaviour
     private IEnumerator MoveCoroutine(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken, bool offline)
     {
         if (player == null) yield break;
-        var board = LevelManager.Instance.CurrentLevel.BoardJointsSCO;
+        var board = LevelManager.Instance.CurrentLevel.Board.BoardJointsSCO;
         int currentTile = player.GetPlayerCurrentTileIndex();
 
         if (isCorrect)

@@ -3083,15 +3083,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5375374041227213229}
     - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 714970145695455465}
+    - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PerformTransition
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Ricimi.SceneTransition, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912388533651222819, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8021474400587063231, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
       propertyPath: m_IsActive
@@ -3105,8 +3121,31 @@ PrefabInstance:
     - {fileID: 9085198614804674067, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8909915717471460733, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 714970145695455465}
   m_SourcePrefab: {fileID: 100100000, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+--- !u!1 &3617391261936682573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8909915717471460733, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}
+  m_PrefabInstance: {fileID: 5302406974268824368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &714970145695455465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617391261936682573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f7eaf6dd2a2478c939f6bb532e39ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: <Insert scene name>
+  duration: 1
+  color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!224 &7827197663797811233 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2668987247188460305, guid: b3c3d454955b54620b4a1722514ce76a, type: 3}

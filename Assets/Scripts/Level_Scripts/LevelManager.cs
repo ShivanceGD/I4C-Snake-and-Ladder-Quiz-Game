@@ -8,8 +8,8 @@ public class LevelManager : NetworkBehaviour
 {
     public static LevelManager Instance { get; private set; }
 
-    [SerializeField] private LevelSettingsScriptableObject currentLevel;
-    public LevelSettingsScriptableObject CurrentLevel => currentLevel;
+    [SerializeField] private LevelDataSO currentLevel;
+    public LevelDataSO CurrentLevel => currentLevel;
     public TurnManager turn;
     public GameObject PlayerPrefab;
     public Transform PlayerPanelTransform;
