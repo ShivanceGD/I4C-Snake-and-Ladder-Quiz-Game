@@ -1,18 +1,12 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
 
 public class BoardLogicManager : MonoBehaviour
 {
     [Header("Reference")] public static BoardLogicManager Instance;
     [SerializeField] private Tilemap tilemap;
-
-    [Header("Height and Width")] [SerializeField]
-    private int boardWidth = 10;
-
-    [SerializeField] private int boardHeight = 10;
+    public static List<Vector3> TilePositions { get; } = new();
 
     private void OnEnable()
     {
@@ -21,13 +15,8 @@ public class BoardLogicManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
     }
-
-   
-
-    public static List<Vector3> TilePositions { get; } = new();
 
     /// <summary>
     /// Return the winning tile index
@@ -47,21 +36,17 @@ public class BoardLogicManager : MonoBehaviour
     public static Vector3 GetTilePosition(int index) => TilePositions[index];
 
     /// <summary>
-    /// Spawn and Generate Tiles Positions 
+    /// Spawn and Generate Tiles Positions. Call it while bootstraping scene
     /// </summary>
-    /// <param name="Tilemap"></param>
-    /// <param name="spawnParent"></param>
     /// <param name="NumberPrefab"></param>
     /// <param name="BoardWidth"></param>
     /// <param name="BoardHeight"></param>
-    public void SpawnAndGenerateTilesWithNumbers(GameObject NumberPrefab, int BoardWidth, int BoardHeight)
+    public void GenerateTilesPositionWithNumbers(GameObject NumberPrefab, int BoardWidth, int BoardHeight)
     {
-        
-        GenerateTilePositions(boardWidth, boardHeight);
+        GenerateTilePositions(BoardWidth, BoardHeight);
         GetComponent<BoardNumbering>().GenerateAndPlaceTilesNumbers(NumberPrefab, BoardHeight * BoardWidth);
     }
-
-
+    
     private void GenerateTilePositions(int BoardWidth, int BoardHeight)
     {
         TilePositions.Clear();
@@ -72,7 +57,7 @@ public class BoardLogicManager : MonoBehaviour
 
             for (int x = 0; x < BoardWidth; x++)
             {
-                int actualX = leftToRight ? x : boardWidth - 1 - x;
+                int actualX = leftToRight ? x : BoardWidth - 1 - x;
                 Vector3Int cellPos = new(actualX, y, 0);
 
                 if (!tilemap.HasTile(cellPos)) continue;
@@ -82,11 +67,9 @@ public class BoardLogicManager : MonoBehaviour
             }
         }
     }
-
+    
     private void SpawnBoard(Tilemap Tilemap, Transform SpawnParent)
     {
         this.tilemap = Instantiate(Tilemap, SpawnParent);
     }
-
-    
 }

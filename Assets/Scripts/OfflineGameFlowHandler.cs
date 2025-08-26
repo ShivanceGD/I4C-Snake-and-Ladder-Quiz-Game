@@ -1,142 +1,90 @@
-using System;
-using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-
-public class OfflineGameFlowHandler:MonoBehaviour
+public class OfflineGameFlowHandler : MonoBehaviour
 {
+    public SerializedDictionary<Player, PlayerGameData> AllPlayers;
     public Transform BoardParent, HomePoint;
     public LevelDataSO CurrentLevel;
-    //public List<OfflinePlayerCurrentData> Players;
-    public int TotalPlayersToSpawn=2;
-     public SerializedDictionary<PlayerManager, OfflinePlayerCurrentData> Players;
-     public PlayerManager p;
-     Color[] playerColors = { Color.red, Color.blue, Color.green, Color.yellow };
+    public int TotalPlayersToSpawn = 2;
+    private GlobalColourManager colorManager;
+
+    private void Awake()
+    {
+        Color[] playerColors = { Color.red, Color.blue, Color.green, Color.yellow };
+        colorManager = new GlobalColourManager(playerColors);
+    }
+
     public void BootStrapLevel()
     {
         BootStrapBoard();
         BootStrapAllPlayers();
     }
-[ContextMenu("AddQeustionsandAnswers")]
-    public void AddQuestionsAndAnswersToPlayer(string question,string answer,bool IsCorrect)
+
+    public void StartOfflineGame()
     {
-        if (Players.TryGetValue(this.p, out var data))
+        //Start Turn -> 0 index then ++ got whose index turn is it
+        //Ask quiz from him (if player) Take moves (if cpu) -> Movement manager to move
+        //Again ask for turn and cycle repeats
+    }
+
+    #region Spawn/Register Players
+
+    [ContextMenu("Create Players")]
+    private void BootStrapAllPlayers()
+    {
+        // Instead of destroying all PlayerGameData, reuse existing ones if possible
+        foreach (var kvp in AllPlayers)
         {
-            data.offlineStateDataData.QuestionsAndAnswers.Add(question, answer);
-            if (IsCorrect)
-            {
-                data.offlineStateDataData.TotalCorrectAnswered++;
-            }
-            else
-            {
-                data.offlineStateDataData.TotalIncorrectAnswered++;
-            }
+            kvp.Value.ResetGameState();
         }
-        else
+
+        AllPlayers.Clear();
+        SpawnAndRegisterPlayersOffline();
+        SpawnAndRegisterCPUOffline();
+        colorManager.Reset();
+    }
+    private void SpawnAndRegisterCPUOffline()
+    {
+        GameObject botCPU = Instantiate(CurrentLevel.CPUPrefab, HomePoint);
+        botCPU.transform.name = "CPU";
+        var player = botCPU.GetComponent<Player>();
+        AllPlayers.Add(player, new PlayerGameData("CPU", PlayerType.CPU, Color.white));
+    }
+    private void SpawnAndRegisterPlayersOffline()
+    {
+        for (int i = 0; i < TotalPlayersToSpawn; i++)
         {
-            Debug.LogWarning("Player not found in dictionary!");
+            GameObject playerObj = Instantiate(CurrentLevel.PlayerPrefab, HomePoint);
+            playerObj.transform.name = "Player" + (i + 1);
+            Color assignedColor = colorManager.GetUniqueColor();
+            playerObj.GetComponent<SpriteRenderer>().color = assignedColor;
+
+            var player = playerObj.GetComponent<Player>();
+            AllPlayers.Add(player, new PlayerGameData("Player" + (i +1), PlayerType.Human, assignedColor));
         }
     }
 
-    public void UpdateIndexAndMovementData(int NewIndex)
-    {
-        if (Players.TryGetValue(this.p, out var data))
-        {
-            data.offlineStateDataData.CurrentIndex = NewIndex;
-            data.offlineStateDataData.MovesCounter++;
-        }
-    }
-    
-    public void MarkFinished(bool finished)
-    {
-        if (Players.TryGetValue(this.p, out var data))
-        {
-            data.offlineStateDataData.IsFinished = finished;
-        }
-    }
+    #endregion
 
-   
+    #region Spawning GameBoard and Numbers
     private void BootStrapBoard()
     {
         Instantiate(CurrentLevel.Board.BoardPrefab, BoardParent);
-        BoardLogicManager.Instance.SpawnAndGenerateTilesWithNumbers(CurrentLevel.Board.NumberToSpawnOnBoard,CurrentLevel.Board.BoardWidth,CurrentLevel.Board.BoardHeight);
+        BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevel.Board.NumberToSpawnOnBoard, CurrentLevel.Board.BoardWidth, CurrentLevel.Board.BoardHeight
+        );
     }
-[ContextMenu("Create Players")]
-    private void BootStrapAllPlayers()
+    #endregion
+    
+    //Todo
+    public void UpdatePlayersAllGameData(Player player, string question = null, string answer = null, bool? isCorrect = null, int? newIndex = null, bool? finished = null, bool incrementMove = false)
     {
-        
-        Players.Clear();
-        
-        for (int i = 0; i < TotalPlayersToSpawn; i++)
+        if (AllPlayers.TryGetValue(player, out var data))
         {
-            GameObject Player = Instantiate(CurrentLevel.PlayerPrefab, HomePoint);
-            Color AssignedColor = playerColors[i % playerColors.Length];
-            Player.GetComponent<SpriteRenderer>().color = AssignedColor;
-            //Player.name = "Player" + i;
-            Players.Add(Player.GetComponent<PlayerManager>(),new OfflinePlayerCurrentData("Player"+i,0,0,0,0,false,PlayerType.Human,AssignedColor));
+            data.UpdatePlayersDataQuestionAndAnswer( data, question, answer);
+            //call all
         }
-        GameObject BotCPU = Instantiate(CurrentLevel.CPUPrefab, HomePoint);
-        Players.Add(BotCPU.GetComponent<PlayerManager>(),new OfflinePlayerCurrentData("CPU",0,0,0,0,false,PlayerType.CPU,Color.white));
-        
-
-        // Example: spawning 2 humans and 1 CPU
-        /*var player1 = new OfflinePlayerCurrentData(null, "Me", 0, 0, 0, 0, false, PlayerType.Human);
-        var player2 = new OfflinePlayerCurrentData(null, "Friend", 0, 0, 0, 0, false, PlayerType.Human);
-        var cpu = new OfflinePlayerCurrentData(null, "CPU Bot", 0, 0, 0, 0, false, PlayerType.CPU);*/
-
-        /*Players.Add(null,player1);
-        Players.Add(null,player2);
-        Players.Add(null,cpu);*/
     }
-    
-}
-[Serializable]
-public class OfflineGameStateData
-{
-    
-    public int CurrentIndex;
-    public int MovesCounter;
-    public int TotalCorrectAnswered, TotalIncorrectAnswered;
-    public bool IsFinished;
-    public SerializedDictionary<string, string> QuestionsAndAnswers ;
 
 }
-[Serializable]
-public class OfflinePlayerCurrentData
-{
-    //public PlayerManager Player;
-    public PlayerType  PlayerType;
-    public string Name;
-    public Color color;
-    public OfflineGameStateData offlineStateDataData;
-    public OfflinePlayerCurrentData( string playerName,
-        int currentIndex, int movesCounter, int totalCorrectAnswered,
-        int totalIncorrectAnswered, bool isFinished, PlayerType playerType,Color AssignedColor)
-    {
-        
-        PlayerType = playerType;
-        Name = playerName;
-        color = AssignedColor;
-        offlineStateDataData = new OfflineGameStateData
-        {
-            CurrentIndex = currentIndex,
-            MovesCounter = movesCounter,
-            TotalCorrectAnswered = totalCorrectAnswered,
-            TotalIncorrectAnswered = totalIncorrectAnswered,
-            IsFinished = isFinished,
-           QuestionsAndAnswers =  new()
-           
-            
-        };
-    }
-    
-   
-     
-}
-[Serializable]
-public enum PlayerType
-{
-    CPU,Human
-}
+

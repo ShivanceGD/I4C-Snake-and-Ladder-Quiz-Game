@@ -6308,11 +6308,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494466bff06447ef91560d653fa2325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AuthManager: {fileID: 1438911786}
-  GameManager: {fileID: 0}
-  LoadingScreen: {fileID: 0}
-  SoundManager: {fileID: 0}
-  RemoteConfigManager: {fileID: 1438911785}
+  UiManager: {fileID: 0}
+  AuthManagerPrefab: {fileID: 0}
+  GameManagerPrefab: {fileID: 0}
+  SoundManagerPrefab: {fileID: 0}
+  RemoteConfigManagerPrefab: {fileID: 0}
 --- !u!4 &1094389328
 Transform:
   m_ObjectHideFlags: 0
@@ -9231,13 +9231,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d912f1b60504af7bc6698cb2b24b811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllPlayers:
+    _serializedList: []
   BoardParent: {fileID: 0}
   HomePoint: {fileID: 613544543}
   CurrentLevel: {fileID: 11400000, guid: 374c7815719c8904590325f1bd64490c, type: 2}
   TotalPlayersToSpawn: 2
-  Players:
-    _serializedList: []
-  p: {fileID: 0}
+  currentPlayer: {fileID: 0}
 --- !u!1 &1556780331
 GameObject:
   m_ObjectHideFlags: 0

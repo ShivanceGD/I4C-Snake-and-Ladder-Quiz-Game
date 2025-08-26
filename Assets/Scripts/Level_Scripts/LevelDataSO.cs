@@ -2,10 +2,7 @@ using System;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.UI;
-
-
 
 [CreateAssetMenu(fileName = "New Level", menuName = "Shivance Games/Create New Level")]
 public class LevelDataSO : ScriptableObject
@@ -19,9 +16,6 @@ public class LevelDataSO : ScriptableObject
     public GameMode GameMode; 
     public int LevelStars;
     [Range(0,3)]public int StarsToUnlockLevel;
-    public int LevelPoints;
-    /*public bool isLevelUnlocked;
-    public bool isLevelCompleted;*/
     
     [Header("Quiz Settings")]
     public QuizScriptableObject LevelQuizSCO;
@@ -34,9 +28,11 @@ public class LevelDataSO : ScriptableObject
     [Header("Player And CPU Prefabs")] 
     public GameObject PlayerPrefab;
     public GameObject CPUPrefab;
+    
     [Header("Step Range for Difficulty")]
     public DifficultyStepRange DiceRollRangePerQuizDifficulty;
     
+    [Header("Level UI Elements")]
     public LevelUIElements LevelUIElements;
 }
 
