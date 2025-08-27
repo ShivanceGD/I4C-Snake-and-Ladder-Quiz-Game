@@ -1,5 +1,8 @@
+using System;
+using System.Linq;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OfflineGameFlowHandler : MonoBehaviour
 {
@@ -8,7 +11,9 @@ public class OfflineGameFlowHandler : MonoBehaviour
     public LevelDataSO CurrentLevel;
     public int TotalPlayersToSpawn = 2;
     private GlobalColourManager colorManager;
-
+    //public int CurrentTurnIndex=0;
+    public event Action<PlayerGameData> OnTurnStartedAction; 
+    
     private void Awake()
     {
         Color[] playerColors = { Color.red, Color.blue, Color.green, Color.yellow };
@@ -26,6 +31,12 @@ public class OfflineGameFlowHandler : MonoBehaviour
         //Start Turn -> 0 index then ++ got whose index turn is it
         //Ask quiz from him (if player) Take moves (if cpu) -> Movement manager to move
         //Again ask for turn and cycle repeats
+        if (AllPlayers.Count != 0 && !IsGameOver())
+        {
+            OnTurnStartedAction.Invoke(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
+        }
+        
+        
     }
 
     #region Spawn/Register Players
@@ -77,14 +88,62 @@ public class OfflineGameFlowHandler : MonoBehaviour
     #endregion
     
     //Todo
-    public void UpdatePlayersAllGameData(Player player, string question = null, string answer = null, bool? isCorrect = null, int? newIndex = null, bool? finished = null, bool incrementMove = false)
+    public void UpdatePlayersAllGameData(Player player, string question = null, string answer = null, bool? isCorrect = null, int? newIndex = null, bool? finished = false, bool incrementMove = false)
     {
         if (AllPlayers.TryGetValue(player, out var data))
         {
             data.UpdatePlayersDataQuestionAndAnswer( data, question, answer);
+            data.UpdatePlayersDataCorrectOrIncorrectCounter(data, isCorrect.Value);
+            if(newIndex!=null){ data.UpdatePlayersDataIndexData(data,newIndex.Value); }
+            if(incrementMove) { data.UpdatePlayersDataMovesCounter(data);}
+            if(finished == true ) { data.UpdatePlayersDataMarkFinished(data, true);}
+            
             //call all
         }
     }
+    private bool IsGameOver()
+    {
+        int activePlayers = 0;
 
+        foreach (var kvp in AllPlayers)
+        {
+            PlayerGameData data = kvp.Value;
+
+            // If this player is not finished, they are still active
+            if (!data.GetPlayerDataFinishedState(data))
+            {
+                activePlayers++;
+            }
+        }
+
+        // Game over when <= 1 active player remains
+        return activePlayers <= 1;
+    }
+#region Event Wiring
+    public void EventWiring()
+    {
+            OnTurnStartedAction += (PlayerGameData) => HandleStartTurn(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
+    }
+
+    public void HandleStartTurn(PlayerGameData player)
+    {
+        if (player == null)
+        {
+            Debug.LogError("No Player Found To Start Turn");
+            return;
+        }
+
+        if (player.PlayerType == PlayerType.Human)
+        {
+            //Start Quiz
+        }
+        else if (player.PlayerType == PlayerType.CPU)
+        {
+            //Start Random Movement
+        }
+        else Debug.LogError("No Player Type Found");
+        
+    }
+#endregion
 }
 

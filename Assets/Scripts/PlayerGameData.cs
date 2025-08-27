@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
@@ -32,7 +33,7 @@ public class PlayerGameData
         data.PlayerCurrentGameStateData.QuestionsAndAnswers[Question] = Answer;
     }
 
-    public static void UpdatePlayersDataCorrectOrIncorrectCounter(PlayerGameData data, bool isCorrect)
+    public void UpdatePlayersDataCorrectOrIncorrectCounter(PlayerGameData data, bool isCorrect)
     {
         _ = isCorrect ? ++data.PlayerCurrentGameStateData.TotalCorrectAnswered : ++data.PlayerCurrentGameStateData.TotalIncorrectAnswered;
     }
@@ -42,7 +43,7 @@ public class PlayerGameData
         data.PlayerCurrentGameStateData.CurrentIndex = newIndex;
     }
 
-    public static void UpdatePlayersDataMovesCounter(PlayerGameData data)
+    public void UpdatePlayersDataMovesCounter(PlayerGameData data)
     {
         data.PlayerCurrentGameStateData.MovesCounter++;
     }
@@ -50,6 +51,39 @@ public class PlayerGameData
     public void UpdatePlayersDataMarkFinished(PlayerGameData data, bool finished)
     {
         data.PlayerCurrentGameStateData.IsFinished = finished;
+    }
+
+    public bool GetPlayerDataFinishedState(PlayerGameData data)
+    {
+        return data.PlayerCurrentGameStateData.IsFinished;
+    }
+
+    public int GetPlayerDataMoves(PlayerGameData data)
+    {
+        return data.PlayerCurrentGameStateData.MovesCounter;
+    }
+
+    public int GetPlayerDataTotalCorrectAnswered(PlayerGameData data)
+    {
+        return data.PlayerCurrentGameStateData.TotalCorrectAnswered;
+    }
+
+    public int GetPlayerDataTotalIncorrectAnswered(PlayerGameData data)
+    {
+        return data.PlayerCurrentGameStateData.TotalIncorrectAnswered;
+    }
+
+    public int GetPlayerDataCurrentIndex(PlayerGameData data)
+    {
+        return data.PlayerCurrentGameStateData.CurrentIndex;
+    }
+
+    public IEnumerable<KeyValuePair<string, string>> GetPlayerCurrentDataQuestionAndAnswers(PlayerGameData data)
+    {
+        foreach (var kvp in data.PlayerCurrentGameStateData.QuestionsAndAnswers)
+        {
+            yield return kvp;
+        }
     }
 }
 
@@ -60,6 +94,7 @@ public class PlayerGameStateData
     public int MovesCounter;
     public int TotalCorrectAnswered, TotalIncorrectAnswered;
     public bool IsFinished;
+   
     public SerializedDictionary<string, string> QuestionsAndAnswers = new(); // Allocated once and reused
 }
 
