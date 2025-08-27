@@ -52,7 +52,7 @@ public class QuizManager : MonoBehaviour
 
         // show UI
         quizUI.ShowQuestion(q);
-        quizUI.ShowCharacter(q);
+        //quizUI.ShowCharacter(q);
         quizUI.SetHintButtonState(canUseHint);
         quizUI.SetHintAction(() => { onUseHint?.Invoke(); quizUI.SetHintButtonState(false); });
 

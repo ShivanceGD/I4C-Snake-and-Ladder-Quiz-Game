@@ -18,18 +18,18 @@ public class QuizUI : MonoBehaviour
     public Sprite defaultButtonSprite;
     public TMP_Text Difficulty_text;
 
-    [Header("Character Panel UI")]
+    /*[Header("Character Panel UI")]
     public Image Character_Icon;
     public Image CharacterBackground_Icon;
     public TMP_Text CharacterName_text;
-    public TMP_Text CharacterInfo_text;
+    public TMP_Text CharacterInfo_text;*/
     [Header("Misc")]
     [SerializeField] Color EasyColor;
     [SerializeField] Color MediumColor;
     [SerializeField] Color HardColor;
 
-    [Header("Characters Reference")]
-    public CharacterSCO chars;
+    /*[Header("Characters Reference")]
+    public CharacterSCO chars;*/
     
     private Action<int> onOptionSelected;
     private Action onHintAction;
@@ -83,7 +83,7 @@ public class QuizUI : MonoBehaviour
         }
         //ResetOptionSprites();
     }
-    public void ShowCharacter(QuizQuestionData q)
+    /*public void ShowCharacter(QuizQuestionData q)
     {
         
 
@@ -108,7 +108,7 @@ public class QuizUI : MonoBehaviour
                 Character_Icon.sprite = RandomInfo<Sprite>(chars.MaleCharacters_Icons);
             }
             CharacterInfo_text.text = q.CharInfo;
-        }
+        }*/
         /*if(q.difficulty == Difficulty.Easy)
         {
             Difficulty_text.text = "Easy";
@@ -124,7 +124,7 @@ public class QuizUI : MonoBehaviour
             Difficulty_text.text = "Hard";
             Difficulty_text.color = Hard;
         }*/
-    }
+    //}
 
     public void ResetOptionSprites()
     {
