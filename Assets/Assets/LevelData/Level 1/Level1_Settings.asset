@@ -21,7 +21,7 @@ MonoBehaviour:
   LevelQuizSCO: {fileID: 11400000, guid: b4ce6ec8ec1141b479b620b1ef5d8533, type: 2}
   NoHintDifficulty: 
   OptionsToRemoveOnHint: 0
-  Board: {fileID: 0}
+  Board: {fileID: 11400000, guid: 0d2152d47638ae14eafcaff865620880, type: 2}
   PlayerPrefab: {fileID: 8567868040279243809, guid: 80839167c1967514d96ae271faa0914b, type: 3}
   CPUPrefab: {fileID: 8567868040279243809, guid: 80839167c1967514d96ae271faa0914b, type: 3}
   DiceRollRangePerQuizDifficulty:

@@ -32,6 +32,7 @@ public class UiLogicManager : MonoBehaviour
             button.gameObject.GetComponentInChildren<TMP_Text>().text = OfflineLevel.LevelNumber.ToString();
             button.interactable = true;
             button.onClick.AddListener(()=>OnClickAction?.Invoke());
+            button.gameObject.GetComponent<LevelDataHolder>().levelData = OfflineLevel;
         }
         else
         {

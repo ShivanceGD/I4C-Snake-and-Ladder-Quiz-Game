@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8173059298790308622}
   - component: {fileID: 3562774833881134502}
   - component: {fileID: 5838655783723942565}
+  - component: {fileID: -4003400847645202282}
   m_Layer: 5
   m_Name: 'Level_UnLocked_Button_Prefab '
   m_TagString: Untagged
@@ -280,3 +281,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4003400847645202282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308034138494984638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0f266f2052a034d916f940e3ce684a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelData:
+    Levels: []

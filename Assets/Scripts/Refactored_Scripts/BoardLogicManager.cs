@@ -34,12 +34,12 @@ public class BoardLogicManager : MonoBehaviour
 
    
 
-    public void GenerateTilesPositionWithNumbers(GameObject NumberPrefab, int BoardWidth, int BoardHeight,Transform SpawnLocation)
+    public void GenerateTilesPositionWithNumbers(GameObject NumberPrefab, int BoardWidth, int BoardHeight)
     {
         GenerateTilePositions(BoardWidth, BoardHeight);
         var bn = GetComponent<BoardNumbering>();
         if (bn != null)
-            bn.GenerateAndPlaceTilesNumbers(NumberPrefab, BoardHeight * BoardWidth,SpawnLocation);
+            bn.GenerateAndPlaceTilesNumbers(NumberPrefab, BoardHeight * BoardWidth);
     }
 
     private void GenerateTilePositions(int BoardWidth, int BoardHeight)

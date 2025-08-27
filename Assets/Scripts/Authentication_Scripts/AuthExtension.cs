@@ -7,8 +7,34 @@ using UnityEngine.Events;
 public static class AuthExtensions
 {
 
-    #region Auth Events Handling
+    /*#region Auth Events Handling
     public static void RegisterEvents(UnityEvent onSignedIn, UnityEvent onExpired, UnityEvent onSignedOut)
+    {
+        AuthenticationService.Instance.SignedIn += () =>
+        {
+            Debug.Log($"✅ Signed in. PlayerID: {AuthenticationService.Instance.PlayerId}");
+            onSignedIn?.Invoke();
+        };
+
+        AuthenticationService.Instance.Expired += () =>
+        {
+            Debug.Log("⚠️ Access token expired.");
+            onExpired?.Invoke();
+        };
+        AuthenticationService.Instance.SignInFailed += (e) =>
+        {
+            Debug.Log("⚠️" + e);
+            onSignedOut?.Invoke();
+        };
+
+        AuthenticationService.Instance.SignedOut += () =>
+        {
+            Debug.Log("🚪 Signed out.");
+            onSignedOut?.Invoke();
+        };
+    }*/
+    #region Auth Events Handling
+    public static void RegisterEvents(UnityAction onSignedIn, UnityAction onExpired, UnityAction onSignedOut, UnityAction<string> onSignInFailed)
     {
         AuthenticationService.Instance.SignedIn += () =>
         {
@@ -27,7 +53,57 @@ public static class AuthExtensions
             Debug.Log("🚪 Signed out.");
             onSignedOut?.Invoke();
         };
+
+        AuthenticationService.Instance.SignInFailed += (exception) =>
+        {
+            string reason = exception?.Message ?? "Unknown error";
+            Debug.LogError($"❌ Sign-in failed: {reason}");
+            onSignInFailed?.Invoke(reason);
+        };
     }
+    #endregion
+
+    #region Sign-Up / Sign-In
+    public static async Task<string> SignUpWithUsernamePasswordAsync(string username, string password)
+    {
+        try
+        {
+            await AuthenticationService.Instance.SignUpWithUsernamePasswordAsync(username, password);
+            Debug.Log("✅ Sign-up successful.");
+            return "Success: Account created!";
+        }
+        catch (AuthenticationException ex)
+        {
+            Debug.LogError($"Sign-up failed: {ex.Message}");
+            return $"Sign-up failed: {ex.Message}";
+        }
+        catch (RequestFailedException ex)
+        {
+            Debug.LogError($"Sign-up failed: {ex.Message}");
+            return $"Sign-up failed: {ex.Message}";
+        }
+    }
+
+    public static async Task<string> SignInWithUsernamePasswordAsync(string username, string password)
+    {
+        try
+        {
+            await AuthenticationService.Instance.SignInWithUsernamePasswordAsync(username, password);
+            Debug.Log("✅ Sign-in successful.");
+            return "Success: Signed in!";
+        }
+        catch (AuthenticationException ex)
+        {
+            Debug.LogError($"Sign-in failed: {ex.Message}");
+            return $"Sign-in failed: {ex.Message}";
+        }
+        catch (RequestFailedException ex)
+        {
+            Debug.LogError($"Sign-in failed: {ex.Message}");
+            return $"Sign-in failed: {ex.Message}";
+        }
+    }
+    #endregion
 
     public static void CheckStates()
     {
@@ -38,7 +114,7 @@ public static class AuthExtensions
         Debug.Log($"PlayerId: {AuthenticationService.Instance.PlayerId}");
         Debug.Log($"PlayerName (cached): {AuthenticationService.Instance.PlayerName}");
     }
-    #endregion
+    //#endregion
 
     #region Update Player Name and Password
     public static async Task UpdatePlayerNameAsync(string playerName)
@@ -109,7 +185,7 @@ public static class AuthExtensions
         catch (RequestFailedException ex) { Debug.LogException(ex); }
     }
 
-    public static async Task SignInWithUsernamePasswordAsync(string username, string password)
+    /*public static async Task SignInWithUsernamePasswordAsync(string username, string password)
     {
         try
         {
@@ -140,7 +216,7 @@ public static class AuthExtensions
         }
         catch (AuthenticationException ex) { Debug.LogException(ex); }
         catch (RequestFailedException ex) { Debug.LogException(ex); }
-    }
+    }*/
     #endregion
 
     #region Signout and Session Handling

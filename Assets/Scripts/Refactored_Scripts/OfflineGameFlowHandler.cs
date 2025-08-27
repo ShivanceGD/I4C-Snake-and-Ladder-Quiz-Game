@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
+using UnityEngine.UI;
 
 public class OfflineFlowManager : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class OfflineFlowManager : MonoBehaviour
     public MovementManager movementManager;
     public QuizManager quizManager;
     public TurnLogic turnHandler;
+    public GameObject HowToPlayPanelPrefab;
+    public Transform CanvasTransform;
+    private GameObject HowToPlayPanel;
+    
 
     // central player-state store
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new SerializedDictionary<Player, PlayerGameData>();
@@ -31,13 +36,18 @@ public class OfflineFlowManager : MonoBehaviour
         if (turnHandler == null) turnHandler = FindObjectOfType<TurnLogic>();
     }
 
-    [ContextMenu("Starteve")]
-    public void StartLevel()
+    private void Start()
     {
         BootstrapLevel();
-        StartCoroutine(StartFirstTurnNextFrame());
     }
 
+    [ContextMenu("StartLevel")]
+    public void StartLevel()
+    {
+        Destroy(HowToPlayPanel);
+        StartCoroutine(StartFirstTurnNextFrame());
+    }
+    
     private IEnumerator StartFirstTurnNextFrame()
     {
         // allow one frame for everything to settle (tile positions etc.)
@@ -47,13 +57,17 @@ public class OfflineFlowManager : MonoBehaviour
 
     public async void BootstrapLevel()
     {
+        HowToPlayPanel = Instantiate(HowToPlayPanelPrefab,CanvasTransform);
+        GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>().onClick.AddListener(()=>StartLevel());
+        FindingManagersInScene();
         // 1) Board
         if (CurrentLevelData.Board?.BoardPrefab != null)
         {
-            GameObject SpawnedBoard = Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
+            
+            Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
             await Task.Yield();
             
-            BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight,SpawnedBoard.transform);
+            BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight);
         }
         else Debug.LogWarning("[OfflineFlowManager] Board prefab missing in levelData.");
 
@@ -104,7 +118,8 @@ public class OfflineFlowManager : MonoBehaviour
     {
         for (int i = 0; i < TotalPlayersToSpawn; i++)
         {
-            var obj = Instantiate(CurrentLevelData.PlayerPrefab, PlayerSpawnLocation);
+            var obj = Instantiate(CurrentLevelData.PlayerPrefab);
+            obj.transform.position = PlayerSpawnLocation.position;
             obj.name = $"Player{i + 1}";
             var player = obj.GetComponent<Player>();
             Color assigned = paletteLen > 0 ? PlayerColors[i % paletteLen] : player.Color;

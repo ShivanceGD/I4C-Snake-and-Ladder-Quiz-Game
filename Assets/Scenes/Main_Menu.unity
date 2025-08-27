@@ -203,8 +203,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59292558}
-  - component: {fileID: 59292559}
-  - component: {fileID: 59292560}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -227,58 +225,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &59292559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59292557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2843312104
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
---- !u!114 &59292560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59292557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdfd20c89e906b24c8df655db7525a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  startScene: {fileID: 0}
-  AllLevels: []
-  levelManager: {fileID: 0}
-  quizManager: {fileID: 0}
-  turnManager: {fileID: 0}
-  movementManager: {fileID: 0}
-  netFlow: {fileID: 0}
-  autoStartOnHost: 1
-  playerWaitTimeout: 8
-  isOfflineMode: 0
-  offlinePlayerPrefab: {fileID: 4267328496052221226, guid: 05beb2b3c6a73d3488c6651ceb130fc7, type: 3}
-  offlineCpuPrefab: {fileID: 4267328496052221226, guid: 05beb2b3c6a73d3488c6651ceb130fc7, type: 3}
-  offlineSpawnPoints: []
-  autoStartOffline: 0
 --- !u!1 &66310918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397948432}
   - component: {fileID: 397948433}
+  - component: {fileID: 397948434}
   m_Layer: 0
   m_Name: Authentication Manager
   m_TagString: Untagged
@@ -1397,8 +1344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc97ee4e4a6df44d8022c9108266991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SuccessFailPannel: {fileID: 958393141}
-  SuccessFail_text: {fileID: 958393142}
+  SuccessFailPanel: {fileID: 958393141}
+  SuccessFailText: {fileID: 958393142}
   UserName: {fileID: 5194687243551594087}
   UID: {fileID: 8840050517602308202}
   Username: {fileID: 5034601548085070919}
@@ -1408,61 +1355,31 @@ MonoBehaviour:
   Logout: {fileID: 171099130}
   OnSignedIn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 397948433}
-        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: UpdateText
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Successfully Signed In
-          m_BoolArgument: 0
-        m_CallState: 2
-  onExpired:
+      m_Calls: []
+  OnExpired:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 397948433}
-        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: UpdateText
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Session Token Expired. Please Login Again
-          m_BoolArgument: 1
-        m_CallState: 2
-  onSignedOut:
+      m_Calls: []
+  OnSignedOut:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 397948433}
-        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: UpdateText
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Successfully Signed Out
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 958393141}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Successfully Signed Out
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnAuthMessage:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &397948434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397948430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494466bff06447ef91560d653fa2325b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UiManager: {fileID: 0}
+  SoundManagerPrefab: {fileID: 0}
+  RemoteConfigManagerPrefab: {fileID: 0}
 --- !u!1001 &426091374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2274,7 +2191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2864486697453313632, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2864486697453313632, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2282,7 +2199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2864486697453313632, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2864486697453313632, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2326,7 +2243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2864486697453313632, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 2864486697453313632, guid: 03c892f02aaef4055a824e3dd70e95a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2672,11 +2589,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22412598, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 700
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 22412598, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 450
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 22412598, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2763,8 +2680,20 @@ PrefabInstance:
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4131572706565545705, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 898.4032
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131572706565545705, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 587.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131572706565545705, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9.485992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131572706565545705, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4
+      value: -9.059
       objectReference: {fileID: 0}
     - target: {fileID: 5795669187200698342, guid: 79b4f2e553c674958b7712c7f559452f, type: 3}
       propertyPath: m_IsActive

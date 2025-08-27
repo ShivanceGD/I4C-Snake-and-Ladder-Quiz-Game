@@ -28,7 +28,6 @@ public class GameBootStrapper : MonoBehaviour
     {
         try
         {
-
             await UnityServices.InitializeAsync();
 
             if (!Unity.Services.Authentication.AuthenticationService.Instance.IsSignedIn)
