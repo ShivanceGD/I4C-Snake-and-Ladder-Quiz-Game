@@ -33,9 +33,13 @@ public class QuizManager : MonoBehaviour
     public Sprite correctButton, IncorrectButton;
 
     //
-    public void ShowQuizNew(string question, string[] answers, float timeLimit, Difficulty difficulty, int remainingHints)
+    public void ShowQuizNew(string question, string[] answers, float timeLimit, Difficulty difficulty, int remainingHints,int CorrectAnswerIndex,int OptionsToBeRemoved)
     {
-        
+        quizUI.ShowQuizPannelWithDetails(question,answers,timeLimit,difficulty);
+        hintUsed = false;
+        quizUI.SetHintButtonState(remainingHints<=0);
+        quizTimer.StartTimer(timeLimit,quizUI.UpdateTimerDisplay);
+        quizUI.OnHintRequested += ()=> UseHintNew(CorrectAnswerIndex,OptionsToBeRemoved);
     }
     
     private void Awake()
@@ -46,7 +50,7 @@ public class QuizManager : MonoBehaviour
         if (quizUI != null)
         {
             quizUI.OnOptionSelected += HandleOptionSelected;
-            quizUI.OnHintRequested += HandleHintRequest;
+            //quizUI.OnHintRequested += UseHintNew();
         }
 
         if (quizTimer != null)
@@ -117,11 +121,26 @@ public class QuizManager : MonoBehaviour
     {
         if (!CanUseHint()) return;
 
-        hintSystem.RemoveWrongAnswers(wrongAnswersToRemove, currentQuestion, quizUI);
+        //hintSystem.RemoveWrongAnswers(wrongAnswersToRemove, currentQuestion, quizUI);
 
         hintUsed = true;
         currentPlayer.UseHint();
         quizUI.SetHintButtonState(false);
+    }
+
+    public void UseHintNew(int CorrectAnswerIndex,int OptionsToBeRemoved)
+    {
+        QuizHintSystem hintSystem = new QuizHintSystem();
+
+        // Example: 4 options, correct is index 2, remove 2 wrong ones
+        List<int> toRemove = hintSystem.GetHints(4, CorrectAnswerIndex, OptionsToBeRemoved);
+
+        foreach (int idx in toRemove)
+        {
+            quizUI.RemoveOption(idx); // UI decides how to hide
+        }
+
+        
     }
 
     private void HandleOptionSelected(int selectedIndex)
@@ -141,7 +160,7 @@ public class QuizManager : MonoBehaviour
     }
 
 
-    private void HandleHintRequest() => UseHint();
+   // private void HandleHintRequest() => UseHintNew();
 
     #endregion
 
@@ -193,7 +212,7 @@ public class QuizManager : MonoBehaviour
     }*/
     public int GetRandomQuestionIndex()
     {
-        if (questions == null || questions.Count == 0) CacheQuestionsFromLevel();
+        //if (questions == null || questions.Count == 0) CacheQuestionsFromLevel();
         if (questions == null || questions.Count == 0) return -1;
 
         int newIndex;
