@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Vector3 = UnityEngine.Vector3;
 
 public class BoardLogicManager : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class BoardLogicManager : MonoBehaviour
     public static BoardLogicManager Instance;
     [SerializeField] private Tilemap tilemap;
     public static List<Vector3> TilePositions { get; } = new();
+    
 
     private void OnEnable()
     {
@@ -29,12 +32,14 @@ public class BoardLogicManager : MonoBehaviour
         return TilePositions[index];
     }
 
-    public void GenerateTilesPositionWithNumbers(GameObject NumberPrefab, int BoardWidth, int BoardHeight)
+   
+
+    public void GenerateTilesPositionWithNumbers(GameObject NumberPrefab, int BoardWidth, int BoardHeight,Transform SpawnLocation)
     {
         GenerateTilePositions(BoardWidth, BoardHeight);
         var bn = GetComponent<BoardNumbering>();
         if (bn != null)
-            bn.GenerateAndPlaceTilesNumbers(NumberPrefab, BoardHeight * BoardWidth);
+            bn.GenerateAndPlaceTilesNumbers(NumberPrefab, BoardHeight * BoardWidth,SpawnLocation);
     }
 
     private void GenerateTilePositions(int BoardWidth, int BoardHeight)

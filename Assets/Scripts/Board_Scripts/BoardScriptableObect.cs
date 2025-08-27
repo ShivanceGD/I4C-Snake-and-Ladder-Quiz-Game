@@ -8,7 +8,7 @@ public class BoardScriptableObect : ScriptableObject
     [Header("Board Data")] 
     public GameObject BoardPrefab;
     public GameObject NumberToSpawnOnBoard;
-    public BoardScriptableObect BoardJointsSCO;
+    //public BoardScriptableObect BoardJointsSCO;
     public int BoardHeight, BoardWidth;
     
     [SerializedDictionary("Snake Head", "Snake Tail")]

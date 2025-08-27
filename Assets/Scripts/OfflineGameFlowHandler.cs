@@ -2,18 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
 
 public class OfflineFlowManager : MonoBehaviour
 {
     [Header("References (assign in inspector)")]
-    public LevelDataSO levelData;
+    public LevelDataSO CurrentLevelData;
     public Transform boardParent;
-    public Transform playersParent;
+    public Transform PlayerSpawnLocation;
     public MovementManager movementManager;
     public QuizManager quizManager;
-    public TurnLogic turnManager;
+    public TurnLogic turnHandler;
 
     // central player-state store
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new SerializedDictionary<Player, PlayerGameData>();
@@ -23,17 +24,15 @@ public class OfflineFlowManager : MonoBehaviour
 
     [Header("Player Colors (assigned in order)")]
     public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
-
-    private void Start()
+    private void FindingManagersInScene()
     {
-        if (levelData == null) { Debug.LogError("[OfflineFlowManager] levelData not assigned."); return; }
         if (movementManager == null) movementManager = FindObjectOfType<MovementManager>();
         if (quizManager == null) quizManager = FindObjectOfType<QuizManager>();
-        if (turnManager == null) turnManager = FindObjectOfType<TurnLogic>();
+        if (turnHandler == null) turnHandler = FindObjectOfType<TurnLogic>();
     }
 
     [ContextMenu("Starteve")]
-    public void StartEVe()
+    public void StartLevel()
     {
         BootstrapLevel();
         StartCoroutine(StartFirstTurnNextFrame());
@@ -46,13 +45,15 @@ public class OfflineFlowManager : MonoBehaviour
         StartTurns();
     }
 
-    public void BootstrapLevel()
+    public async void BootstrapLevel()
     {
         // 1) Board
-        if (levelData.Board?.BoardPrefab != null)
+        if (CurrentLevelData.Board?.BoardPrefab != null)
         {
-            Instantiate(levelData.Board.BoardPrefab, boardParent);
-            BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(levelData.Board.NumberToSpawnOnBoard, levelData.Board.BoardWidth, levelData.Board.BoardHeight);
+            GameObject SpawnedBoard = Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
+            await Task.Yield();
+            
+            BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight,SpawnedBoard.transform);
         }
         else Debug.LogWarning("[OfflineFlowManager] Board prefab missing in levelData.");
 
@@ -60,7 +61,7 @@ public class OfflineFlowManager : MonoBehaviour
         BootStrapAllPlayers();
 
         // 3) Load quiz questions into QuizManager
-        quizManager.LoadQuestions(levelData.LevelQuizSCO);
+        quizManager.LoadQuestions(CurrentLevelData.LevelQuizSCO);
     }
 
     private void BootStrapAllPlayers()
@@ -72,23 +73,22 @@ public class OfflineFlowManager : MonoBehaviour
         int paletteLen = (PlayerColors != null && PlayerColors.Length > 0) ? PlayerColors.Length : 0;
 
         // spawn human players
-        for (int i = 0; i < TotalPlayersToSpawn; i++)
-        {
-            var obj = Instantiate(levelData.PlayerPrefab, playersParent);
-            obj.name = $"Player{i + 1}";
-            var player = obj.GetComponent<Player>();
-            Color assigned = paletteLen > 0 ? PlayerColors[i % paletteLen] : player.Color;
-            player.ApplyColor(assigned); // apply color visually
-            player.Color = assigned;
-            var data = new PlayerGameData(player.PlayerName, PlayerType.Human, assigned);
-            AllPlayers.Add(player, data);
-            player.transform.position = BoardLogicManager.GetTilePosition(0);
-        }
+        SpawnHumanPlayerOffline(paletteLen);
 
         // spawn CPU
-        if (levelData.CPUPrefab != null)
+        SpawnCPUPlayerOffline(paletteLen);
+
+        // register turn order
+        var list = AllPlayers.Keys.ToList();
+        turnHandler.RegisterPlayers(list);
+        Debug.Log($"[OfflineFlowManager] Bootstrapped {AllPlayers.Count} players.");
+    }
+
+    private void SpawnCPUPlayerOffline(int paletteLen)
+    {
+        if (CurrentLevelData.CPUPrefab != null)
         {
-            var bot = Instantiate(levelData.CPUPrefab, playersParent);
+            var bot = Instantiate(CurrentLevelData.CPUPrefab, PlayerSpawnLocation);
             bot.name = "CPU";
             var cpu = bot.GetComponent<Player>();
             Color cpuColor = paletteLen > 0 ? PlayerColors[TotalPlayersToSpawn % paletteLen] : cpu.Color;
@@ -96,13 +96,24 @@ public class OfflineFlowManager : MonoBehaviour
             cpu.Color = cpuColor;
             var cdata = new PlayerGameData("CPU", PlayerType.CPU, cpuColor);
             AllPlayers.Add(cpu, cdata);
-            cpu.transform.position = BoardLogicManager.GetTilePosition(0);
+            //cpu.transform.position = BoardLogicManager.GetTilePosition(0);
         }
+    }
 
-        // register turn order
-        var list = AllPlayers.Keys.ToList();
-        turnManager.RegisterPlayers(list);
-        Debug.Log($"[OfflineFlowManager] Bootstrapped {AllPlayers.Count} players.");
+    private void SpawnHumanPlayerOffline(int paletteLen)
+    {
+        for (int i = 0; i < TotalPlayersToSpawn; i++)
+        {
+            var obj = Instantiate(CurrentLevelData.PlayerPrefab, PlayerSpawnLocation);
+            obj.name = $"Player{i + 1}";
+            var player = obj.GetComponent<Player>();
+            Color assigned = paletteLen > 0 ? PlayerColors[i % paletteLen] : player.Color;
+            player.ApplyColor(assigned); // apply color visually
+            player.Color = assigned;
+            var data = new PlayerGameData(player.PlayerName, PlayerType.Human, assigned);
+            AllPlayers.Add(player, data);
+            //player.transform.position = BoardLogicManager.GetTilePosition(0);
+        }
     }
 
     public void StartTurns()
@@ -113,7 +124,7 @@ public class OfflineFlowManager : MonoBehaviour
             return;
         }
 
-        Player current = turnManager.GetCurrentPlayer();
+        Player current = turnHandler.GetCurrentPlayer();
         if (current == null) { Debug.LogWarning("[OfflineFlowManager] No current player determined."); return; }
 
         StartTurnForPlayer(current);
@@ -142,7 +153,7 @@ public class OfflineFlowManager : MonoBehaviour
         }, (qr) =>
         {
             Debug.Log($"[OfflineFlowManager] Quiz result for {p.name}: correct={qr.IsCorrect} time={qr.TimeTaken} sel={qr.SelectedIndex}");
-            movementManager.ProcessPostQuizMovement(p, qr.IsCorrect, q != null ? q.difficulty : Difficulty.Easy, qr.TimeTaken, levelData.Board, levelData.DiceRollRangePerQuizDifficulty, (mres) =>
+            movementManager.ProcessPostQuizMovement(p, qr.IsCorrect, q != null ? q.difficulty : Difficulty.Easy, qr.TimeTaken, CurrentLevelData.Board, CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
             {
                 Debug.Log($"[OfflineFlowManager] MovementResult for {p.name}: finalIndex={mres.FinalTileIndex} reason={mres.Reason}");
                 UpdatePlayerDataAfterMovement(p, q, qr, mres);
@@ -152,7 +163,7 @@ public class OfflineFlowManager : MonoBehaviour
                     Debug.Log($"[OfflineFlowManager] {p.name} finished the game!");
                     // mark finished in data and remove from turn order
                     if (AllPlayers.TryGetValue(p, out var d)) d.UpdatePlayersDataMarkFinished(true);
-                    turnManager.RemovePlayerFromTurn(p);
+                    turnHandler.RemovePlayerFromTurn(p);
                 }
 
                 // Check game end
@@ -163,8 +174,8 @@ public class OfflineFlowManager : MonoBehaviour
                 }
 
                 // continue to next player
-                turnManager.EndTurn();
-                Player nxt = turnManager.GetCurrentPlayer();
+                turnHandler.EndTurn();
+                Player nxt = turnHandler.GetCurrentPlayer();
                 if (nxt != null) StartTurnForPlayer(nxt);
                 else Debug.Log("[OfflineFlowManager] No next player available.");
             });
@@ -177,14 +188,14 @@ public class OfflineFlowManager : MonoBehaviour
         bool correct = UnityEngine.Random.value > 0.35f;
         float t = UnityEngine.Random.Range(2f, 8f);
         Difficulty d = Difficulty.Easy;
-        movementManager.ProcessPostQuizMovement(cpu, correct, d, t, levelData.Board, levelData.DiceRollRangePerQuizDifficulty, (mres) =>
+        movementManager.ProcessPostQuizMovement(cpu, correct, d, t, CurrentLevelData.Board, CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
         {
             UpdatePlayerDataAfterMovement(cpu, null, new QuizResult { IsCorrect = correct, SelectedIndex = -1, TimeTaken = t }, mres);
             if (mres.Finished)
             {
                 Debug.Log($"[OfflineFlowManager] {cpu.name} finished.");
                 if (AllPlayers.TryGetValue(cpu, out var cd)) cd.UpdatePlayersDataMarkFinished(true);
-                turnManager.RemovePlayerFromTurn(cpu);
+                turnHandler.RemovePlayerFromTurn(cpu);
             }
 
             if (CheckForGameEnd())
@@ -193,8 +204,8 @@ public class OfflineFlowManager : MonoBehaviour
                 return;
             }
 
-            turnManager.EndTurn();
-            Player nxt = turnManager.GetCurrentPlayer();
+            turnHandler.EndTurn();
+            Player nxt = turnHandler.GetCurrentPlayer();
             if (nxt != null) StartTurnForPlayer(nxt);
         });
         yield break;

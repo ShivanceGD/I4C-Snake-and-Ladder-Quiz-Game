@@ -12,48 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac19286a61a4824081ce74dc0c206b8, type: 3}
   m_Name: Level1_BoardConfig
   m_EditorClassIdentifier: 
-  BoardPrefab: {fileID: 6398724971142089126, guid: 482024eabcede424bb010cc7bcbe10e1, type: 3}
+  BoardPrefab: {fileID: 662205634618706673, guid: 5ef86cee8750d2b47998580ed0d1a955, type: 3}
   NumberToSpawnOnBoard: {fileID: 5471844210743242975, guid: daa9e7369db538649851accdb1543156, type: 3}
-  BoardJointsSCO: {fileID: 11400000}
   BoardHeight: 10
   BoardWidth: 10
   Snakes:
     _serializedList:
-    - Key: 31
-      Value: 8
-    - Key: 35
-      Value: 14
-    - Key: 41
-      Value: 19
-    - Key: 45
-      Value: 24
-    - Key: 63
-      Value: 44
-    - Key: 67
-      Value: 27
-    - Key: 87
-      Value: 68
-    - Key: 91
-      Value: 68
-    - Key: 97
-      Value: 65
-    - Key: 99
-      Value: 22
+    - Key: 30
+      Value: 7
+    - Key: 34
+      Value: 13
+    - Key: 40
+      Value: 18
+    - Key: 44
+      Value: 23
+    - Key: 62
+      Value: 43
+    - Key: 66
+      Value: 26
+    - Key: 86
+      Value: 67
+    - Key: 90
+      Value: 67
+    - Key: 96
+      Value: 64
+    - Key: 98
+      Value: 21
   Ladders:
     _serializedList:
-    - Key: 7
-      Value: 28
-    - Key: 16
+    - Key: 6
+      Value: 27
+    - Key: 15
+      Value: 64
+    - Key: 21
+      Value: 42
+    - Key: 46
       Value: 65
-    - Key: 22
-      Value: 43
-    - Key: 47
-      Value: 66
-    - Key: 52
-      Value: 71
-    - Key: 60
-      Value: 79
-    - Key: 64
-      Value: 83
-    - Key: 75
-      Value: 94
+    - Key: 51
+      Value: 70
+    - Key: 59
+      Value: 78
+    - Key: 63
+      Value: 82
+    - Key: 74
+      Value: 93
