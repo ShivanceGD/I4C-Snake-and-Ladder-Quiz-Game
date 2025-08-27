@@ -1,3 +1,4 @@
+/*
 using System;
 using Ricimi;
 using Unity.Netcode;
@@ -67,3 +68,4 @@ public class StartScene : NetworkBehaviour
         
     }
 }
+*/

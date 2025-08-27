@@ -1,62 +1,44 @@
 ﻿using System.Collections;
-using Unity.Netcode;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerManager))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 3f;
-    private PlayerManager pm;
+    public float stepDuration = 0.18f;
 
-    private int totalTiles => BoardManager.TilePositions.Count;
-
-    private void Awake() => pm = GetComponent<PlayerManager>();
-
-    public IEnumerator MovePlayerTileByTileCO(int steps, int currentIndex)
+    public IEnumerator MovePlayerTileByTile(int steps)
     {
-        WaitForSeconds stepDelay = new WaitForSeconds(0.1f);
-        int idx = currentIndex;
+        if (steps <= 0) yield break;
         for (int i = 0; i < steps; i++)
         {
-            idx++;
-            if (idx >= totalTiles) { idx = totalTiles - 1; break; }
-            Vector3 target = BoardManager.GetTilePosition(idx);
-            yield return StartCoroutine(MoveToTileCO(target, idx));
-            yield return stepDelay;
+            int currentIdx = BoardLogicManager.GetTileIndexFromPosition(transform.position);
+            int nextIdx = Mathf.Min(BoardLogicManager.GetWinningTileIndex, currentIdx + 1);
+            Vector3 target = BoardLogicManager.GetTilePosition(nextIdx);
+            float elapsed = 0f;
+            Vector3 start = transform.position;
+            while (elapsed < stepDuration)
+            {
+                elapsed += Time.deltaTime;
+                transform.position = Vector3.Lerp(start, target, elapsed / stepDuration);
+                yield return null;
+            }
+            transform.position = target;
+            yield return null;
         }
     }
 
-    public IEnumerator MovePlayerToExactTileCO(int newIndex)
+    public IEnumerator MovePlayerDirectlyToTile(int targetIndex)
     {
-        if (newIndex < 0 || newIndex >= totalTiles) yield break;
-        Vector3 target = BoardManager.GetTilePosition(newIndex);
-        yield return StartCoroutine(MoveToTileCO(target, newIndex));
-    }
-
-    private IEnumerator MoveToTileCO(Vector3 target, int indexNow)
-    {
-        var anim = GetComponent<PlayerAnimation>();
-        //if (anim != null) anim.SetPlayerAnimation(PlayerAnimation.PlayerState.Walking, indexNow);
-
-        bool soundPlayed = false;
-        while (Vector3.Distance(transform.position, target) > 0.01f)
+        Vector3 target = BoardLogicManager.GetTilePosition(targetIndex);
+        float elapsed = 0f;
+        float duration = Mathf.Max(0.12f, stepDuration * 1.2f);
+        Vector3 start = transform.position;
+        while (elapsed < duration)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-            if (!soundPlayed && SoundManager.Instance != null) { SoundManager.Instance.PlayStepSound(); soundPlayed = true; }
+            elapsed += Time.deltaTime;
+            transform.position = Vector3.Lerp(start, target, elapsed / duration);
             yield return null;
         }
         transform.position = target;
-
-        // stop walking → idle
-        //if (anim != null) anim.SetPlayerAnimation(PlayerAnimation.PlayerState.Idle, indexNow);
-
-        // Update tile index
-        bool offline = (NetworkManager.Singleton == null) || (GameManager.Instance != null && GameManager.Instance.isOfflineMode);
-        if (offline || (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer))
-        {
-            var pmComp = GetComponent<PlayerManager>();
-            pmComp.SetPlayerTileIndex(indexNow);
-        }
+        yield return null;
     }
-
 }

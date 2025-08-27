@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac19286a61a4824081ce74dc0c206b8, type: 3}
   m_Name: Level1_BoardConfig
   m_EditorClassIdentifier: 
+  BoardPrefab: {fileID: 6398724971142089126, guid: 482024eabcede424bb010cc7bcbe10e1, type: 3}
+  NumberToSpawnOnBoard: {fileID: 5471844210743242975, guid: daa9e7369db538649851accdb1543156, type: 3}
+  BoardJointsSCO: {fileID: 11400000}
+  BoardHeight: 10
+  BoardWidth: 10
   Snakes:
     _serializedList:
     - Key: 31

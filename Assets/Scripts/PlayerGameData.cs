@@ -10,12 +10,15 @@ public class PlayerGameData
     public string Name;
     public Color Color;
     public PlayerGameStateData PlayerCurrentGameStateData;
+
+    public PlayerGameData() { PlayerCurrentGameStateData = new PlayerGameStateData(); }
+
     public PlayerGameData(string playerName, PlayerType playerType, Color assignedColor)
     {
         PlayerType = playerType;
         Name = playerName;
         Color = assignedColor;
-        PlayerCurrentGameStateData = new PlayerGameStateData(); // Allocate once
+        PlayerCurrentGameStateData = new PlayerGameStateData();
     }
 
     public void ResetGameState()
@@ -25,66 +28,15 @@ public class PlayerGameData
         PlayerCurrentGameStateData.TotalCorrectAnswered = 0;
         PlayerCurrentGameStateData.TotalIncorrectAnswered = 0;
         PlayerCurrentGameStateData.IsFinished = false;
-        PlayerCurrentGameStateData.QuestionsAndAnswers.Clear(); // ♻️ reuse instead of realloc
-    }
-    
-    public void UpdatePlayersDataQuestionAndAnswer(PlayerGameData data, string Question, string Answer)
-    {
-        data.PlayerCurrentGameStateData.QuestionsAndAnswers[Question] = Answer;
+        PlayerCurrentGameStateData.QuestionsAndAnswers.Clear();
     }
 
-    public void UpdatePlayersDataCorrectOrIncorrectCounter(PlayerGameData data, bool isCorrect)
-    {
-        _ = isCorrect ? ++data.PlayerCurrentGameStateData.TotalCorrectAnswered : ++data.PlayerCurrentGameStateData.TotalIncorrectAnswered;
-    }
-
-    public void UpdatePlayersDataIndexData(PlayerGameData data, int newIndex)
-    {
-        data.PlayerCurrentGameStateData.CurrentIndex = newIndex;
-    }
-
-    public void UpdatePlayersDataMovesCounter(PlayerGameData data)
-    {
-        data.PlayerCurrentGameStateData.MovesCounter++;
-    }
-
-    public void UpdatePlayersDataMarkFinished(PlayerGameData data, bool finished)
-    {
-        data.PlayerCurrentGameStateData.IsFinished = finished;
-    }
-
-    public bool GetPlayerDataFinishedState(PlayerGameData data)
-    {
-        return data.PlayerCurrentGameStateData.IsFinished;
-    }
-
-    public int GetPlayerDataMoves(PlayerGameData data)
-    {
-        return data.PlayerCurrentGameStateData.MovesCounter;
-    }
-
-    public int GetPlayerDataTotalCorrectAnswered(PlayerGameData data)
-    {
-        return data.PlayerCurrentGameStateData.TotalCorrectAnswered;
-    }
-
-    public int GetPlayerDataTotalIncorrectAnswered(PlayerGameData data)
-    {
-        return data.PlayerCurrentGameStateData.TotalIncorrectAnswered;
-    }
-
-    public int GetPlayerDataCurrentIndex(PlayerGameData data)
-    {
-        return data.PlayerCurrentGameStateData.CurrentIndex;
-    }
-
-    public IEnumerable<KeyValuePair<string, string>> GetPlayerCurrentDataQuestionAndAnswers(PlayerGameData data)
-    {
-        foreach (var kvp in data.PlayerCurrentGameStateData.QuestionsAndAnswers)
-        {
-            yield return kvp;
-        }
-    }
+    public void UpdatePlayersDataQuestionAndAnswer(string Question, string Answer) => PlayerCurrentGameStateData.QuestionsAndAnswers[Question] = Answer;
+    public void UpdatePlayersDataCorrectOrIncorrectCounter(bool isCorrect) { if (isCorrect) PlayerCurrentGameStateData.TotalCorrectAnswered++; else PlayerCurrentGameStateData.TotalIncorrectAnswered++; }
+    public void UpdatePlayersDataIndexData(int newIndex) => PlayerCurrentGameStateData.CurrentIndex = newIndex;
+    public void UpdatePlayersDataMovesCounter() => PlayerCurrentGameStateData.MovesCounter++;
+    public void UpdatePlayersDataMarkFinished(bool finished) => PlayerCurrentGameStateData.IsFinished = finished;
+    public bool GetPlayerDataFinishedState() => PlayerCurrentGameStateData.IsFinished;
 }
 
 [Serializable]
@@ -92,10 +44,10 @@ public class PlayerGameStateData
 {
     public int CurrentIndex;
     public int MovesCounter;
-    public int TotalCorrectAnswered, TotalIncorrectAnswered;
+    public int TotalCorrectAnswered;
+    public int TotalIncorrectAnswered;
     public bool IsFinished;
-   
-    public SerializedDictionary<string, string> QuestionsAndAnswers = new(); // Allocated once and reused
+    public SerializedDictionary<string, string> QuestionsAndAnswers = new();
 }
 
 [Serializable]

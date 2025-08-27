@@ -10,7 +10,7 @@ public class GameBootStrapper : MonoBehaviour
 {
     public UIManager UiManager;
     public AuthManager AuthManagerPrefab;
-    public GameManager GameManagerPrefab;
+    //public GameManager GameManagerPrefab;
     public SoundManager SoundManagerPrefab;
     public RemoteConfigLoadManager RemoteConfigManagerPrefab;
 

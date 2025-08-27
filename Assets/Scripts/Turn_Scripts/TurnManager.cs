@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -172,3 +173,4 @@ public class TurnManager : NetworkBehaviour
 
     public bool IsPlayerFinished(PlayerManager p) => finished.Contains(p);
 }
+*/

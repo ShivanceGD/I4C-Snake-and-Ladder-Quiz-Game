@@ -1,3 +1,4 @@
+/*
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
@@ -10,7 +11,7 @@ public class LevelManager : NetworkBehaviour
 
     [SerializeField] private LevelDataSO currentLevel;
     public LevelDataSO CurrentLevel => currentLevel;
-    public TurnManager turn;
+    //public TurnManager turn;
     public GameObject PlayerPrefab;
     public Transform PlayerPanelTransform;
 
@@ -60,3 +61,4 @@ public class LevelManager : NetworkBehaviour
 
  
 }
+*/

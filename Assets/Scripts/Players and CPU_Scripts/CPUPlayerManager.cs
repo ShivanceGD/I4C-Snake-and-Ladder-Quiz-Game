@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 
 public class CPUPlayerManager : PlayerManager
@@ -15,3 +16,4 @@ public class CPUPlayerManager : PlayerManager
         // If multiplayer, the server should simulate CPU actions server-side (spawn CPU on server).
     }
 }
+*/

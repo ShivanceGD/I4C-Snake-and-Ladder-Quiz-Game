@@ -1,97 +1,187 @@
-﻿using System.Collections;
-using Unity.Netcode;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementManager : NetworkBehaviour
+public class MovementManager : MonoBehaviour
 {
-    [Header("Dependencies")]
-    public TurnManager turnManager;
+    public float endTurnDelay = 0.45f;
 
-    [Header("Settings")]
-    public float endTurnDelay = 0.5f;
-
-    // Server entry (MP)
-    public void ProcessPostQuizMovementServer(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken)
+    public void ProcessPostQuizMovement(
+        Player player,
+        bool isCorrect,
+        Difficulty difficulty,
+        float timeTaken,
+        BoardScriptableObect board,
+        DifficultyStepRange diceRollRange,
+        Action<MovementResult> onComplete)
     {
-        if (!IsServer) { Debug.LogWarning("Call on server only."); return; }
-        StartCoroutine(MoveCoroutine(player, isCorrect, difficulty, timeTaken, offline: false));
+        StartCoroutine(MoveCoroutine(player, isCorrect, difficulty, timeTaken, board, diceRollRange, onComplete));
     }
 
-    // Offline single-player entry (NEW)
-    public void ProcessPostQuizMovementOffline(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken)
+    private IEnumerator MoveCoroutine(
+        Player player,
+        bool isCorrect,
+        Difficulty difficulty,
+        float timeTaken,
+        BoardScriptableObect board,
+        DifficultyStepRange diceRollRange,
+        Action<MovementResult> onComplete)
     {
-        StartCoroutine(MoveCoroutine(player, isCorrect, difficulty, timeTaken, offline: true));
-    }
-
-    private IEnumerator MoveCoroutine(PlayerManager player, bool isCorrect, Difficulty difficulty, float timeTaken, bool offline)
-    {
-        if (player == null) yield break;
-        var board = LevelManager.Instance.CurrentLevel.Board.BoardJointsSCO;
-        int currentTile = player.GetPlayerCurrentTileIndex();
-
-        if (isCorrect)
+        if (player == null)
         {
-            foreach (var ladder in board.Ladders)
+            onComplete?.Invoke(new MovementResult { Player = null, StepsTaken = 0, FinalTileIndex = 0, Finished = false, UsedSnakeOrLadder = false, Reason = "InvalidPlayer" });
+            yield break;
+        }
+
+        int currentTile = BoardLogicManager.GetTileIndexFromPosition(player.transform.position);
+        int tileCount = Math.Max(1, UnityEngine.Mathf.Max(1, BoardLogicManager.TilePositions.Count)); // defensive
+
+        // normalize snakes and ladders into zero-based dictionaries
+        var laddersNormalized = new Dictionary<int, int>();
+        var snakesNormalized = new Dictionary<int, int>();
+        NormalizeBoardIndices(board, tileCount, ref laddersNormalized, ref snakesNormalized);
+
+        var result = new MovementResult
+        {
+            Player = player,
+            StepsTaken = 0,
+            FinalTileIndex = currentTile,
+            Finished = false,
+            UsedSnakeOrLadder = false,
+            Reason = "None"
+        };
+
+        // LADDER (if correct)
+        if (isCorrect && laddersNormalized.Count > 0)
+        {
+            foreach (var kv in laddersNormalized)
             {
-                if (ladder.Key > currentTile && ladder.Key - currentTile <= 5)
+                int ladderStart = kv.Key; // zero-based start index
+                int ladderEnd = kv.Value; // zero-based end index
+                if (ladderStart > currentTile && ladderStart - currentTile <= 5)
                 {
-                    SoundManager.Instance.PlayLadderSound();
-                    yield return player.MovePlayerTileByTile((ladder.Key - 1) - currentTile);
-                    yield return player.MovePlayerDirectlyToTile(ladder.Value - 1);
-                    CheckWin(player);
+                    SoundManager.Instance?.PlayLadderSound();
+                    int toMove = ladderStart - currentTile;
+                    if (toMove > 0) yield return player.Movement.MovePlayerTileByTile(toMove);
+                    yield return player.Movement.MovePlayerDirectlyToTile(ladderEnd);
+
+                    result.StepsTaken = toMove;
+                    result.FinalTileIndex = ladderEnd;
+                    result.Finished = result.FinalTileIndex >= BoardLogicManager.GetWinningTileIndex;
+                    result.UsedSnakeOrLadder = true;
+                    result.Reason = "Ladder";
+
                     yield return new WaitForSeconds(endTurnDelay);
-                    if (offline) turnManager.AdvanceLocalTurn(); else turnManager.ServerAdvanceTurn();
+                    onComplete?.Invoke(result);
                     yield break;
                 }
             }
         }
-        else
+
+        // SNAKE (if incorrect)
+        if (!isCorrect && snakesNormalized.Count > 0)
         {
-            foreach (var snake in board.Snakes)
+            foreach (var kv in snakesNormalized)
             {
-                if (snake.Key >= currentTile && snake.Key - currentTile <= 5)
+                int snakeHead = kv.Key; // zero-based head index
+                int snakeTail = kv.Value; // zero-based tail index
+                if (snakeHead >= currentTile && snakeHead - currentTile <= 5)
                 {
-                    SoundManager.Instance.PlaySnakeSound();
-                    yield return player.MovePlayerTileByTile((snake.Key) - (currentTile+1));
-                    yield return player.MovePlayerDirectlyToTile(snake.Value - 1);
-                    CheckWin(player);
+                    SoundManager.Instance?.PlaySnakeSound();
+                    int forward = snakeHead - currentTile;
+                    if (forward > 0) yield return player.Movement.MovePlayerTileByTile(forward);
+                    yield return player.Movement.MovePlayerDirectlyToTile(snakeTail);
+
+                    result.StepsTaken = forward;
+                    result.FinalTileIndex = snakeTail;
+                    result.Finished = result.FinalTileIndex >= BoardLogicManager.GetWinningTileIndex;
+                    result.UsedSnakeOrLadder = true;
+                    result.Reason = "Snake";
+
                     yield return new WaitForSeconds(endTurnDelay);
-                    if (offline) turnManager.AdvanceLocalTurn(); else turnManager.ServerAdvanceTurn();
+                    onComplete?.Invoke(result);
                     yield break;
                 }
             }
         }
 
-        int steps = GetSteps(isCorrect, difficulty, timeTaken);
+        // NORMAL movement (dice)
+        int steps = GetSteps(isCorrect, difficulty, timeTaken, diceRollRange);
         if (steps > 0)
         {
-            yield return player.MovePlayerTileByTile(steps);
-            CheckWin(player);
+            yield return player.Movement.MovePlayerTileByTile(steps);
+            result.StepsTaken = steps;
+            result.FinalTileIndex = BoardLogicManager.GetTileIndexFromPosition(player.transform.position);
+            result.Finished = result.FinalTileIndex >= BoardLogicManager.GetWinningTileIndex;
+            result.Reason = "Normal";
         }
 
         yield return new WaitForSeconds(endTurnDelay);
-        if (offline) turnManager.AdvanceLocalTurn(); else turnManager.ServerAdvanceTurn();
+        onComplete?.Invoke(result);
     }
 
-    private void CheckWin(PlayerManager player)
+    private void NormalizeBoardIndices(BoardScriptableObect board, int tileCount, ref Dictionary<int,int> laddersOut, ref Dictionary<int,int> snakesOut)
     {
-        if (player.GetPlayerCurrentTileIndex() >= BoardManager.WinningTileIndex && !turnManager.IsPlayerFinished(player))
+        laddersOut = new Dictionary<int, int>();
+        snakesOut = new Dictionary<int, int>();
+        if (board == null) return;
+
+        bool laddersNull = board.Ladders == null || board.Ladders.Count == 0;
+        bool snakesNull = board.Snakes == null || board.Snakes.Count == 0;
+
+        if (!laddersNull)
         {
-            player.SetPlayerTileIndex(BoardManager.WinningTileIndex);
-            turnManager.MarkPlayerFinished(player);
-            Debug.Log($"🎉 {player.name} finished.");
+            // detect 1-based vs 0-based by checking if any key/value is >= tileCount
+            bool laddersAreOneBased = false;
+            foreach (var kv in board.Ladders)
+            {
+                if (kv.Key >= tileCount || kv.Value >= tileCount) { laddersAreOneBased = true; break; }
+            }
+
+            foreach (var kv in board.Ladders)
+            {
+                int k = kv.Key - (laddersAreOneBased ? 1 : 0);
+                int v = kv.Value - (laddersAreOneBased ? 1 : 0);
+                k = Mathf.Clamp(k, 0, Math.Max(0, tileCount - 1));
+                v = Mathf.Clamp(v, 0, Math.Max(0, tileCount - 1));
+                if (!laddersOut.ContainsKey(k)) laddersOut[k] = v;
+            }
+        }
+
+        if (!snakesNull)
+        {
+            bool snakesAreOneBased = false;
+            foreach (var kv in board.Snakes)
+            {
+                if (kv.Key >= tileCount || kv.Value >= tileCount) { snakesAreOneBased = true; break; }
+            }
+
+            foreach (var kv in board.Snakes)
+            {
+                int k = kv.Key - (snakesAreOneBased ? 1 : 0);
+                int v = kv.Value - (snakesAreOneBased ? 1 : 0);
+                k = Mathf.Clamp(k, 0, Math.Max(0, tileCount - 1));
+                v = Mathf.Clamp(v, 0, Math.Max(0, tileCount - 1));
+                if (!snakesOut.ContainsKey(k)) snakesOut[k] = v;
+            }
         }
     }
 
-    private int GetSteps(bool correct, Difficulty difficulty, float timeTaken)
+    private int GetSteps(bool correct, Difficulty difficulty, float timeTaken, DifficultyStepRange diceRollRange)
     {
         if (!correct) return 0;
-        if (!LevelManager.Instance.CurrentLevel.DiceRollRangePerQuizDifficulty.TryGetValue(difficulty, out var range))
+        if (diceRollRange == null)
         {
-            Debug.LogWarning($"Missing dice range for {difficulty}, defaulting to 1.");
+            Debug.LogWarning("[MovementManager] diceRollRange is null, defaulting to 1.");
             return 1;
         }
-        int s = Random.Range(range.x, range.y + 1);
+        if (!diceRollRange.TryGetValue(difficulty, out var range))
+        {
+            Debug.LogWarning($"[MovementManager] Missing dice range for {difficulty}, defaulting to 1.");
+            return 1;
+        }
+        int s = UnityEngine.Random.Range(range.x, range.y + 1);
         if (timeTaken < 5f) s++;
         return s;
     }

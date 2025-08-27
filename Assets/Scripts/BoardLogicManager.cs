@@ -4,7 +4,8 @@ using UnityEngine.Tilemaps;
 
 public class BoardLogicManager : MonoBehaviour
 {
-    [Header("Reference")] public static BoardLogicManager Instance;
+    [Header("Reference")]
+    public static BoardLogicManager Instance;
     [SerializeField] private Tilemap tilemap;
     public static List<Vector3> TilePositions { get; } = new();
 
@@ -18,35 +19,24 @@ public class BoardLogicManager : MonoBehaviour
         Instance = this;
     }
 
-    /// <summary>
-    /// Return the winning tile index
-    /// </summary>
-    public static int GetWinningTileIndex => TilePositions.Count - 1;
+    public static int GetWinningTileIndex => TilePositions.Count == 0 ? 0 : TilePositions.Count - 1;
+    public static Vector3 GetWinningTilePosition => TilePositions.Count == 0 ? Vector3.zero : TilePositions[GetWinningTileIndex];
 
-    /// <summary>
-    /// Return Vector3 position of winning tile index
-    /// </summary>
-    public static Vector3 GetWinningTilePosition => TilePositions[GetWinningTileIndex];
+    public static Vector3 GetTilePosition(int index)
+    {
+        if (TilePositions == null || TilePositions.Count == 0) return Vector3.zero;
+        index = Mathf.Clamp(index, 0, TilePositions.Count - 1);
+        return TilePositions[index];
+    }
 
-    /// <summary>
-    /// Get Vector3 position on any index
-    /// </summary>
-    /// <param name="index"></param>
-    /// <returns></returns>
-    public static Vector3 GetTilePosition(int index) => TilePositions[index];
-
-    /// <summary>
-    /// Spawn and Generate Tiles Positions. Call it while bootstraping scene
-    /// </summary>
-    /// <param name="NumberPrefab"></param>
-    /// <param name="BoardWidth"></param>
-    /// <param name="BoardHeight"></param>
     public void GenerateTilesPositionWithNumbers(GameObject NumberPrefab, int BoardWidth, int BoardHeight)
     {
         GenerateTilePositions(BoardWidth, BoardHeight);
-        GetComponent<BoardNumbering>().GenerateAndPlaceTilesNumbers(NumberPrefab, BoardHeight * BoardWidth);
+        var bn = GetComponent<BoardNumbering>();
+        if (bn != null)
+            bn.GenerateAndPlaceTilesNumbers(NumberPrefab, BoardHeight * BoardWidth);
     }
-    
+
     private void GenerateTilePositions(int BoardWidth, int BoardHeight)
     {
         TilePositions.Clear();
@@ -58,7 +48,7 @@ public class BoardLogicManager : MonoBehaviour
             for (int x = 0; x < BoardWidth; x++)
             {
                 int actualX = leftToRight ? x : BoardWidth - 1 - x;
-                Vector3Int cellPos = new(actualX, y, 0);
+                Vector3Int cellPos = new Vector3Int(actualX, y, 0);
 
                 if (!tilemap.HasTile(cellPos)) continue;
 
@@ -66,10 +56,21 @@ public class BoardLogicManager : MonoBehaviour
                 TilePositions.Add(worldPos);
             }
         }
+
+        Debug.Log($"[BoardLogicManager] Generated {TilePositions.Count} tile positions.");
     }
-    
-    private void SpawnBoard(Tilemap Tilemap, Transform SpawnParent)
+
+    // nearest tile index for a world position (used by movement)
+    public static int GetTileIndexFromPosition(Vector3 worldPos)
     {
-        this.tilemap = Instantiate(Tilemap, SpawnParent);
+        if (TilePositions == null || TilePositions.Count == 0) return 0;
+        int best = 0;
+        float bestSqr = float.MaxValue;
+        for (int i = 0; i < TilePositions.Count; i++)
+        {
+            float sq = (TilePositions[i] - worldPos).sqrMagnitude;
+            if (sq < bestSqr) { bestSqr = sq; best = i; }
+        }
+        return best;
     }
 }

@@ -1,147 +1,248 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
-using AYellowpaper.SerializedCollections;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using AYellowpaper.SerializedCollections;
 
-public class OfflineGameFlowHandler : MonoBehaviour
+public class OfflineFlowManager : MonoBehaviour
 {
-    public SerializedDictionary<Player, PlayerGameData> AllPlayers;
-    public Transform BoardParent, HomePoint;
-    public LevelDataSO CurrentLevel;
-    public int TotalPlayersToSpawn = 2;
-    private GlobalColourManager colorManager;
-    //public int CurrentTurnIndex=0;
-    public event Action<PlayerGameData> OnTurnStartedAction; 
-    public  event Action OnQuizCompletedAction;
-    
-    private void Awake()
+    [Header("References (assign in inspector)")]
+    public LevelDataSO levelData;
+    public Transform boardParent;
+    public Transform playersParent;
+    public MovementManager movementManager;
+    public QuizManager quizManager;
+    public TurnLogic turnManager;
+
+    // central player-state store
+    public SerializedDictionary<Player, PlayerGameData> AllPlayers = new SerializedDictionary<Player, PlayerGameData>();
+
+    [Header("Settings")]
+    public int TotalPlayersToSpawn = 1;
+
+    [Header("Player Colors (assigned in order)")]
+    public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
+
+    private void Start()
     {
-        Color[] playerColors = { Color.red, Color.blue, Color.green, Color.yellow };
-        colorManager = new GlobalColourManager(playerColors);
+        if (levelData == null) { Debug.LogError("[OfflineFlowManager] levelData not assigned."); return; }
+        if (movementManager == null) movementManager = FindObjectOfType<MovementManager>();
+        if (quizManager == null) quizManager = FindObjectOfType<QuizManager>();
+        if (turnManager == null) turnManager = FindObjectOfType<TurnLogic>();
     }
 
-    public void BootStrapLevel()
+    [ContextMenu("Starteve")]
+    public void StartEVe()
     {
-        BootStrapBoard();
-        BootStrapAllPlayers();
-        BootStrapEventWiring();
+        BootstrapLevel();
+        StartCoroutine(StartFirstTurnNextFrame());
     }
 
-    public void StartOfflineGame()
+    private IEnumerator StartFirstTurnNextFrame()
     {
-        //Start Turn -> 0 index then ++ got whose index turn is it
-        //Ask quiz from him (if player) Take moves (if cpu) -> Movement manager to move
-        //Again ask for turn and cycle repeats
-        if (AllPlayers.Count != 0 && !IsGameOver())
+        // allow one frame for everything to settle (tile positions etc.)
+        yield return null;
+        StartTurns();
+    }
+
+    public void BootstrapLevel()
+    {
+        // 1) Board
+        if (levelData.Board?.BoardPrefab != null)
         {
-            OnTurnStartedAction?.Invoke(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
+            Instantiate(levelData.Board.BoardPrefab, boardParent);
+            BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(levelData.Board.NumberToSpawnOnBoard, levelData.Board.BoardWidth, levelData.Board.BoardHeight);
         }
-        
-        
-    }
-    #region Event Wiring
-    private void BootStrapEventWiring()
-    {
-        OnTurnStartedAction += (_) => HandleStartTurnOffline(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
-        //OnQuizCompletedAction += QuizManager.Instance.OnQuizCompletedOffline();
+        else Debug.LogWarning("[OfflineFlowManager] Board prefab missing in levelData.");
+
+        // 2) Spawn Players
+        BootStrapAllPlayers();
+
+        // 3) Load quiz questions into QuizManager
+        quizManager.LoadQuestions(levelData.LevelQuizSCO);
     }
 
-    private void HandleStartTurnOffline(PlayerGameData player)
+    private void BootStrapAllPlayers()
     {
-        if (player == null)
+        // reset existing
+        foreach (var kv in AllPlayers) kv.Value.ResetGameState();
+        AllPlayers.Clear();
+
+        int paletteLen = (PlayerColors != null && PlayerColors.Length > 0) ? PlayerColors.Length : 0;
+
+        // spawn human players
+        for (int i = 0; i < TotalPlayersToSpawn; i++)
         {
-            Debug.LogError("No Player Found To Start Turn");
+            var obj = Instantiate(levelData.PlayerPrefab, playersParent);
+            obj.name = $"Player{i + 1}";
+            var player = obj.GetComponent<Player>();
+            Color assigned = paletteLen > 0 ? PlayerColors[i % paletteLen] : player.Color;
+            player.ApplyColor(assigned); // apply color visually
+            player.Color = assigned;
+            var data = new PlayerGameData(player.PlayerName, PlayerType.Human, assigned);
+            AllPlayers.Add(player, data);
+            player.transform.position = BoardLogicManager.GetTilePosition(0);
+        }
+
+        // spawn CPU
+        if (levelData.CPUPrefab != null)
+        {
+            var bot = Instantiate(levelData.CPUPrefab, playersParent);
+            bot.name = "CPU";
+            var cpu = bot.GetComponent<Player>();
+            Color cpuColor = paletteLen > 0 ? PlayerColors[TotalPlayersToSpawn % paletteLen] : cpu.Color;
+            cpu.ApplyColor(cpuColor);
+            cpu.Color = cpuColor;
+            var cdata = new PlayerGameData("CPU", PlayerType.CPU, cpuColor);
+            AllPlayers.Add(cpu, cdata);
+            cpu.transform.position = BoardLogicManager.GetTilePosition(0);
+        }
+
+        // register turn order
+        var list = AllPlayers.Keys.ToList();
+        turnManager.RegisterPlayers(list);
+        Debug.Log($"[OfflineFlowManager] Bootstrapped {AllPlayers.Count} players.");
+    }
+
+    public void StartTurns()
+    {
+        if (AllPlayers.Count == 0)
+        {
+            Debug.LogWarning("[OfflineFlowManager] No players found to start turns.");
             return;
         }
 
-        if (player.PlayerType == PlayerType.Human)
-        {
-            int randomQuestionIndex = Random.Range(0, CurrentLevel.LevelQuizSCO.questions.Count);
-            QuizQuestionData quizRandomQuestion = CurrentLevel.LevelQuizSCO.questions[randomQuestionIndex];
-            QuizManager.Instance.ShowQuizNew(quizRandomQuestion.question, quizRandomQuestion.options, quizRandomQuestion.timeLimit, quizRandomQuestion.difficulty, 2, quizRandomQuestion.correctAnswerIndex, 2);
-        }
-        else if (player.PlayerType == PlayerType.CPU)
-        {
-            //Start Random Movement
-        }
-        else Debug.LogError("No Player Type Found");
-        
+        Player current = turnManager.GetCurrentPlayer();
+        if (current == null) { Debug.LogWarning("[OfflineFlowManager] No current player determined."); return; }
+
+        StartTurnForPlayer(current);
     }
-    #endregion
 
-    #region Spawn/Register Players
-
-    [ContextMenu("Create Players")]
-    private void BootStrapAllPlayers()
+    private void StartTurnForPlayer(Player p)
     {
-        // Instead of destroying all PlayerGameData, reuse existing ones if possible
-        foreach (var kvp in AllPlayers)
+        Debug.Log($"[OfflineFlowManager] StartTurn -> {p?.name}");
+        if (p == null) return;
+
+        // If CPU, auto-resolve
+        if (p.IsCpu)
         {
-            kvp.Value.ResetGameState();
+            StartCoroutine(CpuSequence(p));
+            return;
         }
 
-        AllPlayers.Clear();
-        SpawnAndRegisterPlayersOffline();
-        SpawnAndRegisterCPUOffline();
-        colorManager.Reset();
-    }
-    private void SpawnAndRegisterCPUOffline()
-    {
-        GameObject botCPU = Instantiate(CurrentLevel.CPUPrefab, HomePoint);
-        botCPU.transform.name = "CPU";
-        var player = botCPU.GetComponent<Player>();
-        AllPlayers.Add(player, new PlayerGameData("CPU", PlayerType.CPU, Color.white));
-    }
-    private void SpawnAndRegisterPlayersOffline()
-    {
-        for (int i = 0; i < TotalPlayersToSpawn; i++)
+        // Human: ask quiz manager for question
+        int idx = quizManager.GetRandomQuestionIndex();
+        var q = quizManager.GetQuestionByIndex(idx);
+        bool canUseHint = q != null && q.isHintAllowed && AllPlayers.TryGetValue(p, out var pd) && !pd.PlayerCurrentGameStateData.IsFinished;
+
+        quizManager.ShowQuizForPlayer(q, p, canUseHint, () =>
         {
-            GameObject playerObj = Instantiate(CurrentLevel.PlayerPrefab, HomePoint);
-            playerObj.transform.name = "Player" + (i + 1);
-            Color assignedColor = colorManager.GetUniqueColor();
-            playerObj.GetComponent<SpriteRenderer>().color = assignedColor;
-
-            var player = playerObj.GetComponent<Player>();
-            AllPlayers.Add(player, new PlayerGameData("Player" + (i +1), PlayerType.Human, assignedColor));
-        }
-    }
-
-    #endregion
-
-    #region Spawning GameBoard and Numbers
-    private void BootStrapBoard()
-    {
-        Instantiate(CurrentLevel.Board.BoardPrefab, BoardParent);
-        BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevel.Board.NumberToSpawnOnBoard, CurrentLevel.Board.BoardWidth, CurrentLevel.Board.BoardHeight
-        );
-    }
-    #endregion
-    
-    public void UpdatePlayersAllGameData(Player player, string question = null, string answer = null, bool? isCorrect = null, int? newIndex = null, bool? finished = false, bool incrementMove = false)
-    {
-        if (AllPlayers.TryGetValue(player, out var data))
+            // hint used: if you track hint counts, do it here (no counter in PlayerGameData by default)
+        }, (qr) =>
         {
-            data.UpdatePlayersDataQuestionAndAnswer( data, question, answer);
-            data.UpdatePlayersDataCorrectOrIncorrectCounter(data, isCorrect != null && isCorrect.Value);
-            if(newIndex!=null){ data.UpdatePlayersDataIndexData(data, newIndex.Value); }
-            if(incrementMove) { data.UpdatePlayersDataMovesCounter(data);}
-            if(finished == true ) { data.UpdatePlayersDataMarkFinished(data,true);}
-        }
-    }
-    private bool IsGameOver()
-    {
-        int playersFinished = 0;
-
-        foreach (var kvp in AllPlayers)
-        {
-            PlayerGameData data = kvp.Value;
-            if (!data.GetPlayerDataFinishedState(data))
+            Debug.Log($"[OfflineFlowManager] Quiz result for {p.name}: correct={qr.IsCorrect} time={qr.TimeTaken} sel={qr.SelectedIndex}");
+            movementManager.ProcessPostQuizMovement(p, qr.IsCorrect, q != null ? q.difficulty : Difficulty.Easy, qr.TimeTaken, levelData.Board, levelData.DiceRollRangePerQuizDifficulty, (mres) =>
             {
-                playersFinished++;
+                Debug.Log($"[OfflineFlowManager] MovementResult for {p.name}: finalIndex={mres.FinalTileIndex} reason={mres.Reason}");
+                UpdatePlayerDataAfterMovement(p, q, qr, mres);
+
+                if (mres.Finished)
+                {
+                    Debug.Log($"[OfflineFlowManager] {p.name} finished the game!");
+                    // mark finished in data and remove from turn order
+                    if (AllPlayers.TryGetValue(p, out var d)) d.UpdatePlayersDataMarkFinished(true);
+                    turnManager.RemovePlayerFromTurn(p);
+                }
+
+                // Check game end
+                if (CheckForGameEnd())
+                {
+                    ShowLeaderboard();
+                    return;
+                }
+
+                // continue to next player
+                turnManager.EndTurn();
+                Player nxt = turnManager.GetCurrentPlayer();
+                if (nxt != null) StartTurnForPlayer(nxt);
+                else Debug.Log("[OfflineFlowManager] No next player available.");
+            });
+        });
+    }
+
+    private IEnumerator CpuSequence(Player cpu)
+    {
+        yield return new WaitForSeconds(0.5f);
+        bool correct = UnityEngine.Random.value > 0.35f;
+        float t = UnityEngine.Random.Range(2f, 8f);
+        Difficulty d = Difficulty.Easy;
+        movementManager.ProcessPostQuizMovement(cpu, correct, d, t, levelData.Board, levelData.DiceRollRangePerQuizDifficulty, (mres) =>
+        {
+            UpdatePlayerDataAfterMovement(cpu, null, new QuizResult { IsCorrect = correct, SelectedIndex = -1, TimeTaken = t }, mres);
+            if (mres.Finished)
+            {
+                Debug.Log($"[OfflineFlowManager] {cpu.name} finished.");
+                if (AllPlayers.TryGetValue(cpu, out var cd)) cd.UpdatePlayersDataMarkFinished(true);
+                turnManager.RemovePlayerFromTurn(cpu);
             }
+
+            if (CheckForGameEnd())
+            {
+                ShowLeaderboard();
+                return;
+            }
+
+            turnManager.EndTurn();
+            Player nxt = turnManager.GetCurrentPlayer();
+            if (nxt != null) StartTurnForPlayer(nxt);
+        });
+        yield break;
+    }
+
+    private void UpdatePlayerDataAfterMovement(Player p, QuizQuestionData question, QuizResult quizResult, MovementResult movementResult)
+    {
+        if (!AllPlayers.TryGetValue(p, out var data)) return;
+
+        if (question != null)
+        {
+            string answer = (quizResult.SelectedIndex >= 0 && quizResult.SelectedIndex < question.options.Length) ? question.options[quizResult.SelectedIndex] : "";
+            data.UpdatePlayersDataQuestionAndAnswer(question.question, answer);
+            data.UpdatePlayersDataCorrectOrIncorrectCounter(quizResult.IsCorrect);
         }
-        return playersFinished <= 1;
+
+        if (movementResult.FinalTileIndex >= 0)
+        {
+            data.UpdatePlayersDataIndexData(movementResult.FinalTileIndex);
+        }
+
+        data.UpdatePlayersDataMovesCounter();
+        if (movementResult.Finished) data.UpdatePlayersDataMarkFinished(true);
+    }
+
+    private bool CheckForGameEnd()
+    {
+        // Game ends when remaining players who are NOT finished are <= 1
+        int notFinished = AllPlayers.Values.Count(x => !x.PlayerCurrentGameStateData.IsFinished);
+        if (notFinished <= 1)
+        {
+            Debug.Log($"[OfflineFlowManager] Game end condition met. Not finished count: {notFinished}");
+            return true;
+        }
+        return false;
+    }
+
+    private void ShowLeaderboard()
+    {
+        Debug.Log("[OfflineFlowManager] === Leaderboard ===");
+        var ranking = AllPlayers.OrderByDescending(kv => kv.Value.PlayerCurrentGameStateData.CurrentIndex)
+                                .ThenByDescending(kv => kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered)
+                                .ToList();
+        int rank = 1;
+        foreach (var kv in ranking)
+        {
+            Debug.Log($"{rank}. {kv.Value.Name} - tile:{kv.Value.PlayerCurrentGameStateData.CurrentIndex} correct:{kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered}");
+            rank++;
+        }
     }
 }
-

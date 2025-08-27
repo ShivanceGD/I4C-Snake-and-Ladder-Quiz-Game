@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -93,7 +94,7 @@ public class GameManager : NetworkBehaviour
                 isUnlocked
             );
         }
-    }*/
+    }#1#
     [ContextMenu("Generate All Offline Buttons")]
     public async void GenerateAllOfflineLevels()
     {
@@ -433,3 +434,4 @@ public class GameManager : NetworkBehaviour
         // MoveCoroutine will advance turn locally when it finishes.
     }
 }
+*/

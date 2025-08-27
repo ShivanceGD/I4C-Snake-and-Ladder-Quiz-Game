@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cba3198441e8b443a0d36e5a25e9057, type: 3}
+  m_Name: TestLevel
+  m_EditorClassIdentifier: 
+  LevelNumber: 1
+  LevelName: aaksj
+  TotalAvailableMoves: 20
+  GameMode: 1
+  LevelStars: 0
+  StarsToUnlockLevel: 0
+  LevelQuizSCO: {fileID: 11400000, guid: b4ce6ec8ec1141b479b620b1ef5d8533, type: 2}
+  NoHintDifficulty: 00000000
+  OptionsToRemoveOnHint: 2
+  Board: {fileID: 11400000, guid: 0d2152d47638ae14eafcaff865620880, type: 2}
+  PlayerPrefab: {fileID: 8567868040279243809, guid: 80839167c1967514d96ae271faa0914b, type: 3}
+  CPUPrefab: {fileID: 8567868040279243809, guid: 3c970a4e5299a794cb991686976a43c4, type: 3}
+  DiceRollRangePerQuizDifficulty:
+    _serializedList:
+    - Key: 0
+      Value: {x: 1, y: 2}
+    - Key: 1
+      Value: {x: 3, y: 4}
+    - Key: 2
+      Value: {x: 5, y: 6}
+  LevelUIElements:
+    LevelLockedButtonPrefab: {fileID: 3562774833881134502, guid: 71f1950f8da39ea4a961e39e3c5c02aa, type: 3}
+    LevelUnlockedButtonPrefab: {fileID: 3562774833881134502, guid: 2afcfa3b932f1c4458d74e67fe91d152, type: 3}
