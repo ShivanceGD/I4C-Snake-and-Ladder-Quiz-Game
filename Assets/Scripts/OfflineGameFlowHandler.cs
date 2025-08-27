@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class OfflineGameFlowHandler : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class OfflineGameFlowHandler : MonoBehaviour
     private GlobalColourManager colorManager;
     //public int CurrentTurnIndex=0;
     public event Action<PlayerGameData> OnTurnStartedAction; 
+    public  event Action OnQuizCompletedAction;
     
     private void Awake()
     {
@@ -42,6 +44,7 @@ public class OfflineGameFlowHandler : MonoBehaviour
     private void BootStrapEventWiring()
     {
         OnTurnStartedAction += (_) => HandleStartTurnOffline(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
+        //OnQuizCompletedAction += QuizManager.Instance.OnQuizCompletedOffline();
     }
 
     private void HandleStartTurnOffline(PlayerGameData player)
@@ -54,7 +57,9 @@ public class OfflineGameFlowHandler : MonoBehaviour
 
         if (player.PlayerType == PlayerType.Human)
         {
-            //QuizManager.Instance.ShowQuizNew();
+            int randomQuestionIndex = Random.Range(0, CurrentLevel.LevelQuizSCO.questions.Count);
+            QuizQuestionData quizRandomQuestion = CurrentLevel.LevelQuizSCO.questions[randomQuestionIndex];
+            QuizManager.Instance.ShowQuizNew(quizRandomQuestion.question, quizRandomQuestion.options, quizRandomQuestion.timeLimit, quizRandomQuestion.difficulty, 2, quizRandomQuestion.correctAnswerIndex, 2);
         }
         else if (player.PlayerType == PlayerType.CPU)
         {

@@ -33,33 +33,37 @@ public class QuizManager : MonoBehaviour
     public Sprite correctButton, IncorrectButton;
 
     //
-    public void ShowQuizNew(string question, string[] answers, float timeLimit, Difficulty difficulty, int remainingHints,int CorrectAnswerIndex,int OptionsToBeRemoved)
+    public void ShowQuizNew(string question, string[] answers, float timeLimit, Difficulty difficulty, int remainingHints, int CorrectAnswerIndex, int OptionsToBeRemoved)
     {
-        quizUI.ShowQuizPannelWithDetails(question,answers,timeLimit,difficulty);
+        quizUI.ShowQuizPannelWithDetails(question, answers, timeLimit, difficulty);
         hintUsed = false;
-        quizUI.SetHintButtonState(remainingHints<=0);
-        quizTimer.StartTimer(timeLimit,quizUI.UpdateTimerDisplay);
-        quizUI.OnHintRequested += ()=> UseHintNew(CorrectAnswerIndex,OptionsToBeRemoved);
+
+        quizUI.SetHintButtonState(remainingHints <= 0);
+        quizTimer.StartTimer(timeLimit, quizUI.UpdateTimerDisplay);
+
+        // Replace old hint listener
+        quizUI.SetHintAction(() => UseHintNew(CorrectAnswerIndex, OptionsToBeRemoved));
+
+        // Replace old option listeners
+        quizUI.SetOptionAction(HandleOptionSelected);
     }
+
     
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else { Destroy(gameObject); return; }
-
-        if (quizUI != null)
-        {
-            quizUI.OnOptionSelected += HandleOptionSelected;
-            //quizUI.OnHintRequested += UseHintNew();
-        }
-
         if (quizTimer != null)
         {
             // Time up = treat as incorrect
-            quizTimer.OnTimeUp.AddListener(_ => EndQuiz(false));
+            //quizTimer.OnTimeUp.AddListener(_ => EndQuiz(false));
         }
     }
 
+    public void OnQuizCompletedOffline()
+    {
+        
+    }
     #region Public API used by your setup
 
     public void CacheQuestionsFromLevel()
@@ -131,16 +135,13 @@ public class QuizManager : MonoBehaviour
     public void UseHintNew(int CorrectAnswerIndex,int OptionsToBeRemoved)
     {
         QuizHintSystem hintSystem = new QuizHintSystem();
-
-        // Example: 4 options, correct is index 2, remove 2 wrong ones
+        
         List<int> toRemove = hintSystem.GetHints(4, CorrectAnswerIndex, OptionsToBeRemoved);
 
         foreach (int idx in toRemove)
         {
-            quizUI.RemoveOption(idx); // UI decides how to hide
+            quizUI.RemoveOption(idx);
         }
-
-        
     }
 
     private void HandleOptionSelected(int selectedIndex)
@@ -149,24 +150,16 @@ public class QuizManager : MonoBehaviour
 
         bool isCorrect = selectedIndex == currentQuestion.correctAnswerIndex;
 
-        // Get the clicked button
-        var clickedButton = quizUI.optionButtons[selectedIndex];
-        if (clickedButton != null && clickedButton.image != null)
-        {
-            clickedButton.transform.GetChild(1).GetComponent<Image>().sprite = isCorrect ? correctButton : IncorrectButton;
-        }
-
-        EndQuiz(isCorrect);
+        EndQuiz(isCorrect, true);
     }
 
 
-   // private void HandleHintRequest() => UseHintNew();
 
     #endregion
 
     #region Finish + report to server
 
-    private void EndQuiz(bool isCorrect)
+    private void EndQuiz(bool isCorrect, bool isOffline)
     {
         // Stop local UI
         if (quizTimer != null) quizTimer.StopTimer();
@@ -174,7 +167,24 @@ public class QuizManager : MonoBehaviour
 
         float timeTaken = quizTimer != null ? quizTimer.ElapsedTime : 0f;
 
+        if (!isOffline)
+        {
+            if (QuizCompletedOnline(isCorrect, timeTaken)) return;
+        }
         // Multiplayer path: send result to server so movement/turn advance happens server-side
+       
+
+        // Fallback (offline or no netFlow): invoke event locally
+        QuizCompleteOffline(isCorrect, timeTaken);
+    }
+
+    private void QuizCompleteOffline(bool isCorrect, float timeTaken)
+    {
+        OnQuizCompleted?.Invoke(currentPlayer, isCorrect, currentQuestion != null ? currentQuestion.difficulty : Difficulty.Easy, timeTaken);
+    }
+
+    private bool QuizCompletedOnline(bool isCorrect, float timeTaken)
+    {
         if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsClient && !IsOffline())
         {
             ulong localId = NetworkManager.Singleton.LocalClientId;
@@ -185,14 +195,11 @@ public class QuizManager : MonoBehaviour
                 netFlow.SendQuizResultServerRpc(localId, isCorrect,
                     currentQuestion != null ? currentQuestion.difficulty : Difficulty.Easy,
                     timeTaken);
-                return;
+                return true;
             }
         }
 
-        // Fallback (offline or no netFlow): invoke event locally
-        OnQuizCompleted?.Invoke(currentPlayer, isCorrect,
-            currentQuestion != null ? currentQuestion.difficulty : Difficulty.Easy,
-            timeTaken);
+        return false;
     }
 
     private bool IsOffline()

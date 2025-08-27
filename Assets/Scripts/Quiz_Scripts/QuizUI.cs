@@ -15,8 +15,6 @@ public class QuizUI : MonoBehaviour
     public TMP_Text timerText;
     public Button hintButton;
     public List<Button> optionButtons;
-    public Button optionButtonPrefab;
-    public Transform optionButtonTransform;
     public Sprite defaultButtonSprite;
     public TMP_Text Difficulty_text;
 
@@ -32,35 +30,45 @@ public class QuizUI : MonoBehaviour
 
     [Header("Characters Reference")]
     public CharacterSCO chars;
-    public event Action<int> OnOptionSelected;
-    public event Action OnHintRequested;
     
-
+    private Action<int> onOptionSelected;
+    private Action onHintAction;
+    
+    
     private void Start()
     {
-        if (hintButton) hintButton.onClick.AddListener(() => OnHintRequested?.Invoke());
+        if (hintButton) hintButton.onClick.AddListener(() => onHintAction?.Invoke());
+
         for (int i = 0; i < optionButtons.Count; i++)
         {
             int idx = i;
             var b = optionButtons[i];
-            if (b) b.onClick.AddListener(() => OnOptionSelected?.Invoke(idx));
+            if (b) b.onClick.AddListener(() => onOptionSelected?.Invoke(idx));
         }
-        
     }
-
     
-    //
+    public void SetOptionAction(Action<int> action)
+    {
+        onOptionSelected = action;
+    }
+    public void SetHintAction(Action action)
+    {
+        onHintAction = action;
+    }
+    
     public void ShowQuizPannelWithDetails(string question, string[] answers, float timeLimit, Difficulty difficulty)
     {
         if (quizPanel) quizPanel.SetActive(true);
         if (questionText) questionText.text = question;
-        for (int i = 0; i < answers.Length; i++)
+        for (int i = 0; i < optionButtons.Count; i++)
         {
-            int idx = i;
-            Button button = Instantiate(optionButtonPrefab, optionButtonTransform);
-            button.GetComponentInChildren<TMP_Text>().text = answers[idx];
-            optionButtons.Add(button);
-            button.onClick.AddListener(() => OnOptionSelected?.Invoke(idx));
+            if (i < answers.Length) 
+            { 
+                optionButtons[i].gameObject.SetActive(true); 
+                var t = optionButtons[i].GetComponentInChildren<TMP_Text>(); 
+                if (t) t.text = answers[i]; 
+            }
+            else optionButtons[i].gameObject.SetActive(false);
         }
         SetDifficultyColorAndText(difficulty);
     }
@@ -73,7 +81,7 @@ public class QuizUI : MonoBehaviour
             if (i < q.options.Length) { optionButtons[i].gameObject.SetActive(true); var t = optionButtons[i].GetComponentInChildren<TMP_Text>(); if (t) t.text = q.options[i]; }
             else optionButtons[i].gameObject.SetActive(false);
         }
-        ResetOptionSprites();
+        //ResetOptionSprites();
     }
     public void ShowCharacter(QuizQuestionData q)
     {
