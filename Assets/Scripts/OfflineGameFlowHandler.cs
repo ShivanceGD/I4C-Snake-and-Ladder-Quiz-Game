@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class OfflineGameFlowHandler : MonoBehaviour
 {
@@ -24,6 +23,7 @@ public class OfflineGameFlowHandler : MonoBehaviour
     {
         BootStrapBoard();
         BootStrapAllPlayers();
+        BootStrapEventWiring();
     }
 
     public void StartOfflineGame()
@@ -33,11 +33,37 @@ public class OfflineGameFlowHandler : MonoBehaviour
         //Again ask for turn and cycle repeats
         if (AllPlayers.Count != 0 && !IsGameOver())
         {
-            OnTurnStartedAction.Invoke(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
+            OnTurnStartedAction?.Invoke(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
         }
         
         
     }
+    #region Event Wiring
+    private void BootStrapEventWiring()
+    {
+        OnTurnStartedAction += (_) => HandleStartTurnOffline(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
+    }
+
+    private void HandleStartTurnOffline(PlayerGameData player)
+    {
+        if (player == null)
+        {
+            Debug.LogError("No Player Found To Start Turn");
+            return;
+        }
+
+        if (player.PlayerType == PlayerType.Human)
+        {
+            //QuizManager.Instance.ShowQuizNew();
+        }
+        else if (player.PlayerType == PlayerType.CPU)
+        {
+            //Start Random Movement
+        }
+        else Debug.LogError("No Player Type Found");
+        
+    }
+    #endregion
 
     #region Spawn/Register Players
 
@@ -87,63 +113,30 @@ public class OfflineGameFlowHandler : MonoBehaviour
     }
     #endregion
     
-    //Todo
     public void UpdatePlayersAllGameData(Player player, string question = null, string answer = null, bool? isCorrect = null, int? newIndex = null, bool? finished = false, bool incrementMove = false)
     {
         if (AllPlayers.TryGetValue(player, out var data))
         {
             data.UpdatePlayersDataQuestionAndAnswer( data, question, answer);
-            data.UpdatePlayersDataCorrectOrIncorrectCounter(data, isCorrect.Value);
-            if(newIndex!=null){ data.UpdatePlayersDataIndexData(data,newIndex.Value); }
+            data.UpdatePlayersDataCorrectOrIncorrectCounter(data, isCorrect != null && isCorrect.Value);
+            if(newIndex!=null){ data.UpdatePlayersDataIndexData(data, newIndex.Value); }
             if(incrementMove) { data.UpdatePlayersDataMovesCounter(data);}
-            if(finished == true ) { data.UpdatePlayersDataMarkFinished(data, true);}
-            
-            //call all
+            if(finished == true ) { data.UpdatePlayersDataMarkFinished(data,true);}
         }
     }
     private bool IsGameOver()
     {
-        int activePlayers = 0;
+        int playersFinished = 0;
 
         foreach (var kvp in AllPlayers)
         {
             PlayerGameData data = kvp.Value;
-
-            // If this player is not finished, they are still active
             if (!data.GetPlayerDataFinishedState(data))
             {
-                activePlayers++;
+                playersFinished++;
             }
         }
-
-        // Game over when <= 1 active player remains
-        return activePlayers <= 1;
+        return playersFinished <= 1;
     }
-#region Event Wiring
-    public void EventWiring()
-    {
-            OnTurnStartedAction += (PlayerGameData) => HandleStartTurn(AllPlayers.ElementAt(TurnHandler.Instance.GetCurrentTurnIndex()).Value);
-    }
-
-    public void HandleStartTurn(PlayerGameData player)
-    {
-        if (player == null)
-        {
-            Debug.LogError("No Player Found To Start Turn");
-            return;
-        }
-
-        if (player.PlayerType == PlayerType.Human)
-        {
-            //Start Quiz
-        }
-        else if (player.PlayerType == PlayerType.CPU)
-        {
-            //Start Random Movement
-        }
-        else Debug.LogError("No Player Type Found");
-        
-    }
-#endregion
 }
 

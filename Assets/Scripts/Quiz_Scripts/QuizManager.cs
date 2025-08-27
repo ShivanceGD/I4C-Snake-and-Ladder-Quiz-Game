@@ -7,9 +7,7 @@ using UnityEngine.UI;
 public class QuizManager : MonoBehaviour
 {
     public static QuizManager Instance;
-
     
-
     [Header("Systems")]
     [SerializeField] private QuizUI quizUI;
     [SerializeField] private QuizTimer quizTimer;
@@ -20,6 +18,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private int wrongAnswersToRemove = 2;
 
     // Raised on the SERVER to drive movement/turn advance (GameManager subscribes)
+    
     public Action<PlayerManager, bool, Difficulty, float> OnQuizCompleted;
     private int lastQuestionIndex;
 
@@ -33,6 +32,12 @@ public class QuizManager : MonoBehaviour
 
     public Sprite correctButton, IncorrectButton;
 
+    //
+    public void ShowQuizNew(string question, string[] answers, float timeLimit, Difficulty difficulty, int remainingHints)
+    {
+        
+    }
+    
     private void Awake()
     {
         if (Instance == null) Instance = this;

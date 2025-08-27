@@ -14,14 +14,16 @@ public class QuizUI : MonoBehaviour
     public TMP_Text timerText;
     public Button hintButton;
     public Button[] optionButtons;
+    public Button optionButtonPrefab;
+    public Transform optionButtonTransform;
     public Sprite defaultButtonSprite;
+    public TMP_Text Difficulty_text;
 
     [Header("Character Panel UI")]
     public Image Character_Icon;
     public Image CharacterBackground_Icon;
     public TMP_Text CharacterName_text;
     public TMP_Text CharacterInfo_text;
-    public TMP_Text Difficulty_text;
     [Header("Misc")]
     [SerializeField] Color Easy;
     [SerializeField] Color Medium;
@@ -42,8 +44,23 @@ public class QuizUI : MonoBehaviour
             var b = optionButtons[i];
             if (b) b.onClick.AddListener(() => OnOptionSelected?.Invoke(idx));
         }
+        
     }
 
+    
+    //
+    public void ShowQuizPannelWithDetails(string question, string[] answers, float timeLimit, Difficulty difficulty)
+    {
+        if (quizPanel) quizPanel.SetActive(true);
+        if (questionText) questionText.text = question;
+        for (int i = 0; i < answers.Length; i++)
+        {
+            int idx = i;
+            Button button = Instantiate(optionButtonPrefab, optionButtonTransform);
+            button.GetComponentInChildren<TMP_Text>().text = answers[idx];
+            button.onClick.AddListener(() => OnOptionSelected?.Invoke(idx));
+        }
+    }
     public void ShowQuestion(QuizQuestionData q)
     {
         if (quizPanel) quizPanel.SetActive(true);
