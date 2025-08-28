@@ -1,68 +1,7 @@
-/*
-using UnityEngine;
-using Unity.Services.Core;
-using UnityEngine.Events;
-using TMPro;
-using UnityEngine.UI;
-
-public class AuthManager : MonoBehaviour
-{
-    [Header("Pannels")]
-    //public GameObject AuthenticationPannel;
-    public GameObject SuccessFailPannel;
-    public TMP_Text SuccessFail_text;
-
-    [Header("Profile")]
-    public TMP_Text UserName;
-    public TMP_Text UID;
-
-    [Header("Username Password")]
-    public TMP_InputField Username;
-    public TMP_InputField Password;
-    public Button UsernameSignUpButton, UsernameSignInButton;
-
-    [Header("Logout")]
-    public Button Logout;
-
-    [Header("Events")]
-    public UnityEvent OnSignedIn, onExpired, onSignedOut,OnSignInFailed;
-
-    public void RegisterAuthEvents()
-    {
-        
-        AuthExtensions.RegisterEvents(OnSignedIn, onExpired, onSignedOut,OnSignInFailed);
-    }
-
-    [ContextMenu("LINK")]
-    public async void SignUpProfile()
-    {
-        await AuthExtensions.SignUpWithUsernamePasswordAsync(Username.text,Password.text);
-    }
-
-    public void GetUserName()
-    {
-        Username.text = AuthExtensions.GetCachedPlayerName();
-        UID.text = AuthExtensions.GetPlayerID();
-    }
-    public async void SignInButton()
-    {
-      await  AuthExtensions.SignInWithUsernamePasswordAsync(Username.text, Password.text);
-    }
-    public void UpdateText(string txt)
-    {
-        SuccessFail_text.text = txt;
-    }
-    public void SignoutButton()
-    {
-        AuthExtensions.SignOut();
-    }
-}
-*/
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 using UnityEngine.UI;
-using System.Threading.Tasks;
 using Unity.Services.Core;
 
 public class AuthManager : MonoBehaviour
@@ -93,12 +32,12 @@ public class AuthManager : MonoBehaviour
     public UnityEvent OnSignedIn;
     public UnityEvent OnExpired;
     public UnityEvent OnSignedOut;
-    public UnityEvent<string> OnAuthMessage; // carries messages
+    public UnityEvent<string> OnAuthMessage;
 
     private void Start()
     {
         UnityServices.InitializeAsync();
-        // Subscribe UI buttons
+
 #if Unity_Editor || UNITY_STANDALONE_WIN
         {
         GooglePlaySignInButton.gameObject.SetActive(false);
@@ -107,7 +46,6 @@ public class AuthManager : MonoBehaviour
         UsernameSignUpButton.onClick.AddListener(SignUpProfile);
         UsernameSignInButton.onClick.AddListener(SignInButton);
         GuestButton.onClick.AddListener(GuestSignIn);
-        //Logout.onClick.AddListener(SignoutButton);
 
         // Register auth events
         AuthExtensions.RegisterEvents(
@@ -127,8 +65,8 @@ public class AuthManager : MonoBehaviour
         }
 
         string result = await AuthExtensions.SignUpWithUsernamePasswordAsync(Username_SignUp.text, Password_SignUp.text);
-        ShowMessage(result, Color.green);
-        UpdateProfileUI();
+        ShowMessage(result, Color.red);
+        //UpdateProfileUI();
     }
 
     public async void GuestSignIn()

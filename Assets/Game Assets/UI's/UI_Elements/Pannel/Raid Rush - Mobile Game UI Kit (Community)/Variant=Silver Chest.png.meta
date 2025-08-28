@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Variant=Silver Chest_0: 1983138497325168432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

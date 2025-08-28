@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shop-Card-Coins-Title_0: 1399208934991835926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

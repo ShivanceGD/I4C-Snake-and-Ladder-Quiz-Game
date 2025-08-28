@@ -23,7 +23,7 @@ MonoBehaviour:
   OptionsToRemoveOnHint: 0
   Board: {fileID: 11400000, guid: 0d2152d47638ae14eafcaff865620880, type: 2}
   PlayerPrefab: {fileID: 8567868040279243809, guid: 80839167c1967514d96ae271faa0914b, type: 3}
-  CPUPrefab: {fileID: 8567868040279243809, guid: 80839167c1967514d96ae271faa0914b, type: 3}
+  CPUPrefab: {fileID: 8567868040279243809, guid: 3c970a4e5299a794cb991686976a43c4, type: 3}
   DiceRollRangePerQuizDifficulty:
     _serializedList:
     - Key: 0

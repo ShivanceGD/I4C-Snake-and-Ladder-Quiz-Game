@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Variant=Epic, Special Card=true_0: -3377404784759064516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

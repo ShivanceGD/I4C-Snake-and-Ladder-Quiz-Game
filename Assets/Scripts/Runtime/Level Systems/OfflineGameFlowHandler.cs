@@ -19,6 +19,7 @@ public class OfflineFlowManager : MonoBehaviour
     public GameObject HowToPlayPanelPrefab;
     public Transform CanvasTransform;
     private GameObject HowToPlayPanel;
+    public BoardManager boardManager;
     
 
     // central player-state store
@@ -29,29 +30,15 @@ public class OfflineFlowManager : MonoBehaviour
 
     [Header("Player Colors (assigned in order)")]
     public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
-    private void FindingManagersInScene()
-    {
-        if (movementManager == null) movementManager = FindFirstObjectByType<MovementManager>();
-        if (quizManager == null) quizManager = FindFirstObjectByType<QuizManager>();
-        if (offlineTurnHandler == null) offlineTurnHandler = FindFirstObjectByType<OfflineTurnLogic>();
-    }
 
-    private async void Start()
-    {
-        /*try
-        {
-            await BootstrapLevel();
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }*/
-    }
-
-    [ContextMenu("StartLevel")]
-    public void StartLevel()
+    private void Start()
     {
         BootstrapLevel();
+        BootStrapAllPlayers();
+    }
+    public void StartTurn()
+    {
+
         Destroy(HowToPlayPanel);
         StartCoroutine(StartFirstTurnNextFrame());
     }
@@ -66,21 +53,20 @@ public class OfflineFlowManager : MonoBehaviour
     private async Task BootstrapLevel()
     {
         HowToPlayPanel = Instantiate(HowToPlayPanelPrefab,CanvasTransform);
-        GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>().onClick.AddListener(StartLevel);
-        FindingManagersInScene();
+        GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>().onClick.AddListener(StartTurn);
+        
         // 1) Board
         if (CurrentLevelData.Board?.BoardPrefab != null)
         {
-            
             Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
-            //await Task.Yield();
+            if(boardManager == null) boardManager = FindFirstObjectByType<BoardManager>();
+            await Task.Yield();
             
             BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberPrefabToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight);
         }
         else Debug.LogWarning("[OfflineFlowManager] Board prefab missing in levelData.");
 
-        // 2) Spawn Players
-        BootStrapAllPlayers();
+        FindingManagersInScene();
 
         // 3) Load quiz questions into QuizManager
         quizManager.LoadQuestions(CurrentLevelData.LevelQuizSCO);
@@ -105,12 +91,21 @@ public class OfflineFlowManager : MonoBehaviour
         offlineTurnHandler.RegisterPlayers(list);
         Debug.Log($"[OfflineFlowManager] Bootstrapped {AllPlayers.Count} players.");
     }
-
+    
+    private void FindingManagersInScene()
+    {
+        if (movementManager == null) movementManager = FindFirstObjectByType<MovementManager>();
+        if (quizManager == null) quizManager = FindFirstObjectByType<QuizManager>();
+        if (offlineTurnHandler == null) offlineTurnHandler = FindFirstObjectByType<OfflineTurnLogic>();
+        
+    }
+    
     private void SpawnCPUPlayerOffline(int paletteLen)
     {
         if (CurrentLevelData.CPUPrefab != null)
         {
             var bot = Instantiate(CurrentLevelData.CPUPrefab);
+            bot.transform.position = boardManager.StartPoint.position;
             bot.name = "CPU";
             var cpu = bot.GetComponent<Player>();
             Color cpuColor = paletteLen > 0 ? PlayerColors[TotalPlayersToSpawn % paletteLen] : cpu.Color;
@@ -127,7 +122,7 @@ public class OfflineFlowManager : MonoBehaviour
         for (int i = 0; i < TotalPlayersToSpawn; i++)
         {
             var obj = Instantiate(CurrentLevelData.PlayerPrefab);
-            obj.transform.position = PlayerSpawnLocation.position;
+            obj.transform.position = boardManager.StartPoint.position;
             obj.name = $"Player{i + 1}";
             var player = obj.GetComponent<Player>();
             Color assigned = paletteLen > 0 ? PlayerColors[i % paletteLen] : player.Color;
@@ -208,14 +203,12 @@ public class OfflineFlowManager : MonoBehaviour
     private IEnumerator CpuSequence(Player cpu)
     {
         yield return new WaitForSeconds(0.5f);
-        bool correct = Random.value > 0.35f;
+        bool correct = Random.value > 0.2;
         float t = Random.Range(2f, 8f);
         QuestionsDifficulty d = QuestionsDifficulty.Easy;
-        movementManager.ProcessPostQuizMovement(cpu, correct, d, t, CurrentLevelData.Board,
-            CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
+        movementManager.ProcessPostQuizMovement(cpu, correct, d, t, CurrentLevelData.Board, CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
             {
-                UpdatePlayerDataAfterMovement(cpu, null,
-                    new QuizResult { IsCorrect = correct, SelectedIndex = -1, TimeTaken = t }, mres);
+                UpdatePlayerDataAfterMovement(cpu, null, new QuizResult { IsCorrect = correct, SelectedIndex = -1, TimeTaken = t }, mres);
                 if (mres.Finished)
                 {
                     Debug.Log($"[OfflineFlowManager] {cpu.name} finished.");

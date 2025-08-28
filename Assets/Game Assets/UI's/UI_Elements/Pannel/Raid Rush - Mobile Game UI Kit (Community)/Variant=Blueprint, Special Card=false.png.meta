@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Variant=Blueprint, Special Card=false_0: 6415304140012642167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu.unity
     guid: 5556a66a973b6484f80d500c2cae1af7
   - enabled: 1
+    path: Assets/Scenes/Offline_Level.unity
+    guid: 1d6a34c5dba67e546b1130b1836c4004
+  - enabled: 1
     path: Assets/Scenes/Multiplayer_Lobby_Select.unity
     guid: 4db8c797828c37e4aad99439d76ef699
   - enabled: 1

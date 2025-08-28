@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Variant=Obsidian Chest_0: -6122440605764882145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

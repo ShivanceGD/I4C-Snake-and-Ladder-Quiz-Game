@@ -6,6 +6,7 @@ public class BoardManager : MonoBehaviour
 {
     [Header("Reference")]
     public Tilemap tilemap;
+    public Transform StartPoint;
 
     [Header("Height and Width")]
     public int boardWidth = 10;

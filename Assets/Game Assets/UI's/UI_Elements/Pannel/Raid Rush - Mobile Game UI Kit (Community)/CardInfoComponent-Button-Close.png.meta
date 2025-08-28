@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CardInfoComponent-Button-Close_0: 6582508320017343850
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

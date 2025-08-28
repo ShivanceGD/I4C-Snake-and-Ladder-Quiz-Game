@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shop-Card-Gems-Title_0: 6923379235698570973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

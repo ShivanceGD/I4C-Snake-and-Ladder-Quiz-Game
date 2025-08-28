@@ -86,6 +86,7 @@ public class LoadingSceneManager : MonoBehaviour
                 TransitionManager.Instance().Transition(transition, 0);
                 yield return new WaitForSeconds(1f);
                 operation.allowSceneActivation = true;
+                loadingScreen.SetActive(false);
             }
 
             yield return null;
