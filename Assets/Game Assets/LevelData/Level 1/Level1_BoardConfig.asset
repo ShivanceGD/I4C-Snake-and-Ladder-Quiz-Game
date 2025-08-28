@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level1_BoardConfig
   m_EditorClassIdentifier: 
   BoardPrefab: {fileID: 662205634618706673, guid: 5ef86cee8750d2b47998580ed0d1a955, type: 3}
-  NumberToSpawnOnBoard: {fileID: 5471844210743242975, guid: daa9e7369db538649851accdb1543156, type: 3}
+  NumberPrefabToSpawnOnBoard: {fileID: 5471844210743242975, guid: daa9e7369db538649851accdb1543156, type: 3}
   BoardHeight: 10
   BoardWidth: 10
   Snakes:

@@ -63,6 +63,7 @@ using UnityEngine.Events;
 using TMPro;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using Unity.Services.Core;
 
 public class AuthManager : MonoBehaviour
 {
@@ -74,14 +75,19 @@ public class AuthManager : MonoBehaviour
     public TMP_Text UserName;
     public TMP_Text UID;
 
-    [Header("Username Password")]
-    public TMP_InputField Username;
-    public TMP_InputField Password;
-    public Button UsernameSignUpButton;
+    [Header("SignIn References")]
+    public TMP_InputField Username_SignIn;
+    public TMP_InputField Password_SignIn;
     public Button UsernameSignInButton;
+    [Header("SignUp References")]
+    public TMP_InputField Username_SignUp;
+    public TMP_InputField Password_SignUp;
+    public Button UsernameSignUpButton;
+    public Button GuestButton;
+    public Button GooglePlaySignInButton;
 
     [Header("Logout")]
-    public Button Logout;
+   // public Button Logout;
 
     [Header("Events")]
     public UnityEvent OnSignedIn;
@@ -91,10 +97,17 @@ public class AuthManager : MonoBehaviour
 
     private void Start()
     {
+        UnityServices.InitializeAsync();
         // Subscribe UI buttons
+#if Unity_Editor || UNITY_STANDALONE_WIN
+        {
+        GooglePlaySignInButton.gameObject.SetActive(false);
+        }
+#endif
         UsernameSignUpButton.onClick.AddListener(SignUpProfile);
         UsernameSignInButton.onClick.AddListener(SignInButton);
-        Logout.onClick.AddListener(SignoutButton);
+        GuestButton.onClick.AddListener(GuestSignIn);
+        //Logout.onClick.AddListener(SignoutButton);
 
         // Register auth events
         AuthExtensions.RegisterEvents(
@@ -107,26 +120,30 @@ public class AuthManager : MonoBehaviour
 
     public async void SignUpProfile()
     {
-        if (string.IsNullOrEmpty(Username.text) || string.IsNullOrEmpty(Password.text))
+        if (string.IsNullOrEmpty(Username_SignUp.text) || string.IsNullOrEmpty(Password_SignUp.text))
         {
             ShowMessage("Username and Password cannot be empty!", Color.red);
             return;
         }
 
-        string result = await AuthExtensions.SignUpWithUsernamePasswordAsync(Username.text, Password.text);
+        string result = await AuthExtensions.SignUpWithUsernamePasswordAsync(Username_SignUp.text, Password_SignUp.text);
         ShowMessage(result, Color.green);
         UpdateProfileUI();
     }
 
+    public async void GuestSignIn()
+    {
+        await AuthExtensions.SignInAnonymouslyAsync();
+    }
     public async void SignInButton()
     {
-        if (string.IsNullOrEmpty(Username.text) || string.IsNullOrEmpty(Password.text))
+        if (string.IsNullOrEmpty(Username_SignIn.text) || string.IsNullOrEmpty(Password_SignIn.text))
         {
             ShowMessage("Username and Password cannot be empty!", Color.red);
             return;
         }
 
-        string result = await AuthExtensions.SignInWithUsernamePasswordAsync(Username.text, Password.text);
+        string result = await AuthExtensions.SignInWithUsernamePasswordAsync(Username_SignIn.text, Password_SignIn.text);
         if (result.StartsWith("Success"))
             ShowMessage("Signed in successfully!", Color.green);
         else

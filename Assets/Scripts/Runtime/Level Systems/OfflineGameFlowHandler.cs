@@ -38,19 +38,20 @@ public class OfflineFlowManager : MonoBehaviour
 
     private async void Start()
     {
-        try
+        /*try
         {
             await BootstrapLevel();
         }
         catch (Exception e)
         {
             Debug.Log(e);
-        }
+        }*/
     }
 
     [ContextMenu("StartLevel")]
     public void StartLevel()
     {
+        BootstrapLevel();
         Destroy(HowToPlayPanel);
         StartCoroutine(StartFirstTurnNextFrame());
     }
@@ -72,7 +73,7 @@ public class OfflineFlowManager : MonoBehaviour
         {
             
             Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
-            await Task.Yield();
+            //await Task.Yield();
             
             BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberPrefabToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight);
         }
@@ -109,7 +110,7 @@ public class OfflineFlowManager : MonoBehaviour
     {
         if (CurrentLevelData.CPUPrefab != null)
         {
-            var bot = Instantiate(CurrentLevelData.CPUPrefab, PlayerSpawnLocation);
+            var bot = Instantiate(CurrentLevelData.CPUPrefab);
             bot.name = "CPU";
             var cpu = bot.GetComponent<Player>();
             Color cpuColor = paletteLen > 0 ? PlayerColors[TotalPlayersToSpawn % paletteLen] : cpu.Color;

@@ -266,76 +266,6 @@ MonoBehaviour:
   m_Spacing: {x: 100, y: 100}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!1 &312071114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 312071115}
-  - component: {fileID: 312071116}
-  - component: {fileID: 312071117}
-  m_Layer: 0
-  m_Name: Network Flow Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &312071115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312071114}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &312071116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312071114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2889243957
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 0
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
---- !u!114 &312071117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312071114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1094a8dff230145b181698f956df79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &314810384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,10 +2478,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentLevelData: {fileID: 11400000, guid: 374c7815719c8904590325f1bd64490c, type: 2}
   boardParent: {fileID: 2066640058}
-  PlayerSpawnLocation: {fileID: 0}
+  PlayerSpawnLocation: {fileID: 903157959}
   movementManager: {fileID: 1059952292}
   quizManager: {fileID: 662343069}
-  turnHandler: {fileID: 0}
+  offlineTurnHandler: {fileID: 0}
   HowToPlayPanelPrefab: {fileID: 5453255641188065005, guid: 829b411ca801c624cb5a9c24f8646f6a, type: 3}
   CanvasTransform: {fileID: 1542624319}
   AllPlayers:
@@ -17466,7 +17396,6 @@ SceneRoots:
   - {fileID: 903157959}
   - {fileID: 1206277071}
   - {fileID: 1059952293}
-  - {fileID: 312071115}
   - {fileID: 133396340}
   - {fileID: 662343065}
   - {fileID: 1031087001199236114}

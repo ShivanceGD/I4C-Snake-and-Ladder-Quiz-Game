@@ -753,17 +753,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2864486697453313632, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
   m_PrefabInstance: {fileID: 171099128}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &171099130 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5585583631189188578, guid: c2de0605e80bf4d5ab6cf8ffb6b6e072, type: 3}
-  m_PrefabInstance: {fileID: 171099128}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &194233639 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4835658423302709099, guid: 21b729d6d03734632b580817a5589b60, type: 3}
@@ -1348,11 +1337,14 @@ MonoBehaviour:
   SuccessFailText: {fileID: 958393142}
   UserName: {fileID: 5194687243551594087}
   UID: {fileID: 8840050517602308202}
-  Username: {fileID: 5034601548085070919}
-  Password: {fileID: 7859990637214423566}
-  UsernameSignUpButton: {fileID: 4872555796598835910}
+  Username_SignIn: {fileID: 0}
+  Password_SignIn: {fileID: 0}
   UsernameSignInButton: {fileID: 3971613658847548122}
-  Logout: {fileID: 171099130}
+  Username_SignUp: {fileID: 0}
+  Password_SignUp: {fileID: 0}
+  UsernameSignUpButton: {fileID: 4872555796598835910}
+  GuestButton: {fileID: 0}
+  GooglePlaySignInButton: {fileID: 0}
   OnSignedIn:
     m_PersistentCalls:
       m_Calls: []
@@ -4714,7 +4706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1881455083
 GameObject:
   m_ObjectHideFlags: 0
