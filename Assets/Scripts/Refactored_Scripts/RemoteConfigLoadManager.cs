@@ -33,7 +33,7 @@ public class RemoteConfigLoadManager : MonoBehaviour
         Debug.Log("Unlocked Levels: " + string.Join(",", unlockedLevels));
     }*/
 
-    public async Task<List<int>> GetDefaultUnlockedLevels()
+    public Task<List<int>> GetDefaultUnlockedLevels()
     {
         string result = RemoteConfigService.Instance.appConfig.GetJson(DefaultUnlockedLevelKey);
 
@@ -41,10 +41,10 @@ public class RemoteConfigLoadManager : MonoBehaviour
         {
             // Deserialize JSON into wrapper
             LevelsToBeUnlockedConfigWrapper wrapper = JsonUtility.FromJson<LevelsToBeUnlockedConfigWrapper>(result);
-            return wrapper.levelNumbersToUnlock;
+            return Task.FromResult(wrapper.levelNumbersToUnlock);
         }
 
-        return new List<int>(); // return empty if not found
+        return Task.FromResult(new List<int>()); // return empty if not found
     }
 }
 

@@ -1377,9 +1377,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494466bff06447ef91560d653fa2325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onBootStrapped:
+    m_PersistentCalls:
+      m_Calls: []
   UiManager: {fileID: 0}
   SoundManagerPrefab: {fileID: 0}
   RemoteConfigManagerPrefab: {fileID: 0}
+  LoadingSceneManagerPrefab: {fileID: 0}
 --- !u!1001 &426091374
 PrefabInstance:
   m_ObjectHideFlags: 0
