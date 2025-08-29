@@ -1,8 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
+using TMPro;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -19,6 +21,10 @@ public class OfflineFlowManager : MonoBehaviour
     public Transform CanvasTransform;
     private GameObject HowToPlayPanel;
     public BoardLogicManager boardManager;
+    [Header("LeaderBoard References")]
+    [SerializeField]private GameObject LeaderBoard;
+    [SerializeField]private GameObject RankPrefab;
+    [SerializeField]private Transform RankingTransform;
     
     // central player-state store
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new();
@@ -260,19 +266,35 @@ public class OfflineFlowManager : MonoBehaviour
 
     private void ShowLeaderboard()
     {
+        LeaderBoard.SetActive(true);
         Debug.Log("[OfflineFlowManager] === Leaderboard ===");
         var ranking = AllPlayers.OrderByDescending(kv => kv.Value.PlayerCurrentGameStateData.CurrentIndex).ThenByDescending(kv => kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered).ToList();
         int rank = 1;
         foreach (var kv in ranking)
         {
+            SetLeaderBoardRankings(rank, kv);
             Debug.Log($"{rank}. {kv.Value.Name} - tile:{kv.Value.PlayerCurrentGameStateData.CurrentIndex} correct:{kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered}");
             rank++;
         }
     }
 
+    private void SetLeaderBoardRankings(int rank, KeyValuePair<Player, PlayerGameData> kv)
+    {
+        GameObject ranks = Instantiate(RankPrefab, RankingTransform);
+        ranks.transform.GetChild(4).GetChild(3).GetComponent<Image>().color = kv.Value.Color;
+        ranks.transform.GetChild(0).GetComponent<TMP_Text>().text = kv.Value.Name;
+        ranks.transform.GetChild(1).GetComponentInChildren<TMP_Text>().text = rank.ToString();
+        ranks.transform.GetChild(2).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered.ToString();
+        ranks.transform.GetChild(3).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.CurrentIndex.ToString();
+    }
+
     public void SwitchScene(string SceneName)
     {
         LoadingSceneManager.Instance.LoadScene(SceneName);
-        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading Main Menu \n Please Wait!");
+        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading Menu");
+    }
+    public void PauseAndResumeGame(float f)
+    {
+        Time.timeScale = f;
     }
 }
