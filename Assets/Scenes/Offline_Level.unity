@@ -16314,9 +16314,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoardShinyPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6632144098797190551, guid: 009638a05b0cd254c80f5f8cd4641545, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8755298131586487985, guid: 009638a05b0cd254c80f5f8cd4641545, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8755298131586487985, guid: 009638a05b0cd254c80f5f8cd4641545, type: 3}
       propertyPath: m_LocalPosition.y

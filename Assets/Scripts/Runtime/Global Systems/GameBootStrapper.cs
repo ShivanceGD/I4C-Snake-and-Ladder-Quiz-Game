@@ -41,9 +41,8 @@ public class GameBootStrapper : MonoBehaviour
         // Instantiate managers
         LoadingSceneManager loadedSceneManager = Instantiate(LoadingSceneManagerPrefab);
 
-        await Task.Yield(); // let Unity process instantiate
-
-        // Unload bootstrap scene if you don’t need it anymore
+        await Task.Yield();
+        
         if (!string.IsNullOrEmpty(BootStrapperSceneName))
         {
             var unloadOp = SceneManager.UnloadSceneAsync(BootStrapperSceneName);
@@ -62,11 +61,6 @@ public class GameBootStrapper : MonoBehaviour
         try
         {
             await UnityServices.InitializeAsync();
-
-            if (!Unity.Services.Authentication.AuthenticationService.Instance.IsSignedIn)
-            {
-                await AuthExtensions.SignInCachedOrAnonymousAsync();
-            }
 
             RemoteConfigService.Instance.FetchConfigs(new userAttribute(), new appAttribute());
             if (token.IsCancellationRequested) return;
