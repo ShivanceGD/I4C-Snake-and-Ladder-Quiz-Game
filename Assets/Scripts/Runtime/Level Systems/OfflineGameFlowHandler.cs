@@ -269,4 +269,10 @@ public class OfflineFlowManager : MonoBehaviour
             rank++;
         }
     }
+
+    public void SwitchScene(string SceneName)
+    {
+        LoadingSceneManager.Instance.LoadScene(SceneName);
+        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading Main Menu \n Please Wait!");
+    }
 }

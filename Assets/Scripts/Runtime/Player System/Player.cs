@@ -4,11 +4,10 @@ using Unity.Netcode;
 
 public class Player : MonoBehaviour
 {
-    [Header("Player meta")]
-    public string PlayerName = "Player";
+    [Header("Player meta")] public string PlayerName = "Player";
     public bool IsCpu = false;
     public Color Color = Color.white;
-
+    public SpriteRenderer PlayerSprite;
     [HideInInspector] public List<QuizQuestionData> QuestionsList = new();
 
     public PlayerMovement Movement { get; private set; }
@@ -44,27 +43,11 @@ public class Player : MonoBehaviour
     public void ApplyColor(Color c)
     {
         Color = c;
-        var sr = GetComponentInChildren<SpriteRenderer>();
-        if (sr != null)
-        {
-            sr.color = c;
-            return;
-        }
 
-        var r = GetComponentInChildren<Renderer>();
-        if (r != null)
+        if (PlayerSprite != null)
         {
-            if (r.material != null) r.material.color = c;
-            return;
+            PlayerSprite.color = c;
+            
         }
-
-#if UNITY_UI
-        var img = GetComponentInChildren<UnityEngine.UI.Image>();
-        if (img != null)
-        {
-            img.color = c;
-            return;
-        }
-#endif
     }
 }

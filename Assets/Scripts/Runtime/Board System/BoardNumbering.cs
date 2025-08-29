@@ -15,7 +15,7 @@ public class BoardNumbering : MonoBehaviour
     {
         for (int i = 0; i < BoardSize; i++)
         {
-            Vector3 worldPos = BoardManager.TilePositions[i];
+            Vector3 worldPos = BoardLogicManager.TilePositions[i];
             worldPos.z = zLocationOfText;
 
             GameObject label = Instantiate(NumberPrefab, worldPos, Quaternion.identity, transform);
