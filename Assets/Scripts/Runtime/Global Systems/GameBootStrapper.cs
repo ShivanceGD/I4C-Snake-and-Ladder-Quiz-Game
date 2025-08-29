@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Unity.Services.Core;
@@ -13,7 +12,6 @@ public class GameBootStrapper : MonoBehaviour
     [SerializeField] private string FirstSceneToLoad;
     [SerializeField] private string BootStrapperSceneName;
     
-    [SerializeField]private UIManager UiManager;
     [SerializeField]private SoundManager SoundManagerPrefab;
     [SerializeField]private RemoteConfigLoadManager RemoteConfigManagerPrefab;
     [SerializeField]private LoadingSceneManager LoadingSceneManagerPrefab;
@@ -38,9 +36,9 @@ public class GameBootStrapper : MonoBehaviour
 
     private async Task CloneEverything()
     {
-        // Instantiate managers
         LoadingSceneManager loadedSceneManager = Instantiate(LoadingSceneManagerPrefab);
-
+        SoundManager loadedSoundManager = Instantiate(SoundManagerPrefab);
+        
         await Task.Yield();
         
         if (!string.IsNullOrEmpty(BootStrapperSceneName))

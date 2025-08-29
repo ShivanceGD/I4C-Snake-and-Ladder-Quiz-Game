@@ -17,10 +17,11 @@ public class LoadingSceneManager : MonoBehaviour
     [SerializeField] private TransitionSettings transition;
 
     [Header("Loading Speed")]
-    [SerializeField] private float fillSpeed = 0.3f; // speed of bar (smaller = slower)
+    [SerializeField] private float fillSpeed = 0.3f;
 
     private float fakeProgress = 0f;
     private bool sceneReady = false;
+    private bool firstLoad = true;
 
     private void Start()
     {
@@ -32,57 +33,50 @@ public class LoadingSceneManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
 
+        ResetLoadingUI();
+
+        // Hide on very first boot
         if (loadingScreen != null)
             loadingScreen.SetActive(false);
     }
 
     [ContextMenu("Loading Scene")]
-    public void LoadScene(string  sceneName)
+    public void LoadScene(string sceneName)
     {
         StartCoroutine(LoadSceneAsync(sceneName));
     }
 
     public void SetLoadingScreenMessage(string message)
     {
-        messageText.text = message;
+        if (messageText != null)
+            messageText.text = message;
     }
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
+        ResetLoadingUI();
         loadingScreen.SetActive(true);
-        progressBar.fillAmount = 0;
-        progressText.text = "0%";
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         operation.allowSceneActivation = false;
 
-        // Scene loads in background, but UI moves at our speed
         while (!operation.isDone)
         {
-            // Unity load progress (0 to 0.9)
             if (operation.progress >= 0.9f)
                 sceneReady = true;
 
-            // Gradually increase fake progress
-            if (!sceneReady)
-            {
-                // Before scene ready, cap at 90%
-                fakeProgress = Mathf.MoveTowards(fakeProgress, 0.9f, fillSpeed * Time.deltaTime);
-            }
-            else
-            {
-                // Once ready, let it go to 100%
-                fakeProgress = Mathf.MoveTowards(fakeProgress, 1f, fillSpeed * Time.deltaTime);
-            }
+            // Progress target
+            float targetProgress = sceneReady ? 1f : 0.9f;
+            fakeProgress = Mathf.MoveTowards(fakeProgress, targetProgress, fillSpeed * Time.deltaTime);
 
             UpdateLoadingUI(fakeProgress);
 
-            // When bar reaches 100% AND scene is ready → activate
             if (fakeProgress >= 1f && sceneReady)
             {
-                yield return new WaitForSeconds(0.5f); // short pause at 100%
+                yield return new WaitForSeconds(0.5f); // Pause at 100%
                 TransitionManager.Instance().Transition(transition, 0);
                 yield return new WaitForSeconds(1f);
                 operation.allowSceneActivation = true;
@@ -91,11 +85,43 @@ public class LoadingSceneManager : MonoBehaviour
 
             yield return null;
         }
+
+        firstLoad = false;
     }
 
     private void UpdateLoadingUI(float progress)
     {
-        progressBar.fillAmount = progress;
-        progressText.text = Mathf.RoundToInt(progress * 100f) + "%";
+        if (progressBar != null)
+        {
+            // Cancel old tween if still running
+            LeanTween.cancel(progressBar.gameObject);
+
+            // Tween fillAmount toward target
+            LeanTween.value(progressBar.gameObject, progressBar.fillAmount, progress, 0.4f)
+                .setEase(LeanTweenType.easeOutQuad)
+                .setOnUpdate((float val) =>
+                {
+                    progressBar.fillAmount = val;
+                });
+        }
+
+        if (progressText != null)
+        {
+            int percent = Mathf.RoundToInt(progress * 100f);
+            progressText.text = percent + "%";
+        }
+    }
+
+
+    private void ResetLoadingUI()
+    {
+        fakeProgress = 0f;
+        sceneReady = false;
+
+        if (progressBar != null)
+            progressBar.fillAmount = 0f;
+
+        if (progressText != null)
+            progressText.text = "0%";
     }
 }
