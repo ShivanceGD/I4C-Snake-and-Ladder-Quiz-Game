@@ -1,33 +1,61 @@
 using System;
+using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Unity.Services.Core;
 using Unity.Services.RemoteConfig;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-100)]
 public class GameBootStrapper : MonoBehaviour
 {
-    public UnityEvent onBootStrapped;
+    [SerializeField] private string FirstSceneToLoad;
+    [SerializeField] private string BootStrapperSceneName;
     
-    public UIManager UiManager;
-    //public AuthManager AuthManagerPrefab;
-    //public GameManager GameManagerPrefab;
-    public SoundManager SoundManagerPrefab;
-    public RemoteConfigLoadManager RemoteConfigManagerPrefab;
-    public LoadingSceneManager  LoadingSceneManagerPrefab;
+    [SerializeField]private UIManager UiManager;
+    [SerializeField]private SoundManager SoundManagerPrefab;
+    [SerializeField]private RemoteConfigLoadManager RemoteConfigManagerPrefab;
+    [SerializeField]private LoadingSceneManager LoadingSceneManagerPrefab;
 
     public bool IsBootStrapped { get; private set; }
 
     private CancellationTokenSource cts;
 
-    private void Awake()
+    private async void Awake()
     {
-        cts = new CancellationTokenSource();
-        _ = InitializeGameAsync(cts.Token);
-        
+        try
+        {
+            await CloneEverything();
+            cts = new CancellationTokenSource();
+            _ = InitializeGameAsync(cts.Token);
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+        }
     }
+
+    private async Task CloneEverything()
+    {
+        // Instantiate managers
+        LoadingSceneManager loadedSceneManager = Instantiate(LoadingSceneManagerPrefab);
+
+        await Task.Yield(); // let Unity process instantiate
+
+        // Unload bootstrap scene if you don’t need it anymore
+        if (!string.IsNullOrEmpty(BootStrapperSceneName))
+        {
+            var unloadOp = SceneManager.UnloadSceneAsync(BootStrapperSceneName);
+            if (unloadOp != null)
+            {
+                while (!unloadOp.isDone) await Task.Yield();
+            }
+        }
+        // Load the first scene
+        loadedSceneManager.LoadScene(FirstSceneToLoad);
+    }
+
 
     private async Task InitializeGameAsync(CancellationToken token)
     {
@@ -41,19 +69,9 @@ public class GameBootStrapper : MonoBehaviour
             }
 
             RemoteConfigService.Instance.FetchConfigs(new userAttribute(), new appAttribute());
-            Instantiate(LoadingSceneManagerPrefab);
-            LoadingSceneManager.Instance.LoadScene("SignUp_SignIn");
             if (token.IsCancellationRequested) return;
-        
-            //Instantiate(UiManager);
-            //Show Loading Screen
-            /*Instantiate(AuthManagerPrefab);
-            Instantiate(GameManagerPrefab);
-            Instantiate(SoundManagerPrefab);
-            Instantiate(RemoteConfigManagerPrefab);*/
             
             IsBootStrapped = true;
-            onBootStrapped?.Invoke();
             Debug.Log("[BootStrapper] Initialization complete.");
         }
         catch (Exception ex)

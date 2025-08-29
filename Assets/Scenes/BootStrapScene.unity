@@ -129,9 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 66757523}
   - component: {fileID: 66757524}
-  - component: {fileID: 66757527}
-  - component: {fileID: 66757526}
-  - component: {fileID: 66757525}
   m_Layer: 0
   m_Name: BootStrapper
   m_TagString: Untagged
@@ -166,67 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 494466bff06447ef91560d653fa2325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onBootStrapped:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9217673945713108773, guid: 3055738105012ed4db99bd6a49c070ba, type: 3}
-        m_TargetAssemblyTypeName: LoadingSceneManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SignUp_SignIn
-          m_BoolArgument: 0
-        m_CallState: 2
-  UiManager: {fileID: 66757527}
-  SoundManagerPrefab: {fileID: 66757526}
-  RemoteConfigManagerPrefab: {fileID: 66757525}
+  FirstSceneToLoad: SignUp_SignIn
+  BootStrapperSceneName: BootStrapScene
+  UiManager: {fileID: 0}
+  SoundManagerPrefab: {fileID: 0}
+  RemoteConfigManagerPrefab: {fileID: 0}
   LoadingSceneManagerPrefab: {fileID: 9217673945713108773, guid: 3055738105012ed4db99bd6a49c070ba, type: 3}
---- !u!114 &66757525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66757522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e50f189eeafb4efd941dcb71c9a9d548, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultUnlockedLevelKey: LevelsToBeUnlocked
---- !u!114 &66757526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66757522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c26c184ac56d1d04586d7ee422a79a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  stepSound: {fileID: 0}
-  LadderSound: {fileID: 0}
-  SnakeSound: {fileID: 0}
---- !u!114 &66757527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66757522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fe84af1860b452b8b593d6b63e55679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OfflineLevelsButtonParentTransform: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

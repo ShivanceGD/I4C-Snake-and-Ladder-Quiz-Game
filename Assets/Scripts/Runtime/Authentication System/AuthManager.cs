@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
@@ -6,6 +7,9 @@ using Unity.Services.Core;
 
 public class AuthManager : MonoBehaviour
 {
+    [Header("Scenes to load after success")]
+    public string OfflineSceneName;
+    
     [Header("Panels")]
     public GameObject SuccessFailPanel;
     public TMP_Text SuccessFailText;
@@ -71,7 +75,16 @@ public class AuthManager : MonoBehaviour
 
     public async void GuestSignIn()
     {
-        await AuthExtensions.SignInAnonymouslyAsync();
+        try
+        {
+            await AuthExtensions.SignInAnonymouslyAsync();
+            LoadingSceneManager.Instance.LoadScene(OfflineSceneName);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        
     }
     public async void SignInButton()
     {
