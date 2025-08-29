@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class OfflineTurnLogic : MonoBehaviour
 {
-    private List<Player> players = new List<Player>();
-    private int currentIndex = 0;
+    private readonly List<Player> players = new ();
+    private int currentIndex;
 
     public int PlayerCount => players.Count;
 
@@ -31,7 +31,7 @@ public class OfflineTurnLogic : MonoBehaviour
 
     public void RemovePlayerFromTurn(Player p)
     {
-        if (p == null) return;
+        if (!p) return;
         int idx = players.IndexOf(p);
         if (idx < 0) return;
         players.RemoveAt(idx);

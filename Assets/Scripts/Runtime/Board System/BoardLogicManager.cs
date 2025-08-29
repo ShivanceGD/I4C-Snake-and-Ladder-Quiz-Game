@@ -9,6 +9,7 @@ public class BoardLogicManager : MonoBehaviour
     [Header("Reference")]
     public static BoardLogicManager Instance;
     [SerializeField] private Tilemap tilemap;
+    public Transform playerHouseLocation;
     public static List<Vector3> TilePositions { get; } = new();
     
 

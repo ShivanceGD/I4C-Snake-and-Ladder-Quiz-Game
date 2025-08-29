@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,11 +18,10 @@ public class OfflineFlowManager : MonoBehaviour
     public GameObject HowToPlayPanelPrefab;
     public Transform CanvasTransform;
     private GameObject HowToPlayPanel;
-    public BoardManager boardManager;
+    public BoardLogicManager boardManager;
     
-
     // central player-state store
-    public SerializedDictionary<Player, PlayerGameData> AllPlayers = new SerializedDictionary<Player, PlayerGameData>();
+    public SerializedDictionary<Player, PlayerGameData> AllPlayers = new();
 
     [Header("Settings")]
     public int TotalPlayersToSpawn = 1;
@@ -31,9 +29,9 @@ public class OfflineFlowManager : MonoBehaviour
     [Header("Player Colors (assigned in order)")]
     public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
 
-    private void Start()
+    private async void Start()
     {
-        BootstrapLevel();
+        await BootstrapLevel();
         BootStrapAllPlayers();
     }
     public void StartTurn()
@@ -59,7 +57,7 @@ public class OfflineFlowManager : MonoBehaviour
         if (CurrentLevelData.Board?.BoardPrefab != null)
         {
             Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
-            if(boardManager == null) boardManager = FindFirstObjectByType<BoardManager>();
+            if(boardManager == null) boardManager = FindFirstObjectByType<BoardLogicManager>();
             await Task.Yield();
             
             BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberPrefabToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight);
@@ -105,7 +103,7 @@ public class OfflineFlowManager : MonoBehaviour
         if (CurrentLevelData.CPUPrefab != null)
         {
             var bot = Instantiate(CurrentLevelData.CPUPrefab);
-            bot.transform.position = boardManager.StartPoint.position;
+            bot.transform.position = boardManager.playerHouseLocation.position;
             bot.name = "CPU";
             var cpu = bot.GetComponent<Player>();
             Color cpuColor = paletteLen > 0 ? PlayerColors[TotalPlayersToSpawn % paletteLen] : cpu.Color;
@@ -122,7 +120,7 @@ public class OfflineFlowManager : MonoBehaviour
         for (int i = 0; i < TotalPlayersToSpawn; i++)
         {
             var obj = Instantiate(CurrentLevelData.PlayerPrefab);
-            obj.transform.position = boardManager.StartPoint.position;
+            obj.transform.position = boardManager.playerHouseLocation.position;
             obj.name = $"Player{i + 1}";
             var player = obj.GetComponent<Player>();
             Color assigned = paletteLen > 0 ? PlayerColors[i % paletteLen] : player.Color;
@@ -263,9 +261,7 @@ public class OfflineFlowManager : MonoBehaviour
     private void ShowLeaderboard()
     {
         Debug.Log("[OfflineFlowManager] === Leaderboard ===");
-        var ranking = AllPlayers.OrderByDescending(kv => kv.Value.PlayerCurrentGameStateData.CurrentIndex)
-                                .ThenByDescending(kv => kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered)
-                                .ToList();
+        var ranking = AllPlayers.OrderByDescending(kv => kv.Value.PlayerCurrentGameStateData.CurrentIndex).ThenByDescending(kv => kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered).ToList();
         int rank = 1;
         foreach (var kv in ranking)
         {
