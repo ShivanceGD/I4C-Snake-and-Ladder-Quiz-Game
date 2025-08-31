@@ -995,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc97ee4e4a6df44d8022c9108266991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OfflineSceneName: Offline_Level
+  OfflineSceneName: New_Menu
   SuccessFailPanel: {fileID: 8997041813881577075}
   SuccessFailText: {fileID: 6096710998661669058}
   UserName: {fileID: 0}
