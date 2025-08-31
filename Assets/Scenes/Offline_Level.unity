@@ -4135,6 +4135,8 @@ MonoBehaviour:
   LeaderBoard: {fileID: 425463355}
   RankPrefab: {fileID: 2283468471138548295, guid: 926cb1b80f74a684fbaafd41fe643d50, type: 3}
   RankingTransform: {fileID: 556817750784530265}
+  SummaryPrefab: {fileID: 6329641993332901225, guid: c1d18a4fa56ebf74688d565f77a0930b, type: 3}
+  SummaryTransform: {fileID: 1599299943}
   AllPlayers:
     _serializedList: []
   TotalPlayersToSpawn: 1

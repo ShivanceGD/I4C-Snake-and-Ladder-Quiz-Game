@@ -26,9 +26,9 @@ public class OfflineFlowManager : MonoBehaviour
     [SerializeField]private GameObject RankPrefab;
     [SerializeField]private Transform RankingTransform;
 
-    [Header("Summary References")] [SerializeField]
-    private GameObject SummaryPrefab;
-    private Transform SummaryTransform;
+    [Header("Summary References")] 
+    [SerializeField] private GameObject SummaryPrefab;
+    [SerializeField] private Transform SummaryTransform;
     
     // central player-state store
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new();

@@ -48,6 +48,7 @@ public class LevelUIElements
 public enum GameMode
 {
     Default,
+    
     SinglePlayer,
     MultiPlayer
 }
