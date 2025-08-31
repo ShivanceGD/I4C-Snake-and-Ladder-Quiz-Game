@@ -18,18 +18,18 @@ public class QuizUI : MonoBehaviour
     public Sprite defaultButtonSprite;
     public TMP_Text Difficulty_text;
 
-    /*[Header("Character Panel UI")]
+    [Header("Character Panel UI")]
     public Image Character_Icon;
     public Image CharacterBackground_Icon;
     public TMP_Text CharacterName_text;
-    public TMP_Text CharacterInfo_text;*/
+    public TMP_Text CharacterInfo_text;
     [Header("Misc")]
     [SerializeField] Color EasyColor;
     [SerializeField] Color MediumColor;
     [SerializeField] Color HardColor;
 
-    /*[Header("Characters Reference")]
-    public CharacterSCO chars;*/
+    [Header("Characters Reference")]
+    public CharacterSCO chars;
     
     private Action<int> onOptionSelected;
     private Action onHintAction;
@@ -83,12 +83,12 @@ public class QuizUI : MonoBehaviour
         }
         //ResetOptionSprites();
     }
-    /*public void ShowCharacter(QuizQuestionData q)
+    public void ShowCharacter(QuizQuestionData q)
     {
         
-
+        
         CharacterBackground_Icon.color = RandomInfo<Color>(chars.BGColor);
-        if(q.isAnonymous)
+        if(q.characterData.characterGender == CharacterGender.Anonymous)
         {
             CharacterName_text.text = chars.Anonymous_Name;
             CharacterInfo_text.text = chars.Anonymous_Name;
@@ -96,35 +96,19 @@ public class QuizUI : MonoBehaviour
         }
         else
         {
-           
-            if(!q.isMale)
+            if(q.characterData.characterGender == CharacterGender.Male)
             {
-                CharacterName_text.text = q.CharName;
-                Character_Icon.sprite = RandomInfo<Sprite>(chars.FemaleCharacters_Icons);
+                Character_Icon.sprite = RandomInfo<Sprite>(chars.MaleCharacters_Icons);
             }
             else
             {
-                CharacterName_text.text = q.CharName;
-                Character_Icon.sprite = RandomInfo<Sprite>(chars.MaleCharacters_Icons);
+                Character_Icon.sprite = RandomInfo<Sprite>(chars.FemaleCharacters_Icons);
             }
-            CharacterInfo_text.text = q.CharInfo;
-        }*/
-        /*if(q.difficulty == Difficulty.Easy)
-        {
-            Difficulty_text.text = "Easy";
-            Difficulty_text.color = Easy;
+            CharacterName_text.text = q.characterData.characterName;
+            CharacterInfo_text.text = q.characterData.characterInfo;
         }
-        else if(q.difficulty == Difficulty.Medium)
-        {
-            Difficulty_text.text = "Medium";
-            Difficulty_text.color = Medium;
-        }
-        else if(q.difficulty == Difficulty.Hard)
-        {
-            Difficulty_text.text = "Hard";
-            Difficulty_text.color = Hard;
-        }*/
-    //}
+        
+    }
 
     public void ResetOptionSprites()
     {
@@ -134,7 +118,7 @@ public class QuizUI : MonoBehaviour
                 btn.image.sprite = defaultButtonSprite;
         }
     }
-    public void UpdateTimerDisplay(float t) { if (timerText) timerText.text = $"{t:F1}s"; }
+    public void UpdateTimerDisplay(float t) { if (timerText) timerText.text = $"Timer: {t:F1}s"; }
     public void SetHintButtonState(bool active) { if (hintButton) hintButton.interactable = active; }
     public void RemoveOption(int index) { if (index >= 0 && index < optionButtons.Count) optionButtons[index].gameObject.SetActive(false); }
     public void HideQuizPannel() { if (quizPanel) quizPanel.SetActive(false); }

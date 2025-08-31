@@ -16,6 +16,7 @@ public class QuizQuestionData
     public QuestionsDifficulty questionsDifficulty;
     public bool isHintAllowed;
     public float timeLimit;
+    public CharacterData characterData;
 }
 
 [System.Serializable]
@@ -24,4 +25,20 @@ public enum QuestionsDifficulty
     Easy,
     Medium,
     Hard
+}
+
+[System.Serializable]
+public class CharacterData
+{
+    public string characterName;
+    public string characterInfo;
+    public CharacterGender characterGender;
+}
+
+[System.Serializable]
+public enum CharacterGender
+{
+    Male,
+    Female,
+    Anonymous
 }

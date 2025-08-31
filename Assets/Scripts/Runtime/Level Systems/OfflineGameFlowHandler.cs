@@ -25,6 +25,10 @@ public class OfflineFlowManager : MonoBehaviour
     [SerializeField]private GameObject LeaderBoard;
     [SerializeField]private GameObject RankPrefab;
     [SerializeField]private Transform RankingTransform;
+
+    [Header("Summary References")] [SerializeField]
+    private GameObject SummaryPrefab;
+    private Transform SummaryTransform;
     
     // central player-state store
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new();
@@ -288,6 +292,11 @@ public class OfflineFlowManager : MonoBehaviour
         ranks.transform.GetChild(3).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.CurrentIndex.ToString();
     }
 
+    private void SetSummaryData(KeyValuePair<Player, PlayerGameData> kv)
+    {
+        GameObject summary = Instantiate(SummaryPrefab, SummaryTransform);
+        //summary.transform.GetChild(0).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers.Keys;
+    }
     public void SwitchScene(string SceneName)
     {
         LoadingSceneManager.Instance.LoadScene(SceneName);
