@@ -294,7 +294,16 @@ public class OfflineFlowManager : MonoBehaviour
 
     private void SetSummaryData(KeyValuePair<Player, PlayerGameData> kv)
     {
-        GameObject summary = Instantiate(SummaryPrefab, SummaryTransform);
+        int index = 1;
+        foreach (var qa in kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers)
+        {
+            GameObject summary = Instantiate(SummaryPrefab, SummaryTransform);
+            summary.transform.GetChild(0).GetComponent<TMP_Text>().text = index.ToString();
+            summary.transform.GetChild(1).GetComponent<TMP_Text>().text = qa.Key;
+            summary.transform.GetChild(2).GetComponent<TMP_Text>().text = qa.Value;
+            index++;
+
+        }
         //summary.transform.GetChild(0).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers.Keys;
     }
     public void SwitchScene(string SceneName)
