@@ -21,13 +21,13 @@ MonoBehaviour:
     - WhatsApp
     - SEBI Advisor
     correctAnswerIndex: 3
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: 'Arnav introduces himself as an authorized SEBI agent and asks you
       to invest in XYZ company through his personal account. What should you do?
 
@@ -38,13 +38,13 @@ MonoBehaviour:
     - Trust
     - Ignore
     correctAnswerIndex: 1
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Arnav
-    CharInfo: SEBI Agent
-    isMale: 1
+    characterData:
+      characterName: Arnav
+      characterInfo: SEBI Agent
+      characterGender: 0
   - question: "Riya, claiming to be a bank officer, asks you to transfer money to
       a \u201Cspecial investment account\u201D for double returns. What is the right
       action?"
@@ -54,13 +54,13 @@ MonoBehaviour:
     - Delay
     - Transfer
     correctAnswerIndex: 0
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Riya
-    CharInfo: Bank Officer
-    isMale: 0
+    characterData:
+      characterName: 'Riya '
+      characterInfo: Bank Officer
+      characterGender: 1
   - question: RBI issues guidelines for which type of financial entities to prevent
       scams?
     options:
@@ -69,13 +69,13 @@ MonoBehaviour:
     - Banks
     - I4C
     correctAnswerIndex: 2
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: "Umang runs a Telegram channel with \u201Cguaranteed profit schemes.\u201D
       What is the safest response?"
     options:
@@ -84,13 +84,13 @@ MonoBehaviour:
     - Invest
     - Join
     correctAnswerIndex: 0
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Umang
-    CharInfo: Telegram Guide
-    isMale: 1
+    characterData:
+      characterName: Umang
+      characterInfo: Telegram Guide
+      characterGender: 0
   - question: 'Meera promotes a cryptocurrency promising 10x growth in one month.
       What is the best action?
 
@@ -101,13 +101,13 @@ MonoBehaviour:
     - Follow
     - Share
     correctAnswerIndex: 1
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Meera
-    CharInfo: Social Media Influencer
-    isMale: 0
+    characterData:
+      characterName: Meera
+      characterInfo: Social Media Influencer
+      characterGender: 1
   - question: "SEBI\u2019s Investor Protection Fund is designed to:\r\n"
     options:
     - Safeguard
@@ -115,13 +115,13 @@ MonoBehaviour:
     - Promote
     - Advertise
     correctAnswerIndex: 0
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: 'A common red flag of an online investment scam is:'
     options:
     - Ads
@@ -129,13 +129,13 @@ MonoBehaviour:
     - Friends
     - Unrealistic Returns
     correctAnswerIndex: 3
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: 'Raj says he invested in a scheme and got double returns in one week.
       He pressures you to join. What should you do?
 
@@ -146,13 +146,13 @@ MonoBehaviour:
     - Copy
     - Join
     correctAnswerIndex: 0
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Raj
-    CharInfo: College Student
-    isMale: 1
+    characterData:
+      characterName: Raj
+      characterInfo: College Student
+      characterGender: 0
   - question: Which official website should you check before investing?
     options:
     - 'Twitter '
@@ -160,13 +160,13 @@ MonoBehaviour:
     - SEBI
     - Youtube
     correctAnswerIndex: 2
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Raj
-    CharInfo: College Student
-    isMale: 1
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: Kavya offers mutual funds but insists payment be made directly to her
       personal wallet. What is correct?
     options:
@@ -175,13 +175,13 @@ MonoBehaviour:
     - Agree
     - Trust
     correctAnswerIndex: 1
-    difficulty: 1
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Kavya
-    CharInfo: Mutual Fund Seller
-    isMale: 0
+    characterData:
+      characterName: Kavya
+      characterInfo: Mutual Fund Seller
+      characterGender: 1
   - question: 'A Ponzi scheme primarily relies on:
 
 '
@@ -191,13 +191,13 @@ MonoBehaviour:
     - New Investors
     - Crypto
     correctAnswerIndex: 2
-    difficulty: 1
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: "Neeraj calls, offering a \u201Cgovernment-approved\u201D scheme and
       asks for Aadhaar + PAN. Correct response?"
     options:
@@ -206,13 +206,13 @@ MonoBehaviour:
     - Send
     - Provide
     correctAnswerIndex: 0
-    difficulty: 1
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Neeraj
-    CharInfo: Phone Caller
-    isMale: 1
+    characterData:
+      characterName: Neeraj
+      characterInfo: Phone Caller
+      characterGender: 0
   - question: 'RBI issues scam alerts mainly for:'
     options:
     - Schools
@@ -220,13 +220,13 @@ MonoBehaviour:
     - Temples
     - Shops
     correctAnswerIndex: 1
-    difficulty: 1
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: "Priya says she doubled her money with a \u201Ccommunity scheme\u201D
       and invites you. Best decision?"
     options:
@@ -235,13 +235,13 @@ MonoBehaviour:
     - Decline
     - Agree
     correctAnswerIndex: 2
-    difficulty: 1
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Priya
-    CharInfo: Neighbor
-    isMale: 0
+    characterData:
+      characterName: Priya
+      characterInfo: Neighbor
+      characterGender: 1
   - question: "Ankit says his uncle\u2019s company provides \u201Cguaranteed 50%
       profit monthly\u201D and urges you to invest. What\u2019s correct?"
     options:
@@ -250,27 +250,27 @@ MonoBehaviour:
     - Trust
     - Join
     correctAnswerIndex: 0
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Riya
-    CharInfo: Bank Officer
-    isMale: 0
+    characterData:
+      characterName: Ankit
+      characterInfo: Office Colleague
+      characterGender: 0
   - question: 'The SEBI Act was introduced in:'
     options:
     - 1992
-    - 2000
-    - 2010
-    - 2005
+    - 1993
+    - 1990
+    - 1991
     correctAnswerIndex: 0
-    difficulty: 2
+    questionsDifficulty: 2
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: Sneha adds you to a WhatsApp group with fake screenshots of profits.
       Correct reaction?
     options:
@@ -279,13 +279,13 @@ MonoBehaviour:
     - Invest
     - Join
     correctAnswerIndex: 1
-    difficulty: 2
+    questionsDifficulty: 2
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Sneha
-    CharInfo: WhatsApp Promoter
-    isMale: 0
+    characterData:
+      characterName: Sneha
+      characterInfo: WhatsApp Promoter
+      characterGender: 1
   - question: 'Fake investment channels may also violate:'
     options:
     - PMLA
@@ -293,13 +293,13 @@ MonoBehaviour:
     - IT
     - Shops
     correctAnswerIndex: 0
-    difficulty: 2
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: Rohan claims he invested Rs 50,000 and got Rs 1 lakh back instantly.
       He wants you to join. Best choice?
     options:
@@ -308,13 +308,13 @@ MonoBehaviour:
     - Agree
     - Pay
     correctAnswerIndex: 1
-    difficulty: 2
+    questionsDifficulty: 2
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Rohan
-    CharInfo: Bank Officer
-    isMale: 1
+    characterData:
+      characterName: Rohan
+      characterInfo: Relative
+      characterGender: 0
   - question: "Priya says she doubled her money with a \u201Ccommunity scheme\u201D
       and invites you. Best decision?"
     options:
@@ -323,13 +323,13 @@ MonoBehaviour:
     - Join
     - Agree
     correctAnswerIndex: 0
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Raj
-    CharInfo: College Student
-    isMale: 1
+    characterData:
+      characterName: Priya
+      characterInfo: Neighbor
+      characterGender: 1
   - question: ' SEBI mandates that only registered individuals can be called:'
     options:
     - Friend
@@ -337,13 +337,13 @@ MonoBehaviour:
     - Broker
     - Leader
     correctAnswerIndex: 1
-    difficulty: 1
+    questionsDifficulty: 1
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Raj
-    CharInfo: College Student
-    isMale: 1
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: "Aarav uploads \u201Csecret stock tips\u201D and asks for money in
       advance. Best response?"
     options:
@@ -352,13 +352,13 @@ MonoBehaviour:
     - Pay
     - Trust
     correctAnswerIndex: 0
-    difficulty: 1
+    questionsDifficulty: 1
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Aarav
-    CharInfo: YouTube Expert
-    isMale: 1
+    characterData:
+      characterName: Aarav
+      characterInfo: YouTube Expert
+      characterGender: 0
   - question: "Investment returns guaranteed with \u201Cno risk\u201D should be seen
       as:"
     options:
@@ -367,13 +367,13 @@ MonoBehaviour:
     - Trusted
     - Fraud
     correctAnswerIndex: 3
-    difficulty: 1
+    questionsDifficulty: 1
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: "SEBI\u2019s investor education campaigns are run under:"
     options:
     - Scam
@@ -381,13 +381,13 @@ MonoBehaviour:
     - Fraud
     - Fake
     correctAnswerIndex: 1
-    difficulty: 1
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: "Divya says her NGO collects money to invest for \u201Csocial growth
       funds.\u201D What should you do?"
     options:
@@ -396,13 +396,13 @@ MonoBehaviour:
     - Trust
     - Support
     correctAnswerIndex: 0
-    difficulty: 0
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Raj
-    CharInfo: College Student
-    isMale: 1
+    characterData:
+      characterName: Divya
+      characterInfo: NGO Worker
+      characterGender: 1
   - question: 'Cross-border online scams are monitored by:'
     options:
     - Local
@@ -410,13 +410,13 @@ MonoBehaviour:
     - Banks
     - Interpol
     correctAnswerIndex: 3
-    difficulty: 2
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
   - question: "Ananya tells you she found an \u201Cinvestment job\u201D where you
       pay first to earn later. Best response?"
     options:
@@ -425,13 +425,13 @@ MonoBehaviour:
     - Avoid
     - Apply
     correctAnswerIndex: 2
-    difficulty: 2
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 0
-    CharName: Ananya
-    CharInfo: Job Seeker
-    isMale: 0
+    characterData:
+      characterName: Ananya
+      characterInfo: Job Seeker
+      characterGender: 1
   - question: " Manish says he lost pension savings to a scheme but now trusts another
       \u201Csure-shot profit\u201D company. What should you do?"
     options:
@@ -440,13 +440,13 @@ MonoBehaviour:
     - Join
     - Warn
     correctAnswerIndex: 3
-    difficulty: 2
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: Manish
+      characterInfo: Retired Officer
+      characterGender: 0
   - question: 'The national portal for reporting financial cybercrimes in India is:'
     options:
     - 1930
@@ -454,10 +454,10 @@ MonoBehaviour:
     - 101
     - 1309
     correctAnswerIndex: 0
-    difficulty: 2
+    questionsDifficulty: 0
     isHintAllowed: 0
     timeLimit: 20
-    isAnonymous: 1
-    CharName: 
-    CharInfo: 
-    isMale: 0
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2

@@ -78,7 +78,7 @@ public class AuthManager : MonoBehaviour
         try
         {
             await AuthExtensions.SignInAnonymouslyAsync();
-            LoadingSceneManager.Instance.LoadScene(OfflineSceneName);
+            LoadingSceneManager.Instance.LoadofflineScene(OfflineSceneName);
         }
         catch (Exception e)
         {

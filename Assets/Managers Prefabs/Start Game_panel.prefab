@@ -2149,7 +2149,7 @@ GameObject:
   - component: {fileID: 3768068545878870042}
   - component: {fileID: 8880709170665728972}
   m_Layer: 5
-  m_Name: Start Game
+  m_Name: Start Game_panel
   m_TagString: StartGamePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -50,7 +50,7 @@ public class GameBootStrapper : MonoBehaviour
             }
         }
         // Load the first scene
-        loadedSceneManager.LoadScene(FirstSceneToLoad);
+        loadedSceneManager.LoadofflineScene(FirstSceneToLoad);
     }
 
 

@@ -1,11 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
 using EasyTransition;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
-public class LoadingSceneManager : MonoBehaviour
+public class LoadingSceneManager : NetworkBehaviour
 {
     public static LoadingSceneManager Instance;
 
@@ -22,6 +24,18 @@ public class LoadingSceneManager : MonoBehaviour
     private float fakeProgress = 0f;
     private bool sceneReady = false;
     private bool firstLoad = true;
+
+    private void OnEnable()
+    {
+        if (NetworkManager.Singleton != null)
+            NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += OnSceneLoadComplete;
+    }
+
+    private void OnDisable()
+    {
+        if (NetworkManager.Singleton != null)
+            NetworkManager.Singleton.SceneManager.OnLoadEventCompleted -= OnSceneLoadComplete;
+    }
 
     private void Start()
     {
@@ -44,9 +58,14 @@ public class LoadingSceneManager : MonoBehaviour
     }
 
     [ContextMenu("Loading Scene")]
-    public void LoadScene(string sceneName)
+    public void LoadofflineScene(string sceneName)
     {
-        StartCoroutine(LoadSceneAsync(sceneName));
+        StartCoroutine(LoadOfflineScene(sceneName));
+    }
+
+    public void LoadOnlineScene(string sceneName)
+    {
+        StartCoroutine(LoadMultiplayerScene(sceneName));
     }
 
     public void SetLoadingScreenMessage(string message)
@@ -55,7 +74,7 @@ public class LoadingSceneManager : MonoBehaviour
             messageText.text = message;
     }
 
-    private IEnumerator LoadSceneAsync(string sceneName)
+    private IEnumerator LoadOfflineScene(string sceneName)
     {
         ResetLoadingUI();
         loadingScreen.SetActive(true);
@@ -87,6 +106,56 @@ public class LoadingSceneManager : MonoBehaviour
         }
 
         firstLoad = false;
+    }
+    private IEnumerator LoadMultiplayerScene(string sceneName)
+    {
+        
+        if (!NetworkManager.Singleton.IsServer)
+            yield break; // Only server loads the scene
+
+        ResetLoadingUI();
+        loadingScreen.SetActive(true);
+
+        var status = NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
+        if (status != SceneEventProgressStatus.Started)
+        {
+            Debug.LogError($"Failed to start loading scene {sceneName}. Status: {status}");
+            yield break;
+        }
+
+        // Fake progress until NGO tells us scene is loaded
+        fakeProgress = 0f;
+        sceneReady = false;
+
+        while (!sceneReady)
+        {
+            fakeProgress = Mathf.MoveTowards(fakeProgress, 0.9f, fillSpeed * Time.deltaTime);
+            UpdateLoadingUI(fakeProgress);
+            yield return null;
+        }
+
+        // Once OnSceneLoadComplete is called, finish progress
+        while (fakeProgress < 1f)
+        {
+            fakeProgress = Mathf.MoveTowards(fakeProgress, 1f, fillSpeed * Time.deltaTime);
+            UpdateLoadingUI(fakeProgress);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f); // pause at 100%
+        TransitionManager.Instance().Transition(transition, 0);
+        yield return new WaitForSeconds(1f);
+        loadingScreen.SetActive(false);
+        
+
+        firstLoad = false;
+    }
+    private void OnSceneLoadComplete(string sceneName, LoadSceneMode loadSceneMode,
+        List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
+    {
+        Debug.Log($"Scene {sceneName} loaded. Clients completed: {clientsCompleted.Count}");
+        sceneReady = true;
     }
 
     private void UpdateLoadingUI(float progress)

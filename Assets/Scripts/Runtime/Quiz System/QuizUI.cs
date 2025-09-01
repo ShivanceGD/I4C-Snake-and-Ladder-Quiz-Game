@@ -70,7 +70,7 @@ public class QuizUI : MonoBehaviour
             }
             else optionButtons[i].gameObject.SetActive(false);
         }
-        SetDifficultyColorAndText(questionsDifficulty);
+        //SetDifficultyColorAndText(questionsDifficulty);
     }
     public void ShowQuestion(QuizQuestionData q)
     {
@@ -81,17 +81,15 @@ public class QuizUI : MonoBehaviour
             if (i < q.options.Length) { optionButtons[i].gameObject.SetActive(true); var t = optionButtons[i].GetComponentInChildren<TMP_Text>(); if (t) t.text = q.options[i]; }
             else optionButtons[i].gameObject.SetActive(false);
         }
-        //ResetOptionSprites();
+        SetDifficultyColorAndText(q.questionsDifficulty);
     }
+        //ResetOptionSprites();
+    
     public void ShowCharacter(QuizQuestionData q)
     {
-        
-        
         CharacterBackground_Icon.color = RandomInfo<Color>(chars.BGColor);
         if(q.characterData.characterGender == CharacterGender.Anonymous)
         {
-            CharacterName_text.text = chars.Anonymous_Name;
-            CharacterInfo_text.text = chars.Anonymous_Name;
             Character_Icon.sprite = chars.Anonymous_icon;
         }
         else
@@ -104,10 +102,10 @@ public class QuizUI : MonoBehaviour
             {
                 Character_Icon.sprite = RandomInfo<Sprite>(chars.FemaleCharacters_Icons);
             }
-            CharacterName_text.text = q.characterData.characterName;
-            CharacterInfo_text.text = q.characterData.characterInfo;
+           
         }
-        
+        CharacterName_text.text = q.characterData.characterName;
+        CharacterInfo_text.text = q.characterData.characterInfo;
     }
 
     public void ResetOptionSprites()

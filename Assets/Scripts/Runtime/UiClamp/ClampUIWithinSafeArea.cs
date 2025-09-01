@@ -22,4 +22,16 @@ public class ClampUIWithinSafeArea : MonoBehaviour
         rectTransform.anchorMin = anchorMin;
         rectTransform.anchorMax = anchorMax;
     }
+
+    public void LoadofflineScene(string sceneName)
+    {
+        LoadingSceneManager.Instance.LoadofflineScene(sceneName);
+        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");
+    }
+
+    public void LoadonlineScene(string SceneName)
+    {
+        LoadingSceneManager.Instance.LoadOnlineScene(SceneName);
+        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");
+    }
 }
