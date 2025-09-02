@@ -5424,23 +5424,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5323690165911041243, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5323690165911041243, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1793113710}
+      objectReference: {fileID: 1024203731}
     - target: {fileID: 5323690165911041243, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5323690165911041243, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PerformTransition
+      value: LoadofflineScene
       objectReference: {fileID: 0}
     - target: {fileID: 5323690165911041243, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Ricimi.SceneTransition, Assembly-CSharp
+      value: ClampUIWithinSafeArea, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323690165911041243, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: New_Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5323690165911041243, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5451,36 +5455,13 @@ PrefabInstance:
     - {fileID: 2567828309982520065, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2567828311121327430, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1793113710}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
 --- !u!224 &1793113708 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2567828311121327449, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
   m_PrefabInstance: {fileID: 1793113707}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1793113709 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2567828311121327430, guid: ce18a3f1ebf9c48d49a6a6a095d03ed3, type: 3}
-  m_PrefabInstance: {fileID: 1793113707}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1793113710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1793113709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f7eaf6dd2a2478c939f6bb532e39ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: Main_Menu
-  duration: 0.3
-  color: {r: 0.18823531, g: 0.7568628, b: 0.8705883, a: 1}
 --- !u!1 &1842209034
 GameObject:
   m_ObjectHideFlags: 0
