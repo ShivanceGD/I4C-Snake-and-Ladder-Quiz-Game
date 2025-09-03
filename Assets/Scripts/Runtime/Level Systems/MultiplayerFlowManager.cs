@@ -39,7 +39,7 @@ public class MultiplayerFlowManager : NetworkBehaviour
 
     private void Awake()
     {
-        
+        BootstrapLevel();
     }
 
     private void FindingManagersInScene()
@@ -53,8 +53,6 @@ public class MultiplayerFlowManager : NetworkBehaviour
     [ContextMenu("Start Game Online")]
     public async void StartGame()
     {
-        
-        await BootstrapLevel();
         if (IsServer)
         {
             StartCoroutine(StartFirstTurnNextFrame());

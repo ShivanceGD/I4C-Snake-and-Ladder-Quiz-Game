@@ -1,7 +1,9 @@
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(RectTransform))]
-public class ClampUIWithinSafeArea : MonoBehaviour
+public class ClampUIWithinSafeArea : NetworkBehaviour
 {
     private void Awake()
     {
@@ -31,7 +33,10 @@ public class ClampUIWithinSafeArea : MonoBehaviour
 
     public void LoadonlineScene(string SceneName)
     {
-        LoadingSceneManager.Instance.LoadOnlineScene(SceneName);
-        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");
+        if (!NetworkManager.Singleton.IsServer)
+            return; 
+        NetworkManager.Singleton.SceneManager.LoadScene("Multiplayer_Level_New", LoadSceneMode.Single);
+        /*LoadingSceneManager.Instance.LoadOnlineScene(SceneName);
+        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");*/
     }
 }
