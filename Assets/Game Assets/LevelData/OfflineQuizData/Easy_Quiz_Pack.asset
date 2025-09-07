@@ -1,0 +1,451 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Easy_Quiz_Pack
+  m_EditorClassIdentifier: 
+  questions:
+  - question: 'You receive a WhatsApp link showing child abuse content. What should
+      you do?
+
+'
+    options:
+    - Ignore
+    - Delete
+    - Report
+    - Forward
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Forwarding even one CSAM image or video is:'
+    options:
+    - Harmless
+    - Private
+    - Fun
+    - Illegal
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: You find morphed child photos being circulated online. Your action?
+    options:
+    - Save
+    - Report
+    - Share
+    - Like
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which is the most common way CSAM spreads in India?
+    options:
+    - Messengers
+    - News Sites
+    - Darknet
+    - Books
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: If a child is found with CSAM on their phone , what should be done?
+    options:
+    - Ignore
+    - Delete
+    - Inform Parents
+    - Call Police
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Your laptop shows "Files locked, pay Bitcoin to unlock" First step?
+    options:
+    - Pay Ransom
+    - Disconnect Internet
+    - Restart PC
+    - Ignore Screen
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which is the most common source of ransomware infections?
+    options:
+    - Phone Calls
+    - Email Links
+    - Posters
+    - SMS
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: What is the best protection against ransomware attacks?
+    options:
+    - None
+    - Free Antivirus
+    - Regular Backups
+    - Delete Files
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Ransomware criminals usually demand money in:'
+    options:
+    - UPI
+    - Cheque
+    - Cryptocurrency
+    - Cash
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which Indian agency issues public alerts on ransomware?
+    options:
+    - SEBI
+    - CERT-in
+    - RBI
+    - TRAI
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "You get an SMS: \u201CYour bank KYC expired, click link.\u201D What
+      should you do?"
+    options:
+    - Click Link
+    - Call Number
+    - 'Verify '
+    - Ignore
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Which clue most often reveals a phishing email?
+
+'
+    options:
+    - 'Fake Sender '
+    - Bank Logo
+    - Bad Grammar
+    - Long Text
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'If your banks asks you for an OTP over phone, you should:'
+    options:
+    - Share OTP
+    - Ask why
+    - Refuse
+    - Delay Reply
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Where can you report phishing scams in India? '
+    options:
+    - Gmail
+    - RBI
+    - SEBI
+    - Cyber Portal
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "A mail says you won a lottery and must pay \u20B9500 to claim. What
+      should you do?"
+    options:
+    - 'Pay '
+    - 'Reply '
+    - 'Delete '
+    - Forward
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Why do cybercriminals send phishing messages?
+    options:
+    - For Fun
+    - For Survey
+    - To Steal Data
+    - For News
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'What is the safest way to check if a website is real or fake?
+
+'
+    options:
+    - Logo Design
+    - Domain Name
+    - Page color
+    - Padlock Icon
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "A caller says, \u201CI am from your bank, give OTP now.\u201D Best
+      action?"
+    options:
+    - Refuse
+    - Share OTP
+    - Dellay call
+    - Verify ID
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Which scam is most common in India today?
+
+'
+    options:
+    - Loan waiver
+    - Fake jobs
+    - Bill offers
+    - Free Ads
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: You receive a WhatsApp link for free subsidy registration. What should
+      you do?
+    options:
+    - Click Link
+    - Share Link
+    - Verify Site
+    - Ignore
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which red flag is often present in a fraud message?
+    options:
+    - Govt Logo
+    - Urgent Demand
+    - Polite Tone
+    - Correct Date
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Most fake job scam emails come from
+    options:
+    - Gmail IDs
+    - Govt Domain
+    - SEBI Mail
+    - Bank Mail
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "In cybersecurity, \u201Ctailgating\u201D means:"
+    options:
+    - Office Entry
+    - Car Chase
+    - Internet Use
+    - Mobile Game
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "You get a call: \u201CIncome Tax refund is waiting, share bank details.\u201D
+      Best step?"
+    options:
+    - Check IT Portal
+    - Share Details
+    - Delay Response
+    - Trust Caller
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Where can Indian citizens report any online scam?
+    options:
+    - RBI
+    - Cyber Portal
+    - Gmail
+    - Police Site
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which of the following is NOT a cybercrime?
+    options:
+    - CSAM
+    - ATM Withdrawal
+    - Phishing
+    - Ransomware
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Which password is the safest to use?
+
+'
+    options:
+    - 123456
+    - Name123
+    - Strong$Pass
+    - Password
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Who manages the National Cybercrime Reporting Portal?
+    options:
+    - RBI
+    - CERT-in
+    - I4C
+    - SEBI
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which is a good cyber safety habit?
+    options:
+    - Same password
+    - Skip Updates
+    - Software Updates
+    - Weak Password
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: If you are scammed online, what is the first step?
+    options:
+    - Do Nothing
+    - Tell Friends
+    - Inform Bank
+    - Wait Longer
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2

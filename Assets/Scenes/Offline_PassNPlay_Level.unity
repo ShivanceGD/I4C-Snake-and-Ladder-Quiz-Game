@@ -5000,6 +5000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398b1158b58a11744ae2bd6e73b91389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!224 &1552196088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10128,8 +10129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 30.927, y: -264}
-  m_SizeDelta: {x: -65.493, y: 170}
+  m_AnchoredPosition: {x: 50, y: -264}
+  m_SizeDelta: {x: -100, y: 170}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &3618056034452210274
 GameObject:

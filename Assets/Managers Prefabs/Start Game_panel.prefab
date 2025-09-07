@@ -1923,11 +1923,11 @@ GameObject:
   - component: {fileID: 5886091574419583712}
   m_Layer: 5
   m_Name: Close Button (1)
-  m_TagString: Untagged
+  m_TagString: StartGameCloseButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8309202747113903726
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2150,7 +2150,7 @@ GameObject:
   - component: {fileID: 8880709170665728972}
   m_Layer: 5
   m_Name: Start Game_panel
-  m_TagString: StartGamePanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

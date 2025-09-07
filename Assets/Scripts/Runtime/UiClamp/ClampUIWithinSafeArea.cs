@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,7 +26,7 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         rectTransform.anchorMax = anchorMax;
     }
 
-    public void LoadofflineScene(string sceneName)
+    public void LoadScene(string sceneName)
     {
         LoadingSceneManager.Instance.LoadofflineScene(sceneName);
         LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");
@@ -38,5 +39,15 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         NetworkManager.Singleton.SceneManager.LoadScene("Multiplayer_Level_New", LoadSceneMode.Single);
         /*LoadingSceneManager.Instance.LoadOnlineScene(SceneName);
         LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");*/
+    }
+    public void SignOut()
+    {
+        AuthExtensions.SignOut();
+    }
+
+    public async void Wait(float seconds)
+    {
+        int milliseconds = (int)(seconds * 1000);
+        await Task.Delay(milliseconds);
     }
 }

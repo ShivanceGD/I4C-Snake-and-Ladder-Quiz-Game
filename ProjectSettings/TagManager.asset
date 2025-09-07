@@ -9,6 +9,7 @@ TagManager:
   - House
   - StartGameButton
   - StartGamePanel
+  - StartGameCloseButton
   layers:
   - Default
   - TransparentFX

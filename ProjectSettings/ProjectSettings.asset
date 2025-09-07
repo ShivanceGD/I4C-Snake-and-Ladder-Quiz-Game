@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Shivance Games
   productName: Snake and Ladder I4C
-  defaultCursor: {fileID: 2800000, guid: 4109965138c8b98489eb8f0d37137ecc, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 94e33189afcecda468a78c7b8a81687f, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

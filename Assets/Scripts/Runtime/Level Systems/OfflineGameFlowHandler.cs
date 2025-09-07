@@ -21,6 +21,7 @@ public class OfflineFlowManager : MonoBehaviour
     public Transform CanvasTransform;
     private GameObject HowToPlayPanel;
     public BoardLogicManager boardManager;
+    public QuizPackSO CurrentQuizPack;
     [Header("LeaderBoard References")]
     [SerializeField]private GameObject LeaderBoard;
     [SerializeField]private GameObject RankPrefab;
@@ -41,8 +42,15 @@ public class OfflineFlowManager : MonoBehaviour
 
     private async void Start()
     {
+        GetLevelData();
         await BootstrapLevel();
         BootStrapAllPlayers();
+    }
+
+    private void GetLevelData()
+    {
+        TotalPlayersToSpawn = GameModeManager.Instance.NumberOfPlayersToBeSpawned;
+        CurrentQuizPack = GameModeManager.Instance.QuizPack;
     }
     public void StartTurn()
     {
@@ -77,7 +85,7 @@ public class OfflineFlowManager : MonoBehaviour
         FindingManagersInScene();
 
         // 3) Load quiz questions into QuizManager
-        quizManager.LoadQuestions(CurrentLevelData.LevelQuizSCO);
+        quizManager.LoadQuestions(CurrentQuizPack);
     }
 
     private void BootStrapAllPlayers()
@@ -91,8 +99,11 @@ public class OfflineFlowManager : MonoBehaviour
         // spawn human players
         SpawnHumanPlayerOffline(paletteLen);
 
+        if (TotalPlayersToSpawn < 4)
+        {
+         SpawnCPUPlayerOffline(paletteLen);
+        }
         // spawn CPU
-        SpawnCPUPlayerOffline(paletteLen);
 
         // register turn order
         var list = AllPlayers.Keys.ToList();

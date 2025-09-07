@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,16 @@ public class MultiplayerFlowManager : NetworkBehaviour
         BootstrapLevel();
     }
 
+    private void Start()
+    {
+        foreach (var player in AllPlayers.Keys)
+        {
+            player.transform.position = PlayerSpawnLocation.position;
+        }
+
+        
+    }
+
     private void FindingManagersInScene()
     {
         if (movementManager == null) movementManager = FindFirstObjectByType<MovementManager>();
@@ -81,7 +92,26 @@ public class MultiplayerFlowManager : NetworkBehaviour
         BoardLogicManager.Instance?.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberPrefabToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight //spawnedBoard.transform
             );*/
         HowToPlayPanel = Instantiate(HowToPlayPanelPrefab,CanvasTransform);
-        GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>().onClick.AddListener(StartTurns);
+        if (IsServer) // Host
+        {
+            Debug.Log("Is Server (Host)");
+            // Host can see and use StartGameButton
+            var startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
+            startButton.onClick.AddListener(StartGame);
+
+            // Hide the close button for host if you want
+            GameObject.FindGameObjectWithTag("StartGameCloseButton").SetActive(false);
+        }
+        else // Client
+        {
+            Debug.Log("Is Client");
+            // Clients cannot start the game -> hide start button
+            GameObject.FindGameObjectWithTag("StartGameButton").SetActive(false);
+
+            // Clients can only close the HowToPlay panel
+            var closeBtn = GameObject.FindGameObjectWithTag("StartGameCloseButton").GetComponent<Button>();
+            closeBtn.onClick.AddListener(() => HowToPlayPanel.SetActive(false));
+        }
         
         // 1) Board
         if (CurrentLevelData.Board?.BoardPrefab != null)
