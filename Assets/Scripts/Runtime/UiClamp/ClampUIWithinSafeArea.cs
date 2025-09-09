@@ -1,15 +1,29 @@
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(RectTransform))]
 public class ClampUIWithinSafeArea : NetworkBehaviour
 {
-    private void Awake()
+    public GameObject[] foundButtons;
+     private void Awake()
     {
         ClampUi();
     }
+
+    public void FindButtons()
+    {
+        foundButtons = GameObject.FindGameObjectsWithTag("CloseButton");
+        foreach (GameObject obj in foundButtons)
+        {
+                obj.GetComponent<Button>().onClick.AddListener(()=> SoundManager.Instance.PlayCloseSound());
+        }
+    }
+
     public void ClampUi()
     {
         var rectTransform = GetComponent<RectTransform>();
@@ -40,14 +54,5 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         /*LoadingSceneManager.Instance.LoadOnlineScene(SceneName);
         LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");*/
     }
-    public void SignOut()
-    {
-        AuthExtensions.SignOut();
-    }
-
-    public async void Wait(float seconds)
-    {
-        int milliseconds = (int)(seconds * 1000);
-        await Task.Delay(milliseconds);
-    }
+   
 }

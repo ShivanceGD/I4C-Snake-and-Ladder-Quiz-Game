@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Quiz Pack", menuName = "Shivance Games/Create Quiz Pack")]
 public class QuizPackSO : ScriptableObject
 {
+    
     public List<QuizQuestionData> questions = new();
 }
 

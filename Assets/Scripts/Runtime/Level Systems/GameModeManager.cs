@@ -2,8 +2,8 @@ using UnityEngine;
 public class GameModeManager : MonoBehaviour
 {
        public static GameModeManager Instance;
-       public int NumberOfPlayersToBeSpawned { get; private set; }
-       public QuizPackSO QuizPack { get; private set; }
+       public int NumberOfPlayersToBeSpawned;
+       public QuizPackSO QuizPack;
        private void Awake()
        {
               if (Instance != null && Instance != this)
@@ -14,17 +14,18 @@ public class GameModeManager : MonoBehaviour
               Instance = this;
               DontDestroyOnLoad(gameObject);
        }
-       public void ChooseNumberOfPlayersForPassNPlayMode(int NumberOfPlayers)
+       /*public void ChooseNumberOfPlayersForPassNPlayMode(int NumberOfPlayers)
        {
               NumberOfPlayersToBeSpawned = NumberOfPlayers;
-              //Offline Flow Manager Player to Spawn Set To NumberOfPlayers
+              Debug.Log($"[GameModeManager] NumberOfPlayers set to {NumberOfPlayers}");
        }
 
        public void ChooseModusOperandiToOfflineLevel(QuizPackSO quizPack)
        {
               QuizPack = quizPack;
-              //Offline Flow Manager QuizPack Set To level for the level 
-       }
+              Debug.Log($"[GameModeManager] QuizPack set to {quizPack?.name}");
+       }*/
+
 
       
 }

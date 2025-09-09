@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip stepSound;
     [SerializeField] private AudioClip LadderSound;
     [SerializeField] private AudioClip SnakeSound;
+    [SerializeField] private AudioClip CloseSound;
 
     private void Awake()
     {
@@ -47,5 +48,10 @@ public class SoundManager : MonoBehaviour
     public void PlaySnakeSound()
     {
         PlayOneShotAudio(SnakeSound);
+    }
+
+    public void PlayCloseSound()
+    {
+        PlayOneShotAudio(CloseSound);
     }
 }

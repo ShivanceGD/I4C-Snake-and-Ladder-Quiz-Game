@@ -146,3 +146,4 @@ MonoBehaviour:
   stepSound: {fileID: 8300000, guid: 5aaa4c7d5781546c6a13a9f1eb97b15b, type: 3}
   LadderSound: {fileID: 8300000, guid: 9d12098ed55364e7e80e277242e2c77e, type: 3}
   SnakeSound: {fileID: 8300000, guid: 1895f3ad1d5789947ad28bb9224e6cea, type: 3}
+  CloseSound: {fileID: 8300000, guid: 9cb19eb032d304b07acec596ae2ce4a4, type: 3}

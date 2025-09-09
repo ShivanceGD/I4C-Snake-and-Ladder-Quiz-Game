@@ -10,6 +10,7 @@ TagManager:
   - StartGameButton
   - StartGamePanel
   - StartGameCloseButton
+  - CloseButton
   layers:
   - Default
   - TransparentFX

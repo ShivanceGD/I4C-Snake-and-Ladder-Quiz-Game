@@ -49,6 +49,7 @@ public class OfflineFlowManager : MonoBehaviour
 
     private void GetLevelData()
     {
+        Debug.Log("Data");
         TotalPlayersToSpawn = GameModeManager.Instance.NumberOfPlayersToBeSpawned;
         CurrentQuizPack = GameModeManager.Instance.QuizPack;
     }

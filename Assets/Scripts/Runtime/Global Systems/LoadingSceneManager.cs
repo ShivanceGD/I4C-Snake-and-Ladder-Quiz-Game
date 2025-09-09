@@ -147,7 +147,7 @@ public class LoadingSceneManager : NetworkBehaviour
         TransitionManager.Instance().Transition(transition, 0);
         yield return new WaitForSeconds(1f);
         loadingScreen.SetActive(false);
-        
+        GetComponent<ClampUIWithinSafeArea>().FindButtons();
 
         firstLoad = false;
     }
@@ -156,6 +156,7 @@ public class LoadingSceneManager : NetworkBehaviour
     {
         Debug.Log($"Scene {sceneName} loaded. Clients completed: {clientsCompleted.Count}");
         sceneReady = true;
+        
     }
 
     private void UpdateLoadingUI(float progress)
