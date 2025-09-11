@@ -49,6 +49,8 @@ public class MultiplayerFlowManager : NetworkBehaviour
         {
             player.transform.position = PlayerSpawnLocation.position;
         }
+
+        BootstrapLevel();
     }
 
     private void FindingManagersInScene()
@@ -93,26 +95,30 @@ public class MultiplayerFlowManager : NetworkBehaviour
         // safe call
         BoardLogicManager.Instance?.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberPrefabToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight //spawnedBoard.transform
             );*/
-        //HowToPlayPanel = Instantiate(HowToPlayPanelPrefab,CanvasTransform);
+        HowToPlayPanel = Instantiate(HowToPlayPanelPrefab,CanvasTransform);
         if (IsHost) // Host
         {
             Debug.Log("Is Server (Host)");
             // Host can see and use StartGameButton
-            /*var startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
-            startButton.onClick.AddListener(StartGame);
+            var startButton = GameObject.FindGameObjectWithTag("StartGameButton").GetComponent<Button>();
+            startButton.onClick.AddListener(() =>
+            {
+                StartGame();
+                Destroy(HowToPlayPanel);
+            });
 
             // Hide the close button for host if you want
-            GameObject.FindGameObjectWithTag("StartGameCloseButton").SetActive(false);*/
+            GameObject.FindGameObjectWithTag("StartGameCloseButton").SetActive(false);
         }
         else // Client
         {
             Debug.Log("Is Client");
             // Clients cannot start the game -> hide start button
-            /*GameObject.FindGameObjectWithTag("StartGameButton").SetActive(false);
+            GameObject.FindGameObjectWithTag("StartGameButton").SetActive(false);
 
             // Clients can only close the HowToPlay panel
             var closeBtn = GameObject.FindGameObjectWithTag("StartGameCloseButton").GetComponent<Button>();
-            closeBtn.onClick.AddListener(() => HowToPlayPanel.SetActive(false));*/
+            closeBtn.onClick.AddListener(() => Destroy(HowToPlayPanel));
         }
         
         // 1) Board

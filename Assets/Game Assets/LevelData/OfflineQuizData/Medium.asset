@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Medium
+  m_EditorClassIdentifier: 
+  questions:
+  - question: "Someone offers free cloud storage access for \u201Chidden videos.\u201D
+      What is this likely?"
+    options:
+    - Backup
+    - CSAM
+    - Spam
+    - Ads
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'If a stranger sends a minor an obscene message online, it is punishable
+      under:'
+    options:
+    - 67B IT Act
+    - 420 IPC
+    - SEBI Act
+    - None
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "A child\u2019s gaming profile is hacked and sexual chats are sent.
+      This is:"
+    options:
+    - Fun
+    - CSAM Grooming
+    - Spam
+    - Harmless
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Who can file CSAM complaints in India?
+    options:
+    - Only Parents
+    - Any Citizen
+    - Only Police
+    - Only NGOs
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'A ransomware deletes files if payment is not made. It is called:'
+    options:
+    - Crypto
+    - Wiper
+    - Trojan
+    - Worm
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which malware records keystrokes secretly?
+    options:
+    - Worm
+    - KeyLogger
+    - Trojan
+    - Botnet
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'A QR code pasted on a shop replaces the real one. This is:
+
+'
+    options:
+    - QR Fraud
+    - Skimming
+    - UPI lag
+    - Cashless
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: If ransomware spreads to 50 PCs in 1 hour, what should admins do first?
+    options:
+    - Pay ransom
+    - Isolate Network
+    - Delete Files
+    - Restart
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "A fraudster asks you to scan a QR to \u201Creceive money.\u201D Scanning
+      will:"
+    options:
+    - Debit Funds
+    - Credit Funds
+    - Verify ID
+    - Nothing
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: What is the main trick in e-KYC scams?
+    options:
+    - Fake Adhaar
+    - Bank Offer
+    - Free Recharge
+    - PAN Update
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which fraud occurs when you install an APK outside Play Store?
+    options:
+    - Adware
+    - None
+    - Malware
+    - Oatch
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "A message says: \u201CYour UPI blocked, update now.\u201D This is:"
+    options:
+    - Spam
+    - 'Upgrade '
+    - OTP
+    - Phishing
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "If you see \u20B91 credited before fraud debit, it is:"
+    options:
+    - Refund
+    - Cashback
+    - Tax
+    - Testing
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'A Telegram group promises daily stock tips for a fee. This is:'
+    options:
+    - Tip Scam
+    - SEBI Advice
+    - Mutual Fund
+    - Loan
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "Fraudsters offering \u201Cguaranteed 40% crypto returns\u201D are
+      running:"
+    options:
+    - Mining Pool
+    - Ponzi
+    - RBI Scheme
+    - SEBI Plan
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 50
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2

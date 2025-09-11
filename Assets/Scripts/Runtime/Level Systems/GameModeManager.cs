@@ -2,7 +2,7 @@ using UnityEngine;
 public class GameModeManager : MonoBehaviour
 {
        public static GameModeManager Instance;
-       public int NumberOfPlayersToBeSpawned;
+       public int NumberOfPlayersToBeSpawned =  1;
        public QuizPackSO QuizPack;
        private void Awake()
        {

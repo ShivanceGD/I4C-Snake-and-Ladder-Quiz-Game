@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 target = BoardLogicManager.GetTilePosition(nextIdx);
 
             yield return MoveTo(target, stepDuration);
+            SoundManager.Instance.PlayStepSound();
             yield return PlayLandingBounce();
         }
     }

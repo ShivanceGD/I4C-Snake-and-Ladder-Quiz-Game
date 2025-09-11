@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Hard
+  m_EditorClassIdentifier: 
+  questions:
+  - question: A darknet forum is selling illegal child content for crypto payments.
+      Reporting should go to
+    options:
+    - 'I4C '
+    - CERT-In
+    - SEBI
+    - TRAI
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "A hacker uses AI to morph adult videos with minors\u2019 faces. This
+      technique is called:"
+    options:
+    - Phishing
+    - Deepfake
+    - Sextortion
+    - Spam
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'A malware secretly records webcams and uploads footage to servers.
+      This is:'
+    options:
+    - Keylogger
+    - Trojan
+    - Spyware
+    - Wiper
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Which malware can bypass antivirus by using rootkits?
+    options:
+    - Trojan
+    - Botnet
+    - Rootkit
+    - Worm
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Ransomware asks for crypto payment, then threatens to leak corporate
+      secrets. This is:'
+    options:
+    - Doxware
+    - Wiper
+    - Spyware
+    - Ransomware
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Which technique spreads malware across cloud accounts? '
+    options:
+    - OTP
+    - Ads
+    - Phishing
+    - API Abuse
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: APT actors often combine ransomware with
+    options:
+    - SMS Spam
+    - Ads
+    - Chain Mail
+    - Supply Chain
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "A phishing attack mimics a bank\u2019s login portal but uses AI chat
+      prompts. This is:\r\n"
+    options:
+    - Spear Phishing
+    - Mass Phishing
+    - Keylogging
+    - Scam Call
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'A printer in a corporate network is exploited to leak confidential
+      docs. Type of attack?
+
+'
+    options:
+    - IoT Attack
+    - Phishing
+    - Malware
+    - Worm
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'A compromised router in a home IoT network is used for crypto mining.
+      This is:'
+    options:
+    - Malware
+    - Keylogger
+    - Ransomware
+    - Botnet
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'An AI voice call mimics your CEO to approve fund transfer. This is:'
+    options:
+    - Spam
+    - Phishing
+    - Vishing
+    - Malware
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2

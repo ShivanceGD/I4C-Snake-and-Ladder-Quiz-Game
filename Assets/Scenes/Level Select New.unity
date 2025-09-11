@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 553032087551434624}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: ShowNextLevels
         m_Mode: 1
@@ -3145,7 +3145,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 553032087551434624}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: ShowPreviousLevels
         m_Mode: 1
@@ -7401,7 +7401,6 @@ GameObject:
   - component: {fileID: 1532274360}
   - component: {fileID: 1532274358}
   - component: {fileID: 1532274361}
-  - component: {fileID: 1532274362}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -7465,41 +7464,6 @@ MonoBehaviour:
   SinglePlayerDataKey: SinglePlayerData
   MultiPlayerDataKey: MultiPlayerData
   LevelDataKey: LevelData
---- !u!114 &1532274362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532274357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d912f1b60504af7bc6698cb2b24b811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentLevelData: {fileID: 0}
-  boardParent: {fileID: 0}
-  PlayerSpawnLocation: {fileID: 0}
-  movementManager: {fileID: 0}
-  quizManager: {fileID: 0}
-  offlineTurnHandler: {fileID: 0}
-  HowToPlayPanelPrefab: {fileID: 0}
-  CanvasTransform: {fileID: 0}
-  boardManager: {fileID: 0}
-  CurrentQuizPack: {fileID: 0}
-  LeaderBoard: {fileID: 0}
-  RankPrefab: {fileID: 0}
-  RankingTransform: {fileID: 0}
-  SummaryPrefab: {fileID: 0}
-  SummaryTransform: {fileID: 0}
-  AllPlayers:
-    _serializedList: []
-  TotalPlayersToSpawn: 2
-  PlayerColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1556780331
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,7 +10670,6 @@ GameObject:
   - component: {fileID: 6563761344169594760}
   - component: {fileID: 5297580715727557185}
   - component: {fileID: 7303442156389407430}
-  - component: {fileID: 553032087551434624}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -10714,22 +10677,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &553032087551434624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553032087551434623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d799829a4636e436883b22421391c443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prevLevelButton: {fileID: 657078552}
-  nextLevelButton: {fileID: 513913287}
-  levelGroup: {fileID: 2106023232}
-  levelText: {fileID: 1060867111}
 --- !u!1 &613298341549389122
 GameObject:
   m_ObjectHideFlags: 0

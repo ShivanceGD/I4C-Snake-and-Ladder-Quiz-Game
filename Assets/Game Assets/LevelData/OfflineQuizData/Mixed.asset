@@ -1,0 +1,463 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Mixed
+  m_EditorClassIdentifier: 
+  questions:
+  - question: According to SEBI regulations, which of the following entities are
+      legally authorized to provide investment advice in India?
+    options:
+    - Friends
+    - Telegram
+    - WhatsApp
+    - SEBI Advisor
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Arnav introduces himself as an authorized SEBI agent and asks you
+      to invest in XYZ company through his personal account. What should you do?
+
+'
+    options:
+    - Invest
+    - 'Verify '
+    - Trust
+    - Ignore
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Arnav
+      characterInfo: SEBI Agent
+      characterGender: 0
+  - question: "Riya, claiming to be a bank officer, asks you to transfer money to
+      a \u201Cspecial investment account\u201D for double returns. What is the right
+      action?"
+    options:
+    - 'Report '
+    - Comply
+    - Delay
+    - Transfer
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: 'Riya '
+      characterInfo: Bank Officer
+      characterGender: 1
+  - question: RBI issues guidelines for which type of financial entities to prevent
+      scams?
+    options:
+    - Shops
+    - Schools
+    - Banks
+    - I4C
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "Umang runs a Telegram channel with \u201Cguaranteed profit schemes.\u201D
+      What is the safest response?"
+    options:
+    - Avoid
+    - Trust
+    - Invest
+    - Join
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Umang
+      characterInfo: Telegram Guide
+      characterGender: 0
+  - question: 'Meera promotes a cryptocurrency promising 10x growth in one month.
+      What is the best action?
+
+'
+    options:
+    - Invest
+    - Ignore
+    - Follow
+    - Share
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Meera
+      characterInfo: Social Media Influencer
+      characterGender: 1
+  - question: "SEBI\u2019s Investor Protection Fund is designed to:\r\n"
+    options:
+    - Safeguard
+    - Scam
+    - Promote
+    - Advertise
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'A common red flag of an online investment scam is:'
+    options:
+    - Ads
+    - Emails
+    - Friends
+    - Unrealistic Returns
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: 'Raj says he invested in a scheme and got double returns in one week.
+      He pressures you to join. What should you do?
+
+'
+    options:
+    - Decline
+    - Try
+    - Copy
+    - Join
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Raj
+      characterInfo: College Student
+      characterGender: 0
+  - question: Which official website should you check before investing?
+    options:
+    - 'Twitter '
+    - Facebook
+    - SEBI
+    - Youtube
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Kavya offers mutual funds but insists payment be made directly to her
+      personal wallet. What is correct?
+    options:
+    - Pay
+    - 'Refuse '
+    - Agree
+    - Trust
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Kavya
+      characterInfo: Mutual Fund Seller
+      characterGender: 1
+  - question: 'A Ponzi scheme primarily relies on:
+
+'
+    options:
+    - Stocks
+    - Gold
+    - New Investors
+    - Crypto
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "Neeraj calls, offering a \u201Cgovernment-approved\u201D scheme and
+      asks for Aadhaar + PAN. Correct response?"
+    options:
+    - Decline
+    - Share
+    - Send
+    - Provide
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Neeraj
+      characterInfo: Phone Caller
+      characterGender: 0
+  - question: 'RBI issues scam alerts mainly for:'
+    options:
+    - Schools
+    - Banks
+    - Temples
+    - Shops
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "Priya says she doubled her money with a \u201Ccommunity scheme\u201D
+      and invites you. Best decision?"
+    options:
+    - Join
+    - Pay
+    - Decline
+    - Agree
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Priya
+      characterInfo: Neighbor
+      characterGender: 1
+  - question: "Ankit says his uncle\u2019s company provides \u201Cguaranteed 50%
+      profit monthly\u201D and urges you to invest. What\u2019s correct?"
+    options:
+    - Avoid
+    - Apply
+    - Trust
+    - Join
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Ankit
+      characterInfo: Office Colleague
+      characterGender: 0
+  - question: 'The SEBI Act was introduced in:'
+    options:
+    - 1992
+    - 1993
+    - 1990
+    - 1991
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Sneha adds you to a WhatsApp group with fake screenshots of profits.
+      Correct reaction?
+    options:
+    - Support
+    - Warn
+    - Invest
+    - Join
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Sneha
+      characterInfo: WhatsApp Promoter
+      characterGender: 1
+  - question: 'Fake investment channels may also violate:'
+    options:
+    - PMLA
+    - GST
+    - IT
+    - Shops
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: Rohan claims he invested Rs 50,000 and got Rs 1 lakh back instantly.
+      He wants you to join. Best choice?
+    options:
+    - Join
+    - Decline
+    - Agree
+    - Pay
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Rohan
+      characterInfo: Relative
+      characterGender: 0
+  - question: "Priya says she doubled her money with a \u201Ccommunity scheme\u201D
+      and invites you. Best decision?"
+    options:
+    - Decline
+    - Pay
+    - Join
+    - Agree
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Priya
+      characterInfo: Neighbor
+      characterGender: 1
+  - question: ' SEBI mandates that only registered individuals can be called:'
+    options:
+    - Friend
+    - Advisor
+    - Broker
+    - Leader
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "Aarav uploads \u201Csecret stock tips\u201D and asks for money in
+      advance. Best response?"
+    options:
+    - Avoid
+    - Send
+    - Pay
+    - Trust
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Aarav
+      characterInfo: YouTube Expert
+      characterGender: 0
+  - question: "Investment returns guaranteed with \u201Cno risk\u201D should be seen
+      as:"
+    options:
+    - Safe
+    - Legal
+    - Trusted
+    - Fraud
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "SEBI\u2019s investor education campaigns are run under:"
+    options:
+    - Scam
+    - Awareness
+    - Fraud
+    - Fake
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "Divya says her NGO collects money to invest for \u201Csocial growth
+      funds.\u201D What should you do?"
+    options:
+    - Donate
+    - Verify
+    - Trust
+    - Support
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Divya
+      characterInfo: NGO Worker
+      characterGender: 1
+  - question: 'Cross-border online scams are monitored by:'
+    options:
+    - Local
+    - Shops
+    - Banks
+    - Interpol
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2
+  - question: "Ananya tells you she found an \u201Cinvestment job\u201D where you
+      pay first to earn later. Best response?"
+    options:
+    - Join
+    - Trust
+    - Avoid
+    - Apply
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Ananya
+      characterInfo: Job Seeker
+      characterGender: 1
+  - question: " Manish says he lost pension savings to a scheme but now trusts another
+      \u201Csure-shot profit\u201D company. What should you do?"
+    options:
+    - Suppot
+    - Invest
+    - Join
+    - Warn
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: Manish
+      characterInfo: Retired Officer
+      characterGender: 0
+  - question: 'The national portal for reporting financial cybercrimes in India is:'
+    options:
+    - 1930
+    - 100
+    - 101
+    - 1309
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ????
+      characterInfo: ????
+      characterGender: 2

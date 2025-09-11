@@ -46,7 +46,7 @@ public class GameManager : NetworkBehaviour
     private PlayerManager cpuPlayer;
     
    
-    /*public async void GenerateAllOfflineLevels()
+    public async void GenerateAllOfflineLevels()
     {
         // Load unlocked levels from Remote Config
         LevelsToBeUnlocked = RemoteConfigLoadManager.Instance.GetDefaultUnlockedLevels();

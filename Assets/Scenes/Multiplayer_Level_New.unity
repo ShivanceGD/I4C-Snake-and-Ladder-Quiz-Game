@@ -2074,9 +2074,9 @@ MonoBehaviour:
   CharacterBackground_Icon: {fileID: 1062930508}
   CharacterName_text: {fileID: 2381911033800092877}
   CharacterInfo_text: {fileID: 8626507508279967097}
-  EasyColor: {r: 0, g: 1, b: 0.28376174, a: 1}
-  MediumColor: {r: 1, g: 0.9622973, b: 0, a: 1}
-  HardColor: {r: 1, g: 0, b: 0.11420822, a: 1}
+  EasyColor: {r: 0, g: 0.9245283, b: 0.09256957, a: 1}
+  MediumColor: {r: 1, g: 0.883468, b: 0, a: 1}
+  HardColor: {r: 1, g: 0.1273585, b: 0.22447474, a: 1}
   chars: {fileID: 11400000, guid: 7d665a22aaa636c4a910c1e4e0360c59, type: 2}
 --- !u!114 &662343067
 MonoBehaviour:
@@ -4225,7 +4225,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   CurrentLevelData: {fileID: 11400000, guid: 374c7815719c8904590325f1bd64490c, type: 2}
   boardParent: {fileID: 2066640058}
-  PlayerSpawnLocation: {fileID: 1206277071}
+  PlayerSpawnLocation: {fileID: 2109223639}
   movementManager: {fileID: 1059952292}
   quizManager: {fileID: 662343069}
   onlineTurnHandler: {fileID: 133396341}
@@ -4561,7 +4561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6067696467860351015, guid: a81c5623db96c4553b06023224d478a7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6067696467860351032, guid: a81c5623db96c4553b06023224d478a7, type: 3}
       propertyPath: m_Pivot.x
@@ -4688,6 +4688,7 @@ Transform:
   - {fileID: 662343065}
   - {fileID: 2066640058}
   - {fileID: 2049185128}
+  - {fileID: 2109223639}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1334270141
@@ -7671,6 +7672,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1182}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2109223638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2109223639}
+  m_Layer: 0
+  m_Name: PlayerPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2109223639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109223638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.816, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1324550217}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125402322
 GameObject:
   m_ObjectHideFlags: 0
