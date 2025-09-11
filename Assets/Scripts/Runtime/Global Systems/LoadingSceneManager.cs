@@ -74,7 +74,7 @@ public class LoadingSceneManager : NetworkBehaviour
             messageText.text = message;
     }
 
-    private IEnumerator LoadOfflineScene(string sceneName)
+    /*private IEnumerator LoadOfflineScene(string sceneName)
     {
         ResetLoadingUI();
         loadingScreen.SetActive(true);
@@ -96,9 +96,9 @@ public class LoadingSceneManager : NetworkBehaviour
             if (fakeProgress >= 1f && sceneReady)
             {
                 yield return new WaitForSeconds(0.5f); // Pause at 100%
-                TransitionManager.Instance().Transition(transition, 0);
-                yield return new WaitForSeconds(1f);
+                //yield return new WaitForSeconds(1f);
                 operation.allowSceneActivation = true;
+                TransitionManager.Instance().Transition(transition, 0);
                 loadingScreen.SetActive(false);
             }
 
@@ -106,7 +106,81 @@ public class LoadingSceneManager : NetworkBehaviour
         }
 
         firstLoad = false;
+    }*/
+    /*private IEnumerator LoadOfflineScene(string sceneName)
+    {
+        ResetLoadingUI();
+        loadingScreen.SetActive(true);
+
+        // Step 1: Fill loading bar to 100%
+        fakeProgress = 0f;
+        while (fakeProgress < 1f)
+        {
+            fakeProgress = Mathf.MoveTowards(fakeProgress, 1f, fillSpeed * Time.deltaTime);
+            UpdateLoadingUI(fakeProgress);
+            yield return null;
+        }
+
+        // Step 2: Start transition AND scene loading at the same time
+        bool transitionDone = false;
+        TransitionManager.Instance().onTransitionCutPointReached += () => transitionDone = true;
+        TransitionManager.Instance().Transition(transition, 0f);
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        operation.allowSceneActivation = true;
+
+        // Step 3: Wait until transition finishes
+        while (!transitionDone)
+            yield return null;
+
+        // Step 4: Clean up
+        TransitionManager.Instance().onTransitionCutPointReached = null;
+        loadingScreen.SetActive(false);
+    }*/
+    private IEnumerator LoadOfflineScene(string sceneName)
+    {
+        ResetLoadingUI();
+        loadingScreen.SetActive(true);
+
+        // Step 1: Fill the loading bar to 100% (fake or actual)
+        fakeProgress = 0f;
+        while (fakeProgress < 1f)
+        {
+            fakeProgress = Mathf.MoveTowards(fakeProgress, 1f, fillSpeed * Time.deltaTime);
+            UpdateLoadingUI(fakeProgress);
+            yield return null;
+        }
+
+        // Step 2: Start transition
+        bool transitionDone = false;
+        TransitionManager.Instance().onTransitionCutPointReached += () => transitionDone = true;
+        TransitionManager.Instance().Transition(transition, 0f);
+
+        // Step 3: Start loading scene asynchronously
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        operation.allowSceneActivation = false; // Prevent scene from activating immediately
+
+        // Step 4: Wait until transition finishes
+        while (!transitionDone)
+        {
+            // Keep transition running and optionally update a progress bar based on scene load
+            if (progressBar != null)
+                progressBar.fillAmount = operation.progress;
+
+            yield return null;
+        }
+
+        // Step 5: Activate scene
+        operation.allowSceneActivation = true;
+
+        // Cleanup
+        TransitionManager.Instance().onTransitionCutPointReached = null;
+        loadingScreen.SetActive(false);
     }
+
+
+
+
     private IEnumerator LoadMultiplayerScene(string sceneName)
     {
         
@@ -144,8 +218,8 @@ public class LoadingSceneManager : NetworkBehaviour
         }
 
         yield return new WaitForSeconds(0.5f); // pause at 100%
+        //yield return new WaitForSeconds(1f);
         TransitionManager.Instance().Transition(transition, 0);
-        yield return new WaitForSeconds(1f);
         loadingScreen.SetActive(false);
         GetComponent<ClampUIWithinSafeArea>().FindButtons();
 

@@ -11,10 +11,13 @@ public class Player : MonoBehaviour
     [HideInInspector] public List<QuizQuestionData> QuestionsList = new();
 
     public PlayerMovement Movement { get; private set; }
+    public PlayerHUD HUD { get; private set; }
+    
 
     private void Awake()
     {
         Movement = GetComponent<PlayerMovement>();
+        HUD = GetComponent<PlayerHUD>();
     }
 
     public ulong OwnerClientId
@@ -49,5 +52,21 @@ public class Player : MonoBehaviour
             PlayerSprite.color = c;
             
         }
+    }
+    
+    /// HUD WRAPPER ///
+    public void ShowTurnHUD(string message)
+    {
+        HUD.ShowTurn(message);
+    }
+
+    public void ShowStateHUD(string stateMessage)
+    {
+        HUD.ShowState(stateMessage);
+    }
+
+    public void ClearHUD()
+    {
+        HUD.Clear();
     }
 }
