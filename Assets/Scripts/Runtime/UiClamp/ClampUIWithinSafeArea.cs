@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.Netcode;
+using Unity.Services.Multiplayer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -54,5 +55,37 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         /*LoadingSceneManager.Instance.LoadOnlineScene(SceneName);
         LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");*/
     }
-   
+    
+    public string multiplayerSceneName = "Multiplayer_Level_New";
+
+    private ISession currentSession;
+
+    // Hook this up in the Inspector to "Joined Session (ISession)"
+    public void OnJoinedSession(ISession session)
+    {
+        currentSession = session;
+
+        if (session.IsHost)
+        {
+            NetworkManager.Singleton.StartHost();
+            session.PlayerJoined += (player) =>
+            {
+                //Debug.Log($"SDK Player joined: {player.Id}");
+                CheckPlayers();
+            };
+        }
+        else
+        {
+            NetworkManager.Singleton.StartClient();
+        }
+    }
+
+    private void CheckPlayers()
+    {
+        if (currentSession != null && currentSession.Players.Count >= 2 && NetworkManager.Singleton.IsHost)
+        {
+            Debug.Log("Two players are in session! Loading multiplayer scene...");
+            NetworkManager.Singleton.SceneManager.LoadScene(multiplayerSceneName, LoadSceneMode.Single);
+        }
+    }
 }
