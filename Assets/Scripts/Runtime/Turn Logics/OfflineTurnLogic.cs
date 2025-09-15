@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 
 public class OfflineTurnLogic : MonoBehaviour
@@ -85,21 +85,24 @@ public class OfflineTurnLogic : MonoBehaviour
         {
             foreach (var p in players)
             {
-                if (p.IsCpu)
+                if (p == current)
                 {
-                    // Optional: show "CPU Turn" above CPU itself
-                    p.ShowTurnHUD("CPU Turn");
+                    // If it's your turn and you're not CPU → "Your Turn"
+                    if (!p.IsCpu)
+                        p.ShowTurnHUD("Your Turn");
+                    else
+                        p.ShowTurnHUD("CPU Turn");
                 }
                 else
                 {
-                    // Humans see CPU's turn
-                    p.ShowTurnHUD("CPU Turn");
+                    // Everyone else sees "<Name>'s Turn"
+                    p.ShowTurnHUD($"{current.PlayerName}'s Turn");
                 }
             }
         }
     }
-}
-/*using System.Collections.Generic;
+}*/
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OfflineTurnLogic : MonoBehaviour
@@ -128,7 +131,6 @@ public class OfflineTurnLogic : MonoBehaviour
     {
         if (players.Count == 0) return;
         currentIndex = (currentIndex + 1) % players.Count;
-        UpdateHUDs();
     }
 
     public void RemovePlayerFromTurn(Player p)
@@ -143,37 +145,5 @@ public class OfflineTurnLogic : MonoBehaviour
 
     public bool IsEmpty() => players.Count == 0;
     
-    private void UpdateHUDs()
-    {
-        if (players.Count == 0) return;
-
-        Player current = GetCurrentPlayer();
-        
-            // Case 1: Current is human
-            if (!current.IsCpu)
-            {
-                foreach (var p in players)
-                {
-                    if (p == current) p.ShowTurnHUD("Your Turn");
-                    else p.ClearHUD();
-                }
-            }
-            // Case 2: Current is CPU
-            else
-            {
-                foreach (var p in players)
-                {
-                    if (p.IsCpu)
-                    {
-                        // optional: show "CPU Turn" above CPU as well
-                        p.ShowTurnHUD("CPU Turn");
-                    }
-                    else
-                    {
-                        // all humans see that it's CPU's turn
-                        p.ShowTurnHUD("CPU Turn");
-                    }
-                }
-        }
+   
     }
-}*/

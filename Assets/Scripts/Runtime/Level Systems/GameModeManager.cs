@@ -1,9 +1,18 @@
+using System.Collections.Generic;
+using Unity.Services.Core;
 using UnityEngine;
 public class GameModeManager : MonoBehaviour
 {
        public static GameModeManager Instance;
        public int NumberOfPlayersToBeSpawned =  1;
        public QuizPackSO QuizPack;
+       
+       [Header("All Levels (assign in inspector)")]
+       public List<LevelDataSO> AllLevels;
+
+       [Header("Unlock System")]
+       public Dictionary<int, int> CachedLevelStarsData;
+       public List<int> LevelsToBeUnlocked;
        private void Awake()
        {
               if (Instance != null && Instance != this)
@@ -26,6 +35,54 @@ public class GameModeManager : MonoBehaviour
               Debug.Log($"[GameModeManager] QuizPack set to {quizPack?.name}");
        }*/
 
+       [ContextMenu("Generate All Offline Buttons")]
+       public async void GenerateAllOfflineLevels()
+       {
+              // Load unlocked levels
+              LevelsToBeUnlocked = await RemoteConfigLoadManager.Instance.GetDefaultUnlockedLevels();
 
-      
+              // Clear old buttons
+              UiLogicManager.Instance.RemoveAllChildInsideParent(UIManager.Instance.OfflineLevelsButtonParentTransform);
+
+              // Load cached stars
+              CachedLevelStarsData = await SaveAndLoadManager.Instance.ReturnLevelAndStars();
+
+              // Iterate levels
+              for (int i = 0; i < AllLevels.Count; i++)
+              {
+                     if (AllLevels[i].GameMode != GameMode.SinglePlayer)
+                            continue;
+
+                     bool isUnlocked = false;
+
+                     // Rule 1: Always unlock first level
+                     if (i == 0)
+                     {
+                            isUnlocked = true;
+                     }
+                     // Rule 2: Check RemoteConfig
+                     else if (LevelsToBeUnlocked != null && LevelsToBeUnlocked.Contains(AllLevels[i].LevelNumber))
+                     {
+                            isUnlocked = true;
+                     }
+                     // Rule 3: Check star requirement
+                     else
+                     {
+                            int prevLevelStars = SaveAndLoadManager.Instance.GetSavedStarsForLevel(
+                                   CachedLevelStarsData,
+                                   AllLevels[i - 1].LevelNumber
+                            );
+
+                            isUnlocked = UiLogicManager.Instance.CheckIfLevelIsCompleted(AllLevels[i].StarsToUnlockLevel, prevLevelStars);
+                     }
+
+                     // ✅ Generate button
+                     /*UiLogicManager.Instance.GenerateOfflineLevelButton(
+                            AllLevels[i],
+                            GameManager.Instance.LoadSinglePlayerLevel,   // uses GameManager’s method
+                            UIManager.Instance.OfflineLevelsButtonParentTransform,
+                            isUnlocked
+                     );*/
+              }
+       }
 }

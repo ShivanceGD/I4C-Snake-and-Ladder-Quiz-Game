@@ -6,7 +6,7 @@ using UnityEngine;
 public class MovementManager : MonoBehaviour
 {
     public float endTurnDelay = 0.45f;
-
+    private OfflineFlowManager offlinemanager;
     public void ProcessPostQuizMovement(
         Player player,
         bool isCorrect,
@@ -17,6 +17,11 @@ public class MovementManager : MonoBehaviour
         Action<MovementResult> onComplete)
     {
         StartCoroutine(MoveCoroutine(player, isCorrect, questionsDifficulty, timeTaken, board, diceRollRange, onComplete));
+    }
+
+    private void Start()
+    {
+         offlinemanager = FindFirstObjectByType<OfflineFlowManager>();
     }
 
     private IEnumerator MoveCoroutine(
@@ -43,8 +48,6 @@ public class MovementManager : MonoBehaviour
         }
 
         // clear last HUD state at the start of movement
-        player.ClearHUD();
-
         int currentTile = BoardLogicManager.GetTileIndexFromPosition(player.transform.position);
         int tileCount = Math.Max(1, Mathf.Max(1, BoardLogicManager.TilePositions.Count)); // defensive
 
@@ -92,9 +95,8 @@ public class MovementManager : MonoBehaviour
                     result.Finished = result.FinalTileIndex >= BoardLogicManager.GetWinningTileIndex;
                     result.UsedSnakeOrLadder = true;
                     result.Reason = "Ladder";
-
-                    player.ShowStateHUD("Climbed a Ladder!");
-
+                    
+                    offlinemanager.UpdateHUD(toMove,false,true);
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
                     yield break;
@@ -122,7 +124,7 @@ public class MovementManager : MonoBehaviour
                     result.UsedSnakeOrLadder = true;
                     result.Reason = "Snake";
 
-                    player.ShowStateHUD("Bitten by a Snake!");
+                    offlinemanager.UpdateHUD(forward,true,false);
 
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
@@ -141,7 +143,7 @@ public class MovementManager : MonoBehaviour
             result.Finished = result.FinalTileIndex >= BoardLogicManager.GetWinningTileIndex;
             result.Reason = "Normal";
 
-            player.ShowStateHUD($"Moved {steps} steps");
+            offlinemanager.UpdateHUD(steps,false,false);
         }
 
         yield return new WaitForSeconds(endTurnDelay);
@@ -209,6 +211,7 @@ public class MovementManager : MonoBehaviour
         }
         int s = UnityEngine.Random.Range(range.x, range.y + 1);
         if (timeTaken < 5f) s++;
+        offlinemanager.UpdateHUD(s,false,false);
         return s;
     }
 }

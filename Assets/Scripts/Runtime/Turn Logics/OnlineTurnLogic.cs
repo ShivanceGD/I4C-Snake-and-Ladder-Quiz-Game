@@ -147,18 +147,30 @@ public class OnlineTurnLogic : NetworkBehaviour
                 if (p.OwnerClientId == localId)
                 {
                     // It's MY turn (local player)
-                    p.ShowTurnHUD("Your Turn");
+                   // p.ShowTurnHUD("Your Turn");
                 }
                 else
                 {
-                    // It's another player's turn
-                    p.ShowTurnHUD($"{current.name}'s Turn");
+                    string displayName = string.IsNullOrEmpty(current.PlayerName) ? $"Player {current.OwnerClientId}" : current.PlayerName;
+                   // p.ShowTurnHUD($"{displayName}'s Turn");
                 }
             }
             else
             {
-                // Do NOT clear HUD for the current player, only others
-                p.ClearHUD();
+                // For all non-current players, also show whose turn it is
+                string displayName = string.IsNullOrEmpty(current.PlayerName) 
+                    ? $"Player {current.OwnerClientId}" 
+                    : current.PlayerName;
+
+                // If it's not their turn, show "X's Turn"
+                /*if (current.OwnerClientId == localId)
+                {
+                    p.ShowTurnHUD("Your Turn");
+                }
+                else
+                {
+                    p.ShowTurnHUD($"{displayName}'s Turn");
+                }*/
             }
         }
     }

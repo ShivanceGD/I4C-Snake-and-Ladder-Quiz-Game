@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     [Header("Player meta")] public string PlayerName = "Player";
     public bool IsCpu = false;
@@ -11,13 +11,13 @@ public class Player : MonoBehaviour
     [HideInInspector] public List<QuizQuestionData> QuestionsList = new();
 
     public PlayerMovement Movement { get; private set; }
-    public PlayerHUD HUD { get; private set; }
+   // public PlayerHUD HUD { get; private set; }
     
 
     private void Awake()
     {
         Movement = GetComponent<PlayerMovement>();
-        HUD = GetComponent<PlayerHUD>();
+        //HUD = GetComponent<PlayerHUD>();
     }
 
     public ulong OwnerClientId
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         }
     }
     
-    /// HUD WRAPPER ///
+    /*/// HUD WRAPPER ///
     public void ShowTurnHUD(string message)
     {
         HUD.ShowTurn(message);
@@ -65,8 +65,29 @@ public class Player : MonoBehaviour
         HUD.ShowState(stateMessage);
     }
 
+    public void ShowLadderText()
+    {
+        HUD.ShowRandomLadderText();
+    }
+    public void ShowSnakesText()
+    {
+        HUD.ShowRandomSnakeText();
+    }
+    
+
     public void ClearHUD()
     {
         HUD.Clear();
+    }*/
+    public override void OnNetworkSpawn()
+    {
+        if (IsServer)
+        {
+            var flowManager = FindFirstObjectByType<MultiplayerFlowManager>();
+            if (flowManager != null)
+            {
+                flowManager.RegisterPlayerServerRpc(OwnerClientId, NetworkObjectId);
+            }
+        }
     }
 }

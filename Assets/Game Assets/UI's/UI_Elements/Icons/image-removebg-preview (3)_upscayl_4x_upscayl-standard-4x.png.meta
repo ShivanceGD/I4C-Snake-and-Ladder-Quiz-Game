@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a7d25820d23fab488215082f800a011
+guid: be11098fe48f1fe4dbe5b8e8fbfa82e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1482439441878466386
-    second: Frame 4 (1)_0
+      213: 4409932601754101530
+    second: image-removebg-preview (3)_upscayl_4x_upscayl-standard-4x_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,11 +46,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.442964, y: 0.49880522}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -178,23 +178,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Frame 4 (1)_0
+      name: image-removebg-preview (3)_upscayl_4x_upscayl-standard-4x_0
       rect:
         serializedVersion: 2
-        x: 159
-        y: 237
-        width: 330
-        height: 588
-      alignment: 9
-      pivot: {x: 0.51413417, y: 0.3274693}
+        x: 161
+        y: 625
+        width: 1678
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea04ec19e215d6be0800000000000000
-      internalID: -1482439441878466386
+      spriteID: a17a7f2265a333d30800000000000000
+      internalID: 4409932601754101530
       vertices: []
       indices: 
       edges: []
@@ -203,8 +203,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cfaed6c3563b8de49b5bc19d2a3cd90b
-    internalID: -1531242210
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Frame 4 (1)_0: -1482439441878466386
+      image-removebg-preview (3)_upscayl_4x_upscayl-standard-4x_0: 4409932601754101530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -30,10 +30,14 @@ public class MultiplayerFlowManager : NetworkBehaviour
     [Header("Summary References")] 
     [SerializeField] private GameObject SummaryPrefab;
     [SerializeField] private Transform SummaryTransform;
-    
 
+    [Header("Hud References")] 
+    [SerializeField] private GameObject PlayerHudItem;
+    [SerializeField] private Transform PlayerHudItemPanelTransform;
+    [SerializeField] private TMP_Text Info_Text;
     // centralized data (server-authoritative)
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new();
+    [SerializeField] private List<GameObject> playerHuds; 
 
     [Header("Colors")]
     public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
@@ -138,7 +142,30 @@ public class MultiplayerFlowManager : NetworkBehaviour
         quizManager?.LoadQuestions(CurrentLevelData.LevelQuizSCO);
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    public void RegisterPlayerServerRpc(ulong clientId, ulong networkObjectId)
+    {
+        var playerObj = NetworkManager.Singleton.SpawnManager.SpawnedObjects[networkObjectId].GetComponent<Player>();
+        if (playerObj == null) return;
 
+        Color c = (PlayerColors != null && PlayerColors.Length > 0) 
+            ? PlayerColors[AllPlayers.Count % PlayerColors.Length] 
+            : playerObj.Color;
+
+        playerObj.ApplyColor(c);
+        playerObj.Color = c;
+
+        var data = new PlayerGameData(playerObj.PlayerName, playerObj.IsCpu ? PlayerType.CPU : PlayerType.Human, c);
+
+        if (!AllPlayers.ContainsKey(playerObj))
+        {
+            AllPlayers[playerObj] = data;
+            Debug.Log($"[Server] Registered player {playerObj.PlayerName} from client {clientId}");
+        }
+
+        // Sync to turn manager
+        onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList());
+    }
     private void RegisterAllNetworkPlayers()
     {
         AllPlayers.Clear();
@@ -286,6 +313,7 @@ public class MultiplayerFlowManager : NetworkBehaviour
     [ClientRpc]
     private void BroadcastLeaderboardClientRpc()
     {
+        LeaderBoard.SetActive(true);
         Debug.Log("[MultiplayerFlowManager] === Leaderboard ===");
         var ranking = AllPlayers.OrderByDescending(kv => kv.Value.PlayerCurrentGameStateData.CurrentIndex).ThenByDescending(kv => kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered).ToList();
         int rank = 1;
@@ -306,6 +334,31 @@ public class MultiplayerFlowManager : NetworkBehaviour
                 Debug.Log($"  Q: {s.Question} | Correct: {s.CorrectAnswer}");
         }*/
     }
+    /// PlayerHuds ///
+    /*private void InstantiatePlayerHuds()
+    {
+        int i = 1;
+        playerHuds.Clear();
+        foreach (var kv in AllPlayers)
+        {
+            Player p = kv.Key;
+            GameObject hud = Instantiate(PlayerHudItem, PlayerHudItemPanelTransform);
+            hud.name = $"{p.name}_HUD";
+
+            // set player name text
+            hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
+            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.name;
+            // set player color if UI has Image
+            
+            hud.transform.GetChild(2).GetComponentInChildren<Image>().color = kv.Value.Color;
+
+            // ensure TurnIndicator starts off
+            hud.transform.Find("TurnIndicator").gameObject.SetActive(false);
+
+            playerHuds.Add(p, hud);
+            i++;
+        }
+    }*/
     private void SetLeaderBoardRankings(int rank, KeyValuePair<Player, PlayerGameData> kv)
     {
         GameObject ranks = Instantiate(RankPrefab, RankingTransform);

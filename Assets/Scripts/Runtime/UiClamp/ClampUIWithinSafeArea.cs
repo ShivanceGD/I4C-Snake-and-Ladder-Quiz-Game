@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class ClampUIWithinSafeArea : NetworkBehaviour
 {
     public GameObject[] foundButtons;
+    public bool isPrivateRoom = false;
      private void Awake()
     {
         ClampUi();
@@ -67,7 +68,7 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
 
         if (session.IsHost)
         {
-            NetworkManager.Singleton.StartHost();
+            //NetworkManager.Singleton.StartHost();
             session.PlayerJoined += (player) =>
             {
                 //Debug.Log($"SDK Player joined: {player.Id}");
@@ -76,16 +77,50 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         }
         else
         {
-            NetworkManager.Singleton.StartClient();
+            //NetworkManager.Singleton.StartClient();
         }
     }
 
-    private void CheckPlayers()
+    /*private void CheckPlayers()
     {
         if (currentSession != null && currentSession.Players.Count >= 2 && NetworkManager.Singleton.IsHost)
         {
             Debug.Log("Two players are in session! Loading multiplayer scene...");
             NetworkManager.Singleton.SceneManager.LoadScene(multiplayerSceneName, LoadSceneMode.Single);
         }
+    }*/
+    private void CheckPlayers()
+    {
+        if (currentSession == null || !NetworkManager.Singleton.IsHost)
+            return;
+
+        if (!isPrivateRoom) // ✅ Auto-start only if NOT private
+        {
+            if (currentSession.Players.Count >= 2)
+            {
+                Debug.Log("Two players are in session! Auto-loading multiplayer scene...");
+                NetworkManager.Singleton.SceneManager.LoadScene(multiplayerSceneName, LoadSceneMode.Single);
+            }
+        }
+        else
+        {
+            Debug.Log("Private room detected. Waiting for host to manually start.");
+        }
+    }
+
+    // 🔘 Call this from your UI "Start Game" button in private rooms
+    public void StartPrivateRoomGame()
+    {
+        if (NetworkManager.Singleton.IsHost)
+        {
+            Debug.Log("Host manually starting game...");
+            NetworkManager.Singleton.SceneManager.LoadScene(multiplayerSceneName, LoadSceneMode.Single);
+        }
+    }
+
+    // Optional: expose this to set when creating/joining sessions
+    public void SetPrivateRoom(bool isPrivate)
+    {
+        isPrivateRoom = isPrivate;
     }
 }
