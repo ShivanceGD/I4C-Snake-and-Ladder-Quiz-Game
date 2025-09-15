@@ -9,6 +9,7 @@ public class QuizManager : MonoBehaviour
 
     [SerializeField] private QuizUI quizUI;
     [SerializeField] private QuizTimer quizTimer;
+    private QuizHintSystem hintSystem = new QuizHintSystem();
 
     private List<QuizQuestionData> questions = new List<QuizQuestionData>();
     private int lastQuestionIndex = -1;
@@ -53,12 +54,28 @@ public class QuizManager : MonoBehaviour
         // show UI
         quizUI.ShowQuestion(q);
         quizUI.ShowCharacter(q);
+
+        // ---- HINT INTEGRATION ----
         quizUI.SetHintButtonState(canUseHint);
-        quizUI.SetHintAction(() =>
+        if (canUseHint)
         {
-            onUseHint?.Invoke();
-            quizUI.SetHintButtonState(false);
-        });
+            quizUI.SetHintAction(() =>
+            {
+                onUseHint?.Invoke();
+                quizUI.SetHintButtonState(false);
+
+                // remove 2 random wrong answers (50/50 style)
+                int removeCount = Mathf.Min(2, q.options.Length - 1);
+                var toRemove = hintSystem.GetHints(q.options.Length, q.correctAnswerIndex, removeCount);
+                foreach (var idx in toRemove)
+                    quizUI.RemoveOption(idx);
+            });
+        }
+        else
+        {
+            quizUI.SetHintAction(null);
+        }
+        // --------------------------
 
         // local handler for answer
         void LocalHandler(int idx)

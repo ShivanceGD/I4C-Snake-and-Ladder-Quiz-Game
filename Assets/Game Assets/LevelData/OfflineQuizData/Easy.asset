@@ -24,7 +24,7 @@ MonoBehaviour:
     - Forward
     correctAnswerIndex: 2
     questionsDifficulty: 0
-    isHintAllowed: 0
+    isHintAllowed: 1
     timeLimit: 30
     characterData:
       characterName: ????
@@ -38,7 +38,7 @@ MonoBehaviour:
     - Illegal
     correctAnswerIndex: 3
     questionsDifficulty: 0
-    isHintAllowed: 0
+    isHintAllowed: 1
     timeLimit: 30
     characterData:
       characterName: ????
@@ -52,7 +52,7 @@ MonoBehaviour:
     - Like
     correctAnswerIndex: 1
     questionsDifficulty: 0
-    isHintAllowed: 0
+    isHintAllowed: 1
     timeLimit: 30
     characterData:
       characterName: ????
@@ -66,7 +66,7 @@ MonoBehaviour:
     - Books
     correctAnswerIndex: 0
     questionsDifficulty: 0
-    isHintAllowed: 0
+    isHintAllowed: 1
     timeLimit: 30
     characterData:
       characterName: ????
@@ -80,7 +80,7 @@ MonoBehaviour:
     - Call Police
     correctAnswerIndex: 3
     questionsDifficulty: 0
-    isHintAllowed: 0
+    isHintAllowed: 1
     timeLimit: 30
     characterData:
       characterName: ????
@@ -342,7 +342,7 @@ MonoBehaviour:
     - Mobile Game
     correctAnswerIndex: 0
     questionsDifficulty: 0
-    isHintAllowed: 0
+    isHintAllowed: 1
     timeLimit: 30
     characterData:
       characterName: ????
