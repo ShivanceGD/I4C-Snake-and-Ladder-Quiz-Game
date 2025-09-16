@@ -85,7 +85,7 @@ public class OnlineTurnLogic : NetworkBehaviour
         if (list == null) return;
         players.AddRange(list);
         currentIndex = 0;
-        ShowCurrentTurnHUD(); // immediately show first turn
+        //ShowCurrentTurnHUD(); // immediately show first turn
     }
 
     public Player GetCurrentPlayer()
@@ -106,7 +106,7 @@ public class OnlineTurnLogic : NetworkBehaviour
         currentIndex = (currentIndex + 1) % players.Count;
 
         // show new player's turn
-        ShowCurrentTurnHUD();
+        //ShowCurrentTurnHUD();
     }
 
     public void RemovePlayerFromTurn(Player p)
@@ -125,7 +125,7 @@ public class OnlineTurnLogic : NetworkBehaviour
         }
 
         currentIndex = currentIndex % players.Count;
-        ShowCurrentTurnHUD();
+        //ShowCurrentTurnHUD();
     }
 
     /// <summary>

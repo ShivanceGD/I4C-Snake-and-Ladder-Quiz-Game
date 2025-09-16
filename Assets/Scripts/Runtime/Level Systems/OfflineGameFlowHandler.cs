@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class OfflineFlowManager : MonoBehaviour
+public class OfflineFlowManager : MonoBehaviour,IFlowManager
 {
     [Header("References (assign in inspector)")]
     public LevelDataSO CurrentLevelData;
@@ -398,9 +398,9 @@ public class OfflineFlowManager : MonoBehaviour
 
         // Add details
         string details = "";
-        if (stepsMoved > 0) details += $" Moved {stepsMoved} steps.";
-        if (ladder) details += LadderTexts[Random.Range(0,LadderTexts.Count)];
-        if (snake) details += SnakeTexts[Random.Range(0,SnakeTexts.Count)];
+        if (stepsMoved > 0) details += $"\n Moved {stepsMoved} steps.";
+        if (ladder) details += $"\n <color=green>{LadderTexts[Random.Range(0,LadderTexts.Count)]}</color>";
+        if (snake) details += $"\n <color=red>{SnakeTexts[Random.Range(0,SnakeTexts.Count)]}</color>";
 
         // Final HUD text
         InfoText.text = baseText + details; 

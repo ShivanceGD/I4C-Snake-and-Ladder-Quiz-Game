@@ -7,6 +7,7 @@ public class MovementManager : MonoBehaviour
 {
     public float endTurnDelay = 0.45f;
     private OfflineFlowManager offlinemanager;
+    private IFlowManager FlowManager;
     public void ProcessPostQuizMovement(
         Player player,
         bool isCorrect,
@@ -21,7 +22,9 @@ public class MovementManager : MonoBehaviour
 
     private void Start()
     {
-         offlinemanager = FindFirstObjectByType<OfflineFlowManager>();
+        FlowManager = FindFirstObjectByType<OfflineFlowManager>();
+        if (FlowManager == null)
+            FlowManager = FindFirstObjectByType<MultiplayerFlowManager>();
     }
 
     private IEnumerator MoveCoroutine(
@@ -96,7 +99,7 @@ public class MovementManager : MonoBehaviour
                     result.UsedSnakeOrLadder = true;
                     result.Reason = "Ladder";
                     
-                    offlinemanager.UpdateHUD(toMove,false,true);
+                    FlowManager.UpdateHUD(toMove,false,true);
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
                     yield break;
@@ -124,7 +127,7 @@ public class MovementManager : MonoBehaviour
                     result.UsedSnakeOrLadder = true;
                     result.Reason = "Snake";
 
-                    offlinemanager.UpdateHUD(forward,true,false);
+                    FlowManager.UpdateHUD(forward,true,false);
 
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
@@ -143,7 +146,7 @@ public class MovementManager : MonoBehaviour
             result.Finished = result.FinalTileIndex >= BoardLogicManager.GetWinningTileIndex;
             result.Reason = "Normal";
 
-            offlinemanager.UpdateHUD(steps,false,false);
+            FlowManager.UpdateHUD(steps,false,false);
         }
 
         yield return new WaitForSeconds(endTurnDelay);
@@ -211,7 +214,7 @@ public class MovementManager : MonoBehaviour
         }
         int s = UnityEngine.Random.Range(range.x, range.y + 1);
         if (timeTaken < 5f) s++;
-        offlinemanager.UpdateHUD(s,false,false);
+        FlowManager.UpdateHUD(s,false,false);
         return s;
     }
 }

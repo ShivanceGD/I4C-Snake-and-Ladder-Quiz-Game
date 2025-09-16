@@ -8,8 +8,9 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-public class MultiplayerFlowManager : NetworkBehaviour
+public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
 {
      [Header("References (assign in inspector)")]
     public LevelDataSO CurrentLevelData;
@@ -37,10 +38,13 @@ public class MultiplayerFlowManager : NetworkBehaviour
     [SerializeField] private TMP_Text Info_Text;
     // centralized data (server-authoritative)
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new();
-    [SerializeField] private List<GameObject> playerHuds; 
-
+    [SerializeField] private Dictionary<Player,GameObject> playerHuds = new ();
+    private Player CurrentPlayer;
     [Header("Colors")]
     public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
+
+    [SerializeField] private List<string> LadderTexts;
+    [SerializeField] private List<string> SnakeTexts;
 
     private void Awake()
     {
@@ -165,6 +169,7 @@ public class MultiplayerFlowManager : NetworkBehaviour
 
         // Sync to turn manager
         onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList());
+        InstantiatePlayerHudsClientRpc();
     }
     private void RegisterAllNetworkPlayers()
     {
@@ -183,7 +188,8 @@ public class MultiplayerFlowManager : NetworkBehaviour
             idx++;
         }
 
-        onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList());
+        onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList()); 
+        InstantiatePlayerHudsClientRpc();
     }
 
     private void StartTurns()
@@ -191,11 +197,13 @@ public class MultiplayerFlowManager : NetworkBehaviour
         if (!IsServer || AllPlayers.Count == 0) return;
         Player current = onlineTurnHandler.GetCurrentPlayer();
         if (current != null) StartTurnForPlayer(current);
+        UpdateTurnIndicators(current);
     }
 
     private void StartTurnForPlayer(Player p)
     {
         if (p == null) return;
+        UpdateTurnIndicators(p);
         if (p.IsCpu)
         {
             //StartCoroutine(CpuSequence(p));
@@ -335,7 +343,8 @@ public class MultiplayerFlowManager : NetworkBehaviour
         }*/
     }
     /// PlayerHuds ///
-    /*private void InstantiatePlayerHuds()
+    [ClientRpc]
+    private void InstantiatePlayerHudsClientRpc()
     {
         int i = 1;
         playerHuds.Clear();
@@ -343,7 +352,8 @@ public class MultiplayerFlowManager : NetworkBehaviour
         {
             Player p = kv.Key;
             GameObject hud = Instantiate(PlayerHudItem, PlayerHudItemPanelTransform);
-            hud.name = $"{p.name}_HUD";
+            //hud.name = $"{p.PlayerName}'s_HUD";
+            hud.name = $"Player{i}_HUD";
 
             // set player name text
             hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
@@ -358,7 +368,31 @@ public class MultiplayerFlowManager : NetworkBehaviour
             playerHuds.Add(p, hud);
             i++;
         }
-    }*/
+    }
+    private void UpdateTurnIndicators(Player current)
+    {
+        CurrentPlayer = current;
+        foreach (var kv in playerHuds)
+        {
+            Transform indicator = kv.Value.transform.Find("TurnIndicator");
+            if (indicator != null)
+                indicator.gameObject.SetActive(kv.Key == current);
+        }
+    }
+    
+    public void UpdateHUD( int stepsMoved = 0, bool snake = false, bool ladder = false)
+    {
+        // Base string = player's turn
+        string baseText = $"{CurrentPlayer.PlayerName}'s Turn";
+
+
+        // Add details
+        string details = "";
+        if (stepsMoved > 0) details += $" Moved {stepsMoved} steps.";
+        if (ladder) details += $"\n <color=green>{LadderTexts[Random.Range(0,LadderTexts.Count)]}</color>";
+        if (snake) details += $"\n <color=red>{SnakeTexts[Random.Range(0,SnakeTexts.Count)]}</color>";
+        Info_Text.text = baseText + details; 
+    }
     private void SetLeaderBoardRankings(int rank, KeyValuePair<Player, PlayerGameData> kv)
     {
         GameObject ranks = Instantiate(RankPrefab, RankingTransform);
