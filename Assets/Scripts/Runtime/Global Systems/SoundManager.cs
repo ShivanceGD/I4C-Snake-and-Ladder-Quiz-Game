@@ -25,9 +25,9 @@ public class SoundManager : MonoBehaviour
 
     public void PlayStepSound()
     {
-        {
+        
             PlayOneShotAudio(stepSound);
-        }
+        
     }
 
     public void PlayOneShotAudio(AudioClip stepSound)

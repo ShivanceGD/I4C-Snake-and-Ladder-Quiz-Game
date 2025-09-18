@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class UiLogicManager : MonoBehaviour
 {
     public static UiLogicManager Instance { get; private set; }
-
+    
 
 
     private void Start()
     {
         if (Instance == null) Instance = this;
         else { Destroy(gameObject); return; }
-        
+        GameModeManager.Instance.GenerateAllOfflineLevels();
     }
 
     public void RemoveAllChildInsideParent(Transform parent)
@@ -31,14 +31,21 @@ public class UiLogicManager : MonoBehaviour
             Button button = Instantiate(OfflineLevel.LevelUIElements.LevelUnlockedButtonPrefab,ButtonParent);
             button.gameObject.GetComponentInChildren<TMP_Text>().text = OfflineLevel.LevelNumber.ToString();
             button.interactable = true;
-            button.onClick.AddListener(()=>OnClickAction?.Invoke());
+            button.onClick.AddListener(() =>
+            {
+                OnClickAction?.Invoke();
+                SetLevelData(OfflineLevel);
+                
+            });
             button.gameObject.GetComponent<LevelDataHolder>().levelData = OfflineLevel;
+           
         }
         else
         {
             Button button = Instantiate(OfflineLevel.LevelUIElements.LevelLockedButtonPrefab,ButtonParent);
             button.gameObject.GetComponentInChildren<TMP_Text>().text = OfflineLevel.LevelNumber.ToString();
-            button.interactable = false;
+            button.interactable = true; // Level is Locked Panel in UI Manager
+            button.onClick.AddListener(LockedButtonPanel);
         }
 
     }
@@ -54,6 +61,35 @@ public class UiLogicManager : MonoBehaviour
         {
            return false;
         }
+    }
+
+    public void ComingSoonPanel()
+    {
+        UIManager.Instance.ComingSoon.SetActive(true);
+    }
+
+    private void LockedButtonPanel()
+    {
+        UIManager.Instance.LockedLevel.SetActive(true);
+    }
+
+    public void StoryModeButton()
+    {
+        /*GameModeManager.Instance.NumberOfPlayersToBeSpawned = 1;
+        LoadingSceneManager.Instance.LoadofflineScene("Offline_Practice_Level");
+        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");
+        UIManager.Instance.offlineFlowManager.CurrentLevelData = OfflineLevel;*/
+        Debug.Log("Clicked");
+        LoadingSceneManager.Instance.LoadofflineScene("Offline_Practice_Level");
+        GameModeManager.Instance.NumberOfPlayersToBeSpawned = 1;
+        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");
+       
+    }
+
+    private void SetLevelData(LevelDataSO levelData)
+    {
+       GameModeManager.Instance.level = levelData;
+       GameModeManager.Instance.QuizPack = levelData.LevelQuizSCO;
     }
 }
 /*using System;

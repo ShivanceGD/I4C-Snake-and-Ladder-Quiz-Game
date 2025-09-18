@@ -86,7 +86,7 @@ public class MovementManager : MonoBehaviour
             {
                 int ladderStart = kv.Key; 
                 int ladderEnd = kv.Value;
-                if (ladderStart > currentTile && ladderStart - currentTile <= 5)
+                if (ladderStart > currentTile && ladderStart - currentTile <= 3)
                 {
                     int toMove = ladderStart - currentTile;
                     if (toMove > 0) yield return player.Movement.MovePlayerTileByTile(toMove);
@@ -114,7 +114,7 @@ public class MovementManager : MonoBehaviour
             {
                 int snakeHead = kv.Key; 
                 int snakeTail = kv.Value;
-                if (snakeHead >= currentTile && snakeHead - currentTile <= 5)
+                if (snakeHead >= currentTile && snakeHead - currentTile <= 3)
                 {
                     int forward = snakeHead - currentTile;
                     if (forward > 0) yield return player.Movement.MovePlayerTileByTile(forward);

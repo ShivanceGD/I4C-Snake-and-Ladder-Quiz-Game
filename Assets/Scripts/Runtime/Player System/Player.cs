@@ -9,7 +9,7 @@ public class Player : NetworkBehaviour
     public Color Color = Color.white;
     public SpriteRenderer PlayerSprite;
     [HideInInspector] public List<QuizQuestionData> QuestionsList = new();
-
+    public int MovesTaken;
     public PlayerMovement Movement { get; private set; }
    // public PlayerHUD HUD { get; private set; }
     

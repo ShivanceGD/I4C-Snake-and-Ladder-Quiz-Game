@@ -230,6 +230,10 @@ public class LoadingSceneManager : NetworkBehaviour
     {
         Debug.Log($"Scene {sceneName} loaded. Clients completed: {clientsCompleted.Count}");
         sceneReady = true;
+        /*if (sceneName == "Level Select New" && GameModeManager.Instance != null)
+        {
+            GameModeManager.Instance.GenerateAllOfflineLevels();
+        }*/
         
     }
 

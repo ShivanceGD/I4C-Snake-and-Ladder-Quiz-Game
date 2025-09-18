@@ -17,12 +17,16 @@ public class RemoteConfigLoadManager : MonoBehaviour
 
     private void Start()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
             return;
         }
-        Instance = this;
 
     }
     /*[ContextMenu("Load Remote Config")]
