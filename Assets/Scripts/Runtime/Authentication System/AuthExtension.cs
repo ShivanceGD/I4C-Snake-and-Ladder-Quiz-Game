@@ -156,7 +156,7 @@ public static class AuthExtensions
     #endregion
 
     #region Sign-In Methods
-    public static async Task SignInCachedOrAnonymousAsync()
+    public static async Task SignInCached()
     {
         if (AuthenticationService.Instance.SessionTokenExists)
         {
@@ -171,7 +171,6 @@ public static class AuthExtensions
                 Debug.Log("Cached session invalid, signing in anonymously...");
             }
         }
-        await SignInAnonymouslyAsync();
     }
 
     public static async Task SignInAnonymouslyAsync()

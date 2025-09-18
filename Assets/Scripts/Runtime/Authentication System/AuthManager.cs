@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using Unity.Services.Authentication;
 using UnityEngine.UI;
 using Unity.Services.Core;
 
@@ -38,7 +39,7 @@ public class AuthManager : MonoBehaviour
     public UnityEvent OnSignedOut;
     public UnityEvent<string> OnAuthMessage;
 
-    private void Start()
+    private async void Start()
     {
         UnityServices.InitializeAsync();
 
@@ -58,8 +59,29 @@ public class AuthManager : MonoBehaviour
             onSignedOut: () => ShowMessage("Signed out.", Color.blue),
             onSignInFailed: (msg) => ShowMessage($"Sign-in failed: {msg}", Color.red)
         );
+        if (AuthenticationService.Instance.SessionTokenExists)
+        {
+            try
+            {
+                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                LoadingSceneManager.Instance.LoadofflineScene(OfflineSceneName);
+                Debug.Log("Signed in with cached session.");
+                return;
+            }
+            catch
+            {
+                Debug.Log("Cached session invalid, signing in anonymously...");
+            }
+        }
     }
 
+    public void LoadScene()
+    {
+        if (LoadingSceneManager.Instance != null)
+            LoadingSceneManager.Instance.LoadofflineScene(OfflineSceneName);
+        else
+            Debug.LogError("LoadingSceneManager instance not found!");
+    }
     public async void SignUpProfile()
     {
         if (string.IsNullOrEmpty(Username_SignUp.text) || string.IsNullOrEmpty(Password_SignUp.text))
