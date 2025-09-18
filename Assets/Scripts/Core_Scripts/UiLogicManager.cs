@@ -19,6 +19,7 @@ public class UiLogicManager : MonoBehaviour
 
     public void RemoveAllChildInsideParent(Transform parent)
     {
+        if (parent.childCount <= 0) return;
         foreach (Transform child in parent)
         {
             Destroy(child.gameObject);
