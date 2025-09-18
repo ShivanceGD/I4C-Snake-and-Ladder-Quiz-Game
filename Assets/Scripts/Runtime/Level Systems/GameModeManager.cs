@@ -6,6 +6,7 @@ public class GameModeManager : MonoBehaviour
        public static GameModeManager Instance;
        public int NumberOfPlayersToBeSpawned =  1;
        public QuizPackSO QuizPack;
+       public LevelDataSO level;
        
        [Header("All Levels (assign in inspector)")]
        public List<LevelDataSO> AllLevels;
@@ -50,9 +51,19 @@ public class GameModeManager : MonoBehaviour
               // Iterate levels
               for (int i = 0; i < AllLevels.Count; i++)
               {
-                     if (AllLevels[i].GameMode != GameMode.SinglePlayer)
+                     if (AllLevels[i].GameMode != GameMode.StoryMode)
                             continue;
-
+                     if (!AllLevels[i].IsUnlockable)
+                     {
+                            UiLogicManager.Instance.GenerateOfflineLevelButton(
+                                   AllLevels[i],
+                                   //GameManager.Instance.LoadSinglePlayerLevel, // uses GameManager’s method
+                                   UiLogicManager.Instance.ComingSoonPanel,
+                                   UIManager.Instance.OfflineLevelsButtonParentTransform,
+                                   false
+                            );
+                            continue;
+                     }
                      bool isUnlocked = false;
 
                      // Rule 1: Always unlock first level
@@ -77,12 +88,22 @@ public class GameModeManager : MonoBehaviour
                      }
 
                      // ✅ Generate button
-                     /*UiLogicManager.Instance.GenerateOfflineLevelButton(
+                     UiLogicManager.Instance.GenerateOfflineLevelButton(
                             AllLevels[i],
-                            GameManager.Instance.LoadSinglePlayerLevel,   // uses GameManager’s method
+                            //GameManager.Instance.LoadSinglePlayerLevel, // uses GameManager’s method
+                            UiLogicManager.Instance.StoryModeButton,
                             UIManager.Instance.OfflineLevelsButtonParentTransform,
                             isUnlocked
-                     );*/
+                     );
               }
+              
+       }
+       [ContextMenu("SaveGameData")]
+       public void SaveGameData()
+       {
+              UnityServices.InitializeAsync();
+              AuthExtensions.SignInAnonymouslyAsync();
+              SaveAndLoadManager.Instance.SavePlayerCommonData("Akash",5);
+              SaveAndLoadManager.Instance.SaveLevelData(AllLevels);
        }
 }

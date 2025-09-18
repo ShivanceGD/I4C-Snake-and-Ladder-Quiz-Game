@@ -10,7 +10,8 @@ public class LevelDataSO : ScriptableObject
     [Header("Level Information")]
     public int LevelNumber;
     public string LevelName;
-    
+    public bool IsUnlockable;
+
     [Header("Level Settings")] 
     public int TotalAvailableMoves;
     public GameMode GameMode; 
@@ -50,6 +51,7 @@ public enum GameMode
     Default,
     
     SinglePlayer,
+    StoryMode,
     MultiPlayer
 }
 [Serializable]

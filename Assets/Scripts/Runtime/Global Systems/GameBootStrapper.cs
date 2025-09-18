@@ -15,7 +15,7 @@ public class GameBootStrapper : MonoBehaviour
     [SerializeField]private SoundManager SoundManagerPrefab;
     [SerializeField]private RemoteConfigLoadManager RemoteConfigManagerPrefab;
     [SerializeField]private LoadingSceneManager LoadingSceneManagerPrefab;
-
+    [SerializeField] private SaveAndLoadManager SaveAndLoadManagerPrefab;
     public bool IsBootStrapped { get; private set; }
 
     private CancellationTokenSource cts;
@@ -38,6 +38,8 @@ public class GameBootStrapper : MonoBehaviour
     {
         LoadingSceneManager loadedSceneManager = Instantiate(LoadingSceneManagerPrefab);
         SoundManager loadedSoundManager = Instantiate(SoundManagerPrefab);
+        RemoteConfigLoadManager RemoteConfigLoadManager = Instantiate(RemoteConfigManagerPrefab);
+        SaveAndLoadManager SaveAndLoadManager = Instantiate(SaveAndLoadManagerPrefab);
         
         await Task.Yield();
         

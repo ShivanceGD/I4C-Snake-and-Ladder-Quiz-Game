@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  PlayerName: Player
+  PlayerName: CPU
   IsCpu: 1
   Color: {r: 0, g: 0, b: 0, a: 1}
   PlayerSprite: {fileID: 6678015193460442352}

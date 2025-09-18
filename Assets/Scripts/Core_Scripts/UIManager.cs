@@ -7,7 +7,9 @@ public class UIManager :  MonoBehaviour
     public static UIManager Instance { get; private set; }
 
     public Transform OfflineLevelsButtonParentTransform;
-
+    public GameObject ComingSoon;
+    public GameObject LockedLevel;
+    
     private void Start()
     {
         if (Instance == null) Instance = this;

@@ -169,7 +169,7 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
 
         // Sync to turn manager
         onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList());
-        InstantiatePlayerHudsClientRpc();
+        InstantiatePlayerHuds();
     }
     private void RegisterAllNetworkPlayers()
     {
@@ -189,7 +189,7 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
         }
 
         onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList()); 
-        InstantiatePlayerHudsClientRpc();
+        InstantiatePlayerHuds();
     }
 
     private void StartTurns()
@@ -343,21 +343,29 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
         }*/
     }
     /// PlayerHuds ///
-    [ClientRpc]
-    private void InstantiatePlayerHudsClientRpc()
+    
+    private void InstantiatePlayerHuds()
     {
         int i = 1;
         playerHuds.Clear();
+        /*if (PlayerHudItemPanelTransform.childCount > 0)
+        {
+            foreach (GameObject child in PlayerHudItemPanelTransform)
+            {
+                Destroy(child);
+            }
+        }*/
         foreach (var kv in AllPlayers)
         {
             Player p = kv.Key;
+            if (playerHuds.ContainsKey(p)) return;
             GameObject hud = Instantiate(PlayerHudItem, PlayerHudItemPanelTransform);
             //hud.name = $"{p.PlayerName}'s_HUD";
             hud.name = $"Player{i}_HUD";
 
             // set player name text
             hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
-            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.name;
+            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.PlayerName;
             // set player color if UI has Image
             
             hud.transform.GetChild(2).GetComponentInChildren<Image>().color = kv.Value.Color;

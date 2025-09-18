@@ -52,6 +52,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
     // store HUDs per player (not in PlayerData, just cached here)
     private Dictionary<Player, GameObject> playerHuds = new();
     private Player CurrentPlayer;
+    
     private async void Start()
     {
         GetLevelData();
@@ -63,6 +64,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
     {
         TotalPlayersToSpawn = GameModeManager.Instance.NumberOfPlayersToBeSpawned;
         CurrentQuizPack = GameModeManager.Instance.QuizPack;
+        if(GameModeManager.Instance.level != null) CurrentLevelData = GameModeManager.Instance.level;
     }
 
     public void StartTurn()
@@ -268,6 +270,12 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
                         return;
                     }
 
+                    if (CurrentLevelData.GameMode == GameMode.StoryMode)
+                    {
+                        //Calculate stars and show
+                        CurrentLevelData.LevelStars = GetStarRating(p.MovesTaken,CurrentLevelData.TotalAvailableMoves,3);
+                    }
+
                     offlineTurnHandler.EndTurn();
                     Player nxt = offlineTurnHandler.GetCurrentPlayer();
                     if (nxt != null) StartTurnForPlayer(nxt);
@@ -391,10 +399,10 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
     {
         // Get whose turn it is from your OfflineTurnHandler
         
-
+        
         // Base string = player's turn
-        string baseText = $"{CurrentPlayer.name}'s Turn";
-
+        
+        string baseText = $"{CurrentPlayer.PlayerName}'s Turn ";
 
         // Add details
         string details = "";
@@ -404,6 +412,17 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
 
         // Final HUD text
         InfoText.text = baseText + details; 
+    }
+    private int GetStarRating(int movesTaken, int maxMoves, int maxStars)
+    {
+        if (movesTaken <= 0)
+            return maxStars; // perfect case
+
+        int bandSize = Mathf.CeilToInt(maxMoves / (float)maxStars);
+        int band = (movesTaken - 1) / bandSize;
+        int stars = maxStars - band;
+
+        return Mathf.Clamp(stars, 1, maxStars);
     }
 }
 
