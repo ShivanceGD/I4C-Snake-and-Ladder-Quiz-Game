@@ -169,6 +169,8 @@ MonoBehaviour:
   AllLevels:
   - {fileID: 11400000, guid: 70d8b0467696093438dad24037d61744, type: 2}
   LevelsToBeUnlocked: 
+  StoryMode: {fileID: 256535291}
+  Multiplayer: {fileID: 73062124}
 --- !u!1 &59798102
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +222,7 @@ GameObject:
   - component: {fileID: 60072990}
   - component: {fileID: 60072989}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Lock_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,6 +631,11 @@ RectTransform:
 --- !u!82 &73062123 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4538448071498736287, guid: ef4ed954f51857a40b4ab7a11a1af21f, type: 3}
+  m_PrefabInstance: {fileID: 73062121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &73062124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4133610266113326476, guid: ef4ed954f51857a40b4ab7a11a1af21f, type: 3}
   m_PrefabInstance: {fileID: 73062121}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &89789491
@@ -2116,6 +2123,11 @@ PrefabInstance:
 --- !u!224 &256535290 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1284550740943139330, guid: ef4ed954f51857a40b4ab7a11a1af21f, type: 3}
+  m_PrefabInstance: {fileID: 256535289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &256535291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4133610266113326476, guid: ef4ed954f51857a40b4ab7a11a1af21f, type: 3}
   m_PrefabInstance: {fileID: 256535289}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &294896407

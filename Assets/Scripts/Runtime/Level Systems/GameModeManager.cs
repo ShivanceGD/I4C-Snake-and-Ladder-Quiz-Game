@@ -1,6 +1,11 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Services.Core;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
+using UnityEngine.UI;
+
 public class GameModeManager : MonoBehaviour
 {
        public static GameModeManager Instance;
@@ -14,6 +19,10 @@ public class GameModeManager : MonoBehaviour
        [Header("Unlock System")]
        public Dictionary<int, int> CachedLevelStarsData;
        public List<int> LevelsToBeUnlocked;
+
+       [Header("Game Mode Buttons")] 
+       [SerializeField] private GameObject StoryMode;
+       [SerializeField] private GameObject Multiplayer;
        private void Awake()
        {
               if (Instance != null && Instance != this)
@@ -24,6 +33,25 @@ public class GameModeManager : MonoBehaviour
               Instance = this;
               DontDestroyOnLoad(gameObject);
        }
+
+       private void Start()
+       {
+              if (Application.internetReachability == NetworkReachability.NotReachable)
+              {
+                     DisableGameModeButtons(StoryMode);
+                     DisableGameModeButtons(Multiplayer);
+              }
+       }
+
+       private void DisableGameModeButtons(GameObject gameModeButton)
+       {
+              gameModeButton.GetComponent<Button>().interactable = false;
+              gameModeButton.GetComponent<Image>().color = Color.grey;
+              gameModeButton.GetComponentInChildren<Image>().color = Color.grey;
+              gameModeButton.GetComponentInChildren<TMP_Text>().color = Color.black;
+              gameModeButton.transform.Find("Lock_Image").gameObject.SetActive(true);
+       }
+       
        /*public void ChooseNumberOfPlayersForPassNPlayMode(int NumberOfPlayers)
        {
               NumberOfPlayersToBeSpawned = NumberOfPlayers;
