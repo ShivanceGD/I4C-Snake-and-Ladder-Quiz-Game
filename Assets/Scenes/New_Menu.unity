@@ -3155,6 +3155,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 119e0878251d6d0429639508e28dbc89, type: 2}
   - {fileID: 11400000, guid: a1056fe8e9f80e54e97f207d408b1f1c, type: 2}
   ChooseQuizPanel: {fileID: 1405404101}
+  StoryModeButton: {fileID: 256535291}
+  MultiplayerButton: {fileID: 73062124}
   practiceSceneName: Offline_Practice_Level
   passNPlaySceneName: Offline_PassNPlay_Level
 --- !u!1001 &426091374

@@ -36,10 +36,11 @@ public class GameModeManager : MonoBehaviour
 
        private void Start()
        {
+              MainMenuUI mainMenuUI = GameObject.FindFirstObjectByType<MainMenuUI>();
               if (Application.internetReachability == NetworkReachability.NotReachable)
               {
-                     DisableGameModeButtons(StoryMode);
-                     DisableGameModeButtons(Multiplayer);
+                     DisableGameModeButtons(mainMenuUI.StoryModeButton);
+                     DisableGameModeButtons(mainMenuUI.MultiplayerButton);
               }
        }
 

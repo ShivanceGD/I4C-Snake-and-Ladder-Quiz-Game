@@ -16,6 +16,8 @@ public class MainMenuUI : MonoBehaviour
    public GameObject quizPackButtonPrefab;   // A button prefab with TMP_Text + Button
    public QuizPackSO[] availableQuizPacks;   // Assign in inspector
    public GameObject ChooseQuizPanel;
+   public GameObject StoryModeButton;
+   public GameObject MultiplayerButton;
    
    [Header("Scenes")]
    public string practiceSceneName = "PracticeScene";

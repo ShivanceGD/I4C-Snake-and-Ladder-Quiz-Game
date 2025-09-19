@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac19286a61a4824081ce74dc0c206b8, type: 3}
   m_Name: Level1_Story_BoardData
   m_EditorClassIdentifier: 
-  BoardPrefab: {fileID: 0}
+  BoardPrefab: {fileID: 6632144098797190551, guid: 009638a05b0cd254c80f5f8cd4641545, type: 3}
   NumberPrefabToSpawnOnBoard: {fileID: 5471844210743242975, guid: daa9e7369db538649851accdb1543156, type: 3}
   BoardHeight: 10
   BoardWidth: 10
