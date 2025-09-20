@@ -48,10 +48,18 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
     [SerializeField] private TMP_Text InfoText;
     [SerializeField] private List<string> LadderTexts;
     [SerializeField] private List<string> SnakeTexts;
+    
+    [Header("GameOver Panel (Only Story Mode)")]
+    [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private List<GameObject> StarsInPanel;
+    [SerializeField] private TMP_Text GameOverText;
+    [SerializeField] private Button RetryButton;
+    [SerializeField] private Button MenuButton;
 
     // store HUDs per player (not in PlayerData, just cached here)
     private Dictionary<Player, GameObject> playerHuds = new();
     private Player CurrentPlayer;
+    //[SerializeField] private int MovesTaken;
     
     private async void Start()
     {
@@ -185,7 +193,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
 
             // set player name text
             hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
-            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.name;
+            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.IsCpu ? "CPU" : p.PlayerName;
             // set player color if UI has Image
             
             hud.transform.GetChild(2).GetComponentInChildren<Image>().color = kv.Value.Color;
@@ -247,7 +255,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
         bool canUseHint = q != null && q.isHintAllowed &&
                           AllPlayers.TryGetValue(p, out var pd) &&
                           !pd.PlayerCurrentGameStateData.IsFinished;
-
+    
         quizManager.ShowQuizForPlayer(q, p, canUseHint, () => { }, (qr) =>
         {
             movementManager.ProcessPostQuizMovement(
@@ -257,7 +265,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
                 CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
                 {
                     UpdatePlayerDataAfterMovement(p, q, qr, mres);
-
+                    p.MovesTaken++;
                     if (mres.Finished)
                     {
                         if (AllPlayers.TryGetValue(p, out var d)) d.UpdatePlayersDataMarkFinished(true);
@@ -267,20 +275,31 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
                     if (CheckForGameEnd())
                     {
                         ShowLeaderboard();
+                        if (CurrentLevelData.GameMode == GameMode.StoryMode)
+                        {
+                            UpdateStarRating(p);
+                        }
                         return;
                     }
-
-                    if (CurrentLevelData.GameMode == GameMode.StoryMode)
-                    {
-                        //Calculate stars and show
-                        CurrentLevelData.LevelStars = GetStarRating(p.MovesTaken,CurrentLevelData.TotalAvailableMoves,3);
-                    }
-
                     offlineTurnHandler.EndTurn();
                     Player nxt = offlineTurnHandler.GetCurrentPlayer();
                     if (nxt != null) StartTurnForPlayer(nxt);
                 });
         });
+    }
+
+    private void UpdateStarRating(Player p)
+    {
+        //Calculate stars and show
+        int newStars = GetStarRating(p.MovesTaken, CurrentLevelData.TotalAvailableMoves, 3);
+        Debug.Log("new Stars " + newStars);
+        if (newStars > CurrentLevelData.LevelStars)
+        {
+            Debug.Log("Stars Updated");
+            CurrentLevelData.LevelStars = newStars;
+            Debug.Log(CurrentLevelData.LevelStars);
+        }
+        GameModeManager.Instance.SaveGameData();
     }
 
     private IEnumerator CpuSequence(Player cpu)
@@ -345,6 +364,8 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
     private void ShowLeaderboard()
     {
         LeaderBoard.SetActive(true);
+        Button ExitButton = LeaderBoard.transform.Find("Exit_Button").GetComponent<Button>();
+        ExitButton.onClick.RemoveAllListeners();
         var ranking = AllPlayers
             .OrderByDescending(kv => kv.Value.PlayerCurrentGameStateData.CurrentIndex)
             .ThenByDescending(kv => kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered)
@@ -357,8 +378,25 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
             SetSummaryData(kv);
             rank++;
         }
-    }
+        if (CurrentLevelData.GameMode == GameMode.StoryMode)
+        {
+            ExitButton.onClick.AddListener(()=>
+            {
+                LeaderBoard.SetActive(false);
+                ShowGameOverPanel();
+            });
+            // Winner is the first player in the ranking
+            Player winner = ranking.First().Key;
 
+            bool playerWon = !winner.IsCpu; // assume Human win if not CPU
+            SetGameOverPanel(playerWon);
+        }
+        else
+        {
+            ExitButton.onClick.AddListener(()=>SwitchScene("New_Menu"));
+        }
+    }
+    
     private void SetLeaderBoardRankings(int rank, KeyValuePair<Player, PlayerGameData> kv)
     {
         GameObject ranks = Instantiate(RankPrefab, RankingTransform);
@@ -381,6 +419,72 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
             index++;
         }
     }
+
+    private void ShowGameOverPanel()
+    {
+        GameOverPanel.SetActive(true);
+    }
+    private void SetGameOverPanel(bool playerWon)
+    {
+        //GameOverPanel.SetActive(true);
+
+        if (playerWon)
+        {
+            GameOverText.text = "<color=blue>Level Completed!</color>   ";
+
+            // Calculate stars
+            int stars = CurrentLevelData.LevelStars;
+            Debug.Log(stars);
+            for (int i = 0; i < stars; i++)
+            {
+                Debug.Log("Star Active");
+                StarsInPanel[i].SetActive(true);
+            }
+
+            // Show Next Level + Menu
+            RetryButton.gameObject.SetActive(false);
+            MenuButton.gameObject.SetActive(true);
+
+            // Hook menu button
+            /*MenuButton.onClick.RemoveAllListeners();
+            MenuButton.onClick.AddListener(() =>
+            {
+                SwitchScene("MainMenu"); // replace with your menu scene
+            });*/
+
+            // Add next level button if you have one
+            // Example:
+            // NextButton.gameObject.SetActive(true);
+            // NextButton.onClick.AddListener(() => LoadNextLevel());
+        }
+        else
+        {
+            GameOverText.text = "<color=red>Level Failed!</color>";
+            
+        
+            // Hide stars on failure
+            foreach (var star in StarsInPanel)
+                star.SetActive(false);
+
+            // Show Retry + Menu
+            RetryButton.gameObject.SetActive(true);
+            MenuButton.gameObject.SetActive(true);
+
+            RetryButton.onClick.RemoveAllListeners();
+            RetryButton.onClick.AddListener(() =>
+            {
+                LoadingSceneManager.Instance.LoadofflineScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+                //SwitchScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            });
+
+            MenuButton.onClick.RemoveAllListeners();
+            MenuButton.onClick.AddListener(() =>
+            {
+                SwitchScene("MainMenu"); // replace with your menu scene
+            });
+        }
+    }
+
 
     public void SwitchScene(string SceneName)
     {
@@ -421,8 +525,9 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
         int bandSize = Mathf.CeilToInt(maxMoves / (float)maxStars);
         int band = (movesTaken - 1) / bandSize;
         int stars = maxStars - band;
-
-        return Mathf.Clamp(stars, 1, maxStars);
+        int stas = Mathf.Clamp(stars, 1, maxStars);
+        Debug.Log(stas);
+        return stas;
     }
 }
 

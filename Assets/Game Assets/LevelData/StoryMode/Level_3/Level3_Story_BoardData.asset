@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac19286a61a4824081ce74dc0c206b8, type: 3}
+  m_Name: Level3_Story_BoardData
+  m_EditorClassIdentifier: 
+  BoardPrefab: {fileID: 6632144098797190551, guid: a557d16c8db8f12448af5a890d2b1505, type: 3}
+  NumberPrefabToSpawnOnBoard: {fileID: 5471844210743242975, guid: 4174d7d4b5cb97444899100015ad4194, type: 3}
+  BoardHeight: 10
+  BoardWidth: 10
+  Snakes:
+    _serializedList:
+    - Key: 20
+      Value: 1
+    - Key: 23
+      Value: 4
+    - Key: 43
+      Value: 22
+    - Key: 45
+      Value: 13
+    - Key: 48
+      Value: 8
+    - Key: 68
+      Value: 33
+    - Key: 77
+      Value: 56
+    - Key: 91
+      Value: 70
+    - Key: 97
+      Value: 76
+    - Key: 98
+      Value: 21
+  Ladders:
+    _serializedList:
+    - Key: 8
+      Value: 29
+    - Key: 15
+      Value: 55
+    - Key: 21
+      Value: 40
+    - Key: 47
+      Value: 66
+    - Key: 51
+      Value: 70
+    - Key: 60
+      Value: 81
+    - Key: 63
+      Value: 82
+    - Key: 74
+      Value: 93

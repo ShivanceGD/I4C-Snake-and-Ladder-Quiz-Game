@@ -10,13 +10,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bac19286a61a4824081ce74dc0c206b8, type: 3}
-  m_Name: Level1_Story_BoardData
+  m_Name: Level1_Story_BoardConfig
   m_EditorClassIdentifier: 
   BoardPrefab: {fileID: 6632144098797190551, guid: 009638a05b0cd254c80f5f8cd4641545, type: 3}
   NumberPrefabToSpawnOnBoard: {fileID: 5471844210743242975, guid: daa9e7369db538649851accdb1543156, type: 3}
   BoardHeight: 10
   BoardWidth: 10
   Snakes:
-    _serializedList: []
+    _serializedList:
+    - Key: 30
+      Value: 7
+    - Key: 34
+      Value: 13
+    - Key: 40
+      Value: 18
+    - Key: 44
+      Value: 23
+    - Key: 62
+      Value: 43
+    - Key: 66
+      Value: 26
+    - Key: 86
+      Value: 67
+    - Key: 90
+      Value: 67
+    - Key: 96
+      Value: 64
+    - Key: 98
+      Value: 21
   Ladders:
-    _serializedList: []
+    _serializedList:
+    - Key: 6
+      Value: 27
+    - Key: 15
+      Value: 64
+    - Key: 21
+      Value: 42
+    - Key: 46
+      Value: 65
+    - Key: 51
+      Value: 70
+    - Key: 59
+      Value: 78
+    - Key: 63
+      Value: 82
+    - Key: 74
+      Value: 93

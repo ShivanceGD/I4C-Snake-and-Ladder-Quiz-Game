@@ -167,7 +167,17 @@ MonoBehaviour:
   QuizPack: {fileID: 0}
   level: {fileID: 0}
   AllLevels:
-  - {fileID: 11400000, guid: 70d8b0467696093438dad24037d61744, type: 2}
+  - {fileID: 11400000, guid: 921605e9451b39a43a15e4286510aa25, type: 2}
+  - {fileID: 11400000, guid: e93f457f206b83148937d480c2391cd1, type: 2}
+  - {fileID: 11400000, guid: 7ca36ea3d3d355e4c8cf347d88c0fa75, type: 2}
+  - {fileID: 11400000, guid: d1f8ef5295758e0449ec50042583089e, type: 2}
+  - {fileID: 11400000, guid: 9cd9d5ca522c92d49b71cb98e8561540, type: 2}
+  - {fileID: 11400000, guid: e79c1db5ee70a614b8fa7ee6803b168d, type: 2}
+  - {fileID: 11400000, guid: 3ee0650f3f8aa244cb4b3d049449734c, type: 2}
+  - {fileID: 11400000, guid: 8f1c05c4647c2ad45a41bc30a589db6d, type: 2}
+  - {fileID: 11400000, guid: 591017031462fc04cb436c654ce86a16, type: 2}
+  - {fileID: 11400000, guid: 5e9a395934416fa428da72d338919e06, type: 2}
+  - {fileID: 11400000, guid: 188f98e926a71ab4da4ae8189187f588, type: 2}
   LevelsToBeUnlocked: 
   StoryMode: {fileID: 256535291}
   Multiplayer: {fileID: 73062124}
@@ -1998,7 +2008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6047773431043294855, guid: ef4ed954f51857a40b4ab7a11a1af21f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6047773431043294855, guid: ef4ed954f51857a40b4ab7a11a1af21f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode

@@ -14,6 +14,7 @@ public class UiLogicManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else { Destroy(gameObject); return; }
+        RemoveAllChildInsideParent(UIManager.Instance.OfflineLevelsButtonParentTransform);
         GameModeManager.Instance.GenerateAllOfflineLevels();
     }
 
@@ -39,14 +40,17 @@ public class UiLogicManager : MonoBehaviour
                 
             });
             button.gameObject.GetComponent<LevelDataHolder>().levelData = OfflineLevel;
-           
+            if (OfflineLevel.LevelStars > 0)
+            {
+                ShowLevelStars(button.gameObject.GetComponent<LevelDataHolder>());
+            }
         }
         else
         {
             Button button = Instantiate(OfflineLevel.LevelUIElements.LevelLockedButtonPrefab,ButtonParent);
             button.gameObject.GetComponentInChildren<TMP_Text>().text = OfflineLevel.LevelNumber.ToString();
             button.interactable = true; // Level is Locked Panel in UI Manager
-            button.onClick.AddListener(LockedButtonPanel);
+            button.onClick.AddListener(() => (OfflineLevel.IsUnlockable ? (Action)LockedButtonPanel : ComingSoonPanel)());
         }
 
     }
@@ -92,41 +96,12 @@ public class UiLogicManager : MonoBehaviour
        GameModeManager.Instance.level = levelData;
        GameModeManager.Instance.QuizPack = levelData.LevelQuizSCO;
     }
+
+    private void ShowLevelStars(LevelDataHolder LevelDataHolder)
+    {
+        for (int i = 0; i < LevelDataHolder.levelData.LevelStars; i++)
+        {
+            LevelDataHolder.stars[i].gameObject.SetActive(true);
+        }
+    }
 }
-/*using System;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class UiLogicManager : MonoBehaviour
-{
-    public static UiLogicManager Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance == null) Instance = this;
-        else { Destroy(gameObject); return; }
-    }
-
-    /// <summary>
-    /// Creates a level button depending on whether the level is unlocked.
-    /// </summary>
-    public void GenerateOfflineLevelButton(LevelDataSO level, Action onClickAction, Transform buttonParent)
-    {
-        Button button;
-
-        if (level.isLevelUnlocked)
-        {
-            button = Instantiate(level.LevelUIElements.LevelUnlockedButtonPrefab, buttonParent);
-            button.interactable = true;
-            button.onClick.AddListener(() => onClickAction?.Invoke());
-        }
-        else
-        {
-            button = Instantiate(level.LevelUIElements.LevelLockedButtonPrefab, buttonParent);
-            button.interactable = false;
-        }
-
-        button.GetComponentInChildren<TMP_Text>().text = level.LevelNumber.ToString();
-    }
-}*/

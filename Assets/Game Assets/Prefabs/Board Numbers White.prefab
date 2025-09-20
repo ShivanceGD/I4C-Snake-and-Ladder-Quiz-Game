@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3370037834523802753}
   - component: {fileID: 5810534438890647157}
   m_Layer: 0
-  m_Name: Board Numbers
+  m_Name: Board Numbers White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

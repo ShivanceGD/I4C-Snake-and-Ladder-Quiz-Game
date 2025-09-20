@@ -17,6 +17,7 @@ public class Player : NetworkBehaviour
     private void Awake()
     {
         Movement = GetComponent<PlayerMovement>();
+        PlayerName = AuthExtensions.GetCachedPlayerName();
         //HUD = GetComponent<PlayerHUD>();
     }
 

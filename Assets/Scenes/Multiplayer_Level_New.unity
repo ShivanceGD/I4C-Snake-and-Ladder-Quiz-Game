@@ -4368,7 +4368,9 @@ MonoBehaviour:
   onlineTurnHandler: {fileID: 133396341}
   HowToPlayPanelPrefab: {fileID: 5453255641188065005, guid: 829b411ca801c624cb5a9c24f8646f6a, type: 3}
   CanvasTransform: {fileID: 1542624319}
-  boardManager: {fileID: 0}
+  BoardLogicManager: {fileID: 0}
+  currentBoardData: {fileID: 0}
+  currentQuizPack: {fileID: 0}
   LeaderBoard: {fileID: 425463355}
   RankPrefab: {fileID: 2283468471138548295, guid: 926cb1b80f74a684fbaafd41fe643d50, type: 3}
   RankingTransform: {fileID: 556817750784530265}
@@ -4396,6 +4398,15 @@ MonoBehaviour:
   - Unsafe Digital Step
   - Bad Online Move
   - Not Cybersafe Enough
+  boardManagers:
+  - {fileID: 11400000, guid: 0d2152d47638ae14eafcaff865620880, type: 2}
+  - {fileID: 11400000, guid: d4096baae2034e148b6b1e7fa3515fdb, type: 2}
+  - {fileID: 11400000, guid: bdab925c8c0bcce4f824b51c6836d36c, type: 2}
+  quizPacks:
+  - {fileID: 11400000, guid: 6a33c5ce48ba3fa48979dc3dae3c44b8, type: 2}
+  - {fileID: 11400000, guid: ac3b1893b7c18ce49bbd5a62317701e2, type: 2}
+  - {fileID: 11400000, guid: 119e0878251d6d0429639508e28dbc89, type: 2}
+  - {fileID: 11400000, guid: a1056fe8e9f80e54e97f207d408b1f1c, type: 2}
 --- !u!1 &1230114899
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
+public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
 {
-     [Header("References (assign in inspector)")]
+    [Header("References (assign in inspector)")]
     public LevelDataSO CurrentLevelData;
+
     public Transform boardParent;
     public Transform PlayerSpawnLocation;
     public MovementManager movementManager;
@@ -22,30 +23,42 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
     public GameObject HowToPlayPanelPrefab;
     public Transform CanvasTransform;
     private GameObject HowToPlayPanel;
-    public BoardLogicManager boardManager;
-    [Header("LeaderBoard References")]
-    [SerializeField]private GameObject LeaderBoard;
-    [SerializeField]private GameObject RankPrefab;
-    [SerializeField]private Transform RankingTransform;
+    public BoardLogicManager BoardLogicManager;
+    public BoardDataSO currentBoardData;
+    public QuizPackSO currentQuizPack;
 
-    [Header("Summary References")] 
-    [SerializeField] private GameObject SummaryPrefab;
+    [Header("LeaderBoard References")] [SerializeField]
+    private GameObject LeaderBoard;
+
+    [SerializeField] private GameObject RankPrefab;
+    [SerializeField] private Transform RankingTransform;
+
+    [Header("Summary References")] [SerializeField]
+    private GameObject SummaryPrefab;
+
     [SerializeField] private Transform SummaryTransform;
 
-    [Header("Hud References")] 
-    [SerializeField] private GameObject PlayerHudItem;
+    [Header("Hud References")] [SerializeField]
+    private GameObject PlayerHudItem;
+
     [SerializeField] private Transform PlayerHudItemPanelTransform;
+
     [SerializeField] private TMP_Text Info_Text;
+
     // centralized data (server-authoritative)
     public SerializedDictionary<Player, PlayerGameData> AllPlayers = new();
-    [SerializeField] private Dictionary<Player,GameObject> playerHuds = new ();
+    [SerializeField] private Dictionary<Player, GameObject> playerHuds = new();
     private Player CurrentPlayer;
-    [Header("Colors")]
-    public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
+    [Header("Colors")] public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
 
     [SerializeField] private List<string> LadderTexts;
     [SerializeField] private List<string> SnakeTexts;
 
+    [Header("Level and Quiz Data")] 
+    [SerializeField] private List<BoardDataSO> boardManagers;
+    [SerializeField] private List<QuizPackSO> quizPacks;
+    
+    
     private void Awake()
     {
         //BootstrapLevel();
@@ -57,6 +70,8 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
         {
             player.transform.position = PlayerSpawnLocation.position;
         }
+        currentBoardData = boardManagers[Random.Range(0, boardManagers.Count)];
+        currentQuizPack = quizPacks[Random.Range(0, quizPacks.Count)];
 
         BootstrapLevel();
     }
@@ -133,17 +148,17 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
         if (CurrentLevelData.Board?.BoardPrefab != null)
         {
             Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
-            if(boardManager == null) boardManager = FindFirstObjectByType<BoardLogicManager>();
+            if(BoardLogicManager == null) BoardLogicManager = FindFirstObjectByType<BoardLogicManager>();
             await Task.Yield();
             
-            BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberPrefabToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight);
+            BoardLogicManager.Instance.GenerateTilesPositionWithNumbers(currentBoardData.NumberPrefabToSpawnOnBoard, currentBoardData.BoardWidth, currentBoardData.BoardHeight);
         }
         else Debug.LogWarning("[OfflineFlowManager] Board prefab missing in levelData.");
 
         FindingManagersInScene();
 
         RegisterAllNetworkPlayers();
-        quizManager?.LoadQuestions(CurrentLevelData.LevelQuizSCO);
+        quizManager?.LoadQuestions(currentQuizPack);
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -360,8 +375,8 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
             Player p = kv.Key;
             if (playerHuds.ContainsKey(p)) return;
             GameObject hud = Instantiate(PlayerHudItem, PlayerHudItemPanelTransform);
-            //hud.name = $"{p.PlayerName}'s_HUD";
-            hud.name = $"Player{i}_HUD";
+            hud.name = $"{p.PlayerName}'s_HUD";
+            //hud.name = $"Player{i}_HUD";
 
             // set player name text
             hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
@@ -391,7 +406,11 @@ public class MultiplayerFlowManager : NetworkBehaviour , IFlowManager
     public void UpdateHUD( int stepsMoved = 0, bool snake = false, bool ladder = false)
     {
         // Base string = player's turn
-        string baseText = $"{CurrentPlayer.PlayerName}'s Turn";
+        string baseText = (CurrentPlayer.OwnerClientId == NetworkManager.Singleton.LocalClientId)
+            ? "Your Turn"
+            : $"{CurrentPlayer.PlayerName}'s Turn";
+
+        //string baseText = $"{CurrentPlayer.PlayerName}'s Turn";
 
 
         // Add details

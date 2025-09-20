@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cba3198441e8b443a0d36e5a25e9057, type: 3}
-  m_Name: Level1_Settings
+  m_Name: Level_ComingSoon 5
   m_EditorClassIdentifier: 
-  LevelNumber: 1
+  LevelNumber: 0
   LevelName: 
   IsUnlockable: 0
   TotalAvailableMoves: 0
-  GameMode: 1
-  LevelStars: 2
-  StarsToUnlockLevel: 0
-  LevelQuizSCO: {fileID: 11400000, guid: 9b21e18e42e16d7458de50a009fb8b57, type: 2}
+  GameMode: 2
+  LevelStars: 0
+  StarsToUnlockLevel: 3
+  LevelQuizSCO: {fileID: 0}
   NoHintDifficulty: 00000000
-  OptionsToRemoveOnHint: 1
-  Board: {fileID: 11400000, guid: 0d2152d47638ae14eafcaff865620880, type: 2}
-  PlayerPrefab: {fileID: 8567868040279243809, guid: f1a942c982929fd4a855c6dd02f30430, type: 3}
-  CPUPrefab: {fileID: 8567868040279243809, guid: ecdc33ba25b49a64cbd865b445424304, type: 3}
+  OptionsToRemoveOnHint: 0
+  Board: {fileID: 0}
+  PlayerPrefab: {fileID: 0}
+  CPUPrefab: {fileID: 0}
   DiceRollRangePerQuizDifficulty:
     _serializedList:
     - Key: 0
