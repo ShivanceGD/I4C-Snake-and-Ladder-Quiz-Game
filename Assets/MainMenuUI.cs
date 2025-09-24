@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,10 @@ public class MainMenuUI : MonoBehaviour
 
    private GameModeUIManager currentMode = GameModeUIManager.None;
 
+   [Header("Leaderboard References")]
+   public GameObject LeaderBoardItemPrefab;
+   public Transform LeaderBoardItemParent;
+   public GameObject CurrentPlayerLeaderBoardItem;
    // Called when Practice button is clicked
    public void OnPracticeClicked()
    {
@@ -77,6 +82,24 @@ public class MainMenuUI : MonoBehaviour
       AuthExtensions.SignOut();
    }
 
+   public async void LeaderBoardSetUp()
+   {
+      var playerScore = await Leaderboard.Instance.GetPlayerScore();
+      LeaderboardItemSetUp(CurrentPlayerLeaderBoardItem,playerScore.Rank+1,(int)playerScore.Score,playerScore.PlayerName);
+      var Scores = await Leaderboard.Instance.GetPaginatedScores();
+      foreach(var entry in Scores.Results)
+      {
+         GameObject scoreEntry = Instantiate(LeaderBoardItemPrefab, LeaderBoardItemParent);
+         LeaderboardItemSetUp(scoreEntry,entry.Rank+1, (int)entry.Score,entry.PlayerName);
+      }
+   }
+
+   public void LeaderboardItemSetUp(GameObject item, int rank, int score, string name)
+   {
+      item.GetComponentInChildren<TMP_Text>().text = name;
+      item.transform.Find("Rankings").GetComponent<TMP_Text>().text = rank.ToString();
+      item.transform.Find("Score_Text").GetComponent<TMP_Text>().text = score.ToString();
+   }
    /*public async void Wait(float seconds)
    {
       int milliseconds = (int)(seconds * 1000);

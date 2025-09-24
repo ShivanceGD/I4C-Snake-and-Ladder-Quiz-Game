@@ -24,6 +24,8 @@ public class GameModeManager : MonoBehaviour
 
        [SerializeField] private GameObject Multiplayer;
 
+       public bool IsPrivateRoom;
+
        private void Awake()
        {
               if (Instance != null && Instance != this)

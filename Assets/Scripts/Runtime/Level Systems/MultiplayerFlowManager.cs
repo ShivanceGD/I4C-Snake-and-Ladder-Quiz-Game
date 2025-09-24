@@ -57,8 +57,11 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     [Header("Level and Quiz Data")] 
     [SerializeField] private List<BoardDataSO> boardManagers;
     [SerializeField] private List<QuizPackSO> quizPacks;
-    
-    
+
+    [Header("Ranking References")] 
+    [SerializeField] private int pointsPerCorrect;
+    [SerializeField] private int penaltyPerMove;
+    [SerializeField] private int WinnerScore;
     private void Awake()
     {
         //BootstrapLevel();
@@ -70,12 +73,33 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         {
             player.transform.position = PlayerSpawnLocation.position;
         }
-        currentBoardData = boardManagers[Random.Range(0, boardManagers.Count)];
-        currentQuizPack = quizPacks[Random.Range(0, quizPacks.Count)];
-
+       
+        if (IsServer)
+        {
+            SelectRandomBoardAndQuizServerRpc();
+        }
         BootstrapLevel();
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    private void SelectRandomBoardAndQuizServerRpc()
+    {
+        int boardIndex = Random.Range(0, boardManagers.Count);
+        int quizIndex = Random.Range(0, quizPacks.Count);
+
+        // Store on host
+        currentBoardData = boardManagers[boardIndex];
+        currentQuizPack = quizPacks[quizIndex];
+
+        // Broadcast to all clients
+        SyncBoardAndQuizClientRpc(boardIndex, quizIndex);
+    }
+    [ClientRpc]
+    private void SyncBoardAndQuizClientRpc(int boardIndex, int quizIndex)
+    {
+        currentBoardData = boardManagers[boardIndex];
+        currentQuizPack = quizPacks[quizIndex];
+    }
     private void FindingManagersInScene()
     {
         if (movementManager == null) movementManager = FindFirstObjectByType<MovementManager>();
@@ -346,6 +370,15 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
             SetSummaryData(kv);
             Debug.Log($"{rank}. {kv.Value.Name} - tile:{kv.Value.PlayerCurrentGameStateData.CurrentIndex} correct:{kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered}");
             rank++;
+            if (!GameModeManager.Instance.IsPrivateRoom)
+            {
+                int correct = kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered;
+                int moves   = kv.Value.PlayerCurrentGameStateData.MovesCounter;
+
+                // Score formula
+                CalculateAndUpdatePoints(correct, moves,rank==1);
+            }
+
         }
 
         // also print debug questions/answers of each player
@@ -357,6 +390,17 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
                 Debug.Log($"  Q: {s.Question} | Correct: {s.CorrectAnswer}");
         }*/
     }
+
+    private void CalculateAndUpdatePoints(int correct, int moves,bool isWinner)
+    {
+        KeyValuePair<Player, PlayerGameData> kv;
+        int score = (correct * pointsPerCorrect) - (moves * penaltyPerMove);
+        if (score < 0) score = 0; // prevent negatives
+        if (isWinner) score += WinnerScore;
+        Leaderboard.Instance.AddScore(score);
+        Debug.Log($"[Leaderboard] Submitted score {score} ");
+    }
+
     /// PlayerHuds ///
     
     private void InstantiatePlayerHuds()
