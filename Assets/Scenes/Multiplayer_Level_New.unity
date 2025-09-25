@@ -3612,7 +3612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 015573da50ed04390be9f20287a541d6, type: 2}
   m_sharedMaterial: {fileID: -2237749729835323621, guid: 015573da50ed04390be9f20287a541d6, type: 2}
@@ -3639,7 +3639,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4407,6 +4407,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac3b1893b7c18ce49bbd5a62317701e2, type: 2}
   - {fileID: 11400000, guid: 119e0878251d6d0429639508e28dbc89, type: 2}
   - {fileID: 11400000, guid: a1056fe8e9f80e54e97f207d408b1f1c, type: 2}
+  pointsPerCorrect: 0
+  penaltyPerMove: 0
+  WinnerScore: 0
+  CurrentBoardIndex:
+    m_InternalValue: -1
+  CurrentQuizIndex:
+    m_InternalValue: -1
 --- !u!1 &1230114899
 GameObject:
   m_ObjectHideFlags: 0
