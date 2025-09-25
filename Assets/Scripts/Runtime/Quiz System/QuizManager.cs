@@ -159,7 +159,6 @@ public class QuizManager : MonoBehaviour
         if (questions == null || idx < 0 || idx >= questions.Count) return null;
         return questions[idx];
     }
-    
 }
 
 public struct QuizResult
