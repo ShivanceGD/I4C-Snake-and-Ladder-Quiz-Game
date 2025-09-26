@@ -131,7 +131,7 @@ public class OnlineTurnLogic : NetworkBehaviour
     /// <summary>
     /// Shows HUD for the current player until EndTurn() is called.
     /// </summary>
-    private void ShowCurrentTurnHUD()
+    /*private void ShowCurrentTurnHUD()
     {
         if (players.Count == 0) return;
 
@@ -170,8 +170,8 @@ public class OnlineTurnLogic : NetworkBehaviour
                 else
                 {
                     p.ShowTurnHUD($"{displayName}'s Turn");
-                }*/
+                }#1#
             }
-        }
+        }*/
     }
-}
+

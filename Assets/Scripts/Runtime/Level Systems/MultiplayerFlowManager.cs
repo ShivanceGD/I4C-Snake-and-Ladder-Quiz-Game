@@ -62,12 +62,16 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     [SerializeField] private int pointsPerCorrect;
     [SerializeField] private int penaltyPerMove;
     [SerializeField] private int WinnerScore;
+    public NetworkVariable<int> currentBoardIndex = new NetworkVariable<int>();
+    public NetworkVariable<int> currentQuizIndex = new NetworkVariable<int>();
+    /*
     private void Awake()
     {
         //BootstrapLevel();
     }
+    */
 
-    private void Start()
+    /*private void Start()
     {
         foreach (var player in AllPlayers.Keys)
         {
@@ -93,13 +97,88 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
 
         // Broadcast to all clients
         SyncBoardAndQuizClientRpc(boardIndex, quizIndex);
+    }*/
+    private void Awake()
+    {
+        // Subscribe to NetworkVariable changes
+        currentBoardIndex.OnValueChanged += OnBoardChanged;
+        currentQuizIndex.OnValueChanged += OnQuizChanged;
     }
-    [ClientRpc]
+
+    private void Start()
+    {
+        foreach (var player in AllPlayers.Keys)
+        {
+            player.transform.position = PlayerSpawnLocation.position;
+        }
+
+        if (IsServer)
+        {
+            SelectRandomBoardAndQuizServerRpc();
+        } 
+        currentQuizPack = quizPacks[currentQuizIndex.Value]; 
+        Debug.Log(currentQuizPack.name); 
+        currentBoardData = boardManagers[currentBoardIndex.Value]; 
+        Debug.Log(currentBoardData.name); 
+        BootstrapLevel();
+    }
+    private void OnBoardChanged(int oldVal, int newVal)
+    {
+        Debug.Log($"[NetworkSync] Board index changed from {oldVal} to {newVal}");
+
+        if (newVal >= 0 && newVal < boardManagers.Count)
+        {
+            currentBoardData = boardManagers[newVal];
+            Debug.Log($"[NetworkSync] currentBoardData set to: {currentBoardData.name}");
+            //SpawnBoardForClient();
+            
+        }
+        else
+        {
+            Debug.LogError($"[NetworkSync] Invalid board index: {newVal}");
+        }
+    }
+
+    private void OnQuizChanged(int oldVal, int newVal)
+    {
+        Debug.Log($"[NetworkSync] Quiz index changed from {oldVal} to {newVal}");
+
+        if (newVal >= 0 && newVal < quizPacks.Count)
+        {
+            currentQuizPack = quizPacks[newVal];
+            Debug.Log($"[NetworkSync] currentQuizPack set to: {currentQuizPack.name}");
+
+            if (quizManager != null)
+            {
+                quizManager.LoadQuestions(currentQuizPack);
+                Debug.Log($"[NetworkSync] Questions loaded for client from quiz pack: {currentQuizPack.name}");
+            }
+            else
+            {
+                Debug.LogError("[NetworkSync] quizManager is null! Cannot load questions.");
+            }
+        }
+        else
+        {
+            Debug.LogError($"[NetworkSync] Invalid quiz index: {newVal}");
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SelectRandomBoardAndQuizServerRpc()
+    {
+        // Assign to NetworkVariables (auto-syncs to clients)
+        currentBoardIndex.Value = Random.Range(0, boardManagers.Count);;
+        currentQuizIndex.Value = Random.Range(0, quizPacks.Count);;
+
+        //Debug.Log($"[Server] Selected board {boardIndex} and quiz {quizIndex}");
+    }
+    /*[ClientRpc]
     private void SyncBoardAndQuizClientRpc(int boardIndex, int quizIndex)
     {
         currentBoardData = boardManagers[boardIndex];
         currentQuizPack = quizPacks[quizIndex];
-    }
+    }*/
     private void FindingManagersInScene()
     {
         if (movementManager == null) movementManager = FindFirstObjectByType<MovementManager>();
@@ -226,7 +305,11 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
             AllPlayers[p] = data;
             idx++;
         }
-
+        Debug.Log($"[RegisterAllNetworkPlayers] Found {players.Length} players:");
+        foreach (var p in players)
+        {
+            Debug.Log($"- {p.name} | Owner: {p.OwnerClientId} | PlayerName: {p.PlayerName}");
+        }
         onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList()); 
         InstantiatePlayerHuds();
     }
@@ -393,7 +476,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
 
     private void CalculateAndUpdatePoints(int correct, int moves,bool isWinner)
     {
-        KeyValuePair<Player, PlayerGameData> kv;
+        //KeyValuePair<Player, PlayerGameData> kv;
         int score = (correct * pointsPerCorrect) - (moves * penaltyPerMove);
         if (score < 0) score = 0; // prevent negatives
         if (isWinner) score += WinnerScore;
@@ -406,7 +489,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     private void InstantiatePlayerHuds()
     {
         int i = 1;
-        playerHuds.Clear();
+        //playerHuds.Clear();
         /*if (PlayerHudItemPanelTransform.childCount > 0)
         {
             foreach (GameObject child in PlayerHudItemPanelTransform)

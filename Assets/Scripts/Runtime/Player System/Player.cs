@@ -55,31 +55,6 @@ public class Player : NetworkBehaviour
         }
     }
     
-    /*/// HUD WRAPPER ///
-    public void ShowTurnHUD(string message)
-    {
-        HUD.ShowTurn(message);
-    }
-
-    public void ShowStateHUD(string stateMessage)
-    {
-        HUD.ShowState(stateMessage);
-    }
-
-    public void ShowLadderText()
-    {
-        HUD.ShowRandomLadderText();
-    }
-    public void ShowSnakesText()
-    {
-        HUD.ShowRandomSnakeText();
-    }
-    
-
-    public void ClearHUD()
-    {
-        HUD.Clear();
-    }*/
     public override void OnNetworkSpawn()
     {
         if (IsServer)
