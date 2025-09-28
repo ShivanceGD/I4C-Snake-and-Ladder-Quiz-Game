@@ -1,5 +1,3 @@
-using System;
-using Unity.Collections;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,42 +63,6 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
     [SerializeField] private int WinnerScore;
     public NetworkVariable<int> currentBoardIndex = new NetworkVariable<int>();
     public NetworkVariable<int> currentQuizIndex = new NetworkVariable<int>();
-    
-    
-    /*
-    private void Awake()
-    {
-        //BootstrapLevel();
-    }
-    */
-
-    /*private void Start()
-    {
-        foreach (var player in AllPlayers.Keys)
-        {
-            player.transform.position = PlayerSpawnLocation.position;
-        }
-       
-        if (IsServer)
-        {
-            SelectRandomBoardAndQuizServerRpc();
-        }
-        BootstrapLevel();
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    private void SelectRandomBoardAndQuizServerRpc()
-    {
-        int boardIndex = Random.Range(0, boardManagers.Count);
-        int quizIndex = Random.Range(0, quizPacks.Count);
-
-        // Store on host
-        currentBoardData = boardManagers[boardIndex];
-        currentQuizPack = quizPacks[quizIndex];
-
-        // Broadcast to all clients
-        SyncBoardAndQuizClientRpc(boardIndex, quizIndex);
-    }*/
     private void Awake()
     {
         // Subscribe to NetworkVariable changes
@@ -174,15 +136,7 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
         // Assign to NetworkVariables (auto-syncs to clients)
         currentBoardIndex.Value = Random.Range(0, boardManagers.Count);;
         currentQuizIndex.Value = Random.Range(0, quizPacks.Count);;
-
-        //Debug.Log($"[Server] Selected board {boardIndex} and quiz {quizIndex}");
     }
-    /*[ClientRpc]
-    private void SyncBoardAndQuizClientRpc(int boardIndex, int quizIndex)
-    {
-        currentBoardData = boardManagers[boardIndex];
-        currentQuizPack = quizPacks[quizIndex];
-    }*/
     private void FindingManagersInScene()
     {
         if (movementManager == null) movementManager = FindFirstObjectByType<MovementManager>();
@@ -213,18 +167,6 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
     [ContextMenu("Spawn Board")]
     public async Task BootstrapLevel()
     {
-        /*if (CurrentLevelData.Board?.BoardPrefab == null) return;
-
-        GameObject spawnedBoard = Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
-        if (spawnedBoard == null)
-        {
-            Debug.LogError("SpawnedBoard is null immediately after Instantiate!");
-            return;
-        }
-
-        // safe call
-        BoardLogicManager.Instance?.GenerateTilesPositionWithNumbers(CurrentLevelData.Board.NumberPrefabToSpawnOnBoard, CurrentLevelData.Board.BoardWidth, CurrentLevelData.Board.BoardHeight //spawnedBoard.transform
-            );*/
         HowToPlayPanel = Instantiate(HowToPlayPanelPrefab,CanvasTransform);
         if (IsHost) // Host
         {
@@ -274,19 +216,25 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
         var playerObj = NetworkManager.Singleton.SpawnManager.SpawnedObjects[networkObjectId].GetComponent<Player>();
         if (playerObj == null) return;
 
-        Color c = (PlayerColors != null && PlayerColors.Length > 0) 
-            ? PlayerColors[AllPlayers.Count % PlayerColors.Length] 
-            : playerObj.Color;
+        int index = (PlayerColors != null && PlayerColors.Length > 0) ? (AllPlayers.Count % PlayerColors.Length) : -1;
 
-        playerObj.ApplyColor(c);
-        playerObj.Color = c;
+        if (index >= 0)
+        {
+            // server writes authoritative color index
+            playerObj.NetworkColorIndex.Value = index;
+            // apply on server immediately as well
+            playerObj.ApplyColor(PlayerColors[index]);
+        }
 
-        var data = new PlayerGameData(playerObj.PlayerName, playerObj.IsCpu ? PlayerType.CPU : PlayerType.Human, c);
+        // prefer server's stored NetworkPlayerName (sent by owner). fallback to PlayerName.
+        string resolvedName = playerObj.NetworkPlayerName.Value.Length > 0 ? playerObj.NetworkPlayerName.Value.ToString() : playerObj.PlayerName;
+
+        var data = new PlayerGameData(resolvedName, playerObj.IsCpu ? PlayerType.CPU : PlayerType.Human, (index >= 0 && PlayerColors != null && index < PlayerColors.Length) ? PlayerColors[index] : playerObj.Color);
 
         if (!AllPlayers.ContainsKey(playerObj))
         {
             AllPlayers[playerObj] = data;
-            Debug.Log($"[Server] Registered player {playerObj.PlayerName} from client {clientId}");
+            Debug.Log($"[Server] Registered player {resolvedName} from client {clientId}");
         }
 
         // Sync to turn manager
@@ -296,27 +244,32 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
     private void RegisterAllNetworkPlayers()
     {
         AllPlayers.Clear();
-        
+
         var players = FindObjectsByType<Player>(FindObjectsSortMode.None);
-        int idx = 0;
         foreach (var p in players)
         {
-            Color c = (PlayerColors != null && PlayerColors.Length > 0) ? PlayerColors[idx % PlayerColors.Length] : p.Color;
-            p.ApplyColor(c);
-            p.Color = c;
+            // Use networked values if available. Do not force-assign colors on clients here.
+            string name = p.NetworkPlayerName.Value.Length > 0 ? p.NetworkPlayerName.Value.ToString() : p.PlayerName;
+            Color color = p.Color;
+            if (p.NetworkColorIndex.Value >= 0 && PlayerColors != null && p.NetworkColorIndex.Value < PlayerColors.Length)
+            {
+                color = PlayerColors[p.NetworkColorIndex.Value];
+                p.ApplyColor(color); // ensure sprite matches
+            }
 
-            var data = new PlayerGameData(p.PlayerName, p.IsCpu ? PlayerType.CPU : PlayerType.Human, c);
+            var data = new PlayerGameData(name, p.IsCpu ? PlayerType.CPU : PlayerType.Human, color);
             AllPlayers[p] = data;
-            idx++;
         }
+
         Debug.Log($"[RegisterAllNetworkPlayers] Found {players.Length} players:");
         foreach (var p in players)
         {
-            Debug.Log($"- {p.name} | Owner: {p.OwnerClientId} | PlayerName: {p.PlayerName}");
+            Debug.Log($"- {p.name} | Owner: {p.OwnerClientId} | PlayerName: {p.PlayerName} | NetName: {p.NetworkPlayerName.Value.ToString()} | ColorIdx: {p.NetworkColorIndex.Value}");
         }
-        onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList()); 
+        onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList());
         InstantiatePlayerHuds();
     }
+    
 
     private void StartTurns()
     {
@@ -389,35 +342,7 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
             if (nxt != null) StartTurnForPlayer(nxt);
         });
     }
-
     
-    /*private IEnumerator CpuSequence(Player cpu)
-    {
-        yield return new WaitForSeconds(0.5f);
-        bool correct = Random.value > 0.35f;
-        float t = Random.Range(2f, 8f);
-        QuestionsDifficulty d = QuestionsDifficulty.Easy;
-        movementManager.ProcessPostQuizMovement(cpu, correct, d, t, CurrentLevelData.Board, CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
-        {
-            UpdatePlayerDataAfterMovement(cpu, null, new QuizResult { IsCorrect = correct, SelectedIndex = -1, TimeTaken = t }, mres);
-            if (mres.Finished)
-            {
-                if (AllPlayers.TryGetValue(cpu, out var cd)) cd.UpdatePlayersDataMarkFinished(true);
-                onlineTurnHandler.RemovePlayerFromTurn(cpu);
-            }
-
-            if (CheckForGameEnd())
-            {
-                BroadcastLeaderboardClientRpc();
-                return;
-            }
-
-            onlineTurnHandler.EndTurn();
-            Player nxt = onlineTurnHandler.GetCurrentPlayer();
-            if (nxt != null) StartTurnForPlayer(nxt);
-        });
-    }*/
-
     private void UpdatePlayerDataAfterMovement(Player p, QuizQuestionData question, QuizResult quizResult, MovementResult movementResult)
     {
         if (!AllPlayers.TryGetValue(p, out var data)) return;
@@ -467,15 +392,6 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
             }
 
         }
-
-        // also print debug questions/answers of each player
-        /*foreach (var kv in AllPlayers)
-        {
-            var summaries = kv.Key.QuestionsListForSummary();
-            Debug.Log($"[QA Dump] {kv.Value.Name}:");
-            foreach (var s in summaries)
-                Debug.Log($"  Q: {s.Question} | Correct: {s.CorrectAnswer}");
-        }*/
     }
 
     private void CalculateAndUpdatePoints(int correct, int moves,bool isWinner)
@@ -490,30 +406,23 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
 
     /// PlayerHuds ///
     
-    private void InstantiatePlayerHuds()
+    public void InstantiatePlayerHuds()
     {
         int i = 1;
-        //playerHuds.Clear();
-        /*if (PlayerHudItemPanelTransform.childCount > 0)
-        {
-            foreach (GameObject child in PlayerHudItemPanelTransform)
-            {
-                Destroy(child);
-            }
-        }*/
+
         foreach (var kv in AllPlayers)
         {
             Player p = kv.Key;
             if (playerHuds.ContainsKey(p)) continue;
-            GameObject hud = Instantiate(PlayerHudItem, PlayerHudItemPanelTransform);
-            hud.name = $"{p.PlayerName}'s_HUD";
-            //hud.name = $"Player{i}_HUD";
 
-            // set player name text
+            GameObject hud = Instantiate(PlayerHudItem, PlayerHudItemPanelTransform);
+            hud.name = $"{kv.Value.Name}'s_HUD";
+
+            // set player slot number
             hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
-            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.PlayerName;
-            // set player color if UI has Image
-            
+            // set displayed name
+            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = kv.Value.Name;
+            // set player color
             hud.transform.GetChild(2).GetComponentInChildren<Image>().color = kv.Value.Color;
 
             // ensure TurnIndicator starts off
@@ -522,21 +431,54 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
             playerHuds.Add(p, hud);
             i++;
         }
-       
+
+        // Sync HUDs to clients
+        SyncHudClientRpc();
+    }
+    [ClientRpc]
+    private void SyncHudClientRpc()
+    {
+        foreach (var kv in AllPlayers)
+        {
+            UpdateHudName(kv.Key, kv.Value.Name);
+            UpdateHudColor(kv.Key, kv.Value.Color);
+        }
+        UpdateTurnIndicatorsClientRpc(onlineTurnHandler.GetCurrentPlayer().OwnerClientId);
+    }
+    public void UpdateHudColor(Player p, Color c)
+    {
+        if (playerHuds.TryGetValue(p, out var hud))
+        {
+            hud.transform.GetChild(2).GetComponentInChildren<Image>().color = c;
+        }
+        if (AllPlayers.TryGetValue(p, out var data)) data.Color = c;
     }
     private void UpdateTurnIndicators(Player current)
     {
-        CurrentPlayer = current;
+        UpdateTurnIndicatorsClientRpc(current.OwnerClientId);
+    }
+    [ClientRpc]
+    private void UpdateTurnIndicatorsClientRpc(ulong currentPlayerId)
+    {
         foreach (var kv in playerHuds)
         {
             Transform indicator = kv.Value.transform.Find("TurnIndicator");
             if (indicator != null)
-                indicator.gameObject.SetActive(kv.Key == current);
+                indicator.gameObject.SetActive(kv.Key.OwnerClientId == currentPlayerId);
         }
+    }
+    
+    public void UpdateHudName(Player p, string name)
+    {
+        if (playerHuds.TryGetValue(p, out var hud))
+        {
+            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = name;
+            hud.name = $"{name}'s_HUD";
+        }
+        if (AllPlayers.TryGetValue(p, out var data)) data.Name = name;
     }
     public void UpdateHUD(int stepsMoved = 0, bool snake = false, bool ladder = false)
     {
-        // Make sure we're the host/server before calling the ClientRpc
         if (IsServer)
         {
             UpdateHUDClientRpc(stepsMoved, snake, ladder);
@@ -552,10 +494,6 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
             ? "Your Turn"
             : $"{currentplayer.PlayerName}'s Turn";
 
-        //string baseText = $"{CurrentPlayer.PlayerName}'s Turn";
-
-
-        // Add details
         string details = "";
         if (stepsMoved > 0) details += $" Moved {stepsMoved} steps.";
         if (ladder) details += $"\n <color=green>{LadderTexts[Random.Range(0,LadderTexts.Count)]}</color>";
@@ -584,12 +522,10 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
             index++;
 
         }
-        //summary.transform.GetChild(0).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers.Keys;
     }
     public void SwitchScene(string SceneName)
     {
         LoadingSceneManager.Instance.LoadofflineScene(SceneName);
         LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading Menu");
     }
-    
 }
