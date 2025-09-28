@@ -1,4 +1,5 @@
 using System;
+using Unity.Collections;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
+public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
 {
     [Header("References (assign in inspector)")]
     public LevelDataSO CurrentLevelData;
@@ -64,6 +65,8 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     [SerializeField] private int WinnerScore;
     public NetworkVariable<int> currentBoardIndex = new NetworkVariable<int>();
     public NetworkVariable<int> currentQuizIndex = new NetworkVariable<int>();
+    
+    
     /*
     private void Awake()
     {
@@ -164,6 +167,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         }
     }
 
+    [ContextMenu("randomBoardAndQuiz")]
     [ServerRpc(RequireOwnership = false)]
     private void SelectRandomBoardAndQuizServerRpc()
     {
@@ -248,9 +252,9 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         }
         
         // 1) Board
-        if (CurrentLevelData.Board?.BoardPrefab != null)
+        if (currentBoardData?.BoardPrefab != null)
         {
-            Instantiate(CurrentLevelData.Board.BoardPrefab, boardParent);
+            Instantiate(currentBoardData.BoardPrefab, boardParent);
             if(BoardLogicManager == null) BoardLogicManager = FindFirstObjectByType<BoardLogicManager>();
             await Task.Yield();
             
@@ -364,7 +368,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         var q = quizManager.GetQuestionByIndex(qIdx);
         var qr = new QuizResult { IsCorrect = isCorrect, TimeTaken = time, SelectedIndex = selectedIdx };
 
-        movementManager.ProcessPostQuizMovement(player, isCorrect, q.questionsDifficulty, time, CurrentLevelData.Board, CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
+        movementManager.ProcessPostQuizMovement(player, isCorrect, q.questionsDifficulty, time, currentBoardData, CurrentLevelData.DiceRollRangePerQuizDifficulty, (mres) =>
         {
             UpdatePlayerDataAfterMovement(player, q, qr, mres);
 
@@ -500,7 +504,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         foreach (var kv in AllPlayers)
         {
             Player p = kv.Key;
-            if (playerHuds.ContainsKey(p)) return;
+            if (playerHuds.ContainsKey(p)) continue;
             GameObject hud = Instantiate(PlayerHudItem, PlayerHudItemPanelTransform);
             hud.name = $"{p.PlayerName}'s_HUD";
             //hud.name = $"Player{i}_HUD";
@@ -518,6 +522,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
             playerHuds.Add(p, hud);
             i++;
         }
+       
     }
     private void UpdateTurnIndicators(Player current)
     {
@@ -529,13 +534,23 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
                 indicator.gameObject.SetActive(kv.Key == current);
         }
     }
-    
-    public void UpdateHUD( int stepsMoved = 0, bool snake = false, bool ladder = false)
+    public void UpdateHUD(int stepsMoved = 0, bool snake = false, bool ladder = false)
     {
+        // Make sure we're the host/server before calling the ClientRpc
+        if (IsServer)
+        {
+            UpdateHUDClientRpc(stepsMoved, snake, ladder);
+        }
+    }
+    
+    [ClientRpc]
+    public void UpdateHUDClientRpc( int stepsMoved = 0, bool snake = false, bool ladder = false)
+    {
+        var currentplayer = onlineTurnHandler.GetCurrentPlayer();
         // Base string = player's turn
-        string baseText = (CurrentPlayer.OwnerClientId == NetworkManager.Singleton.LocalClientId)
+        string baseText = (currentplayer.OwnerClientId == NetworkManager.Singleton.LocalClientId)
             ? "Your Turn"
-            : $"{CurrentPlayer.PlayerName}'s Turn";
+            : $"{currentplayer.PlayerName}'s Turn";
 
         //string baseText = $"{CurrentPlayer.PlayerName}'s Turn";
 

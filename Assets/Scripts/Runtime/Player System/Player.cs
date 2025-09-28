@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using Unity.Netcode;
 
 public class Player : NetworkBehaviour
 {
     [Header("Player meta")] public string PlayerName = "Player";
+    public NetworkVariable<FixedString64Bytes> NetworkPlayerName = new NetworkVariable<FixedString64Bytes>();
+
     public bool IsCpu = false;
     public Color Color = Color.white;
     public SpriteRenderer PlayerSprite;
@@ -55,7 +58,7 @@ public class Player : NetworkBehaviour
         }
     }
     
-    public override void OnNetworkSpawn()
+    /*public override void OnNetworkSpawn()
     {
         if (IsServer)
         {
@@ -65,5 +68,21 @@ public class Player : NetworkBehaviour
                 flowManager.RegisterPlayerServerRpc(OwnerClientId, NetworkObjectId);
             }
         }
+    }*/
+    public override void OnNetworkSpawn()
+    {
+            
+            
+        if (IsServer)
+        {
+            
+            var flowManager = FindFirstObjectByType<MultiplayerFlowManager>();
+            if (flowManager != null)
+            {
+                flowManager.RegisterPlayerServerRpc(OwnerClientId, NetworkObjectId);
+            }
+        }
+
+       
     }
 }
