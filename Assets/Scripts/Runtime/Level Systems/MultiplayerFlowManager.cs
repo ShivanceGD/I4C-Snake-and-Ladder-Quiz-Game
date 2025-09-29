@@ -210,7 +210,7 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
         quizManager?.LoadQuestions(currentQuizPack);
     }
 
-    [ServerRpc(RequireOwnership = false)]
+    /*[ServerRpc(RequireOwnership = false)]
     public void RegisterPlayerServerRpc(ulong clientId, ulong networkObjectId)
     {
         var playerObj = NetworkManager.Singleton.SpawnManager.SpawnedObjects[networkObjectId].GetComponent<Player>();
@@ -240,7 +240,47 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
         // Sync to turn manager
         onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList());
         InstantiatePlayerHuds();
+    }*/
+    [ServerRpc(RequireOwnership = false)]
+    public void RegisterPlayerServerRpc(ulong clientId, ulong networkObjectId)
+    {
+        var playerObj = NetworkManager.Singleton.SpawnManager.SpawnedObjects[networkObjectId].GetComponent<Player>();
+        if (playerObj == null) return;
+
+        int index = -1;
+
+        // ✅ Host (server) always gets red (index 0)
+        if (clientId == NetworkManager.Singleton.LocalClientId && PlayerColors.Length > 0)
+        {
+            index = 0;
+        }
+        else if (PlayerColors != null && PlayerColors.Length > 0)
+        {
+            // Others cycle through remaining colors
+            index = AllPlayers.Count % PlayerColors.Length;
+            if (index == 0) index = 1; // skip red if already taken by host
+        }
+
+        if (index >= 0)
+        {
+            playerObj.NetworkColorIndex.Value = index;
+            playerObj.ApplyColor(PlayerColors[index]); // ✅ Apply immediately on server too
+        }
+
+        string resolvedName = playerObj.NetworkPlayerName.Value.Length > 0 ? playerObj.NetworkPlayerName.Value.ToString() : playerObj.PlayerName;
+
+        var data = new PlayerGameData(resolvedName, playerObj.IsCpu ? PlayerType.CPU : PlayerType.Human, (index >= 0 && PlayerColors != null && index < PlayerColors.Length) ? PlayerColors[index] : playerObj.Color);
+
+        if (!AllPlayers.ContainsKey(playerObj))
+        {
+            AllPlayers[playerObj] = data;
+            Debug.Log($"[Server] Registered player {resolvedName} from client {clientId} with color {PlayerColors[index]}");
+        }
+
+        onlineTurnHandler.RegisterPlayers(AllPlayers.Keys.ToList());
+        InstantiatePlayerHuds();
     }
+
     private void RegisterAllNetworkPlayers()
     {
         AllPlayers.Clear();
@@ -329,10 +369,12 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
             {
                 if (AllPlayers.TryGetValue(player, out var d)) d.UpdatePlayersDataMarkFinished(true);
                 onlineTurnHandler.RemovePlayerFromTurn(player);
+                //StartCoroutine(CheckGameEndNextFrame());
             }
 
             if (CheckForGameEnd())
             {
+                //if(IsServer) PopulateHostLeaderboard();
                 BroadcastLeaderboardClientRpc();
                 return;
             }
@@ -343,6 +385,24 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
         });
     }
     
+    /*private void PopulateHostLeaderboard()
+    {
+        LeaderBoard.SetActive(true);
+        foreach(Transform child in RankingTransform) Destroy(child.gameObject);
+        foreach(Transform child in SummaryTransform) Destroy(child.gameObject);
+
+        var ranking = AllPlayers.OrderByDescending(kv => kv.Value.PlayerCurrentGameStateData.CurrentIndex)
+            .ThenByDescending(kv => kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered)
+            .ToList();
+        int rank = 1;
+        foreach(var kv in ranking)
+        {
+            SetLeaderBoardRankings(rank, kv);
+            SetSummaryData(kv);
+            
+            rank++;
+        }
+    }*/
     private void UpdatePlayerDataAfterMovement(Player p, QuizQuestionData question, QuizResult quizResult, MovementResult movementResult)
     {
         if (!AllPlayers.TryGetValue(p, out var data)) return;
@@ -474,25 +534,26 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
         {
             hud.transform.GetChild(3).GetComponent<TMP_Text>().text = name;
             hud.name = $"{name}'s_HUD";
+            // ✅ Update player number slot again
+            int playerIndex = AllPlayers.Keys.ToList().IndexOf(p) + 1;
+            hud.transform.GetComponentInChildren<TMP_Text>().text = playerIndex.ToString();
         }
         if (AllPlayers.TryGetValue(p, out var data)) data.Name = name;
     }
-    public void UpdateHUD(int stepsMoved = 0, bool snake = false, bool ladder = false)
-    {
-        if (IsServer)
-        {
-            UpdateHUDClientRpc(stepsMoved, snake, ladder);
-        }
-    }
-    
-    [ClientRpc]
-    public void UpdateHUDClientRpc( int stepsMoved = 0, bool snake = false, bool ladder = false)
+
+    public void UpdateHUD(int stepsMoved, bool snake, bool ladder)
     {
         var currentplayer = onlineTurnHandler.GetCurrentPlayer();
+        UpdateHUDClientRPC(stepsMoved,snake,ladder,currentplayer.OwnerClientId);
+    }
+    [ClientRpc]
+    public void UpdateHUDClientRPC( int stepsMoved = 0, bool snake = false, bool ladder = false,ulong currentPlayerClinetID = 0)
+    {
+        var currentPlayer = FindObjectsOfType<Player>().FirstOrDefault(p => p.OwnerClientId == currentPlayerClinetID);
         // Base string = player's turn
-        string baseText = (currentplayer.OwnerClientId == NetworkManager.Singleton.LocalClientId)
+        string baseText = (currentPlayer.OwnerClientId == NetworkManager.Singleton.LocalClientId)
             ? "Your Turn"
-            : $"{currentplayer.PlayerName}'s Turn";
+            : $"{currentPlayer.PlayerName}'s Turn";
 
         string details = "";
         if (stepsMoved > 0) details += $" Moved {stepsMoved} steps.";

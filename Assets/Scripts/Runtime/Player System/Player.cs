@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Netcode;
@@ -5,10 +6,11 @@ using UnityEngine;
 
 public class Player : NetworkBehaviour
 {
-    [Header("Player meta")]
-    public string PlayerName = "Player";
+    [Header("Player meta")] public string PlayerName = "Player";
+
     public NetworkVariable<FixedString64Bytes> NetworkPlayerName = new NetworkVariable<FixedString64Bytes>(
         default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
     public NetworkVariable<int> NetworkColorIndex = new NetworkVariable<int>(
         -1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
@@ -73,8 +75,20 @@ public class Player : NetworkBehaviour
                 Color c = manager.PlayerColors[NetworkColorIndex.Value];
                 ApplyColor(c);
                 manager.UpdateHudColor(this, c);
+                // ✅ Delay re-apply once network state is fully synced
+                StartCoroutine(ForceColorApplyNextFrame());
             }
         }
+        /*if (NetworkColorIndex.Value >= 0)
+        {
+            var manager = FindFirstObjectByType<MultiplayerFlowManager>();
+            if (manager != null && NetworkColorIndex.Value < manager.PlayerColors.Length)
+            {
+                ApplyColor(manager.PlayerColors[NetworkColorIndex.Value]);
+                manager.UpdateHudColor(this, manager.PlayerColors[NetworkColorIndex.Value]);
+            }
+        }*/
+
 
         if (IsServer)
         {
@@ -86,5 +100,21 @@ public class Player : NetworkBehaviour
     private void SendNameToServerServerRpc(string name)
     {
         NetworkPlayerName.Value = name;
+    }
+
+    private IEnumerator ForceColorApplyNextFrame()
+    {
+        yield return null; // wait one frame so Netcode syncs
+        if (NetworkColorIndex.Value >= 0)
+        {
+            var manager = FindFirstObjectByType<MultiplayerFlowManager>();
+            if (manager != null && NetworkColorIndex.Value < manager.PlayerColors.Length)
+            {
+                Color c = manager.PlayerColors[NetworkColorIndex.Value];
+                ApplyColor(c);
+                manager.UpdateHudColor(this, c);
+                Debug.Log($"[ForceApply] Applied color {c} after sync for {PlayerName}");
+            }
+        }
     }
 }
