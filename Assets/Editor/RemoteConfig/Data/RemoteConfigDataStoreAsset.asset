@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"97fd816f-279c-440b-859a-32b9ae43549c\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"60430592-03c8-4ec6-93df-6ee4141ebd5c\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"LevelsToBeUnlocked\",\r\n      \"type\":
     \"json\",\r\n      \"schemaId\": null,\r\n      \"value\": {\r\n        \"levelNumbersToUnlock\":
     [\r\n          1\r\n        ]\r\n      }\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"97fd816f-279c-440b-859a-32b9ae43549c\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"60430592-03c8-4ec6-93df-6ee4141ebd5c\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"LevelsToBeUnlocked\",\r\n      \"type\":
     \"json\",\r\n      \"schemaId\": null,\r\n      \"value\": {\r\n        \"levelNumbersToUnlock\":
     [\r\n          1\r\n        ]\r\n      }\r\n    }\r\n  }\r\n]"
