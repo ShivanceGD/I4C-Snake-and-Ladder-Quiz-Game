@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,8 +11,6 @@ public enum GameModeUIManager
 }
 public class MainMenuUI : MonoBehaviour
 {
-   
-   
    [Header("References")]
    public Transform quizPackButtonParent;    // Where quiz pack buttons will spawn
    public GameObject quizPackButtonPrefab;   // A button prefab with TMP_Text + Button
@@ -31,6 +30,16 @@ public class MainMenuUI : MonoBehaviour
    public Transform LeaderBoardItemParent;
    public GameObject CurrentPlayerLeaderBoardItem;
    // Called when Practice button is clicked
+
+   public TMP_InputField username;
+   public TMP_Text id;
+   public Button updateNameButton;
+
+   public void Start()
+   {
+      username.text = AuthExtensions.GetCachedPlayerName();
+      id.text = AuthExtensions.GetPlayerID();
+   }
    public void OnPracticeClicked()
    {
       currentMode = GameModeUIManager.Practice;
@@ -51,6 +60,17 @@ public class MainMenuUI : MonoBehaviour
       ShowQuizPackButtons();
    }
 
+   public async void ApplyName()
+   {
+      try
+      {
+         await AuthExtensions.UpdatePlayerNameAsync(username.text);
+      }
+      catch (Exception e)
+      {
+         Debug.Log(e.Message);
+      }
+   }
    private void ShowQuizPackButtons()
    {
       // Clear old buttons
@@ -79,6 +99,7 @@ public class MainMenuUI : MonoBehaviour
    
    public void SignOut()
    {
+      LoadingSceneManager.Instance.LoadofflineScene("SignUp_SignIn");
       AuthExtensions.SignOut();
    }
 
@@ -100,11 +121,4 @@ public class MainMenuUI : MonoBehaviour
       item.transform.Find("Rankings").GetComponent<TMP_Text>().text = rank.ToString();
       item.transform.Find("Score_Text").GetComponent<TMP_Text>().text = score.ToString();
    }
-   /*public async void Wait(float seconds)
-   {
-      int milliseconds = (int)(seconds * 1000);
-      await Task.Delay(milliseconds);
-   }*/
-
-  
 }
