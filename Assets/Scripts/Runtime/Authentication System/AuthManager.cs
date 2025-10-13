@@ -43,7 +43,7 @@ public class AuthManager : MonoBehaviour
     {
         UnityServices.InitializeAsync();
 
-#if Unity_Editor || UNITY_STANDALONE_WIN
+#if Unity_Editor || UNITY_STANDALONE_WIN || UNITY_ANDROID
         {
         GooglePlaySignInButton.gameObject.SetActive(false);
         }
@@ -91,8 +91,18 @@ public class AuthManager : MonoBehaviour
         }
 
         string result = await AuthExtensions.SignUpWithUsernamePasswordAsync(Username_SignUp.text, Password_SignUp.text);
-        ShowMessage(result, Color.red);
-        //UpdateProfileUI();
+        //ShowMessage(result, Color.red);
+        //UpdateProfileUI();*/
+        if (result.StartsWith("Success", StringComparison.OrdinalIgnoreCase))
+        {
+            ShowMessage("Account created successfully!", Color.green);
+            new WaitForSeconds(2f); // small delay for UI feedback (optional)
+            LoadScene();
+        }
+        else
+        {
+            ShowMessage(result, Color.red);
+        }
     }
 
     public async void GuestSignIn()
@@ -118,18 +128,23 @@ public class AuthManager : MonoBehaviour
 
         string result = await AuthExtensions.SignInWithUsernamePasswordAsync(Username_SignIn.text, Password_SignIn.text);
         if (result.StartsWith("Success"))
+        {
             ShowMessage("Signed in successfully!", Color.green);
+             new WaitForSeconds(2f);
+            LoadScene();
+        }
+        
         else
             ShowMessage(result, Color.red);
 
-        UpdateProfileUI();
+        //UpdateProfileUI();
     }
 
     public void SignoutButton()
     {
-        AuthExtensions.SignOut();
-        ShowMessage("Signed out successfully.", Color.yellow);
-        UpdateProfileUI();
+        AuthExtensions.SignOut(true);
+        //ShowMessage("Signed out successfully.", Color.yellow);
+        //UpdateProfileUI();
     }
 
     private void UpdateProfileUI()
