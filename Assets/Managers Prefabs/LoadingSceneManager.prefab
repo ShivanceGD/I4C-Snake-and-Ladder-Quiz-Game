@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2694596207
+  GlobalObjectIdHash: 1868229926
   InScenePlacedSourceGlobalObjectIdHash: 1776596735
   DeferredDespawnTick: 0
   Ownership: 1
@@ -1013,6 +1013,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5374806108253107376, guid: 86e839e317559134f9b769488f494fbc, type: 3}
+    - target: {fileID: 3419760653820670301, guid: 77374d387fcf60749891437da87232f0, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3419760653820670301, guid: 77374d387fcf60749891437da87232f0, type: 3}
       propertyPath: m_Maskable
       value: 0

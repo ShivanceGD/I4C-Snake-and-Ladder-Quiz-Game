@@ -90,6 +90,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
     private async Task BootstrapLevel()
     {
         HowToPlayPanel = Instantiate(HowToPlayPanelPrefab, CanvasTransform);
+        GameObject.FindGameObjectWithTag("StartGameCloseButton").SetActive(false);
         GameObject.FindGameObjectWithTag("StartGameButton")
             .GetComponent<Button>().onClick.AddListener(StartTurn);
 
