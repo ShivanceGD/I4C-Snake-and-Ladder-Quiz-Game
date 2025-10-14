@@ -92,6 +92,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
         HowToPlayPanel = Instantiate(HowToPlayPanelPrefab, CanvasTransform);
         GameObject.FindGameObjectWithTag("StartGameButton")
             .GetComponent<Button>().onClick.AddListener(StartTurn);
+        GameObject.FindGameObjectWithTag("StartGameCloseButton").SetActive(false);
 
         // 1) Board
         if (CurrentLevelData.Board?.BoardPrefab != null)
