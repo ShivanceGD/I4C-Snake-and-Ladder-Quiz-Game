@@ -567,8 +567,8 @@ public class MultiplayerFlowManager : NetworkBehaviour,IFlowManager
         ranks.transform.GetChild(4).GetChild(3).GetComponent<Image>().color = kv.Value.Color;
         ranks.transform.GetChild(0).GetComponent<TMP_Text>().text = kv.Value.Name;
         ranks.transform.GetChild(1).GetComponentInChildren<TMP_Text>().text = rank.ToString();
-        ranks.transform.GetChild(2).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered.ToString();
-        ranks.transform.GetChild(3).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.CurrentIndex.ToString();
+        //ranks.transform.GetChild(2).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered.ToString();
+        //ranks.transform.GetChild(3).GetComponent<TMP_Text>().text = kv.Value.PlayerCurrentGameStateData.CurrentIndex.ToString();
     }
 
     private void SetSummaryData(KeyValuePair<Player, PlayerGameData> kv)

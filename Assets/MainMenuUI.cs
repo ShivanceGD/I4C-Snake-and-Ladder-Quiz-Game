@@ -30,10 +30,17 @@ public class MainMenuUI : MonoBehaviour
    public Transform LeaderBoardItemParent;
    public GameObject CurrentPlayerLeaderBoardItem;
    // Called when Practice button is clicked
-
+   
+   [Header("Profile References")]
    public TMP_InputField username;
    public TMP_Text id;
    public Button updateNameButton;
+
+   [Header("HyperLinks")] 
+   [SerializeField]private string InstagramHyperLink;
+   [SerializeField]private string YoutubeHyperLink;
+   [SerializeField]private string FaceBookHyperLink;
+   [SerializeField]private string CyberCrimePortalHyperLink;
 
    public void Start()
    {
@@ -70,6 +77,11 @@ public class MainMenuUI : MonoBehaviour
       {
          Debug.Log(e.Message);
       }
+   }
+
+   public void OpenLinks(string Link)
+   {
+      Application.OpenURL(Link);
    }
    private void ShowQuizPackButtons()
    {
@@ -118,7 +130,7 @@ public class MainMenuUI : MonoBehaviour
    public void LeaderboardItemSetUp(GameObject item, int rank, int score, string name)
    {
       item.GetComponentInChildren<TMP_Text>().text = name;
-      item.transform.Find("Rankings").GetComponent<TMP_Text>().text = rank.ToString();
+      item.transform.GetChild(0).Find("Rankings").GetComponent<TMP_Text>().text = rank.ToString();
       item.transform.Find("Score_Text").GetComponent<TMP_Text>().text = score.ToString();
    }
 }
