@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AYellowpaper.SerializedCollections;
 using TMPro;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -478,11 +479,29 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         foreach (var kv in ranking)
         {
             SetLeaderBoardRankings(rank, kv);
-            SetSummaryData(kv);
+            if (IsServer)
+            {
+                int index = 1;
+                foreach (var qa in kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers)
+                {
+                    SetSummaryClientRpc(kv.Key.OwnerClientId, qa.Key, qa.Value,index);
+                    index++;
+                }
 
+                
+            }
+            // Only host sends summary data to each player
+            /*if (IsServer)
+            {
+                SetSummaryClientRpc(
+                    kv.Key.OwnerClientId, 
+                    kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers.Keys.ToList(),
+                    kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers.Values.ToList()
+                );
+            }*/
             Debug.Log($"{rank}. {kv.Value.Name} - tile:{kv.Value.PlayerCurrentGameStateData.CurrentIndex} correct:{kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered}");
 
-            rank++;
+            
 
             if (!GameModeManager.Instance.IsPrivateRoom)
             {
@@ -491,6 +510,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
 
                 CalculateAndUpdatePoints(correct, moves, rank == 1);
             }
+            rank++;
         }
     }
 
@@ -502,7 +522,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         if (isWinner) score += WinnerScore;
 
         Leaderboard.Instance?.AddScore(score);
-        Debug.Log($"[Leaderboard] Submitted score {score} ");
+        Debug.Log($"[Leaderboard] Submitted score {score}");
     }
 
     #region PlayerHUD Methods
@@ -663,9 +683,66 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         }
     }
 
-    private void SetSummaryData(KeyValuePair<Player, PlayerGameData> kv)
+    [ClientRpc]
+    private void SetSummaryClientRpc(ulong playerID,string question, string answer,int index)
     {
-        int index = 0;
+        
+        if (NetworkManager.Singleton.LocalClientId != playerID) return;
+        Debug.Log($"Setting Summary Data For {playerID}");
+        
+        GameObject summary = Instantiate(SummaryPrefab, SummaryTransform);
+
+        if (summary.transform.childCount > 1)
+        {
+            var ansText = summary.transform.GetChild(1).GetComponentInChildren<TMP_Text>();
+            if (ansText != null) ansText.text = answer;
+        }
+
+        if (summary.transform.childCount > 2)
+        {
+            var idxText = summary.transform.GetChild(2).GetComponent<TMP_Text>();
+            if (idxText != null) idxText.text = index .ToString();
+        }
+
+        if (summary.transform.childCount > 3)
+        {
+            var qText = summary.transform.GetChild(3).GetComponent<TMP_Text>();
+            if (qText != null) qText.text = question;
+        }
+        Debug.Log($"Question: {question} Answer:  {answer} ");
+    }
+    /*private void SetSummaryData(string ques,string Ans,int index)
+    {
+        //Debug.Log($"Setting Summary Data For {kv.Key.PlayerName}");
+        
+            GameObject summary = Instantiate(SummaryPrefab, SummaryTransform);
+
+            if (summary.transform.childCount > 1)
+            {
+                var ansText = summary.transform.GetChild(1).GetComponentInChildren<TMP_Text>();
+                if (ansText != null) ansText.text = Ans;
+            }
+
+            if (summary.transform.childCount > 2)
+            {
+                var idxText = summary.transform.GetChild(2).GetComponent<TMP_Text>();
+                if (idxText != null) idxText.text = index .ToString();
+            }
+
+            if (summary.transform.childCount > 3)
+            {
+                var qText = summary.transform.GetChild(3).GetComponent<TMP_Text>();
+                if (qText != null) qText.text = ques;
+            }
+            Debug.Log($"Question: {ques} Answer:  {Ans} ");
+            
+        
+    }*/
+    /*private void SetSummaryData(KeyValuePair<Player, PlayerGameData> kv)
+    {
+        //Debug.Log($"Setting Summary Data For {kv.Key.PlayerName}");
+       
+        int index = 1;
         foreach (var qa in kv.Value.PlayerCurrentGameStateData.QuestionsAndAnswers)
         {
             GameObject summary = Instantiate(SummaryPrefab, SummaryTransform);
@@ -679,7 +756,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
             if (summary.transform.childCount > 2)
             {
                 var idxText = summary.transform.GetChild(2).GetComponent<TMP_Text>();
-                if (idxText != null) idxText.text = (index + 1).ToString();
+                if (idxText != null) idxText.text = index .ToString();
             }
 
             if (summary.transform.childCount > 3)
@@ -687,10 +764,10 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
                 var qText = summary.transform.GetChild(3).GetComponent<TMP_Text>();
                 if (qText != null) qText.text = qa.Key;
             }
-
+            Debug.Log($"Question: {qa.Key} Answer:  {qa.Value} ");
             index++;
         }
-    }
+    }*/
 
     public void SwitchScene(string SceneName)
     {
