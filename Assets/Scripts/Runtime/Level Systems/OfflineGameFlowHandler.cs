@@ -94,6 +94,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
             .GetComponent<Button>().onClick.AddListener(StartTurn);
         GameObject.FindGameObjectWithTag("StartGameCloseButton").SetActive(false);
 
+        if(CurrentLevelData.GameMode == GameMode.StoryMode) Analytics_Manager.Instance.LogEvent("StoryModeGameStarted");
         // 1) Board
         if (CurrentLevelData.Board?.BoardPrefab != null)
         {
@@ -278,6 +279,7 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
                         ShowLeaderboard();
                         if (CurrentLevelData.GameMode == GameMode.StoryMode)
                         {
+                            Analytics_Manager.Instance.LogEvent("StoryModeLevelCompleted");
                             UpdateStarRating(p);
                         }
                         return;

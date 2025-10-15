@@ -34,6 +34,7 @@ public class QuizManager : MonoBehaviour
         Action onUseHint,
         Action<QuizResult> onComplete)
     {
+        Analytics_Manager.Instance.LogEvent("QuestionsAnswered");
         if (q == null)
         {
             Debug.LogError("[QuizManager] null question");

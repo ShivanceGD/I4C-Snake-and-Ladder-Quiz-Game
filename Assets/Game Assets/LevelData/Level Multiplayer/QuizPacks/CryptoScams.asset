@@ -1,0 +1,662 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: CryptoScams
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: You get a message promising huge crypto returns. What should you do
+      first?
+    options:
+    - Invest Small
+    - Share with Friends
+    - Report & Block
+    - Search Coin
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A website asks for your 12-word secret phrase. What's the best action?
+    options:
+    - Enter Phrase
+    - Close Website
+    - Ask Friend
+    - Refresh Page
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What's a big warning sign of a crypto scam?
+    options:
+    - Social Ads
+    - Small Investment
+    - Unreal Profits
+    - Pro Website
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A "secret" crypto project wants UPI to a personal account. Invest?
+    options:
+    - Yes
+    - No
+    - 'UPI Matches '
+    - Quick Invest
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why is a strong password important for crypto?
+    options:
+    - Easy Remember
+    - Protect Funds
+    - Speed Trading
+    - Serious Investor
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Email asks to update crypto details via link. How to verify?
+    options:
+    - Click Link
+    - Call Email No.
+    - Official Website
+    - Ignore Email
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Crypto ad with a Bollywood star. What's the concern?
+    options:
+    - Star Fake
+    - Coin Expensive
+    - Not India
+    - Ad Fake
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone sends a "free crypto" link in a group. What to do?
+    options:
+    - Click Link
+    - Share Quickly
+    - Report Suspicious
+    - Ask Details
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Is sharing your public crypto address safe?
+    options:
+    - Yes, Recieve
+    - No, Confidential
+    - Only Friends
+    - Only Small
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is 2FA and why use it for crypto?
+    options:
+    - Type Password
+    - Extra Security
+    - Speed Transactions
+    - Track Investments
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Website promises daily easy money from "cloud mining." What is it?
+    options:
+    - Real Chance
+    - Likely Scam
+    - Slow Income
+    - Learn Crypto
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Safest way to store your secret recovery phrase?
+    options:
+    - Screenshot Phone
+    - Write Offline
+    - Text File
+    - Share Family
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, urges quick crypto investment. What to do?
+    options:
+    - Listen Offer
+    - Ask Details
+    - Hang up, Block
+    - Email Details
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Danger of connecting wallet to unknown site asking for "approval"?
+    options:
+    - Lose Fees
+    - Funds Stolen
+    - Website Crash
+    - Internet Slow
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Dating app stranger suggests crypto investment. What scam is this?
+    options:
+    - Real Partnership
+    - Romance Scam
+    - Friendly Advice
+    - New Investors
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What info to avoid sharing online to prevent crypto theft?
+    options:
+    - Favorite Coin
+    - Wallet Address
+    - Full Person Info
+    - Trading System
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Suspect a fake crypto platform in India. Where to check?
+    options:
+    - 'Social Medua '
+    - Cybercrime.gov.in
+    - Ask Friends
+    - Small Invest
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What if a crypto project has no or vague "whitepaper"?
+    options:
+    - Innovative Idea
+    - Fraud Sign
+    - Simple Project
+    - Not Important
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: SMS link for "unclaimed crypto rewards" from government. What's safe?
+    options:
+    - Click, Provide
+    - Forward Gov.
+    - Delete, Block
+    - Reply "STOP"
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why verify official crypto exchange website address before login?
+    options:
+    - Avoid Fakes
+    - Check Updates
+    - Speed Loading
+    - See News
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An "expert" offers to manage your crypto for an upfront fee, promising
+      daily profits. What scam is this?
+    options:
+    - Legitimate Management
+    - Pump & Dump
+    - Advance Fee Scam
+    - Arbitrage
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A new crypto coin's price soars, then crashes after you buy. What happened?
+    options:
+    - Market Correction
+    - Pump & Dump
+    - Short Squeeze
+    - Stablecoin Fall
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: In new crypto projects, what is a "rug pull"?
+    options:
+    - Devs Abandon
+    - Price Drop
+    - Contract Hack
+    - New Staking
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An investment scheme pays you for recruiting new investors. What is
+      this?
+    options:
+    - Affiliate Marketing
+    - Network Marketing
+    - Pyramid Scheme
+    - Multi-Level
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An online platform shows big profits, but you can't withdraw without
+      paying a "fee." What's happening?
+    options:
+    - Standard Procedure
+    - Regulatory Rule
+    - Withdrawal Limit
+    - Money Scam
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your crypto wallet gets a small amount of unknown token. What is it,
+      and what NOT to do?
+    options:
+    - Airdrop, Claim It
+    - Dusting Attack, Dont Touch
+    - New Invest, Research
+    - Bonus, Transfer
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why is checking a crypto's "liquidity" important on exchanges?
+    options:
+    - Stablecoin sign
+    - Rug pull
+    - Speed trades
+    - Owner Count
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Asked to send crypto to a short, personal-looking "smart contract"
+      address. Your concern?
+    options:
+    - Faster Send
+    - Simplified Contract
+    - Fake Adress
+    - Old Standard
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake crypto email looks real, with a slightly wrong website address.
+      What technique is this?
+    options:
+    - DNS Spoofing
+    - Similar Letters
+    - SQL Injection
+    - DDoS Attack
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What scam involves building trust over time, then asking for crypto?
+    options:
+    - Romance Scam
+    - Whaling Attack
+    - Email Compromise
+    - Baiting
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: To invest in new crypto, what should you research in their "whitepaper"?
+    options:
+    - Team Followers
+    - Project Details
+    - Influencer Prices
+    - Number of Memes
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why are hardware wallets (physical devices) more secure for long-term
+      crypto?
+    options:
+    - Prevents Malware
+    - Faster Trades
+    - Easier Trading
+    - Untraceable Crypto
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your crypto account shows unauthorized transactions. What's the immediate
+      step?
+    options:
+    - Change Password
+    - Contact Support
+    - Wait for Funds
+    - Blame Internet
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Main risk of using unverified third-party crypto apps/websites?
+    options:
+    - Slow Loading
+    - Steal Wallet Funds
+    - High Fees
+    - Hard Navigate
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How does a "honeypot" scam work in crypto?
+    options:
+    - High-Yield
+    - Offers Free Crypto
+    - Legit But Risky
+    - Gov-Backed Investments
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: CEO emails to urgently transfer company crypto for "investment." How
+      to handle this sophisticated scam?
+    options:
+    - Transfer Immediately
+    - Reply to Confirm
+    - Verify Via Phone
+    - Forward Team
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A new platform promises instant, zero-fee crypto transfers between
+      different blockchains. What technical risk to investigate?
+    options:
+    - Platform Speed
+    - Control
+    - Interface Design
+    - Supported Coins
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're using a new crypto app. What critical security step to prevent
+      funds being stolen by a malicious app?
+    options:
+    - Use Popular
+    - Check Permission
+    - Assume Safe
+    - Minimize Transactions
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a "sandwich attack" in crypto trading?
+    options:
+    - Bot Manipulation
+    - Contract bug
+    - Phishing
+    - Network
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A new crypto coin's information shows a "pause" function to stop all
+      transfers. What does this mean for scam risk?
+    options:
+    - Standard Update
+    - Creator Control
+    - Lower Fees
+    - Reward Holders
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: NFT stolen after "signature approval" on a fake marketplace. What happened?
+    options:
+    - Network Outage
+    - Phishing
+    - Password Hack
+    - Exchange hack
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a "flash loan attack" in complex crypto finance, and why is
+      it a concern for smaller platforms?
+    options:
+    - Quick Loans
+    - Free Crypto Drops
+    - Exploits Price Flaws
+    - Staking Stablecoins
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Running a crypto computer in India. Besides security, what Indian legal
+      rules for user data (KYC) apply?
+    options:
+    - Only Indian Cloud
+    - IT Act
+    - Special License
+    - Physical Servers
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How does understanding "impermanent loss" in crypto pools help avoid
+      scams?
+    options:
+    - Predict Prices
+    - Guarantees Profit
+    - Prevents Attack
+    - Identify Scam Pools
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake crypto wallet app looks like a real one (e.g., "MetaMaskk").
+      How to technically verify authenticity?
+    options:
+    - Check Downloads
+    - Official Stores
+    - Read Reviews
+    - Look at Icon
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

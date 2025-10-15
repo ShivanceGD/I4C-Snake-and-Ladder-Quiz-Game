@@ -18,6 +18,7 @@ public class MainMenuUI : MonoBehaviour
    public GameObject ChooseQuizPanel;
    public GameObject StoryModeButton;
    public GameObject MultiplayerButton;
+   public Color LockColor;
    
    [Header("Scenes")]
    public string practiceSceneName = "PracticeScene";
@@ -46,6 +47,12 @@ public class MainMenuUI : MonoBehaviour
    {
       username.text = AuthExtensions.GetCachedPlayerName();
       id.text = AuthExtensions.GetPlayerID();
+
+      if (IsInternetReachable())
+      {
+         LockModes(StoryModeButton);
+         LockModes(MultiplayerButton);
+      }
    }
    public void OnPracticeClicked()
    {
@@ -129,8 +136,20 @@ public class MainMenuUI : MonoBehaviour
 
    public void LeaderboardItemSetUp(GameObject item, int rank, int score, string name)
    {
-      item.GetComponentInChildren<TMP_Text>().text = name;
+      item.transform.Find("PlayerName").GetComponent<TMP_Text>().text = name;
       item.transform.GetChild(0).Find("Rankings").GetComponent<TMP_Text>().text = rank.ToString();
       item.transform.Find("Score_Text").GetComponent<TMP_Text>().text = score.ToString();
    }
+
+   private void LockModes(GameObject obj)
+   {
+      obj.GetComponent<Image>().color = LockColor;
+      obj.GetComponent<Button>().interactable = false;
+      obj.transform.Find("Icon").GetComponent<Image>().color = LockColor;
+      obj.transform.Find("Text").GetComponent<TMP_Text>().color = Color.black;
+      obj.transform.Find("Lock_Icon").gameObject.SetActive(true);
+   }
+   private bool IsInternetReachable() => Application.internetReachability == NetworkReachability.NotReachable;
+
+
 }

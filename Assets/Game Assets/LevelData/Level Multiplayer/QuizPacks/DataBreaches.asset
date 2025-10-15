@@ -1,0 +1,688 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: DataBreaches
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: You get an email asking for your password. What should you do?
+    options:
+    - Give Password
+    - Click Link
+    - Delete Mail
+    - Reply Mail
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a common sign of a phishing email?
+    options:
+    - Generic Greeting
+    - Known Sender
+    - Short Email
+    - No Links
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You find an unknown USB drive. What is the safest action?
+    options:
+    - Plug In
+    - Give to Friend
+    - Report It
+    - Keep It
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your colleague asks for your password. What should you do?
+    options:
+    - Give Password
+    - Tell to reset
+    - 'Log In '
+    - Share Screen
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Working publicly, how to protect sensitive info?
+    options:
+    - Use WiFi
+    - 'Hide Screen '
+    - Save Work
+    - Use Strong Password
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an SMS with a link for a government refund. What's safest?
+    options:
+    - Reply STOP
+    - Click Link
+    - Delete SMS
+    - Forward friend
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why use a strong, unique password?
+    options:
+    - Easy Remember
+    - Protect Data
+    - Speed Login
+    - Share Others
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, asks for your OTP to verify. What should you do?
+    options:
+    - Give OTP
+    - Ask Details
+    - End Call
+    - Call Back
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "Two-Factor Authentication" (2FA)?
+    options:
+    - One Password
+    - Extra Security
+    - Fast Login
+    - Backup Method
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get an unknown friend request on social media. Safest action?
+    options:
+    - Accept Request
+    - Check Profile
+    - Ignore Request
+    - 'Ask Mutual '
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Main risk of public Wi-Fi for sensitive tasks?
+    options:
+    - Slow Internet
+    - 'Data Theft '
+    - Battery Drain
+    - App Updates
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Best way to keep software secure?
+    options:
+    - Never Update
+    - Update Regularly
+    - Download Free
+    - 'Share '
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone offers money to transfer funds through your bank. What is this?
+    options:
+    - Easy Money
+    - Money Laundering
+    - Legit Job
+    - Financial Service
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your social media account is hacked. What should you do?
+    options:
+    - Delete Account
+    - Change Password
+    - Ignore It
+    - Create New
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Email with attachment from unknown sender. Safest action?
+    options:
+    - Open Attachment
+    - Scan Virus
+    - Delete Email
+    - Forward Email
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Importance of regularly backing up data?
+    options:
+    - Save Space
+    - Prevent Loss
+    - Speed Up
+    - Share Easily
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Asked for Aadhaar for online survey. What to consider?
+    options:
+    - Provide
+    - 'Check '
+    - Ignore
+    - Ask Why
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Sign of a secure website for online transactions?
+    options:
+    - Has a Lock
+    - Looks Professional
+    - Lots of Ads
+    - Starts http://
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What does "data encryption" mean?
+    options:
+    - Hiding Data
+    - Making Data
+    - Sharing Data
+    - Deleting Data
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a personalized email with a suspicious link. What is this?
+    options:
+    - Legitimate Email
+    - SpearPhishing
+    - Spam Email
+    - Targeted Ad
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your smart device acts strangely. What's the best action?
+    options:
+    - Ignore
+    - Reset Device
+    - Change Password
+    - Disconnect Internet
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "social engineering" in cyber security?
+    options:
+    - Tech Skills
+    - Manipulating People
+    - Random Attacks
+    - Online Games
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Unusual credit card charges after online shopping. Immediate step?
+    options:
+    - 'Ignore '
+    - Contact Bank
+    - Change Password
+    - Delete Card
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a "zero-day exploit"?
+    options:
+    - Old Vulnerability
+    - New Vulnerability
+    - Software Uopdates
+    - Security Patch
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Asked to download a "configuration profile" for security. What's the
+      risk?
+    options:
+    - Better Security
+    - Device Control
+    - Faster Phones
+    - New Features
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "doxing" and its data breach link?
+    options:
+    - Exposing Private Info
+    - Sharing Location
+    - Posting Photos
+    - Online Harassment
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Role of a firewall in network security?
+    options:
+    - Speeds Internet
+    - Blocks Unauthorized
+    - Stores Data
+    - Encrypts data
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Job requires personal device for sensitive data. What's the concern?
+    options:
+    - Cost Saving
+    - Flexibility
+    - Easy Access
+    - Data Privacy
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "identity theft" and its impact?
+    options:
+    - Losing Phone
+    - Stealing Personal Info
+    - Getting New
+    - Changing Name
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Email address found in data breach. What should you do?
+    options:
+    - Ignore
+    - Delete Mail
+    - Change Password
+    - Check Other
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Purpose of a "Virtual Private Network" (VPN)?
+    options:
+    - Hides Online Activity
+    - Speeds Internet
+    - Blocks Ads
+    - Downloads Faster
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Malicious app on phone, not installed by you. Best action?
+    options:
+    - 'Keep it '
+    - Delete App
+    - Scan App
+    - Restart Phone
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "pharming" as a cyberattack?
+    options:
+    - Email Scam
+    - SMS Scam
+    - Phone Call
+    - Website Redirection
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Indian legal framework for data protection?
+    options:
+    - IPC
+    - IT Act
+    - Consumer Protection
+    - Companies Act
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How "supply chain attacks" cause data breaches?
+    options:
+    - Target Vendors
+    - Random Attacks
+    - Only Big Companies
+    - Easy to Stop
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "dark web" and its data breach link?
+    options:
+    - Hidden Internet
+    - Stolen Data Market
+    - Secret Forum
+    - Secure Browsing
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Role of "penetration testing" in preventing breaches?
+    options:
+    - Finds Weaknesses
+    - Tests Speed
+    - Check Designs
+    - Monitors Traffic
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How "insider threats" cause data breaches?
+    options:
+    - External Hackers
+    - Employees
+    - Random People
+    - System Errors
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Significance of "blockchain technology" in data security?
+    options:
+    - Faster Transaction
+    - Immutable Records
+    - 'More Storage '
+    - All of these
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How "AI, machine learning" detect, prevent breaches?
+    options:
+    - 'Analyze Patterns '
+    - 'Predict Attacks '
+    - Automate Response
+    - All of these
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: '"Quantum computing" and its impact on encryption?'
+    options:
+    - Faster Computers
+    - Breaks Encryption
+    - 'New Algorithms '
+    - More Storage
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How "biometric authentication" enhances data security?
+    options:
+    - Faster Login
+    - More Convenient
+    - Unique Identifiers
+    - No Passwords
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: '"Data residency" concept and its importance for Indian businesses?'
+    options:
+    - Data Location
+    - Faster Access
+    - Legal Compliance
+    - Cost Saving
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How "cloud security posture management" (CSPM) helps prevent breaches?
+    options:
+    - Monitors Configurations
+    - Automates Backups
+    - Encrypts Data
+    - Manage Users
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "tokenization" and how it protects data?
+    options:
+    - Replaces Data
+    - Encrypts Data
+    - Hides Data
+    - Deletes Data
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How "decentralized identity" solutions reduce breach risk?
+    options:
+    - Centralized Control
+    - Faster Verification
+    - User-Owned Data
+    - No Passwords
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "threat intelligence" and its role in prevention?
+    options:
+    - Past Attacks
+    - Future Threats
+    - Current Weakness
+    - All of these
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How "zero-trust architecture" changes data security?
+    options:
+    - Trust Everything
+    - Verify Everything
+    - 'No Security '
+    - Only External
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

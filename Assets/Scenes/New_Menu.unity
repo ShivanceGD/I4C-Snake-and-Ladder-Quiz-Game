@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 60072990}
   - component: {fileID: 60072989}
   m_Layer: 0
-  m_Name: Lock_Image
+  m_Name: Lock_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4157312933237091761, guid: 78e9962c3817d0044856319b9188fdeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2823b1247ad4856478edd56b6bf89085, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1674,8 +1674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.6978, y: -146.98502}
-  m_SizeDelta: {x: 1593.5789, y: 501.3228}
+  m_AnchoredPosition: {x: -0.0064335, y: -131.04686}
+  m_SizeDelta: {x: 1520.6, y: 469.4465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215526736
 MonoBehaviour:
@@ -3592,13 +3592,16 @@ MonoBehaviour:
   quizPackButtonParent: {fileID: 1063357865}
   quizPackButtonPrefab: {fileID: 5250659280506281226, guid: a5f66496bc4fc5d44b9d163511ac4bc7, type: 3}
   availableQuizPacks:
-  - {fileID: 11400000, guid: 6a33c5ce48ba3fa48979dc3dae3c44b8, type: 2}
-  - {fileID: 11400000, guid: ac3b1893b7c18ce49bbd5a62317701e2, type: 2}
-  - {fileID: 11400000, guid: 119e0878251d6d0429639508e28dbc89, type: 2}
   - {fileID: 11400000, guid: a1056fe8e9f80e54e97f207d408b1f1c, type: 2}
+  - {fileID: 11400000, guid: 4586580ef3f36bb488c1fdabe2fdfeba, type: 2}
+  - {fileID: 11400000, guid: f687bad51b32300479cd87d962db6661, type: 2}
+  - {fileID: 11400000, guid: d4bbbea21855f9b428ceddd106738713, type: 2}
+  - {fileID: 11400000, guid: b9284ba0f8200f84aad98a80cbffd63f, type: 2}
+  - {fileID: 11400000, guid: 2581ce086b083094891ea4d388df1858, type: 2}
   ChooseQuizPanel: {fileID: 1405404101}
   StoryModeButton: {fileID: 256535291}
   MultiplayerButton: {fileID: 73062124}
+  LockColor: {r: 0, g: 0, b: 0, a: 0}
   practiceSceneName: Offline_Practice_Level
   passNPlaySceneName: Offline_PassNPlay_Level
   LeaderBoardItemPrefab: {fileID: 2283468471138548295, guid: d6483d9d057380843ba73e74be1b87f0, type: 3}
@@ -6813,6 +6816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004021910}
   - component: {fileID: 1004021911}
+  - component: {fileID: 1004021912}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -6837,7 +6841,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 13, y: -0.00007120135}
-  m_SizeDelta: {x: 0, y: 2500}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1004021911
 MonoBehaviour:
@@ -6863,6 +6867,20 @@ MonoBehaviour:
   m_Spacing: {x: 100, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1004021912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004021909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &1063357864
 GameObject:
   m_ObjectHideFlags: 0
@@ -10446,7 +10464,7 @@ GameObject:
   - component: {fileID: 1771677694}
   - component: {fileID: 1771677693}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: Lock_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

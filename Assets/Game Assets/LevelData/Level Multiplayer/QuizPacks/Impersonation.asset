@@ -1,0 +1,708 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Impersonation
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: Someone pretends to be your bank and asks for your PIN. What is this?
+    options:
+    - Real Bank
+    - Phishing Scam
+    - Legit Call
+    - New Service
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a message from a "friend" asking for money urgently. What to
+      do?
+    options:
+    - Send Money
+    - Call Friend
+    - Ignore Message
+    - Share With Others
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the main goal of someone impersonating another online?
+    options:
+    - Make Friends
+    - Steal Info
+    - Share News
+    - Play Game
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an email from "IT Support" asking to verify your password.
+      What's the risk?
+    options:
+    - Real Support
+    - System Update
+    - Account Hack
+    - No Risk
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls pretending to be from a government agency demanding payment.
+      What should you do?
+    options:
+    - Verify Call
+    - Pay Immediately
+    - Ignore Call
+    - Call Back
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a common sign of an impersonation attempt?
+    options:
+    - Generic Greeting
+    - Known Sender
+    - Urgent Request
+    - All of These
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why is it dangerous to share your OTP (One Time Password) with anyone?
+    options:
+    - 'Speeds up '
+    - Protects Account
+    - Grants Access
+    - No Danger
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a friend request from someone you know, but it looks suspicious.
+      What's safest?
+    options:
+    - Accept Request
+    - Check Profile
+    - 'Delete Request '
+    - Ask Mutual
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "identity theft"?
+    options:
+    - Losing Phone
+    - Stealing Personal Info
+    - Getting New
+    - Changing Name
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Is it safe to click on every link in emails, even if they look official?
+    options:
+    - Yes, Always
+    - No, Be Careful
+    - Only from Friends
+    - Only from Family
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What should you do if someone online asks for your personal documents
+      (Aadhaar, PAN)?
+    options:
+    - 'Send Immediately '
+    - Verify Request
+    - Refuse to Send
+    - Ask Why
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You see a fake social media profile of a celebrity. What's the risk?
+    options:
+    - Real Celebrity
+    - Spreading Lies
+    - No Risk
+    - Fun to Follow
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the purpose of "phishing" emails?
+    options:
+    - Entertain you
+    - Steal Info
+    - Find Info
+    - Send Spam
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a good way to protect your online accounts from impersonation?
+    options:
+    - Simple Password
+    - Share Password
+    - Strong Password
+    - No Password
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get an email from a company you use, saying your account is locked.
+      What should you do?
+    options:
+    - Click Unlock
+    - Reply Email
+    - Go Official Site
+    - Wait Days
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the Indian government helpline for cybercrime?
+    options:
+    - 1002
+    - 112
+    - 1098
+    - 1930
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the risk of sharing too much personal info online?
+    options:
+    - Friends Bored
+    - Identity theft
+    - Slow Internet
+    - Less Popular
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What does "spoofing" mean in cybersecurity?
+    options:
+    - Real Identity
+    - Fake Identity
+    - New Technology
+    - Old Technology
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why is verifying the sender of an email important?
+    options:
+    - Faster Response
+    - Looks Professional
+    - Avoids Scams
+    - No Reason
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a highly personalized email from a known contact, but it
+      contains a suspicious link. What advanced scam tactic is this?
+    options:
+    - Legitimate Email
+    - Spear Phishing
+    - Spam Email
+    - Targeted Ad
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "vishing" and how is it used in impersonation?
+    options:
+    - Email Scam
+    - SMS Scam
+    - Voice Call Scam
+    - Online Chat
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An impersonator uses a fake website that looks identical to a real
+      one. What is this technique?
+    options:
+    - Malware Attacks
+    - DDoS Attack
+    - Ransomware
+    - Phishing Attack
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "vishing" and how is it used in impersonation?
+    options:
+    - App Useful
+    - Malware Risk
+    - Faster Wi-Fi
+    - No Concern
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "CEO fraud" or "business email compromise" (BEC)?
+    options:
+    - CEO Scam
+    - Email Hack
+    - Company Fraud
+    - All of These
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An impersonator uses a "deepfake" video to make a fake call. What's
+      the danger?
+    options:
+    - Real Video
+    - Realistic Fake
+    - Fun Video
+    - No Danger
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "catfishing" and how can it lead to impersonation?
+    options:
+    - Online Daity
+    - Fake Identity
+    - Online Gaming
+    - Social Media Fun
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a text message with a link that, when clicked, automatically
+      sends a pre-filled message. What's the risk?
+    options:
+    - Spamming Friends
+    - Premium SMS Charges
+    - Data Sharing
+    - No Risk
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the role of "Two-Factor Authentication" (2FA) in preventing
+      account takeover by impersonators?
+    options:
+    - Speeds Logins
+    - Extra Security Layer
+    - Recovers Password
+    - Tracks Activity
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "smishing" and how is it used in impersonation?
+    options:
+    - Email Scam
+    - Voice Call Scam
+    - SMS Scam
+    - Online Chat
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You find a malicious app on your phone that you don't remember installing.
+      What's the best action?
+    options:
+    - Keep It
+    - Delete App
+    - Scan for Virus
+    - Restart Phone
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "pretexting" in social engineering?
+    options:
+    - Telling Truth
+    - Random Questions
+    - Creating Story
+    - Being Honest
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the role of "Two-Factor Authentication" (2FA) in preventing
+      account takeover by impersonators?
+    options:
+    - Faster Internet
+    - Full Device Control
+    - Better Security
+    - New Features
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the primary defense against sophisticated impersonation attempts?
+    options:
+    - Click Carefully
+    - Use Antivirus
+    - Verify Identity
+    - Disable Internet
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A sophisticated impersonator uses "Unicode homoglyphs" to create a
+      deceptive URL. What makes this particularly dangerous?
+    options:
+    - Easy to Spoil
+    - Looks Identical
+    - Only Tech Users
+    - No Danger
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a "zero-click exploit" and how can it be used by impersonators?
+    options:
+    - 'No Interaction Needed '
+    - Requires Click
+    - Easy to Detect
+    - Only for Experts
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An impersonator initiates a "man-in-the-middle" attack. What does this
+      mean for your data?
+    options:
+    - Data Encrypted
+    - Data Intercepted
+    - Data Deleted
+    - Data Backed Up
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the role of "digital certificates" in verifying online identities?
+    options:
+    - Faster Browsing
+    - More Colors
+    - Offline Use
+    - Verifies Authencity
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can "DNS poisoning" be used by impersonators to redirect you to
+      fake websites?
+    options:
+    - Speeds Internet
+    - Redirects Websites
+    - Blocks SItes
+    - Encrypts Data
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the role of "digital certificates" in verifying online identities?
+    options:
+    - Steals Cookies
+    - Injects Code
+    - Redirects Users
+    - All of These
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "session hijacking" and how can an impersonator facilitate
+      it?
+    options:
+    - Steaks Password
+    - Steals Session Cookie
+    - Encrypts Data
+    - Blocks Access
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a highly targeted phishing attempt based on your personal
+      details. What advanced technique is this?
+    options:
+    - 'Random Attack '
+    - Spear Phishing
+    - Mass Attack
+    - Generic Attack
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can an impersonator bypass traditional firewall or antivirus protections?
+    options:
+    - No Bypass
+    - Encrypted Payload
+    - Direct Connection
+    - Uses Loopholes
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "command injection" and how can an impersonator use it?
+    options:
+    - Runs Commands
+    - Steals Data
+    - Encrypts Files
+    - Phishing
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "browser isolation" technology and how does it protect against
+      impersonation?
+    options:
+    - Runs Links Safely
+    - Blocks All Links
+    - Speeds Browsing
+    - Encrypts Data
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the legal recourse in India if you fall victim to impersonation
+      leading to financial loss?
+    options:
+    - No resource
+    - Report to Police
+    - Ignore
+    - Self Blam
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can "machine learning" be used to detect and block impersonation
+      attempts?
+    options:
+    - Analyzes Patterns
+    - Randomly Blocks
+    - Speeds Internet
+    - Only Known
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the risk of an impersonator exploiting "buffer overflow" vulnerabilities?
+    options:
+    - Slows Down
+    - Crashes Program
+    - Executes Codes
+    - All of These
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can "biometric authentication" help prevent impersonation?
+    options:
+    - Faster Login
+    - Unique Identifiers
+    - More Convenient
+    - No Passwords
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

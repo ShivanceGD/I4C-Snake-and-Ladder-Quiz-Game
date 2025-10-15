@@ -1,0 +1,743 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: MaliciousLinks
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: You get an email from unknown sender about "Package Delayed." It has
+      a link. What's safest?
+    options:
+    - Click Link
+    - Reply Sender
+    - Hover Link
+    - Forward Friend
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Friend sends "OMG, you won't believe this!" with a generic link. What
+      first?
+    options:
+    - Click Link
+    - Share Others
+    - Assume Real
+    - Ask Friend
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What's the main risk of clicking a bad link?
+    options:
+    - Slows Computer
+    - Malware
+    - Many Tabs
+    - Internet Bills
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online ad offers free gadget, has a link. What indicates it's malicious?
+    options:
+    - Offer Actraction
+    - Misspelled URL
+    - Known Brand
+    - Many Comments
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Hovering over a link, where to see the real URL?
+    options:
+    - Link Text
+    - Email Subject
+    - Status Bar
+    - Sender Name
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an SMS with a link for a government refund. What's safest?
+    options:
+    - Reply STOP
+    - Click Link
+    - Delete SMS
+    - Forward friend
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Urgent email from "HR" asks to verify payroll via link. What before
+      clicking?
+    options:
+    - Click Quickly
+    - Call HR Directly
+    - Reply Asking
+    - Forward Everyone
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: '"http://" vs "https://" in a URL. What''s the difference?'
+    options:
+    - Less Secure
+    - Malicious Link
+    - Faster Website
+    - Newer Type
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: News site pop-up asks to download "critical update" from unknown source.
+      What to do?
+    options:
+    - Click Download
+    - Disregard
+    - Call IT
+    - Click Later
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a "phishing" link designed for?
+    options:
+    - Entertain You
+    - Find Info
+    - Steal Info
+    - Send Spam
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Email about breach, asks to change password via link. Safe alternative?
+    options:
+    - Ignore Email
+    - Go Official Site
+    - Reply Mail
+    - Forward Mail
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why are unexpected links, even from contacts, dangerous?
+    options:
+    - Too Long
+    - Account Compromised
+    - Boring Content
+    - Too much Data
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Which URL characteristic is a red flag?
+    options:
+    - Long, Random
+    - Familiar Name
+    - Starts "https://"
+    - Ends".com"
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Email says account locked, has "Unlock Account" button. How to verify?
+    options:
+    - Click Button
+    - Login Official Site
+    - Reply Email
+    - Wait Days
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the primary goal of a malicious link?
+    options:
+    - Entertain You
+    - 'Provide News '
+    - Steal Information
+    - Sell Products
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a message with a link promising a free prize. What should you
+      do?
+    options:
+    - Click Liunk
+    - Delete Message
+    - Share friends
+    - Reply Sender
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the danger of clicking a link from an unknown sender?
+    options:
+    - Nothing Happens
+    - Malware Infection
+    - 'Slow Internet '
+    - Too Many Ads
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can you check if a link is safe before clicking it?
+    options:
+    - Click Quickly
+    - Ask Friends
+    - Trust Sender
+    - Hover Mouse
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a common characteristic of a fake website linked from a malicious
+      email?
+    options:
+    - Looks Professional
+    - Misspelled URL
+    - No Images
+    - Too much Text
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 50
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an urgent warning about your account with a link to "fix"
+      it. What should you do?
+    options:
+    - Click Link
+    - Go Official Site
+    - Ignore Warning
+    - Reply Email
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the purpose of a "shortened link" (like bit.ly)?
+    options:
+    - Hide Destination
+    - Save Space
+    - Look Neat
+    - Track Clicks
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Malicious link redirects to fake email login. What advanced technique?
+    options:
+    - DDoS Attack
+    - Phishing Attack
+    - SQL Injection
+    - Man-in-the-middle
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Click link, browser auto-downloads file. Sign of what?
+    options:
+    - Safe Download
+    - Drive-by-Download
+    - Software Update
+    - Browser Feature
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "typosquatting" with malicious links?
+    options:
+    - Correct Spelling
+    - Similar Domain Names
+    - Fast Typing
+    - Random Characters
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Malicious link exploits browser flaw to run code. What's this called?
+    options:
+    - Zero-day Exploit
+    - Brower Update
+    - Safe Browsing
+    - Plugin Error
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Danger of malicious link installing "root certificate"?
+    options:
+    - Faster Internet
+    - Full Device Control
+    - Better Security
+    - New Features
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: SMS link, auto-sends pre-filled message. What's the risk?
+    options:
+    - Spamming Friends
+    - Premium SMS Charges
+    - Data Sharing
+    - No Risk
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "clickjacking" and how do malicious links use it?
+    options:
+    - 'Hides Actions '
+    - Speeds Clicks
+    - Tracks Clicks
+    - Blocks Ads
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Malicious link leads to fake software update, installs spyware. Primary
+      goal.
+    options:
+    - Improve Software
+    - Steal Data
+    - Fix Bugs
+    - Speed Up
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Risk of clicking malicious link trying to gain "root access" on Android?
+    options:
+    - 'Standard Request '
+    - Full Phone Control
+    - App Update
+    - System Check
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can a malicious link deliver a "watering hole" attack?
+    options:
+    - Target Specific Users
+    - Random attacks
+    - Mass Distribution
+    - Only Public Wi-Fi
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Ethical concern when company uses "dark patterns" in links?
+    options:
+    - User Choice
+    - Manipulation
+    - Transparency
+    - Good Design
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: "Malicious link redirects through several websites to phishing page.
+      Technique?\t\t"
+    options:
+    - Direct Link
+    - Redirection Chain
+    - Simple Link
+    - Complex Link
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Danger of malicious link exploiting outdated browser plugins?
+    options:
+    - No Impact
+    - Targets Old Plugins
+    - Only New Plugins
+    - Random Attacks
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 40
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can a malicious link initiate a "denial of service" (DoS) attack?
+    options:
+    - Speeds up Site
+    - Floods Server
+    - Blocks Users
+    - Fixes Bugs
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the primary defense against sophisticated malicious links?
+    options:
+    - Click Carefully
+    - Use Antivirus
+    - Trust Sender
+    - Disable Internet
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Malicious link uses "Unicode homoglyphs" for deceptive URL. Why dangerous?
+    options:
+    - Easy to Spot
+    - Looks Identical
+    - Only Tech Users
+    - No Danger
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is a "zero-click exploit" via malicious link, and why severe?
+    options:
+    - No Interaction Needed
+    - Requires Click
+    - Easy To Detect
+    - Only For Experts
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: "How can malicious link deliver \"supply chain attack\" via trusted
+      software update?\t"
+    options:
+    - Target Vendors
+    - Random Attacks
+    - Mass Distribution
+    - Only Public Wi-Fi
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "sandboxing" role in protecting against malicious links?
+    options:
+    - 'Isolates Threats '
+    - Speeds Browsing
+    - Block Ads
+    - Encrypts Data
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Malicious link initiates "man-in-the-browser" attack. What for online
+      banking?
+    options:
+    - Data Encrypted
+    - Data Intercepted
+    - Data Deleted
+    - Data Backed Up
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can malicious link exploit "cross-site scripting" (XSS) vulnerabilities?
+    options:
+    - 'Steals Cookies '
+    - Injects Code
+    - Redirects Users
+    - All of These
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "session hijacking" and how does malicious link facilitate
+      it?
+    options:
+    - Steals Password
+    - Steal Session Cookies
+    - Encrypts Data
+    - Blocks Access
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Highly targeted malicious link based on your online activity. What
+      advanced technique?
+    options:
+    - Random Attack
+    - Spear Phishing
+    - Mass Attack
+    - Generic Attack
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can malicious link bypass traditional firewall or antivirus?
+    options:
+    - No Bypass
+    - Encryption Payload
+    - Direct Connection
+    - Uses Loopholes
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is "command injection" and how can malicious link lead to it?
+    options:
+    - Runs Commands
+    - Steals Data
+    - Encrypts Files
+    - Phishing
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can "DNS poisoning" be used with malicious links?
+    options:
+    - Speeds Internet
+    - Redirects Websites
+    - Blocks Sites
+    - Encrypts Data
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Ethical responsibility of software developers in preventing malicious
+      links?
+    options:
+    - No Responsibility
+    - Secure Coding
+    - Fast Patches
+    - User Education
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can "machine learning" detect and block malicious links?
+    options:
+    - Analyzes Patterns
+    - Randomly Blocks
+    - Speeds Internet
+    - Only Known
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Risk of malicious link exploiting "buffer overflow" vulnerabilities?
+    options:
+    - Slows Down
+    - Crashes Program
+    - 'Executes Code '
+    - All of These
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: How can "browser isolation" technology protect against malicious links?
+    options:
+    - Runs Links Safely
+    - Blocks All Links
+    - Speeds Browsing
+    - Encrypts Data
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 1
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

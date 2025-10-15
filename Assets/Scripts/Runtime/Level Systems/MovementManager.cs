@@ -99,6 +99,7 @@ public class MovementManager : MonoBehaviour
                     result.UsedSnakeOrLadder = true;
                     result.Reason = "Ladder";
                     
+                    
                     FlowManager.UpdateHUD(toMove,false,true);
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
@@ -127,8 +128,8 @@ public class MovementManager : MonoBehaviour
                     result.UsedSnakeOrLadder = true;
                     result.Reason = "Snake";
 
+                    
                     FlowManager.UpdateHUD(forward,true,false);
-
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
                     yield break;

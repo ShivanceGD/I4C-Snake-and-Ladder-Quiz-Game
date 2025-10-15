@@ -16,6 +16,7 @@ public class GameBootStrapper : MonoBehaviour
     [SerializeField]private RemoteConfigLoadManager RemoteConfigManagerPrefab;
     [SerializeField]private LoadingSceneManager LoadingSceneManagerPrefab;
     [SerializeField] private SaveAndLoadManager SaveAndLoadManagerPrefab;
+    [SerializeField] private Analytics_Manager AnalyticsManagerPrefab;
     public bool IsBootStrapped { get; private set; }
 
     private CancellationTokenSource cts;
@@ -40,6 +41,7 @@ public class GameBootStrapper : MonoBehaviour
         SoundManager loadedSoundManager = Instantiate(SoundManagerPrefab);
         RemoteConfigLoadManager RemoteConfigLoadManager = Instantiate(RemoteConfigManagerPrefab);
         SaveAndLoadManager SaveAndLoadManager = Instantiate(SaveAndLoadManagerPrefab);
+        Analytics_Manager analyticsManager = Instantiate(AnalyticsManagerPrefab);
         
         await Task.Yield();
         
@@ -61,7 +63,7 @@ public class GameBootStrapper : MonoBehaviour
         try
         {
             await UnityServices.InitializeAsync();
-
+            Analytics_Manager.Instance.StartCollection();
             RemoteConfigService.Instance.FetchConfigs(new userAttribute(), new appAttribute());
             if (token.IsCancellationRequested) return;
             

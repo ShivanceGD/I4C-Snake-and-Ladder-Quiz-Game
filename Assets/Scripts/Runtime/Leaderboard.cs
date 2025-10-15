@@ -56,6 +56,7 @@ public class Leaderboard : MonoBehaviour
     {
         var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(LeaderboardId, score);
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
+        
     }
 
     /*public async Task<LeaderboardEntry> GetScores()

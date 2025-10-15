@@ -169,6 +169,7 @@ MonoBehaviour:
   RemoteConfigManagerPrefab: {fileID: 1852592948123577531, guid: 363afdf1f3a72a94aa868caf5ed9ecad, type: 3}
   LoadingSceneManagerPrefab: {fileID: 9217673945713108773, guid: 3055738105012ed4db99bd6a49c070ba, type: 3}
   SaveAndLoadManagerPrefab: {fileID: 7920305955503099496, guid: f632974ebfcbde3498b759cd638faec7, type: 3}
+  AnalyticsManagerPrefab: {fileID: 4264114458251906863, guid: 357cfcdd403cae2468881fe2a7f90c63, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

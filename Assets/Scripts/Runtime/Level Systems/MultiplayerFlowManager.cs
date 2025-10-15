@@ -184,7 +184,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         foreach (var player in AllPlayers.Keys)
         {
             if (player != null && PlayerSpawnLocation != null)
-                player.transform.position = PlayerSpawnLocation.position;
+                player.transform.position = BoardLogicManager.playerHouseLocation.position;
         }
 
         if (IsServer)
@@ -202,9 +202,10 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     [ContextMenu("Spawn Board")]
     public async Task BootstrapLevel()
     {
+        Analytics_Manager.Instance.LogEvent("MultiplayerMatchStarted");
         // Double-check managers
         FindingManagersInScene();
-
+        
         if (HowToPlayPanelPrefab != null && CanvasTransform != null)
             HowToPlayPanel = Instantiate(HowToPlayPanelPrefab, CanvasTransform);
 
@@ -366,7 +367,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     [ClientRpc]
     private void ShowQuizClientRpc(int questionIdx, ulong targetClient, bool canUseHint, ClientRpcParams rpcParams = default)
     {
-        if (NetworkManager.Singleton.LocalClientId != targetClient) return;
+        if (!IsLocalPlayer(targetClient)) return;
 
         FindingManagersInScene();
 
@@ -399,7 +400,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
             Debug.LogWarning("[SubmitQuizResultServerRpc] Player not found for clientId: " + clientId);
             return;
         }
-
+        Analytics_Manager.Instance.LogEvent(isCorrect ? "CorrectAnswerGiven" : "IncorrectAnswerGiven");
         var q = quizManager != null ? quizManager.GetQuestionByIndex(qIdx) : null;
         var qr = new QuizResult
         {
@@ -508,24 +509,35 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
                 int correct = kv.Value.PlayerCurrentGameStateData.TotalCorrectAnswered;
                 int moves = kv.Value.PlayerCurrentGameStateData.MovesCounter;
 
-                CalculateAndUpdatePoints(correct, moves, rank == 1);
+                SendFinalScoreClientRpc(kv.Key.OwnerClientId,CalculateAndUpdatePoints(correct, moves,rank==1));
             }
             rank++;
         }
     }
 
-    private void CalculateAndUpdatePoints(int correct, int moves, bool isWinner)
+    private int  CalculateAndUpdatePoints(int correct, int moves, bool isWinner)
     {
         int score = (correct * pointsPerCorrect) - (moves * penaltyPerMove);
         if (score < 0) score = 0;
 
         if (isWinner) score += WinnerScore;
 
-        Leaderboard.Instance?.AddScore(score);
-        Debug.Log($"[Leaderboard] Submitted score {score}");
+        //Debug.Log($"[Leaderboard] Submitted score {score}");
+        return score;
     }
+    [ClientRpc]
+    private void SendFinalScoreClientRpc(ulong playerID, int totalScore)
+    {
+        if (!IsLocalPlayer(playerID)) return;
 
-    #region PlayerHUD Methods
+        Debug.Log($"Submitting final score {totalScore} for player {playerID}");
+        Leaderboard.Instance?.AddScore(totalScore);
+    }
+#region Helper
+private bool IsLocalPlayer(ulong id)=> NetworkManager.LocalClientId == id;
+#endregion
+
+#region PlayerHUD Methods
     public void InstantiatePlayerHuds()
     {
         int i = 1;
@@ -653,8 +665,17 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
 
         string details = "";
         if (stepsMoved > 0) details += $" Moved {stepsMoved} steps.";
-        if (ladder) details += $"\n <color=green>{LadderTexts[Random.Range(0, LadderTexts.Count)]}</color>";
-        if (snake) details += $"\n <color=red>{SnakeTexts[Random.Range(0, SnakeTexts.Count)]}</color>";
+        if (ladder)
+        {
+            details += $"\n <color=green>{LadderTexts[Random.Range(0, LadderTexts.Count)]}</color>";
+            Analytics_Manager.Instance.LogEvent("LadderClimbed");
+        }
+
+        if (snake)
+        {
+            details += $"\n <color=red>{SnakeTexts[Random.Range(0, SnakeTexts.Count)]}</color>";
+            Analytics_Manager.Instance.LogEvent("BittenBySnakes");
+        }
 
         Info_Text.text = baseText + details;
     }
@@ -687,7 +708,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     private void SetSummaryClientRpc(ulong playerID,string question, string answer,int index)
     {
         
-        if (NetworkManager.Singleton.LocalClientId != playerID) return;
+        if (!IsLocalPlayer(playerID)) return;
         Debug.Log($"Setting Summary Data For {playerID}");
         
         GameObject summary = Instantiate(SummaryPrefab, SummaryTransform);
