@@ -99,9 +99,17 @@ public class AuthManager : MonoBehaviour
             new WaitForSeconds(2f); // small delay for UI feedback (optional)
             LoadScene();
         }
+        else if (result.Contains("password", StringComparison.OrdinalIgnoreCase) ||
+                 result.Contains("weak", StringComparison.OrdinalIgnoreCase) ||
+                 result.Contains("requirements", StringComparison.OrdinalIgnoreCase))
+        {
+            ShowMessage(result, Color.red);
+            Analytics_Manager.Instance.LogEvent("WeakPasswordEntered");
+        }
         else
         {
             ShowMessage(result, Color.red);
+            
         }
     }
 

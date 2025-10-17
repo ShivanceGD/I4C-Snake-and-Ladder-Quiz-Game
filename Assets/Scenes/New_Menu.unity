@@ -3596,8 +3596,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4586580ef3f36bb488c1fdabe2fdfeba, type: 2}
   - {fileID: 11400000, guid: f687bad51b32300479cd87d962db6661, type: 2}
   - {fileID: 11400000, guid: d4bbbea21855f9b428ceddd106738713, type: 2}
-  - {fileID: 11400000, guid: b9284ba0f8200f84aad98a80cbffd63f, type: 2}
-  - {fileID: 11400000, guid: 2581ce086b083094891ea4d388df1858, type: 2}
   ChooseQuizPanel: {fileID: 1405404101}
   StoryModeButton: {fileID: 256535291}
   MultiplayerButton: {fileID: 73062124}
@@ -9366,7 +9364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 888832461920576317, guid: 4f1bbabf01946f24c9baf62b9ff5c1b5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 888832461920576317, guid: 4f1bbabf01946f24c9baf62b9ff5c1b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10167,7 +10165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 888832461920576317, guid: 4f1bbabf01946f24c9baf62b9ff5c1b5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 888832461920576317, guid: 4f1bbabf01946f24c9baf62b9ff5c1b5, type: 3}
       propertyPath: m_LocalPosition.x
