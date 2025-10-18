@@ -1,0 +1,6071 @@
+fileFormatVersion: 2
+guid: 583237a08b2e67a468b19e42da4a1bc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3699710461563936137
+    second: System Icon Sprite Sheet_0
+  - first:
+      213: 5686827041040995282
+    second: System Icon Sprite Sheet_1
+  - first:
+      213: 4652979144951239619
+    second: System Icon Sprite Sheet_2
+  - first:
+      213: -8512014097388750795
+    second: System Icon Sprite Sheet_3
+  - first:
+      213: -1217916889519035632
+    second: System Icon Sprite Sheet_4
+  - first:
+      213: -4472021595656478277
+    second: System Icon Sprite Sheet_5
+  - first:
+      213: -7546642411155064949
+    second: System Icon Sprite Sheet_6
+  - first:
+      213: -2309159959904411001
+    second: System Icon Sprite Sheet_7
+  - first:
+      213: 7141136011589346200
+    second: System Icon Sprite Sheet_8
+  - first:
+      213: 5981826855745519670
+    second: System Icon Sprite Sheet_9
+  - first:
+      213: 3889152918100846467
+    second: System Icon Sprite Sheet_10
+  - first:
+      213: 7756806317111482274
+    second: System Icon Sprite Sheet_11
+  - first:
+      213: 3490894768309635637
+    second: System Icon Sprite Sheet_12
+  - first:
+      213: 3338135285212582108
+    second: System Icon Sprite Sheet_13
+  - first:
+      213: 3504117602261002816
+    second: System Icon Sprite Sheet_14
+  - first:
+      213: 6105968464009774357
+    second: System Icon Sprite Sheet_15
+  - first:
+      213: 8784676648465138979
+    second: System Icon Sprite Sheet_16
+  - first:
+      213: 6970440826507961447
+    second: System Icon Sprite Sheet_17
+  - first:
+      213: -4872440129781519339
+    second: System Icon Sprite Sheet_18
+  - first:
+      213: -8054471917020867145
+    second: System Icon Sprite Sheet_19
+  - first:
+      213: 8599337652669978638
+    second: System Icon Sprite Sheet_20
+  - first:
+      213: -6607126374700588472
+    second: System Icon Sprite Sheet_21
+  - first:
+      213: -4629786894743133637
+    second: System Icon Sprite Sheet_22
+  - first:
+      213: 7499802232740896978
+    second: System Icon Sprite Sheet_23
+  - first:
+      213: -822553209349423358
+    second: System Icon Sprite Sheet_24
+  - first:
+      213: 2596941217610829883
+    second: System Icon Sprite Sheet_25
+  - first:
+      213: 4606967055848047051
+    second: System Icon Sprite Sheet_26
+  - first:
+      213: 6245254293884979613
+    second: System Icon Sprite Sheet_27
+  - first:
+      213: -4275566782093590136
+    second: System Icon Sprite Sheet_28
+  - first:
+      213: 3466462683816497072
+    second: System Icon Sprite Sheet_29
+  - first:
+      213: 1335066154878638069
+    second: System Icon Sprite Sheet_30
+  - first:
+      213: -8035435261454715615
+    second: System Icon Sprite Sheet_31
+  - first:
+      213: 1083578465963992174
+    second: System Icon Sprite Sheet_32
+  - first:
+      213: 2875648045664092270
+    second: System Icon Sprite Sheet_33
+  - first:
+      213: 7043680940298658356
+    second: System Icon Sprite Sheet_34
+  - first:
+      213: 3229752984142283794
+    second: System Icon Sprite Sheet_35
+  - first:
+      213: -4207152327582707713
+    second: System Icon Sprite Sheet_36
+  - first:
+      213: 8715891193436844444
+    second: System Icon Sprite Sheet_37
+  - first:
+      213: 7411198211656248956
+    second: System Icon Sprite Sheet_38
+  - first:
+      213: 4901424952237492724
+    second: System Icon Sprite Sheet_39
+  - first:
+      213: -8997758517756780788
+    second: System Icon Sprite Sheet_40
+  - first:
+      213: -7633098438107220411
+    second: System Icon Sprite Sheet_41
+  - first:
+      213: 4409699041667626648
+    second: System Icon Sprite Sheet_42
+  - first:
+      213: -7618477140881687004
+    second: System Icon Sprite Sheet_43
+  - first:
+      213: -2456831840724360543
+    second: System Icon Sprite Sheet_44
+  - first:
+      213: 4825480019562906103
+    second: System Icon Sprite Sheet_45
+  - first:
+      213: -957318499335685019
+    second: System Icon Sprite Sheet_46
+  - first:
+      213: -7618772075206547928
+    second: System Icon Sprite Sheet_47
+  - first:
+      213: -4982452330001813703
+    second: System Icon Sprite Sheet_48
+  - first:
+      213: -103792007394053255
+    second: System Icon Sprite Sheet_49
+  - first:
+      213: 2451311352381547820
+    second: System Icon Sprite Sheet_50
+  - first:
+      213: 5772227483962116830
+    second: System Icon Sprite Sheet_51
+  - first:
+      213: 8591236311766780416
+    second: System Icon Sprite Sheet_52
+  - first:
+      213: -8035781037471136856
+    second: System Icon Sprite Sheet_53
+  - first:
+      213: -5161416093515679828
+    second: System Icon Sprite Sheet_54
+  - first:
+      213: -2174368605654170630
+    second: System Icon Sprite Sheet_55
+  - first:
+      213: 2047295900579540623
+    second: System Icon Sprite Sheet_56
+  - first:
+      213: -3387907522387835848
+    second: System Icon Sprite Sheet_57
+  - first:
+      213: 7595647152364338292
+    second: System Icon Sprite Sheet_58
+  - first:
+      213: 2056751720638639204
+    second: System Icon Sprite Sheet_59
+  - first:
+      213: -6703195949016250210
+    second: System Icon Sprite Sheet_60
+  - first:
+      213: 3587704751779113254
+    second: System Icon Sprite Sheet_61
+  - first:
+      213: -6912944134623956180
+    second: System Icon Sprite Sheet_62
+  - first:
+      213: 2939881051349460147
+    second: System Icon Sprite Sheet_63
+  - first:
+      213: -5531523097899116508
+    second: System Icon Sprite Sheet_64
+  - first:
+      213: -8057134731789468819
+    second: System Icon Sprite Sheet_65
+  - first:
+      213: -6227172297760761073
+    second: System Icon Sprite Sheet_66
+  - first:
+      213: -140557548189773113
+    second: System Icon Sprite Sheet_67
+  - first:
+      213: -5054633897460235352
+    second: System Icon Sprite Sheet_68
+  - first:
+      213: -8357535868957513483
+    second: System Icon Sprite Sheet_69
+  - first:
+      213: 3781066699687603919
+    second: System Icon Sprite Sheet_70
+  - first:
+      213: 7552271952435659084
+    second: System Icon Sprite Sheet_71
+  - first:
+      213: -3507937055882488267
+    second: System Icon Sprite Sheet_72
+  - first:
+      213: 7422018980364229795
+    second: System Icon Sprite Sheet_73
+  - first:
+      213: -1227893942276390857
+    second: System Icon Sprite Sheet_74
+  - first:
+      213: -5649061030180959336
+    second: System Icon Sprite Sheet_75
+  - first:
+      213: 2411129293626853042
+    second: System Icon Sprite Sheet_76
+  - first:
+      213: -6722244248720508003
+    second: System Icon Sprite Sheet_77
+  - first:
+      213: 7451409156798087913
+    second: System Icon Sprite Sheet_78
+  - first:
+      213: -1539958753422228048
+    second: System Icon Sprite Sheet_79
+  - first:
+      213: -7707072410907151703
+    second: System Icon Sprite Sheet_80
+  - first:
+      213: 1054947003569484048
+    second: System Icon Sprite Sheet_81
+  - first:
+      213: -1896158737741764747
+    second: System Icon Sprite Sheet_82
+  - first:
+      213: -9066606575292390092
+    second: System Icon Sprite Sheet_83
+  - first:
+      213: -7785836693540954515
+    second: System Icon Sprite Sheet_84
+  - first:
+      213: 1329831245298535305
+    second: System Icon Sprite Sheet_85
+  - first:
+      213: 5199766467825461258
+    second: System Icon Sprite Sheet_86
+  - first:
+      213: 6643746928213966815
+    second: System Icon Sprite Sheet_87
+  - first:
+      213: -5542784231610805368
+    second: System Icon Sprite Sheet_88
+  - first:
+      213: 396670772621976914
+    second: System Icon Sprite Sheet_89
+  - first:
+      213: 2352858113180698151
+    second: System Icon Sprite Sheet_90
+  - first:
+      213: -6594168948165311565
+    second: System Icon Sprite Sheet_91
+  - first:
+      213: 4437242745573739733
+    second: System Icon Sprite Sheet_92
+  - first:
+      213: 3027272121346072795
+    second: System Icon Sprite Sheet_93
+  - first:
+      213: 3718300617663381534
+    second: System Icon Sprite Sheet_94
+  - first:
+      213: 5759291575757100214
+    second: System Icon Sprite Sheet_95
+  - first:
+      213: -8772760084319721927
+    second: System Icon Sprite Sheet_96
+  - first:
+      213: 3815080142666428740
+    second: System Icon Sprite Sheet_97
+  - first:
+      213: -2392148545491319800
+    second: System Icon Sprite Sheet_98
+  - first:
+      213: -1608834083939444234
+    second: System Icon Sprite Sheet_99
+  - first:
+      213: 3542502597877629795
+    second: System Icon Sprite Sheet_100
+  - first:
+      213: 4315173788100907918
+    second: System Icon Sprite Sheet_101
+  - first:
+      213: -6338202898594510464
+    second: System Icon Sprite Sheet_102
+  - first:
+      213: 1649025643905693590
+    second: System Icon Sprite Sheet_103
+  - first:
+      213: -7857275980365606877
+    second: System Icon Sprite Sheet_104
+  - first:
+      213: 317705537740794385
+    second: System Icon Sprite Sheet_105
+  - first:
+      213: 4698100886883626770
+    second: System Icon Sprite Sheet_106
+  - first:
+      213: 3068078544561977727
+    second: System Icon Sprite Sheet_107
+  - first:
+      213: 3446148635620116894
+    second: System Icon Sprite Sheet_108
+  - first:
+      213: 7448372987486479015
+    second: System Icon Sprite Sheet_109
+  - first:
+      213: 3693360632203842296
+    second: System Icon Sprite Sheet_110
+  - first:
+      213: -6130433658183615837
+    second: System Icon Sprite Sheet_111
+  - first:
+      213: -6920281891693727220
+    second: System Icon Sprite Sheet_112
+  - first:
+      213: 7501828919199711489
+    second: System Icon Sprite Sheet_113
+  - first:
+      213: -3415191164757662287
+    second: System Icon Sprite Sheet_114
+  - first:
+      213: -421126838519750987
+    second: System Icon Sprite Sheet_115
+  - first:
+      213: -5286501766315885878
+    second: System Icon Sprite Sheet_116
+  - first:
+      213: -570288848214521927
+    second: System Icon Sprite Sheet_117
+  - first:
+      213: -5617038324267313041
+    second: System Icon Sprite Sheet_118
+  - first:
+      213: -5987415968918150309
+    second: System Icon Sprite Sheet_119
+  - first:
+      213: 6220251521585764899
+    second: System Icon Sprite Sheet_120
+  - first:
+      213: 435434021445507796
+    second: System Icon Sprite Sheet_121
+  - first:
+      213: 6404523503720610149
+    second: System Icon Sprite Sheet_122
+  - first:
+      213: -3712717709308857070
+    second: System Icon Sprite Sheet_123
+  - first:
+      213: -7116284684889925168
+    second: System Icon Sprite Sheet_124
+  - first:
+      213: 6848555640216773824
+    second: System Icon Sprite Sheet_125
+  - first:
+      213: 2712506676813596861
+    second: System Icon Sprite Sheet_126
+  - first:
+      213: -7620421706247907170
+    second: System Icon Sprite Sheet_127
+  - first:
+      213: -1968834076654219687
+    second: System Icon Sprite Sheet_128
+  - first:
+      213: -3963965438776908124
+    second: System Icon Sprite Sheet_129
+  - first:
+      213: 6369444107461794784
+    second: System Icon Sprite Sheet_130
+  - first:
+      213: -6294903894211992967
+    second: System Icon Sprite Sheet_131
+  - first:
+      213: -4160990311197791493
+    second: System Icon Sprite Sheet_132
+  - first:
+      213: 123868047055653272
+    second: System Icon Sprite Sheet_133
+  - first:
+      213: -5123515282734399650
+    second: System Icon Sprite Sheet_134
+  - first:
+      213: 6029420095383622577
+    second: System Icon Sprite Sheet_135
+  - first:
+      213: -9138567049516104430
+    second: System Icon Sprite Sheet_136
+  - first:
+      213: 8085513058959389337
+    second: System Icon Sprite Sheet_137
+  - first:
+      213: 8000355327569844591
+    second: System Icon Sprite Sheet_138
+  - first:
+      213: 7418446886751746921
+    second: System Icon Sprite Sheet_139
+  - first:
+      213: 8316624892011080824
+    second: System Icon Sprite Sheet_140
+  - first:
+      213: 6461545603375699820
+    second: System Icon Sprite Sheet_141
+  - first:
+      213: 3598597410023879033
+    second: System Icon Sprite Sheet_142
+  - first:
+      213: -1766032595442212003
+    second: System Icon Sprite Sheet_143
+  - first:
+      213: 4479149334810634485
+    second: System Icon Sprite Sheet_144
+  - first:
+      213: 5028216809062493580
+    second: System Icon Sprite Sheet_145
+  - first:
+      213: 1334238532692957790
+    second: System Icon Sprite Sheet_146
+  - first:
+      213: 2795004632635371421
+    second: System Icon Sprite Sheet_147
+  - first:
+      213: 94467520285805295
+    second: System Icon Sprite Sheet_148
+  - first:
+      213: -645331468758150805
+    second: System Icon Sprite Sheet_149
+  - first:
+      213: -2014991748205054825
+    second: System Icon Sprite Sheet_150
+  - first:
+      213: 505215536358457856
+    second: System Icon Sprite Sheet_151
+  - first:
+      213: 591621114334829621
+    second: System Icon Sprite Sheet_152
+  - first:
+      213: -6461076300322512948
+    second: System Icon Sprite Sheet_153
+  - first:
+      213: 5537566875428632720
+    second: System Icon Sprite Sheet_154
+  - first:
+      213: -2105277379205670259
+    second: System Icon Sprite Sheet_155
+  - first:
+      213: -5845901249923417406
+    second: System Icon Sprite Sheet_156
+  - first:
+      213: -2438454715363737847
+    second: System Icon Sprite Sheet_157
+  - first:
+      213: 3531404807616100564
+    second: System Icon Sprite Sheet_158
+  - first:
+      213: 4246062506800927415
+    second: System Icon Sprite Sheet_159
+  - first:
+      213: -5906799852040246331
+    second: System Icon Sprite Sheet_160
+  - first:
+      213: 2412858441160355390
+    second: System Icon Sprite Sheet_161
+  - first:
+      213: 3056988782101851732
+    second: System Icon Sprite Sheet_162
+  - first:
+      213: 1629138255261520391
+    second: System Icon Sprite Sheet_163
+  - first:
+      213: -6068125941895601062
+    second: System Icon Sprite Sheet_164
+  - first:
+      213: 4001808957583281666
+    second: System Icon Sprite Sheet_165
+  - first:
+      213: -4844120271166864378
+    second: System Icon Sprite Sheet_166
+  - first:
+      213: 6109826173578903258
+    second: System Icon Sprite Sheet_167
+  - first:
+      213: -8762005591374505950
+    second: System Icon Sprite Sheet_168
+  - first:
+      213: 249494232177371807
+    second: System Icon Sprite Sheet_169
+  - first:
+      213: 7171957330718556647
+    second: System Icon Sprite Sheet_170
+  - first:
+      213: 1356026410717359766
+    second: System Icon Sprite Sheet_171
+  - first:
+      213: -1544160778876740909
+    second: System Icon Sprite Sheet_172
+  - first:
+      213: 3164323239888685363
+    second: System Icon Sprite Sheet_173
+  - first:
+      213: -7584633862599896078
+    second: System Icon Sprite Sheet_174
+  - first:
+      213: -601768377472455904
+    second: System Icon Sprite Sheet_175
+  - first:
+      213: -6723024374117209058
+    second: System Icon Sprite Sheet_176
+  - first:
+      213: -2179227248232608323
+    second: System Icon Sprite Sheet_177
+  - first:
+      213: 2911063376034148745
+    second: System Icon Sprite Sheet_178
+  - first:
+      213: -2353781608720255566
+    second: System Icon Sprite Sheet_179
+  - first:
+      213: 8015238164760081907
+    second: System Icon Sprite Sheet_180
+  - first:
+      213: 5087803008602920759
+    second: System Icon Sprite Sheet_181
+  - first:
+      213: -6365271898020473347
+    second: System Icon Sprite Sheet_182
+  - first:
+      213: 4152790613577420137
+    second: System Icon Sprite Sheet_183
+  - first:
+      213: -3924744242094294895
+    second: System Icon Sprite Sheet_184
+  - first:
+      213: 6522665351919368107
+    second: System Icon Sprite Sheet_185
+  - first:
+      213: 7677595420192213601
+    second: System Icon Sprite Sheet_186
+  - first:
+      213: 675866133848492547
+    second: System Icon Sprite Sheet_187
+  - first:
+      213: 1460103886235869485
+    second: System Icon Sprite Sheet_188
+  - first:
+      213: -4165791435916249935
+    second: System Icon Sprite Sheet_189
+  - first:
+      213: -947655310746046799
+    second: System Icon Sprite Sheet_190
+  - first:
+      213: -6262543725815625663
+    second: System Icon Sprite Sheet_191
+  - first:
+      213: -7938239612515184254
+    second: System Icon Sprite Sheet_192
+  - first:
+      213: -5389668337104949560
+    second: System Icon Sprite Sheet_193
+  - first:
+      213: 2351245903855727893
+    second: System Icon Sprite Sheet_194
+  - first:
+      213: 1285283040019892963
+    second: System Icon Sprite Sheet_195
+  - first:
+      213: -2650312739155762668
+    second: System Icon Sprite Sheet_196
+  - first:
+      213: 5691602660373771145
+    second: System Icon Sprite Sheet_197
+  - first:
+      213: -8532004528184472483
+    second: System Icon Sprite Sheet_198
+  - first:
+      213: -351401120866767020
+    second: System Icon Sprite Sheet_199
+  - first:
+      213: 4672168752006310931
+    second: System Icon Sprite Sheet_200
+  - first:
+      213: 5075287684835364993
+    second: System Icon Sprite Sheet_201
+  - first:
+      213: -3837864231269598444
+    second: System Icon Sprite Sheet_202
+  - first:
+      213: 8381096421543759621
+    second: System Icon Sprite Sheet_203
+  - first:
+      213: 8201924690731566967
+    second: System Icon Sprite Sheet_204
+  - first:
+      213: 4214027560815838661
+    second: System Icon Sprite Sheet_205
+  - first:
+      213: 2946827434471624683
+    second: System Icon Sprite Sheet_206
+  - first:
+      213: -2239105725385701675
+    second: System Icon Sprite Sheet_207
+  - first:
+      213: 8048657640173738689
+    second: System Icon Sprite Sheet_208
+  - first:
+      213: -6947020113741107402
+    second: System Icon Sprite Sheet_209
+  - first:
+      213: -2979372345732658098
+    second: System Icon Sprite Sheet_210
+  - first:
+      213: -1955604157747973972
+    second: System Icon Sprite Sheet_211
+  - first:
+      213: 5503831015950228083
+    second: System Icon Sprite Sheet_212
+  - first:
+      213: -5957903904234115834
+    second: System Icon Sprite Sheet_213
+  - first:
+      213: 8826348431271316564
+    second: System Icon Sprite Sheet_214
+  - first:
+      213: 2966342033589010555
+    second: System Icon Sprite Sheet_215
+  - first:
+      213: 3396769680374567672
+    second: System Icon Sprite Sheet_216
+  - first:
+      213: -3128960616926613038
+    second: System Icon Sprite Sheet_217
+  - first:
+      213: -1458751967845022088
+    second: System Icon Sprite Sheet_218
+  - first:
+      213: -6969556074186828060
+    second: System Icon Sprite Sheet_219
+  - first:
+      213: 2270422142030458316
+    second: System Icon Sprite Sheet_220
+  - first:
+      213: 3007463474871316126
+    second: System Icon Sprite Sheet_221
+  - first:
+      213: -8343779546481246238
+    second: System Icon Sprite Sheet_222
+  - first:
+      213: 6652381970170453779
+    second: System Icon Sprite Sheet_223
+  - first:
+      213: -4252197243517659079
+    second: System Icon Sprite Sheet_224
+  - first:
+      213: 4866129067444351607
+    second: System Icon Sprite Sheet_225
+  - first:
+      213: -3031993212885866198
+    second: System Icon Sprite Sheet_226
+  - first:
+      213: -7426160651213405526
+    second: System Icon Sprite Sheet_227
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1049
+        width: 72
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7726fa6efecf7acc0800000000000000
+      internalID: -3699710461563936137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1048
+        width: 72
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d39550501babee40800000000000000
+      internalID: 5686827041040995282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1081
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c39e1a31e3b29040800000000000000
+      internalID: 4652979144951239619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1081
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538b60ae6404fd980800000000000000
+      internalID: -8512014097388750795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1088
+        width: 70
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01be442ba07191fe0800000000000000
+      internalID: -1217916889519035632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 1049
+        width: 64
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb125037d0030f1c0800000000000000
+      internalID: -4472021595656478277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1061
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87743cf5b0f44790800000000000000
+      internalID: -7546642411155064949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1060
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782a75c304734ffd0800000000000000
+      internalID: -2309159959904411001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1060
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893688ffd596a1360800000000000000
+      internalID: 7141136011589346200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1053
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6308a9c05d7b30350800000000000000
+      internalID: 5981826855745519670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1058
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 387239039fb09f530800000000000000
+      internalID: 3889152918100846467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1058
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a79fe28f36b5ab60800000000000000
+      internalID: 7756806317111482274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1077
+        width: 58
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a8d55db46227030800000000000000
+      internalID: 3490894768309635637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1060
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd01b4f0b50735e20800000000000000
+      internalID: 3338135285212582108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 1060
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ae5f5c46021a030800000000000000
+      internalID: 3504117602261002816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1051
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5154a0b97f1ccb450800000000000000
+      internalID: 6105968464009774357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1051
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3250f6a5ed079e970800000000000000
+      internalID: 8784676648465138979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1049
+        width: 58
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76423ef200bfbb060800000000000000
+      internalID: 6970440826507961447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 958
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ca30b648d916cb0800000000000000
+      internalID: -4872440129781519339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 959
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b59c944774c83090800000000000000
+      internalID: -8054471917020867145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 957
+        width: 76
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08190ba80cf65770800000000000000
+      internalID: 8599337652669978638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 955
+        width: 46
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8426bd97195ce44a0800000000000000
+      internalID: -6607126374700588472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 955
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32a3115951bfbfb0800000000000000
+      internalID: -4629786894743133637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 963
+        width: 18
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0e3302566a41860800000000000000
+      internalID: 7499802232740896978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 974
+        width: 14
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20fbed3d634b594f0800000000000000
+      internalID: -822553209349423358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 956
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30934a37403a0420800000000000000
+      internalID: 2596941217610829883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 973
+        width: 14
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc100c7e02c3fef30800000000000000
+      internalID: 4606967055848047051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 963
+        width: 18
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d994ff601b99ba650800000000000000
+      internalID: 6245254293884979613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 951
+        width: 70
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8810ad32aa22aa4c0800000000000000
+      internalID: -4275566782093590136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 953
+        width: 62
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf8700e1795b1030800000000000000
+      internalID: 3466462683816497072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 952
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f71039289b178210800000000000000
+      internalID: 1335066154878638069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 951
+        width: 67
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125f75904366c7090800000000000000
+      internalID: -8035435261454715615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 953
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64eb0eafd4a90f00800000000000000
+      internalID: 1083578465963992174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 952
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60cad469aa58e720800000000000000
+      internalID: 2875648045664092270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 965
+        width: 60
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432e0b50f7e20c160800000000000000
+      internalID: 7043680940298658356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 955
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2140f042a3362dc20800000000000000
+      internalID: 3229752984142283794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 861
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff897e9f313d95c0800000000000000
+      internalID: -4207152327582707713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 880
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9132c59cd015f870800000000000000
+      internalID: 8715891193436844444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 870
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ee7cdd18dd9d660800000000000000
+      internalID: 7411198211656248956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 870
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f90a53760c550440800000000000000
+      internalID: 4901424952237492724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 880
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f9c5edc4a812380800000000000000
+      internalID: -8997758517756780788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 859
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 546b7059969c11690800000000000000
+      internalID: -7633098438107220411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 860
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896baf03ae5623d30800000000000000
+      internalID: 4409699041667626648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 873
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e3050a76bb54690800000000000000
+      internalID: -7618477140881687004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 865
+        width: 76
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a261cc257497edd0800000000000000
+      internalID: -2456831840724360543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 861
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1cac4e28c87f240800000000000000
+      internalID: 4825480019562906103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 861
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56cbf2e95ebe6b2f0800000000000000
+      internalID: -957318499335685019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 876
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826e5a0e92fa44690800000000000000
+      internalID: -7618772075206547928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 858
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93face70106cadab0800000000000000
+      internalID: -4982452330001813703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 861
+        width: 67
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973b0cc18b14f8ef0800000000000000
+      internalID: -103792007394053255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 861
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25a598ffaec40220800000000000000
+      internalID: 2451311352381547820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 876
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda0f4860521b1050800000000000000
+      internalID: 5772227483962116830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 858
+        width: 70
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00acb4048e33a3770800000000000000
+      internalID: 8591236311766780416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 888
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a386b8c8bb2b7090800000000000000
+      internalID: -8035781037471136856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 861
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca77308c867fe58b0800000000000000
+      internalID: -5161416093515679828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 776
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3c831064713d1e0800000000000000
+      internalID: -2174368605654170630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 774
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e282846c4796c10800000000000000
+      internalID: 2047295900579540623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 767
+        width: 70
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834033cee0cbbf0d0800000000000000
+      internalID: -3387907522387835848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 767
+        width: 70
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c32e377d8296960800000000000000
+      internalID: 7595647152364338292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 767
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ce6d3facc0b8c10800000000000000
+      internalID: 2056751720638639204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 788
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e988c07acc679f2a0800000000000000
+      internalID: -6703195949016250210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 779
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62966c896761ac130800000000000000
+      internalID: 3587704751779113254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 781
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c237e979fe94010a0800000000000000
+      internalID: -6912944134623956180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 767
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b426937d3e8cc820800000000000000
+      internalID: 2939881051349460147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 782
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428dadabc051c33b0800000000000000
+      internalID: -5531523097899116508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 772
+        width: 76
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6bf93466ae4f2090800000000000000
+      internalID: -8057134731789468819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 770
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b11d4c9c3a499a0800000000000000
+      internalID: -6227172297760761073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 770
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c216a597a3ac0ef0800000000000000
+      internalID: -140557548189773113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 772
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a30c3830455ad9b0800000000000000
+      internalID: -5054633897460235352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 770
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8a3354861140c80800000000000000
+      internalID: -8357535868957513483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 773
+        width: 38
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce20f2612c097430800000000000000
+      internalID: 3781066699687603919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 767
+        width: 52
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41c21cb35f0fc860800000000000000
+      internalID: 7552271952435659084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 676
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536d1b165dd415fc0800000000000000
+      internalID: -3507937055882488267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 674
+        width: 74
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac11d860fe400760800000000000000
+      internalID: 7422018980364229795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 670
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73003c417f4a5fee0800000000000000
+      internalID: -1227893942276390857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 672
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89bcf8d4ce08a91b0800000000000000
+      internalID: -5649061030180959336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 670
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6ca2e515d067120800000000000000
+      internalID: 2411129293626853042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 669
+        width: 58
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9bf995c87ac5b2a0800000000000000
+      internalID: -6722244248720508003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 670
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e20b0b1629b86760800000000000000
+      internalID: 7451409156798087913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 670
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5c38d3ca7f0aae0800000000000000
+      internalID: -1539958753422228048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 670
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a27aa1e97afa0590800000000000000
+      internalID: -7707072410907151703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 670
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0113f9cd5bce3ae00800000000000000
+      internalID: 1054947003569484048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 675
+        width: 70
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577262f9cad7fa5e0800000000000000
+      internalID: -1896158737741764747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 675
+        width: 70
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435e9715b51fc2280800000000000000
+      internalID: -9066606575292390092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 670
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e1a4247c623f390800000000000000
+      internalID: -7785836693540954515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 675
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b0c3bc872847210800000000000000
+      internalID: 1329831245298535305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 581
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0869bd8d08492840800000000000000
+      internalID: 5199766467825461258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 579
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdf39c191a4533c50800000000000000
+      internalID: 6643746928213966815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 582
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8839338bb131413b0800000000000000
+      internalID: -5542784231610805368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 582
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 255a9ee47f1418500800000000000000
+      internalID: 396670772621976914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 576
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726080becf707a020800000000000000
+      internalID: 2352858113180698151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 573
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b302bf674ecc74a0800000000000000
+      internalID: -6594168948165311565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 579
+        width: 74
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc0a1084c0449d30800000000000000
+      internalID: 4437242745573739733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 596
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0a64784f7030a20800000000000000
+      internalID: 3027272121346072795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 579
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1001fb16be0a9330800000000000000
+      internalID: 3718300617663381534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 612
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4d6e29c2d1def40800000000000000
+      internalID: 5759291575757100214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 599
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936a562fe25e04680800000000000000
+      internalID: -8772760084319721927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 624
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44177453d23e1f430800000000000000
+      internalID: 3815080142666428740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 624
+        width: 43
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804c50072916dced0800000000000000
+      internalID: -2392148545491319800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 575
+        width: 64
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f99f34bce54ca9e0800000000000000
+      internalID: -1608834083939444234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 603
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3630562085f792130800000000000000
+      internalID: 3542502597877629795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 603
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83d4df82b392eb30800000000000000
+      internalID: 4315173788100907918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 603
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0894ce28b0e2a08a0800000000000000
+      internalID: -6338202898594510464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 576
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6973282161482e610800000000000000
+      internalID: 1649025643905693590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 606
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3205910202955f290800000000000000
+      internalID: -7857275980365606877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 606
+        width: 43
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ae638d087b86400800000000000000
+      internalID: 317705537740794385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 587
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f65a17dd1033140800000000000000
+      internalID: 4698100886883626770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 588
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f793d9f4e21049a20800000000000000
+      internalID: 3068078544561977727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 588
+        width: 43
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e998555fced23df20800000000000000
+      internalID: 3446148635620116894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 577
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a22fb9d4cfed5760800000000000000
+      internalID: 7448372987486479015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 484
+        width: 58
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f21ced3de3714330800000000000000
+      internalID: 3693360632203842296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 479
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aafddc71135ceaa0800000000000000
+      internalID: -6130433658183615837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 489
+        width: 76
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c02f604e84836ff90800000000000000
+      internalID: -6920281891693727220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 483
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101c6a6d7a9db1860800000000000000
+      internalID: 7501828919199711489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 482
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b52198eabdca90d0800000000000000
+      internalID: -3415191164757662287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 486
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5be95a02f5bd72af0800000000000000
+      internalID: -421126838519750987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 499
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca344217a292a6b0800000000000000
+      internalID: -5286501766315885878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 494
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b78ec6605de518f0800000000000000
+      internalID: -570288848214521927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 490
+        width: 9
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f689a4887654c02b0800000000000000
+      internalID: -5617038324267313041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 490
+        width: 9
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53e12226ec68eca0800000000000000
+      internalID: -5987415968918150309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 494
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ad3b57dc5c25650800000000000000
+      internalID: 6220251521585764899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 540
+        width: 52
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da116b7fe8fa0600800000000000000
+      internalID: 435434021445507796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 488
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56938eaa13071e850800000000000000
+      internalID: 6404523503720610149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 482
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215f7590ae6c97cc0800000000000000
+      internalID: -3712717709308857070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 481
+        width: 64
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9559468c0ed3d90800000000000000
+      internalID: -7116284684889925168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 485
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c46e9fc115fa0f50800000000000000
+      internalID: 6848555640216773824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 503
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8895a7372c4a520800000000000000
+      internalID: 2712506676813596861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 485
+        width: 52
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98da6835d2de3690800000000000000
+      internalID: -7620421706247907170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 390
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e475fa6db4da4e0800000000000000
+      internalID: -1968834076654219687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 390
+        width: 70
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6e6c77f6a2df8c0800000000000000
+      internalID: -3963965438776908124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_130
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 389
+        width: 62
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb17f14bafc46850800000000000000
+      internalID: 6369444107461794784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_131
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 387
+        width: 58
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9726542924204a8a0800000000000000
+      internalID: -6294903894211992967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_132
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 441
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfaa63b9b513146c0800000000000000
+      internalID: -4160990311197791493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_133
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 390
+        width: 68
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89906cf155118b100800000000000000
+      internalID: 123868047055653272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_134
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 392
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fb453fefd95e8b0800000000000000
+      internalID: -5123515282734399650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_135
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 392
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b351faa1adcca350800000000000000
+      internalID: 6029420095383622577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_136
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 390
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215c089cfa94d2180800000000000000
+      internalID: -9138567049516104430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_137
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 430
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9927e0ac943853070800000000000000
+      internalID: 8085513058959389337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_138
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 392
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6954b068c8f60f60800000000000000
+      internalID: 8000355327569844591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_139
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 392
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96bb0fd832e93f660800000000000000
+      internalID: 7418446886751746921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_140
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 390
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ced72a6469a6370800000000000000
+      internalID: 8316624892011080824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_141
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 416
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c671235dd750ca950800000000000000
+      internalID: 6461545603375699820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_142
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 390
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9713d1a3749c0f130800000000000000
+      internalID: 3598597410023879033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_143
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 388
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53e7e616bacd77e0800000000000000
+      internalID: -1766032595442212003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_144
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 391
+        width: 76
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8a055a692292e30800000000000000
+      internalID: 4479149334810634485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_145
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 294
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d61d51c80d7c540800000000000000
+      internalID: 5028216809062493580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_146
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 306
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a5dca50ea248210800000000000000
+      internalID: 1334238532692957790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_147
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 294
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9f6dc1a7e9d9c620800000000000000
+      internalID: 2795004632635371421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_148
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 298
+        width: 76
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea827d85bd9f4100800000000000000
+      internalID: 94467520285805295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_149
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 292
+        width: 58
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b611a42c2725b07f0800000000000000
+      internalID: -645331468758150805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_150
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 293
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794f4ee4eaf4904e0800000000000000
+      internalID: -2014991748205054825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_151
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 296
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00287a38ad2e20700800000000000000
+      internalID: 505215536358457856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_152
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 297
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c5c89d44cd53800800000000000000
+      internalID: 591621114334829621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_153
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 296
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfd49c4655a556a0800000000000000
+      internalID: -6461076300322512948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_154
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 317
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 098b4e1ebb369dc40800000000000000
+      internalID: 5537566875428632720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_155
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 294
+        width: 64
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ad7cab06d88c2e0800000000000000
+      internalID: -2105277379205670259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_156
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 294
+        width: 64
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca7d4e39cf2fdea0800000000000000
+      internalID: -5845901249923417406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_157
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 294
+        width: 70
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f3ed91b5ed82ed0800000000000000
+      internalID: -2438454715363737847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_158
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 317
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8701c56f1120130800000000000000
+      internalID: 3531404807616100564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_159
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 294
+        width: 64
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b259f37a5b0dea30800000000000000
+      internalID: 4246062506800927415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_160
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 200
+        width: 64
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cbafc384d4d60ea0800000000000000
+      internalID: -5906799852040246331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_161
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 202
+        width: 28
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e6aa6e7f13c7120800000000000000
+      internalID: 2412858441160355390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_162
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 218
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ee887c91b9c6a20800000000000000
+      internalID: 3056988782101851732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_163
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 202
+        width: 28
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 702dcd29c9cdb9610800000000000000
+      internalID: 1629138255261520391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_164
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 218
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54eafc2b9fa9cba0800000000000000
+      internalID: -6068125941895601062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_165
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 201
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e4abf5b08498730800000000000000
+      internalID: 4001808957583281666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_166
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60484d3574a36ccb0800000000000000
+      internalID: -4844120271166864378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_167
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 245
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adefd8b98867ac450800000000000000
+      internalID: 6109826173578903258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_168
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 249
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228d226765a176680800000000000000
+      internalID: -8762005591374505950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_169
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 200
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ae07aaea1667300800000000000000
+      internalID: 249494232177371807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_170
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 246
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e10db19139e78360800000000000000
+      internalID: 7171957330718556647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_171
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 214
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e2bd406d291d210800000000000000
+      internalID: 1356026410717359766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_172
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 247
+        width: 37
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da16f2f3f9029ae0800000000000000
+      internalID: -1544160778876740909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_173
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 214
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339041ca83fe9eb20800000000000000
+      internalID: 3164323239888685363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_174
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 201
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f39554efa7fdb690800000000000000
+      internalID: -7584633862599896078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_175
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 242
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02be0b759d616a7f0800000000000000
+      internalID: -601768377472455904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_176
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 206
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1c637ca3f403b2a0800000000000000
+      internalID: -6723024374117209058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_177
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 201
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd4e302d54d1c1e0800000000000000
+      internalID: -2179227248232608323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_178
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 201
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9813a2f87bc266820800000000000000
+      internalID: 2911063376034148745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_179
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 231
+        width: 34
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5b1650910b55fd0800000000000000
+      internalID: -2353781608720255566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_180
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 227
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5bda0f4a8db3f60800000000000000
+      internalID: 8015238164760081907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_181
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 230
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737d0f641e18b9640800000000000000
+      internalID: 5087803008602920759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_182
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 232
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df596b3fee20aa7a0800000000000000
+      internalID: -6365271898020473347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_183
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 209
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96dcbd48f0da1a930800000000000000
+      internalID: 4152790613577420137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_184
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 213
+        width: 34
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 198b5bfe7e18889c0800000000000000
+      internalID: -3924744242094294895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_185
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 215
+        width: 37
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7f6e93499258a50800000000000000
+      internalID: 6522665351919368107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_186
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 217
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a09b56b5c4c8a60800000000000000
+      internalID: 7677595420192213601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_187
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 197
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a81c7faa8216900800000000000000
+      internalID: 675866133848492547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_188
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 113
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d21a142afb4534410800000000000000
+      internalID: 1460103886235869485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_189
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 163
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4f8d5a2c22036c0800000000000000
+      internalID: -4165791435916249935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_190
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 144
+        width: 69
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be2879048049d2f0800000000000000
+      internalID: -947655310746046799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_191
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 119
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148886869a9f619a0800000000000000
+      internalID: -6262543725815625663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_192
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 115
+        width: 9
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281191a8125b5d190800000000000000
+      internalID: -7938239612515184254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_193
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 155
+        width: 58
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce60bdf33d0435b0800000000000000
+      internalID: -5389668337104949560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_194
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 111
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 515b9ee21bd41a020800000000000000
+      internalID: 2351245903855727893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_195
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 111
+        width: 60
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea483c7d1e36d110800000000000000
+      internalID: 1285283040019892963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_196
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 106
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412adee0b92383bd0800000000000000
+      internalID: -2650312739155762668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_197
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 160
+        width: 64
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9833f36d672acfe40800000000000000
+      internalID: 5691602660373771145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_198
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 106
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c4a8b061b389980800000000000000
+      internalID: -8532004528184472483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_199
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 137
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45fef09da829f1bf0800000000000000
+      internalID: -351401120866767020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_200
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 137
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c240ac9b0e6d040800000000000000
+      internalID: 4672168752006310931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_201
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 106
+        width: 69
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180d683624b0f6640800000000000000
+      internalID: 5075287684835364993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_202
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 137
+        width: 58
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b7ff6c0da2dbac0800000000000000
+      internalID: -3837864231269598444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_203
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 105
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50fc96a5ac2af4470800000000000000
+      internalID: 8381096421543759621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_204
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 129
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7778f81fc0713d170800000000000000
+      internalID: 8201924690731566967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_205
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 120
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c5422c5dbb3b7a30800000000000000
+      internalID: 4214027560815838661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_206
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 120
+        width: 25
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef8e0e40fb35e820800000000000000
+      internalID: 2946827434471624683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_207
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 129
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d687dfb4391de0e0800000000000000
+      internalID: -2239105725385701675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_208
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 103
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca1a49ea7392bf60800000000000000
+      internalID: 8048657640173738689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_209
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 119
+        width: 58
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63fa7f0730a379f90800000000000000
+      internalID: -6947020113741107402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_210
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 21
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c8bfe03a427a6d0800000000000000
+      internalID: -2979372345732658098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_211
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 21
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0b728316c4cd4e0800000000000000
+      internalID: -1955604157747973972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_212
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 17
+        width: 65
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a9d710629816c40800000000000000
+      internalID: 5503831015950228083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_213
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 12
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d663627f5415da0800000000000000
+      internalID: -5957903904234115834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_214
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 45
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45cc0cd522d7d7a70800000000000000
+      internalID: 8826348431271316564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_215
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 14
+        width: 58
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70026afc509a2920800000000000000
+      internalID: 2966342033589010555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_216
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 18
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f21b860700c32f20800000000000000
+      internalID: 3396769680374567672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_217
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 32
+        width: 13
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1f6e795e2b394d0800000000000000
+      internalID: -3128960616926613038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_218
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 21
+        width: 18
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876023560d871cbe0800000000000000
+      internalID: -1458751967845022088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_219
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 18
+        width: 76
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e69de34da9274f90800000000000000
+      internalID: -6969556074186828060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_220
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 29
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd28e1b8e8228f10800000000000000
+      internalID: 2270422142030458316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_221
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 13
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9eaaae9818acb920800000000000000
+      internalID: 3007463474871316126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_222
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 12
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efb0dfa5b0f43c80800000000000000
+      internalID: -8343779546481246238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_223
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 25
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31f1932f722025c50800000000000000
+      internalID: 6652381970170453779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_224
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 12
+        width: 58
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9381c39d2292df4c0800000000000000
+      internalID: -4252197243517659079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_225
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 11
+        width: 73
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7723930ea96f78340800000000000000
+      internalID: 4866129067444351607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_226
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 11
+        width: 73
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29ea80bc323ce5d0800000000000000
+      internalID: -3031993212885866198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: System Icon Sprite Sheet_227
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 15
+        width: 52
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa20173bb3af0f890800000000000000
+      internalID: -7426160651213405526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      System Icon Sprite Sheet_0: -3699710461563936137
+      System Icon Sprite Sheet_1: 5686827041040995282
+      System Icon Sprite Sheet_10: 3889152918100846467
+      System Icon Sprite Sheet_100: 3542502597877629795
+      System Icon Sprite Sheet_101: 4315173788100907918
+      System Icon Sprite Sheet_102: -6338202898594510464
+      System Icon Sprite Sheet_103: 1649025643905693590
+      System Icon Sprite Sheet_104: -7857275980365606877
+      System Icon Sprite Sheet_105: 317705537740794385
+      System Icon Sprite Sheet_106: 4698100886883626770
+      System Icon Sprite Sheet_107: 3068078544561977727
+      System Icon Sprite Sheet_108: 3446148635620116894
+      System Icon Sprite Sheet_109: 7448372987486479015
+      System Icon Sprite Sheet_11: 7756806317111482274
+      System Icon Sprite Sheet_110: 3693360632203842296
+      System Icon Sprite Sheet_111: -6130433658183615837
+      System Icon Sprite Sheet_112: -6920281891693727220
+      System Icon Sprite Sheet_113: 7501828919199711489
+      System Icon Sprite Sheet_114: -3415191164757662287
+      System Icon Sprite Sheet_115: -421126838519750987
+      System Icon Sprite Sheet_116: -5286501766315885878
+      System Icon Sprite Sheet_117: -570288848214521927
+      System Icon Sprite Sheet_118: -5617038324267313041
+      System Icon Sprite Sheet_119: -5987415968918150309
+      System Icon Sprite Sheet_12: 3490894768309635637
+      System Icon Sprite Sheet_120: 6220251521585764899
+      System Icon Sprite Sheet_121: 435434021445507796
+      System Icon Sprite Sheet_122: 6404523503720610149
+      System Icon Sprite Sheet_123: -3712717709308857070
+      System Icon Sprite Sheet_124: -7116284684889925168
+      System Icon Sprite Sheet_125: 6848555640216773824
+      System Icon Sprite Sheet_126: 2712506676813596861
+      System Icon Sprite Sheet_127: -7620421706247907170
+      System Icon Sprite Sheet_128: -1968834076654219687
+      System Icon Sprite Sheet_129: -3963965438776908124
+      System Icon Sprite Sheet_13: 3338135285212582108
+      System Icon Sprite Sheet_130: 6369444107461794784
+      System Icon Sprite Sheet_131: -6294903894211992967
+      System Icon Sprite Sheet_132: -4160990311197791493
+      System Icon Sprite Sheet_133: 123868047055653272
+      System Icon Sprite Sheet_134: -5123515282734399650
+      System Icon Sprite Sheet_135: 6029420095383622577
+      System Icon Sprite Sheet_136: -9138567049516104430
+      System Icon Sprite Sheet_137: 8085513058959389337
+      System Icon Sprite Sheet_138: 8000355327569844591
+      System Icon Sprite Sheet_139: 7418446886751746921
+      System Icon Sprite Sheet_14: 3504117602261002816
+      System Icon Sprite Sheet_140: 8316624892011080824
+      System Icon Sprite Sheet_141: 6461545603375699820
+      System Icon Sprite Sheet_142: 3598597410023879033
+      System Icon Sprite Sheet_143: -1766032595442212003
+      System Icon Sprite Sheet_144: 4479149334810634485
+      System Icon Sprite Sheet_145: 5028216809062493580
+      System Icon Sprite Sheet_146: 1334238532692957790
+      System Icon Sprite Sheet_147: 2795004632635371421
+      System Icon Sprite Sheet_148: 94467520285805295
+      System Icon Sprite Sheet_149: -645331468758150805
+      System Icon Sprite Sheet_15: 6105968464009774357
+      System Icon Sprite Sheet_150: -2014991748205054825
+      System Icon Sprite Sheet_151: 505215536358457856
+      System Icon Sprite Sheet_152: 591621114334829621
+      System Icon Sprite Sheet_153: -6461076300322512948
+      System Icon Sprite Sheet_154: 5537566875428632720
+      System Icon Sprite Sheet_155: -2105277379205670259
+      System Icon Sprite Sheet_156: -5845901249923417406
+      System Icon Sprite Sheet_157: -2438454715363737847
+      System Icon Sprite Sheet_158: 3531404807616100564
+      System Icon Sprite Sheet_159: 4246062506800927415
+      System Icon Sprite Sheet_16: 8784676648465138979
+      System Icon Sprite Sheet_160: -5906799852040246331
+      System Icon Sprite Sheet_161: 2412858441160355390
+      System Icon Sprite Sheet_162: 3056988782101851732
+      System Icon Sprite Sheet_163: 1629138255261520391
+      System Icon Sprite Sheet_164: -6068125941895601062
+      System Icon Sprite Sheet_165: 4001808957583281666
+      System Icon Sprite Sheet_166: -4844120271166864378
+      System Icon Sprite Sheet_167: 6109826173578903258
+      System Icon Sprite Sheet_168: -8762005591374505950
+      System Icon Sprite Sheet_169: 249494232177371807
+      System Icon Sprite Sheet_17: 6970440826507961447
+      System Icon Sprite Sheet_170: 7171957330718556647
+      System Icon Sprite Sheet_171: 1356026410717359766
+      System Icon Sprite Sheet_172: -1544160778876740909
+      System Icon Sprite Sheet_173: 3164323239888685363
+      System Icon Sprite Sheet_174: -7584633862599896078
+      System Icon Sprite Sheet_175: -601768377472455904
+      System Icon Sprite Sheet_176: -6723024374117209058
+      System Icon Sprite Sheet_177: -2179227248232608323
+      System Icon Sprite Sheet_178: 2911063376034148745
+      System Icon Sprite Sheet_179: -2353781608720255566
+      System Icon Sprite Sheet_18: -4872440129781519339
+      System Icon Sprite Sheet_180: 8015238164760081907
+      System Icon Sprite Sheet_181: 5087803008602920759
+      System Icon Sprite Sheet_182: -6365271898020473347
+      System Icon Sprite Sheet_183: 4152790613577420137
+      System Icon Sprite Sheet_184: -3924744242094294895
+      System Icon Sprite Sheet_185: 6522665351919368107
+      System Icon Sprite Sheet_186: 7677595420192213601
+      System Icon Sprite Sheet_187: 675866133848492547
+      System Icon Sprite Sheet_188: 1460103886235869485
+      System Icon Sprite Sheet_189: -4165791435916249935
+      System Icon Sprite Sheet_19: -8054471917020867145
+      System Icon Sprite Sheet_190: -947655310746046799
+      System Icon Sprite Sheet_191: -6262543725815625663
+      System Icon Sprite Sheet_192: -7938239612515184254
+      System Icon Sprite Sheet_193: -5389668337104949560
+      System Icon Sprite Sheet_194: 2351245903855727893
+      System Icon Sprite Sheet_195: 1285283040019892963
+      System Icon Sprite Sheet_196: -2650312739155762668
+      System Icon Sprite Sheet_197: 5691602660373771145
+      System Icon Sprite Sheet_198: -8532004528184472483
+      System Icon Sprite Sheet_199: -351401120866767020
+      System Icon Sprite Sheet_2: 4652979144951239619
+      System Icon Sprite Sheet_20: 8599337652669978638
+      System Icon Sprite Sheet_200: 4672168752006310931
+      System Icon Sprite Sheet_201: 5075287684835364993
+      System Icon Sprite Sheet_202: -3837864231269598444
+      System Icon Sprite Sheet_203: 8381096421543759621
+      System Icon Sprite Sheet_204: 8201924690731566967
+      System Icon Sprite Sheet_205: 4214027560815838661
+      System Icon Sprite Sheet_206: 2946827434471624683
+      System Icon Sprite Sheet_207: -2239105725385701675
+      System Icon Sprite Sheet_208: 8048657640173738689
+      System Icon Sprite Sheet_209: -6947020113741107402
+      System Icon Sprite Sheet_21: -6607126374700588472
+      System Icon Sprite Sheet_210: -2979372345732658098
+      System Icon Sprite Sheet_211: -1955604157747973972
+      System Icon Sprite Sheet_212: 5503831015950228083
+      System Icon Sprite Sheet_213: -5957903904234115834
+      System Icon Sprite Sheet_214: 8826348431271316564
+      System Icon Sprite Sheet_215: 2966342033589010555
+      System Icon Sprite Sheet_216: 3396769680374567672
+      System Icon Sprite Sheet_217: -3128960616926613038
+      System Icon Sprite Sheet_218: -1458751967845022088
+      System Icon Sprite Sheet_219: -6969556074186828060
+      System Icon Sprite Sheet_22: -4629786894743133637
+      System Icon Sprite Sheet_220: 2270422142030458316
+      System Icon Sprite Sheet_221: 3007463474871316126
+      System Icon Sprite Sheet_222: -8343779546481246238
+      System Icon Sprite Sheet_223: 6652381970170453779
+      System Icon Sprite Sheet_224: -4252197243517659079
+      System Icon Sprite Sheet_225: 4866129067444351607
+      System Icon Sprite Sheet_226: -3031993212885866198
+      System Icon Sprite Sheet_227: -7426160651213405526
+      System Icon Sprite Sheet_23: 7499802232740896978
+      System Icon Sprite Sheet_24: -822553209349423358
+      System Icon Sprite Sheet_25: 2596941217610829883
+      System Icon Sprite Sheet_26: 4606967055848047051
+      System Icon Sprite Sheet_27: 6245254293884979613
+      System Icon Sprite Sheet_28: -4275566782093590136
+      System Icon Sprite Sheet_29: 3466462683816497072
+      System Icon Sprite Sheet_3: -8512014097388750795
+      System Icon Sprite Sheet_30: 1335066154878638069
+      System Icon Sprite Sheet_31: -8035435261454715615
+      System Icon Sprite Sheet_32: 1083578465963992174
+      System Icon Sprite Sheet_33: 2875648045664092270
+      System Icon Sprite Sheet_34: 7043680940298658356
+      System Icon Sprite Sheet_35: 3229752984142283794
+      System Icon Sprite Sheet_36: -4207152327582707713
+      System Icon Sprite Sheet_37: 8715891193436844444
+      System Icon Sprite Sheet_38: 7411198211656248956
+      System Icon Sprite Sheet_39: 4901424952237492724
+      System Icon Sprite Sheet_4: -1217916889519035632
+      System Icon Sprite Sheet_40: -8997758517756780788
+      System Icon Sprite Sheet_41: -7633098438107220411
+      System Icon Sprite Sheet_42: 4409699041667626648
+      System Icon Sprite Sheet_43: -7618477140881687004
+      System Icon Sprite Sheet_44: -2456831840724360543
+      System Icon Sprite Sheet_45: 4825480019562906103
+      System Icon Sprite Sheet_46: -957318499335685019
+      System Icon Sprite Sheet_47: -7618772075206547928
+      System Icon Sprite Sheet_48: -4982452330001813703
+      System Icon Sprite Sheet_49: -103792007394053255
+      System Icon Sprite Sheet_5: -4472021595656478277
+      System Icon Sprite Sheet_50: 2451311352381547820
+      System Icon Sprite Sheet_51: 5772227483962116830
+      System Icon Sprite Sheet_52: 8591236311766780416
+      System Icon Sprite Sheet_53: -8035781037471136856
+      System Icon Sprite Sheet_54: -5161416093515679828
+      System Icon Sprite Sheet_55: -2174368605654170630
+      System Icon Sprite Sheet_56: 2047295900579540623
+      System Icon Sprite Sheet_57: -3387907522387835848
+      System Icon Sprite Sheet_58: 7595647152364338292
+      System Icon Sprite Sheet_59: 2056751720638639204
+      System Icon Sprite Sheet_6: -7546642411155064949
+      System Icon Sprite Sheet_60: -6703195949016250210
+      System Icon Sprite Sheet_61: 3587704751779113254
+      System Icon Sprite Sheet_62: -6912944134623956180
+      System Icon Sprite Sheet_63: 2939881051349460147
+      System Icon Sprite Sheet_64: -5531523097899116508
+      System Icon Sprite Sheet_65: -8057134731789468819
+      System Icon Sprite Sheet_66: -6227172297760761073
+      System Icon Sprite Sheet_67: -140557548189773113
+      System Icon Sprite Sheet_68: -5054633897460235352
+      System Icon Sprite Sheet_69: -8357535868957513483
+      System Icon Sprite Sheet_7: -2309159959904411001
+      System Icon Sprite Sheet_70: 3781066699687603919
+      System Icon Sprite Sheet_71: 7552271952435659084
+      System Icon Sprite Sheet_72: -3507937055882488267
+      System Icon Sprite Sheet_73: 7422018980364229795
+      System Icon Sprite Sheet_74: -1227893942276390857
+      System Icon Sprite Sheet_75: -5649061030180959336
+      System Icon Sprite Sheet_76: 2411129293626853042
+      System Icon Sprite Sheet_77: -6722244248720508003
+      System Icon Sprite Sheet_78: 7451409156798087913
+      System Icon Sprite Sheet_79: -1539958753422228048
+      System Icon Sprite Sheet_8: 7141136011589346200
+      System Icon Sprite Sheet_80: -7707072410907151703
+      System Icon Sprite Sheet_81: 1054947003569484048
+      System Icon Sprite Sheet_82: -1896158737741764747
+      System Icon Sprite Sheet_83: -9066606575292390092
+      System Icon Sprite Sheet_84: -7785836693540954515
+      System Icon Sprite Sheet_85: 1329831245298535305
+      System Icon Sprite Sheet_86: 5199766467825461258
+      System Icon Sprite Sheet_87: 6643746928213966815
+      System Icon Sprite Sheet_88: -5542784231610805368
+      System Icon Sprite Sheet_89: 396670772621976914
+      System Icon Sprite Sheet_9: 5981826855745519670
+      System Icon Sprite Sheet_90: 2352858113180698151
+      System Icon Sprite Sheet_91: -6594168948165311565
+      System Icon Sprite Sheet_92: 4437242745573739733
+      System Icon Sprite Sheet_93: 3027272121346072795
+      System Icon Sprite Sheet_94: 3718300617663381534
+      System Icon Sprite Sheet_95: 5759291575757100214
+      System Icon Sprite Sheet_96: -8772760084319721927
+      System Icon Sprite Sheet_97: 3815080142666428740
+      System Icon Sprite Sheet_98: -2392148545491319800
+      System Icon Sprite Sheet_99: -1608834083939444234
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

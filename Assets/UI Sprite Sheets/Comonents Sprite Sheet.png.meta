@@ -1,0 +1,1599 @@
+fileFormatVersion: 2
+guid: aed99f69f72af824e904d7d9798de74f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2365933424543592276
+    second: Comonents Sprite Sheet_0
+  - first:
+      213: -8340854767781552504
+    second: Comonents Sprite Sheet_1
+  - first:
+      213: 8193843933577000106
+    second: Comonents Sprite Sheet_2
+  - first:
+      213: -5790895237543885577
+    second: Comonents Sprite Sheet_3
+  - first:
+      213: -8907354739673237860
+    second: Comonents Sprite Sheet_4
+  - first:
+      213: 2694347756781133716
+    second: Comonents Sprite Sheet_5
+  - first:
+      213: 3543766206679365267
+    second: Comonents Sprite Sheet_6
+  - first:
+      213: -2625029711876400708
+    second: Comonents Sprite Sheet_7
+  - first:
+      213: -5707744619811387148
+    second: Comonents Sprite Sheet_8
+  - first:
+      213: -4456440676371416267
+    second: Comonents Sprite Sheet_9
+  - first:
+      213: 1412423107042613616
+    second: Comonents Sprite Sheet_10
+  - first:
+      213: 3882110001457507416
+    second: Comonents Sprite Sheet_11
+  - first:
+      213: 4952064684682234969
+    second: Comonents Sprite Sheet_12
+  - first:
+      213: 7275926790168690124
+    second: Comonents Sprite Sheet_13
+  - first:
+      213: 3878481079086742121
+    second: Comonents Sprite Sheet_14
+  - first:
+      213: 4585753510994622515
+    second: Comonents Sprite Sheet_15
+  - first:
+      213: 7107986277267722492
+    second: Comonents Sprite Sheet_16
+  - first:
+      213: -931897669878164645
+    second: Comonents Sprite Sheet_17
+  - first:
+      213: 3775500320747633909
+    second: Comonents Sprite Sheet_18
+  - first:
+      213: -1367575955096353316
+    second: Comonents Sprite Sheet_19
+  - first:
+      213: 3721218874578579827
+    second: Comonents Sprite Sheet_20
+  - first:
+      213: 5309686762645063526
+    second: Comonents Sprite Sheet_21
+  - first:
+      213: 5774388738741771083
+    second: Comonents Sprite Sheet_22
+  - first:
+      213: -829028127773728258
+    second: Comonents Sprite Sheet_23
+  - first:
+      213: 7298490613560946075
+    second: Comonents Sprite Sheet_24
+  - first:
+      213: 4647946751086668584
+    second: Comonents Sprite Sheet_25
+  - first:
+      213: -5346435929581143050
+    second: Comonents Sprite Sheet_26
+  - first:
+      213: 482898300286122122
+    second: Comonents Sprite Sheet_27
+  - first:
+      213: -2443305950105701158
+    second: Comonents Sprite Sheet_28
+  - first:
+      213: -6190982651321326394
+    second: Comonents Sprite Sheet_29
+  - first:
+      213: -2829440200671170581
+    second: Comonents Sprite Sheet_30
+  - first:
+      213: 1784196907132736394
+    second: Comonents Sprite Sheet_31
+  - first:
+      213: -8507445974231940188
+    second: Comonents Sprite Sheet_32
+  - first:
+      213: -5623431773374659779
+    second: Comonents Sprite Sheet_33
+  - first:
+      213: 5958146279988374738
+    second: Comonents Sprite Sheet_34
+  - first:
+      213: -9128649791324127658
+    second: Comonents Sprite Sheet_35
+  - first:
+      213: 8099282069485562978
+    second: Comonents Sprite Sheet_36
+  - first:
+      213: 3308496467378872382
+    second: Comonents Sprite Sheet_37
+  - first:
+      213: 4256169925026064373
+    second: Comonents Sprite Sheet_38
+  - first:
+      213: 1491697686155686396
+    second: Comonents Sprite Sheet_39
+  - first:
+      213: -6666980521339839298
+    second: Comonents Sprite Sheet_40
+  - first:
+      213: -1970209002469652410
+    second: Comonents Sprite Sheet_41
+  - first:
+      213: -6458754848668589627
+    second: Comonents Sprite Sheet_42
+  - first:
+      213: 940816588217441531
+    second: Comonents Sprite Sheet_43
+  - first:
+      213: -2420803403124699214
+    second: Comonents Sprite Sheet_44
+  - first:
+      213: 5180844849608260482
+    second: Comonents Sprite Sheet_45
+  - first:
+      213: -2014378138972906634
+    second: Comonents Sprite Sheet_46
+  - first:
+      213: 5554001659260338694
+    second: Comonents Sprite Sheet_47
+  - first:
+      213: 7444416325581003025
+    second: Comonents Sprite Sheet_48
+  - first:
+      213: -1372104158766752456
+    second: Comonents Sprite Sheet_49
+  - first:
+      213: -7464231772818963604
+    second: Comonents Sprite Sheet_50
+  - first:
+      213: 4734204172106103463
+    second: Comonents Sprite Sheet_51
+  - first:
+      213: 173029591917936828
+    second: Comonents Sprite Sheet_52
+  - first:
+      213: -3985426232130024963
+    second: Comonents Sprite Sheet_53
+  - first:
+      213: -1543818368038348541
+    second: Comonents Sprite Sheet_54
+  - first:
+      213: -2679125245550788199
+    second: Comonents Sprite Sheet_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1654
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca01bdbe5148a2fd0800000000000000
+      internalID: -2365933424543592276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1639
+        width: 61
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ed14bc7c45f3c80800000000000000
+      internalID: -8340854767781552504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1535
+        width: 171
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4b8dd05a166b170800000000000000
+      internalID: 8193843933577000106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1533
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f402b2867b92afa0800000000000000
+      internalID: -5790895237543885577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 1520
+        width: 152
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c967265be08b26480800000000000000
+      internalID: -8907354739673237860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1536
+        width: 179
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f5f40720f346520800000000000000
+      internalID: 2694347756781133716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1530
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 396382cd69cfd2130800000000000000
+      internalID: 3543766206679365267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1623
+        width: 103
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9d2c29265029bd0800000000000000
+      internalID: -2625029711876400708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 1623
+        width: 103
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8ce7b52840ac0b0800000000000000
+      internalID: -5707744619811387148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1210
+        width: 508
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53bb74ae0da8722c0800000000000000
+      internalID: -4456440676371416267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1518
+        width: 81
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07914df155fe99310800000000000000
+      internalID: 1412423107042613616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1513
+        width: 77
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85caddf5a7600e530800000000000000
+      internalID: 3882110001457507416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 1511
+        width: 84
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ccd33f79449b440800000000000000
+      internalID: 4952064684682234969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 1526
+        width: 80
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdb0cbbdd849f460800000000000000
+      internalID: 7275926790168690124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1406
+        width: 88
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96af90b0ef123d530800000000000000
+      internalID: 3878481079086742121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1401
+        width: 84
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338b55a958ed3af30800000000000000
+      internalID: 4585753510994622515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1403
+        width: 92
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0d4e40cd3a4a260800000000000000
+      internalID: 7107986277267722492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1400
+        width: 83
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53d5e3b10c3113f0800000000000000
+      internalID: -931897669878164645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1406
+        width: 89
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc398bc985456430800000000000000
+      internalID: 3775500320747633909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1406
+        width: 89
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5cd112ae4650de0800000000000000
+      internalID: -1367575955096353316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 1385
+        width: 121
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3713cbeb9dc64a330800000000000000
+      internalID: 3721218874578579827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 1382
+        width: 103
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6678d0c8afbcfa940800000000000000
+      internalID: 5309686762645063526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1391
+        width: 80
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b18bfb6ffb22050800000000000000
+      internalID: 5774388738741771083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1387
+        width: 100
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef16d376f43be74f0800000000000000
+      internalID: -829028127773728258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 1420
+        width: 80
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9da2d14b82794560800000000000000
+      internalID: 7298490613560946075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1295
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ba379b1f2d08040800000000000000
+      internalID: 4647946751086668584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 1353
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb3ee249d4adc5b0800000000000000
+      internalID: -5346435929581143050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1353
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88b133127993b600800000000000000
+      internalID: 482898300286122122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1210
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad4f95efe22a71ed0800000000000000
+      internalID: -2443305950105701158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1269
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4e2617416351aa0800000000000000
+      internalID: -6190982651321326394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1265
+        width: 62
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: befe8c5e02fcbb8d0800000000000000
+      internalID: -2829440200671170581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1217
+        width: 122
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a835ffa42adb2c810800000000000000
+      internalID: 1784196907132736394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1275
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a30418f5fa7fe980800000000000000
+      internalID: -8507445974231940188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1167
+        width: 86
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33cb59a89e85f1b0800000000000000
+      internalID: -5623431773374659779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1105
+        width: 147
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dca58a59769fa250800000000000000
+      internalID: 5958146279988374738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1124
+        width: 149
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e7e256165805180800000000000000
+      internalID: -9128649791324127658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1148
+        width: 120
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ca06f512e666070800000000000000
+      internalID: 8099282069485562978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 1154
+        width: 132
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e30a0c602042aed20800000000000000
+      internalID: 3308496467378872382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 1160
+        width: 114
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f721e42ff3f01b30800000000000000
+      internalID: 4256169925026064373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1194
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1f497642393b410800000000000000
+      internalID: 1491697686155686396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1024
+        width: 119
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc171df9802a73a0800000000000000
+      internalID: -6666980521339839298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1024
+        width: 119
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6480582d95968a4e0800000000000000
+      internalID: -1970209002469652410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 983
+        width: 135
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1e6c16fa4ed56a0800000000000000
+      internalID: -6458754848668589627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1012
+        width: 124
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfcde7bc3b37e0d00800000000000000
+      internalID: 940816588217441531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 1019
+        width: 140
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf02bd7124976ed0800000000000000
+      internalID: -2420803403124699214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 1040
+        width: 154
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bff4101fe06e740800000000000000
+      internalID: 5180844849608260482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 1039
+        width: 155
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b153751cd7b04e0800000000000000
+      internalID: -2014378138972906634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1772
+        y: 1041
+        width: 158
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 602842e2517c31d40800000000000000
+      internalID: 5554001659260338694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 866
+        width: 136
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 119df56b431ef4760800000000000000
+      internalID: 7444416325581003025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 937
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d1fdd898e45fce0800000000000000
+      internalID: -1372104158766752456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 939
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6301f3ffb8b96890800000000000000
+      internalID: -7464231772818963604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 943
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa7e849c9543b140800000000000000
+      internalID: 4734204172106103463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 847
+        width: 153
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb046e14f79b66200800000000000000
+      internalID: 173029591917936828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 500
+        width: 509
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9cd5325fbe0b8c0800000000000000
+      internalID: -3985426232130024963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 523
+        width: 506
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309d95faf51439ae0800000000000000
+      internalID: -1543818368038348541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comonents Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 16
+        width: 513
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9910a26a8c5d1dad0800000000000000
+      internalID: -2679125245550788199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Comonents Sprite Sheet_0: -2365933424543592276
+      Comonents Sprite Sheet_1: -8340854767781552504
+      Comonents Sprite Sheet_10: 1412423107042613616
+      Comonents Sprite Sheet_11: 3882110001457507416
+      Comonents Sprite Sheet_12: 4952064684682234969
+      Comonents Sprite Sheet_13: 7275926790168690124
+      Comonents Sprite Sheet_14: 3878481079086742121
+      Comonents Sprite Sheet_15: 4585753510994622515
+      Comonents Sprite Sheet_16: 7107986277267722492
+      Comonents Sprite Sheet_17: -931897669878164645
+      Comonents Sprite Sheet_18: 3775500320747633909
+      Comonents Sprite Sheet_19: -1367575955096353316
+      Comonents Sprite Sheet_2: 8193843933577000106
+      Comonents Sprite Sheet_20: 3721218874578579827
+      Comonents Sprite Sheet_21: 5309686762645063526
+      Comonents Sprite Sheet_22: 5774388738741771083
+      Comonents Sprite Sheet_23: -829028127773728258
+      Comonents Sprite Sheet_24: 7298490613560946075
+      Comonents Sprite Sheet_25: 4647946751086668584
+      Comonents Sprite Sheet_26: -5346435929581143050
+      Comonents Sprite Sheet_27: 482898300286122122
+      Comonents Sprite Sheet_28: -2443305950105701158
+      Comonents Sprite Sheet_29: -6190982651321326394
+      Comonents Sprite Sheet_3: -5790895237543885577
+      Comonents Sprite Sheet_30: -2829440200671170581
+      Comonents Sprite Sheet_31: 1784196907132736394
+      Comonents Sprite Sheet_32: -8507445974231940188
+      Comonents Sprite Sheet_33: -5623431773374659779
+      Comonents Sprite Sheet_34: 5958146279988374738
+      Comonents Sprite Sheet_35: -9128649791324127658
+      Comonents Sprite Sheet_36: 8099282069485562978
+      Comonents Sprite Sheet_37: 3308496467378872382
+      Comonents Sprite Sheet_38: 4256169925026064373
+      Comonents Sprite Sheet_39: 1491697686155686396
+      Comonents Sprite Sheet_4: -8907354739673237860
+      Comonents Sprite Sheet_40: -6666980521339839298
+      Comonents Sprite Sheet_41: -1970209002469652410
+      Comonents Sprite Sheet_42: -6458754848668589627
+      Comonents Sprite Sheet_43: 940816588217441531
+      Comonents Sprite Sheet_44: -2420803403124699214
+      Comonents Sprite Sheet_45: 5180844849608260482
+      Comonents Sprite Sheet_46: -2014378138972906634
+      Comonents Sprite Sheet_47: 5554001659260338694
+      Comonents Sprite Sheet_48: 7444416325581003025
+      Comonents Sprite Sheet_49: -1372104158766752456
+      Comonents Sprite Sheet_5: 2694347756781133716
+      Comonents Sprite Sheet_50: -7464231772818963604
+      Comonents Sprite Sheet_51: 4734204172106103463
+      Comonents Sprite Sheet_52: 173029591917936828
+      Comonents Sprite Sheet_53: -3985426232130024963
+      Comonents Sprite Sheet_54: -1543818368038348541
+      Comonents Sprite Sheet_55: -2679125245550788199
+      Comonents Sprite Sheet_6: 3543766206679365267
+      Comonents Sprite Sheet_7: -2625029711876400708
+      Comonents Sprite Sheet_8: -5707744619811387148
+      Comonents Sprite Sheet_9: -4456440676371416267
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
