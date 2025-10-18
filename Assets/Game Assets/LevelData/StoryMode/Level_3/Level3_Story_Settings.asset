@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level3_Story_Settings
   m_EditorClassIdentifier: 
   LevelNumber: 3
-  LevelName: 
+  LevelName: CSAM
   IsUnlockable: 1
   TotalAvailableMoves: 20
   GameMode: 2

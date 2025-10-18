@@ -265,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &229318908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -553,7 +553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_AnchorMin.x
@@ -561,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_SizeDelta.x
@@ -601,11 +601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 365
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2516,7 +2516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1706460361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2549,7 +2549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2992,6 +2992,10 @@ PrefabInstance:
     - target: {fileID: 1053610373202325195, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_Name
       value: Google SignIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1053610373202325195, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3607898104850360750, guid: 9ae5fa8d93e7b994084fa41eb2d98090, type: 3}
       propertyPath: m_Pivot.x

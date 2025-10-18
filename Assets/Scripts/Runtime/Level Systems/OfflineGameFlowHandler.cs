@@ -195,7 +195,11 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
 
             // set player name text
             hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
-            hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.IsCpu ? "CPU" : p.PlayerName;
+            if (CurrentLevelData.GameMode == GameMode.StoryMode) 
+                hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.IsCpu ? "CPU" : "You";
+            
+            else 
+                hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.IsCpu ? "CPU" : p.PlayerName;
             // set player color if UI has Image
             
             hud.transform.GetChild(2).GetComponentInChildren<Image>().color = kv.Value.Color;

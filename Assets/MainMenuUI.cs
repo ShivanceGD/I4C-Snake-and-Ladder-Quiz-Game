@@ -36,7 +36,6 @@ public class MainMenuUI : MonoBehaviour
    public TMP_InputField username;
    public TMP_Text id;
    public Button updateNameButton;
-
    [Header("HyperLinks")] 
    [SerializeField]private string InstagramHyperLink;
    [SerializeField]private string YoutubeHyperLink;
@@ -57,6 +56,7 @@ public class MainMenuUI : MonoBehaviour
    public void OnPracticeClicked()
    {
       currentMode = GameModeUIManager.Practice;
+      GameModeManager.Instance.NumberOfPlayersToBeSpawned = 1;
       ShowQuizPackButtons();
    }
 
