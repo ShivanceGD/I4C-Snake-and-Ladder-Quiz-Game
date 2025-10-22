@@ -3885,7 +3885,7 @@ MonoBehaviour:
   ChooseQuizPanel: {fileID: 1405404101}
   StoryModeButton: {fileID: 256535291}
   MultiplayerButton: {fileID: 73062124}
-  LockColor: {r: 0, g: 0, b: 0, a: 0}
+  LockColor: {r: 0.67058825, g: 0.67058825, b: 0.67058825, a: 1}
   practiceSceneName: Offline_Practice_Level
   passNPlaySceneName: Offline_PassNPlay_Level
   LeaderBoardItemPrefab: {fileID: 2283468471138548295, guid: d6483d9d057380843ba73e74be1b87f0, type: 3}
@@ -7290,7 +7290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -465}
+  m_AnchoredPosition: {x: 100, y: -550}
   m_SizeDelta: {x: 150, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960377820
