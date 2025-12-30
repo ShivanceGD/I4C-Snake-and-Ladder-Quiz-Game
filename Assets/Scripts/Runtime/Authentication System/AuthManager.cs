@@ -38,6 +38,19 @@ public class AuthManager : MonoBehaviour
     public UnityEvent OnExpired;
     public UnityEvent OnSignedOut;
     public UnityEvent<string> OnAuthMessage;
+    
+    [Header("Show Password - Sign In")]
+    public Toggle ShowPasswordSignInToggle;
+    public TMP_InputField ShowPasswordSignInText;
+    private bool isSignInPasswordVisible = false;
+
+    [Header("Show Password - Sign Up")]
+    public Toggle ShowPasswordSignUpToggle;
+    public TMP_InputField ShowPasswordSignUpText;
+    private bool isSignUpPasswordVisible = false;
+
+
+    
 
     private async void Start()
     {
@@ -59,6 +72,8 @@ public class AuthManager : MonoBehaviour
             onSignedOut: () => ShowMessage("Signed out.", Color.blue),
             onSignInFailed: (msg) => ShowMessage($"Sign-in failed: {msg}", Color.red)
         );
+        ShowPasswordSignInToggle.onValueChanged.AddListener(ToggleSignInPassword);
+        ShowPasswordSignUpToggle.onValueChanged.AddListener(ToggleSignUpPassword);
         if (AuthenticationService.Instance.SessionTokenExists)
         {
             try
@@ -167,5 +182,25 @@ public class AuthManager : MonoBehaviour
         SuccessFailText.color = color;
         SuccessFailText.text = msg;
     }
+    public void ToggleSignInPassword(bool isOn)
+    {
+        Password_SignIn.contentType = isOn
+            ? TMP_InputField.ContentType.Standard
+            : TMP_InputField.ContentType.Password;
+
+        Password_SignIn.ForceLabelUpdate();
+    }
+
+    public void ToggleSignUpPassword(bool isOn)
+    {
+        Password_SignUp.contentType = isOn
+            ? TMP_InputField.ContentType.Standard
+            : TMP_InputField.ContentType.Password;
+
+        Password_SignUp.ForceLabelUpdate();
+    }
+
+
+
 }
 

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6364985751563544203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 456.73633, y: 327.28546, z: -1.9410508}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultUnlockedLevelKey: LevelsToBeUnlocked
+  TournamentAdminsKey: TournamentHostsId

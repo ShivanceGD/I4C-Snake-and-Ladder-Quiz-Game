@@ -1,0 +1,1510 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Extortion Fraud
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: A girl insists on a video call after sending photos. What's a safe
+      approach?
+    options:
+    - Call immediately
+    - Ask for more photos
+    - Be cautious, verify
+    - Trust her instantly
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: On a video call, someone asks you to show private parts. What should
+      you do?
+    options:
+    - Show quickly
+    - End the call immediately
+    - Ignore the request
+    - Ask why
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: After you deny a request, they record and edit a video of you. What's
+      their next step?
+    options:
+    - Apologize
+    - Blackmail you
+    - Delete the video
+    - Ask for friendship
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threaten to make your video viral. What's the main goal of this
+      threat?
+    options:
+    - Embarrass you
+    - Get money
+    - Seek attention
+    - Gain followers
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a video call on WhatsApp and picked it up. What's a common
+      risk of unknown video calls?
+    options:
+    - Making new friends
+    - Getting scammed
+    - Learning new things
+    - Receiving gifts
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They put fake images and videos of you online. What's this act called?
+    options:
+    - Online prank
+    - Digital art
+    - Impersonation
+    - Sextortion
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are blackmailing you for money and threatening to send videos
+      to friends. What's the best action?
+    options:
+    - Pay the money
+    - Ignore them
+    - Report to police
+    - Negotiate
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone threatens to kill you if you don't pay. What's the immediate
+      response?
+    options:
+    - Pay immediately
+    - Block and ignore
+    - Report to police
+    - Ask for proof
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You got a video call, and they mixed it with nudity, then sent it to
+      your contacts. What's the crime?
+    options:
+    - Harassment
+    - Cyberbullying
+    - Sextortion
+    - Identity theft
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are blackmailing you and asking for help. What's the best place
+      to get help for cybercrime?
+    options:
+    - Social media
+    - Friends and family
+    - Cybercrime helpline
+    - Private investigator
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a nude video call on WhatsApp. What's the first thing
+      you should do?
+    options:
+    - Continue call
+    - Block sender, report
+    - Record video
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are demanding money or threatening to upload your video. What's
+      the primary motive?
+    options:
+    - Public shaming
+    - Financial gain
+    - Personal revenge
+    - Online fame
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You paid Rs 5000 out of fear. What's the general advice about paying
+      blackmailers?
+    options:
+    - Always pay
+    - Never pay
+    - Pay small amounts
+    - Pay if threatened
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: After paying, you contacted 1930. What is 1930 for?
+    options:
+    - Emergency services
+    - Cybercrime helpline
+    - Customer care
+    - General inquiry
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You accepted a Facebook request from an unknown person. What's a risk
+      of accepting unknown requests?
+    options:
+    - Making new friends
+    - Privacy breach
+    - Social networking
+    - Finding old friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a video call from a nude person and they recorded it.
+      What's this act called?
+    options:
+    - Online dating
+    - Sextortion
+    - Video chat
+    - Prank call
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: They started blackmailing you for money in the name of police and YouTube.
+      What's their tactic?
+    options:
+    - Legal threat
+    - Fake authority
+    - Genuine concern
+    - Helpful advice
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: You got panic and sent the amount. What's the emotional state scammers
+      exploit?
+    options:
+    - Excitement
+    - Fear and panic
+    - Curiosity
+    - Trust and hope
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: You later realized it was fraud. What's the importance of verifying
+      information before acting?
+    options:
+    - Not important
+    - Crucial for safety
+    - Time-consuming
+    - Only for large sums
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A girl insists on a video call after two days of photos. What's a red
+      flag?
+    options:
+    - Quick intimacy
+    - Friendly gesture
+    - Building rapport
+    - Normal interaction
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: You denied showing private parts, but they recorded anyway. What's
+      the violation?
+    options:
+    - Privacy breach
+    - Misunderstanding
+    - Technical glitch
+    - Friendly joke
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: They edited your video with nudity and sent it. What's the main purpose
+      of this edited video?
+    options:
+    - Entertainment
+    - Blackmail material
+    - Artistic expression
+    - Personal sharing
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threaten to upload your video to YouTube. What's the best way
+      to deal with online threats?
+    options:
+    - Pay them
+    - Ignore the threat
+    - Report to platform
+    - Negotiate
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You picked up an unknown WhatsApp video call. What's a safe practice
+      for unknown calls?
+    options:
+    - Always answer
+    - Screen calls
+    - Call back later
+    - Block all
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They put fake images and videos of you on Facebook. What's the impact
+      of this?
+    options:
+    - Minor inconvenience
+    - Reputation damage
+    - Social media fame
+    - No effect
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are blackmailing you for 15,000. What's the main motive of the
+      scammer?
+    options:
+    - Personal gain
+    - Justice
+    - Revenge
+    - Social experiment
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone mixed your video call with nudity and sent it to your teachers.
+      What's the immediate concern?
+    options:
+    - Personal embarrassment
+    - Technical issue
+    - Social media fame
+    - Legal trouble
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a nude video call on WhatsApp. What's the best way to
+      prevent recording?
+    options:
+    - Stay silent
+    - Turn off camera
+    - Leave call
+    - Ask to stop
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are demanding money or threatening to upload. What's the importance
+      of not engaging further?
+    options:
+    - Not important
+    - Prevents escalation
+    - Shows strength
+    - Saves time
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 5000 out of fear. What's the best way to recover lost money?
+    options:
+    - Ask for refund
+    - Report to bank
+    - Contact scammer
+    - Wait for police
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You accepted a Facebook request from an unknown person. What's a safer
+      alternative?
+    options:
+    - Accept all
+    - Verify profile
+    - Ignore all
+    - Ask for ID
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a video call from a nude person. What's the best way to
+      react?
+    options:
+    - Engage in chat
+    - End call, block
+    - Record them
+    - Ask questions
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They started blackmailing you for money in the name of police. What's
+      the first thing to verify?
+    options:
+    - Police badge
+    - Officer's name
+    - Official contact
+    - Their demands
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You got panic and sent the amount. What's the importance of staying
+      calm in a crisis?
+    options:
+    - Not important
+    - Helps clear thinking
+    - Shows weakness
+    - Delays action
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You realized it was fraud. What's the importance of reporting cybercrime
+      promptly?
+    options:
+    - Not urgent
+    - Increases recovery chance
+    - Depends on amount
+    - No difference
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A girl insists on a video call. What's a good way to verify someone
+      online?
+    options:
+    - Trust photos
+    - Video call immediately
+    - Reverse image search
+    - Ask personal questions
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You denied showing private parts. What's the importance of setting
+      boundaries online?
+    options:
+    - Not important
+    - Essential for safety
+    - Only for adults
+    - Depends on situation
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They edited your video with nudity and sent it. What's the best way
+      to handle fake content online?
+    options:
+    - Ignore it
+    - Report to platform
+    - Share with friends
+    - Confront creator
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threaten to upload your video to YouTube. What's the best platform
+      to report such threats?
+    options:
+    - Facebook
+    - Instagram
+    - YouTube
+    - WhatsApp
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You picked up an unknown WhatsApp video call. What's the primary risk?
+    options:
+    - Data usage
+    - Exposure to scams
+    - Bad connection
+    - Wrong number
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They put fake images and videos of you on Facebook. What's the best
+      way to remove fake content?
+    options:
+    - Ask them to remove
+    - Report to Facebook
+    - Delete your account
+    - Post a counter-video
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are blackmailing you for money. What's the best way to protect
+      yourself from financial extortion?
+    options:
+    - Pay small amounts
+    - Never pay
+    - Negotiate
+    - Ask for proof
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone mixed your video call with nudity and sent it to your relatives.
+      What's the best immediate action?
+    options:
+    - Panic
+    - Inform relatives
+    - Report to police
+    - Delete social media
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a nude video call on WhatsApp. What's the importance of
+      privacy settings on social media?
+    options:
+    - Not important
+    - Crucial for safety
+    - Only for celebrities
+    - Depends on app
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are demanding money or threatening to upload. What's the best
+      way to document the incident?
+    options:
+    - Delete messages
+    - Screenshot chats
+    - Tell friends
+    - Ignore and forget
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 5000 out of fear. What's the best way to prevent future
+      extortion?
+    options:
+    - Be more careful
+    - Avoid online interaction
+    - Never give in
+    - Change identity
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You contacted 1930. What information should you provide to the helpline?
+    options:
+    - Only your name
+    - All incident details
+    - Scammer's name only
+    - Amount lost only
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You accepted a Facebook request from an unknown person. What's the
+      importance of strong privacy settings?
+    options:
+    - Not important
+    - Essential for security
+    - Only for public figures
+    - Depends on mood
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a video call from a nude person. What's the best way to
+      safeguard your online reputation?
+    options:
+    - Engage with them
+    - End call, block, report
+    - Ignore it
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They started blackmailing you for money in the name of YouTube. What's
+      the best way to verify such claims?
+    options:
+    - Trust them
+    - Check YouTube policies
+    - Ask for proof
+    - Pay and see
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You got panic and sent the amount. What's the best way to recover from
+      the emotional distress of fraud?
+    options:
+    - Ignore feelings
+    - Seek professional help
+    - Blame yourself
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You realized it was fraud. What's the importance of informing your
+      bank about fraudulent transactions?
+    options:
+    - Not urgent
+    - Prevents more loss
+    - Bank will handle
+    - Only for large amounts
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A girl insists on a video call. What's a good way to protect your identity
+      online?
+    options:
+    - Share everything
+    - Limit personal info
+    - Use real name
+    - Post daily
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You denied showing private parts. What's the best way to handle unwanted
+      requests online?
+    options:
+    - Comply to avoid trouble
+    - Clearly refuse
+    - Ignore the message
+    - Block sender
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They edited your video with nudity and sent it. What's the best way
+      to control your digital footprint?
+    options:
+    - Post freely
+    - Be mindful of content
+    - Delete old posts
+    - Share everything
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threaten to upload your video to YouTube. What's the best way
+      to gather evidence for reporting?
+    options:
+    - Delete messages
+    - Screenshot everything
+    - Tell friends
+    - Ignore and forget
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You picked up an unknown WhatsApp video call. What's the safest way
+      to communicate with strangers online?
+    options:
+    - Video call
+    - Text chat
+    - Voice call
+    - Meet in person
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They put fake images and videos of you on Facebook. What's the best
+      way to prevent this from happening again?
+    options:
+    - Change profile pic
+    - Review privacy settings
+    - Delete Facebook
+    - Block everyone
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are blackmailing you for money. What's the best way to get legal
+      advice for extortion?
+    options:
+    - Ask friends
+    - Search online
+    - Consult a lawyer
+    - Ignore the problem
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone mixed your video call with nudity. What's the importance of
+      digital literacy?
+    options:
+    - Not important
+    - Essential for safety
+    - Only for techies
+    - Depends on age
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a nude video call on WhatsApp. What's the best way to
+      secure your online accounts?
+    options:
+    - Use easy passwords
+    - Enable 2FA
+    - Share passwords
+    - Log out rarely
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are demanding money or threatening to upload. What's the best
+      way to protect your personal data?
+    options:
+    - Share freely
+    - Limit sharing
+    - Use public Wi-Fi
+    - Click all links
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 5000 out of fear. What's the best way to handle pressure
+      tactics from scammers?
+    options:
+    - Give in
+    - Stay firm, refuse
+    - Negotiate
+    - Ask for time
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You contacted 1930. What's the importance of providing accurate details
+      to authorities?
+    options:
+    - Not important
+    - Crucial for investigation
+    - Only for large amounts
+    - Depends on mood
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You accepted a Facebook request from an unknown person. What's the
+      best way to manage your social media?
+    options:
+    - Accept all requests
+    - Be selective
+    - Post everything
+    - Ignore privacy
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a video call from a nude person. What's the best way to
+      maintain online safety?
+    options:
+    - Trust everyone
+    - Be suspicious
+    - Share everything
+    - Ignore warnings
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They started blackmailing you for money. What's the best way to get
+      support from friends and family?
+    options:
+    - Hide the incident
+    - Share openly
+    - Blame them
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You got panic and sent the amount. What's the importance of seeking
+      help when feeling overwhelmed?
+    options:
+    - Not important
+    - Essential for well-being
+    - Shows weakness
+    - Delays action
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You realized it was fraud. What's the importance of creating public
+      awareness about cybercrime?
+    options:
+    - Not important
+    - Prevents others
+    - Causes panic
+    - Only for experts
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A girl insists on a video call. What's the best way to verify a person's
+      identity online?
+    options:
+    - Trust their word
+    - Ask for ID
+    - Video call
+    - Background check
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You denied showing private parts. What's the importance of knowing
+      your rights online?
+    options:
+    - Not important
+    - Empowers you
+    - Only for legal experts
+    - Depends on country
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They edited your video with nudity and sent it. What's the best way
+      to protect your image online?
+    options:
+    - Post carefully
+    - Share everything
+    - Use filters
+    - Ignore privacy
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threaten to upload your video to YouTube. What's the best way
+      to report online harassment?
+    options:
+    - Ignore it
+    - Block them
+    - Report to platform
+    - Confront them
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You picked up an unknown WhatsApp video call. What's the best way to
+      control who can contact you online?
+    options:
+    - Accept all
+    - Adjust privacy settings
+    - Block everyone
+    - Share contact
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They put fake images and videos of you on Facebook. What's the best
+      way to restore your reputation?
+    options:
+    - Ignore rumors
+    - Issue public statement
+    - Delete social media
+    - Blame others
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are blackmailing you for money. What's the best way to deal with
+      online threats?
+    options:
+    - Comply
+    - Report to authorities
+    - Ignore
+    - Negotiate
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone mixed your video call with nudity. What's the best way to handle
+      unwanted content sent to you?
+    options:
+    - Open and view
+    - Delete, block, report
+    - Forward to friends
+    - Save for evidence
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a nude video call on WhatsApp. What's the importance of
+      being aware of online scams?
+    options:
+    - Not important
+    - Essential for protection
+    - Only for old people
+    - Depends on country
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are demanding money or threatening to upload. What's the best
+      way to get emotional support?
+    options:
+    - Suffer silently
+    - Talk to trusted ones
+    - Blame yourself
+    - Ignore feelings
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 5000 out of fear. What's the best way to avoid falling
+      for similar scams?
+    options:
+    - Be more trusting
+    - Be skeptical
+    - Avoid internet
+    - Share more
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You contacted 1930. What's the importance of keeping a record of all
+      communications with scammers?
+    options:
+    - Not important
+    - Crucial for evidence
+    - Only for large amounts
+    - Time-consuming
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You accepted a Facebook request from an unknown person. What's the
+      best way to verify friend requests?
+    options:
+    - Accept all
+    - Check mutual friends
+    - Ignore all
+    - Ask for ID
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a video call from a nude person. What's the best way to
+      handle unexpected explicit content?
+    options:
+    - View it
+    - Close immediately
+    - Share with friends
+    - Record it
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They started blackmailing you for money. What's the best way to protect
+      your mental health during a scam?
+    options:
+    - Obsess over it
+    - Seek support
+    - Blame yourself
+    - Isolate yourself
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You got panic and sent the amount. What's the importance of having
+      a support system?
+    options:
+    - Not important
+    - Essential for coping
+    - Shows weakness
+    - Delays action
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You realized it was fraud. What's the importance of understanding common
+      scam tactics?
+    options:
+    - Not important
+    - Helps prevention
+    - Only for experts
+    - Depends on age
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A girl insists on a video call. What's the best way to manage online
+      interactions safely?
+    options:
+    - Trust everyone
+    - Be cautious
+    - Share everything
+    - Ignore warnings
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You denied showing private parts. What's the importance of digital
+      consent?
+    options:
+    - Not important
+    - Essential for respect
+    - Only for adults
+    - Depends on situation
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They edited your video with nudity and sent it. What's the best way
+      to deal with cyberstalking?
+    options:
+    - Ignore it
+    - Report to authorities
+    - Engage with stalker
+    - Change identity
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threaten to upload your video to YouTube. What's the best way
+      to protect your online privacy?
+    options:
+    - Share freely
+    - Limit personal info
+    - Use public Wi-Fi
+    - Click all links
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You picked up an unknown WhatsApp video call. What's the best way to
+      prevent unwanted video calls?
+    options:
+    - Accept all
+    - Block unknown numbers
+    - Call back later
+    - Share number
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They put fake images and videos of you on Facebook. What's the best
+      way to monitor your online presence?
+    options:
+    - Never check
+    - Regular checks
+    - Ask friends to check
+    - Ignore it
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are blackmailing you for money. What's the best way to get help
+      from law enforcement?
+    options:
+    - Call local police
+    - Contact cyber cell
+    - Post on social media
+    - Ask friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone mixed your video call with nudity. What's the best way to report
+      online predators?
+    options:
+    - Ignore them
+    - Report to platform
+    - Engage with them
+    - Block only
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a nude video call on WhatsApp. What's the importance of
+      strong passwords?
+    options:
+    - Not important
+    - Essential for security
+    - Only for bank accounts
+    - Depends on app
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They are demanding money or threatening to upload. What's the best
+      way to protect your online reputation?
+    options:
+    - Ignore threats
+    - Seek legal advice
+    - Pay them
+    - Confront them
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 5000 out of fear. What's the best way to deal with the
+      psychological impact of fraud?
+    options:
+    - Suppress feelings
+    - Talk to a counselor
+    - Blame yourself
+    - Isolate yourself
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You contacted 1930. What's the importance of follow-up after reporting
+      a cybercrime?
+    options:
+    - Not important
+    - Crucial for progress
+    - Only for large amounts
+    - Time-consuming
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You accepted a Facebook request from an unknown person. What's the
+      best way to manage your digital identity?
+    options:
+    - Share everything
+    - Be selective
+    - Use real name
+    - Post daily
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You realized it was fraud. What's the importance of educating others
+      about cybercrime?
+    options:
+    - Not important
+    - Prevents more victims
+    - Creates fear
+    - Only for experts
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

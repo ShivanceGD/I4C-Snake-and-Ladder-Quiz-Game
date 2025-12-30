@@ -99,14 +99,33 @@ public class MovementManager : MonoBehaviour
                     result.UsedSnakeOrLadder = true;
                     result.Reason = "Ladder";
                     
-                    
                     FlowManager.UpdateHUD(toMove,false,true);
+                    if (Application.internetReachability != NetworkReachability.NotReachable)
+                    {
+                        Analytics_Manager.Instance.LogEvent("LadderClimbed");
+                    }
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
                     yield break;
                 }
             }
         }
+        
+        /*if (isCorrect && snakesNormalized.Count > 0)
+        {
+            foreach (var kv in snakesNormalized)
+            {
+                int snakeHead = kv.Key;
+                if (snakeHead == currentTile)
+                {
+                    player.ShowShield(true);
+                    //FlowManager.UpdateHUD(,true,false);
+                    yield return new WaitForSeconds(endTurnDelay);
+                    onComplete?.Invoke(result);
+                    yield break;
+                }
+            }
+        }*/
 
         // SNAKE (if incorrect)
         if (!isCorrect && snakesNormalized.Count > 0)
@@ -130,6 +149,10 @@ public class MovementManager : MonoBehaviour
 
                     
                     FlowManager.UpdateHUD(forward,true,false);
+                    if (Application.internetReachability != NetworkReachability.NotReachable)
+                    {
+                        Analytics_Manager.Instance.LogEvent("BittenBySnakes");
+                    }
                     yield return new WaitForSeconds(endTurnDelay);
                     onComplete?.Invoke(result);
                     yield break;

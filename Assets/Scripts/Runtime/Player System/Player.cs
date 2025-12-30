@@ -17,6 +17,7 @@ public class Player : NetworkBehaviour
     public bool IsCpu = false;
     public Color Color = Color.white;
     public SpriteRenderer PlayerSprite;
+    public GameObject ShieldVisual;
     [HideInInspector] public List<QuizQuestionData> QuestionsList = new();
     public int MovesTaken;
     public PlayerMovement Movement { get; private set; }
@@ -116,5 +117,10 @@ public class Player : NetworkBehaviour
                 Debug.Log($"[ForceApply] Applied color {c} after sync for {PlayerName}");
             }
         }
+    }
+    public void ShowShield(bool show)
+    {
+        if (ShieldVisual != null)
+            ShieldVisual.SetActive(show);
     }
 }

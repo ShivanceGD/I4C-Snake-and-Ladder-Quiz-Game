@@ -246,7 +246,14 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
     {
         Debug.Log($"[OfflineFlowManager] StartTurn -> {p?.name}");
         if (p == null) return;
-
+        if (AllPlayers.TryGetValue(p, out var pdata))
+        {
+            if (pdata.HasShield)
+            {
+                pdata.SetShield(false);
+                p.ShowShield(false);
+            }
+        }
         UpdateTurnIndicators(p);
 
         if (p.IsCpu)
@@ -353,6 +360,11 @@ public class OfflineFlowManager : MonoBehaviour,IFlowManager
             data.UpdatePlayersDataCorrectOrIncorrectCounter(quizResult.IsCorrect);
         }
 
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+        {
+            Analytics_Manager.Instance.LogEvent(quizResult.IsCorrect ? "CorrectAnswerGiven" : "InCorrectAnswerGiven");
+        }
+        //test
         if (movementResult.FinalTileIndex >= 0)
         {
             data.UpdatePlayersDataIndexData(movementResult.FinalTileIndex);

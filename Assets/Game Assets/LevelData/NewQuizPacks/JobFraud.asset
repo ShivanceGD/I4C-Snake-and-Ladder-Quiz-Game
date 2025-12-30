@@ -1,0 +1,357 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: JobFraud
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: You get a WhatsApp message offering a part-time job with easy tasks.
+      What's your first thought?
+    options:
+    - Quick Money
+    - Sounds Legitimate
+    - Could be a scam
+    - Worth a try
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message asks you to rate hotels and send screenshots for money. Is
+      this normal?
+    options:
+    - Perfectly Normal
+    - Standard Procedure
+    - Highly Suspicious
+    - Common online job
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: After doing a small task, you quickly receive Rs 150. What does this
+      aim to do?
+    options:
+    - Prove Legitimacy
+    - Build Trust
+    - Show Company Values
+    - Encourage more tasks
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're added to a Telegram group promising daily profits for investments.
+      What should you consider?
+    options:
+    - Invest
+    - Group support helpful
+    - Too good to be true
+    - Trusted group leaders
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: The scammer asks you to invest money in "pre-paid tasks." What's the
+      main risk?
+    options:
+    - Losing all money
+    - Tasks too hard
+    - No group benefits
+    - Daily profit slow
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: After investing lakhs, you don't get profits. The scammer asks for
+      more money. What's their goal?
+    options:
+    - Help you earn
+    - Recover initial loss
+    - Extract more money
+    - Improve task system
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You become suspicious after no profit. What should you immediately
+      think of doing?
+    options:
+    - Invest more money
+    - Ask for refund
+    - Report to authorities
+    - Confront scammer
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You called the cyber crime toll-free number. what is that number?
+    options:
+    - 100
+    - 1930
+    - 112
+    - 911
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You tried to report online but the portal had an error. What should
+      you do next?
+    options:
+    - 'Give up '
+    - Try again later
+    - Call the helpline
+    - Post on social media
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: If your bank account is misused without your knowledge, what is the
+      immediate action?
+    options:
+    - Ignore it
+    - Change password
+    - Block account,report
+    - Wait and watch
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A "work from home" offer promises 2K-5K daily for Google Maps reviews.
+      Is this realistic?
+    options:
+    - Very realistic
+    - Common in market
+    - Unrealistic high pay
+    - Possible for experts
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: The scammer asks you to invest 2K to "qualify a level." What is this
+      tactic called?
+    options:
+    - Skill Verification
+    - Investment Scheme
+    - Phishing trap
+    - Upfrontfee scam
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You invested 5K, earned 5.6K, but can't withdraw. The scammer demands
+      30K for a "group event." What's happening?
+    options:
+    - Genuine Opportunity
+    - Stalling tactic
+    - System error
+    - Tax requirement
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: The scammer says you've earned 4 lakhs but need 2.8 lakhs to claim
+      withdrawal. What's the truth?
+    options:
+    - High withdrawal fee
+    - Legitimacy proof
+    - Another scam layer
+    - Bank regulations
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You refuse to pay more, and the scammer says your amount is "forfeited."
+      What does this mean for you?
+    options:
+    - You lose everything
+    - Small penalty
+    - Temporary suspension
+    - Refund guaranteed
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Milan lost money to false investment promises. What was the initial
+      contact method?
+    options:
+    - Phone Call
+    - WhatsApp message
+    - Email
+    - Telegram
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: Milan was directed to invest by someone in a group. What social media
+      platform was likely used for the group?
+    options:
+    - Facebook
+    - Instagram
+    - Telegram
+    - Twitter
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: Demands for payment escalated for "cryptocurrency conversion fees."
+      What's this a sign of?
+    options:
+    - Legitimate process
+    - Complex trading
+    - Scam escalation
+    - New investment type
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Milan recorded calls and saved chat histories. Why is this important?
+    options:
+    - Evidence for scam
+    - Personal reminder
+    - Sharing with friends
+    - Training purpose
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: Milan aims to seek assistance in fund recovery. Where should this be
+      reported?
+    options:
+    - Local police station
+    - Cybercrime portal
+    - Social media
+    - Bank manager
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: The phrase "misled into multiple transactions" suggests what?
+    options:
+    - Honest mistakes
+    - Informed decisions
+    - Deceptive practices
+    - Good faith errors
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the primary purpose of attaching bank and user details to a
+      fraud report?
+    options:
+    - Sharing private info
+    - Substantiate claims
+    - Personal record
+    - For public view
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: The scam utilized "trust and pressure." How does trust factor in these
+      scams?
+    options:
+    - Build relationship
+    - Gains confidence
+    - Forces payments
+    - Creates urgency
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

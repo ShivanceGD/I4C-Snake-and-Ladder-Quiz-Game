@@ -1,0 +1,1488 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Card Fraud
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: An SMS says your card will be blocked. What's safe?
+    options:
+    - Click link
+    - Call number
+    - Ignore, call bank
+    - Reply card number
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You see a strange charge on your card. What next?
+    options:
+    - Wait for reversal
+    - Block, report bank
+    - Find refund sites
+    - Contact sender
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A discount site lacks HTTPS. Enter card?
+    options:
+    - Pay anyway
+    - Last 4 digits
+    - Leave site
+    - Refresh and retry
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A "bank manager" calls, asking card details. What's best?
+    options:
+    - Share details
+    - Refuse, disconnect call
+    - Ask to call later
+    - Give last 4
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller sends APK for card limit. What's wise?
+    options:
+    - Install APK
+    - Refuse, uninstall, bank
+    - Share with friends
+    - Install if polite
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: App from WhatsApp asks full card details. What's safest?
+    options:
+    - Enter details
+    - Ask call later
+    - Enter expiry only
+    - Never enter card info
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: App asks OTP after card details. What to do?
+    options:
+    - Share with caller
+    - Type in chat
+    - Never share OTP
+    - Write, send photo
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why is installing WhatsApp APKs risky?
+    options:
+    - Malware steals data
+    - Improves phone speed
+    - Approved by stores
+    - Encrypts data
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You installed suspicious APK, entered card details. What now?
+    options:
+    - Wait 24 hours
+    - Block card, dispute
+    - Check app settings
+    - Send to antivirus
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Safest way to request credit limit increase?
+    options:
+    - WhatsApp APK
+    - Chat groups details
+    - Bank app, branch, site
+    - Unknown SMS links
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Caller says e-KYC pending, sends WhatsApp APK. What's best?
+    options:
+    - Install APK
+    - Ask for SMS
+    - Open to verify
+    - Delete, no install
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Why avoid WhatsApp APK for card verification?
+    options:
+    - Slows phone
+    - Too large to install
+    - Malware steals info
+    - Always safe
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What do fraudsters steal with fake e-KYC?
+    options:
+    - Card number, OTP
+    - Only your name
+    - Your location
+    - Your contact list
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Who can legally ask for CVV, OTP?
+    options:
+    - Bank Manager phone
+    - Customer Care
+    - RBI Officer
+    - No one ever
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Card blocked without WhatsApp e-KYC? What to do?
+    options:
+    - Panic, follow caller
+    - Contact bank official
+    - Send card photo
+    - Share OTP
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Safest way to update credit card e-KYC?
+    options:
+    - Official bank ways
+    - WhatsApp APK files
+    - Give details call
+    - Unknown links
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: Entered card details, OTP in suspicious app. Immediate next?
+    options:
+    - Close and forget
+    - Re-enter to confirm
+    - Share on social
+    - Block card, call bank
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: Why do fraudsters send WhatsApp APKs?
+    options:
+    - Verify details
+    - Provide updates
+    - Hack phone, steal data
+    - Share bank offers
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: Where to report credit card e-KYC scams in India?
+    options:
+    - Cyber Crime Portal
+    - To friends
+    - Social media pages
+    - Ignore, not serious
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: "\u20B930,000 deducted after APK install. Immediate step?"
+    options:
+    - Wait for refund
+    - Message scammer
+    - Block card, report
+    - Delete banking app
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: Your bank calls for card renewal, asking for your full card number.
+      What's safest?
+    options:
+    - Give full details
+    - Ask for branch
+    - Refuse, call bank
+    - Provide partial info
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: A message offers a "golden card" upgrade if you download an app. What
+      should you do?
+    options:
+    - Download the app
+    - Ignore and delete
+    - Forward to friends
+    - Ask for details
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card is blocked and asks for your OTP to fix it.
+      What's the right action?
+    options:
+    - Share the OTP
+    - Ask for details
+    - Never share OTP
+    - Call police
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your bank calls, asking for your CVV for a "security update." What's
+      the safest choice?
+    options:
+    - Give the CVV
+    - Ask for ID
+    - Never give CVV
+    - Offer partial info
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an SMS with a link to a "flash sale" website. What's the
+      safest way to proceed?
+    options:
+    - Click the link
+    - Ignore the SMS
+    - Enter card details
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message asks you to download an "update" via an APK file. What should
+      you do?
+    options:
+    - Install immediately
+    - Delete the message
+    - Ask for more info
+    - Forward to support
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call about "unauthorized charges" and they ask for your card
+      number. What's the best response?
+    options:
+    - Give card number
+    - Contact your bank
+    - Ask for transaction ID
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You accidentally shared your card details over a suspicious call. What's
+      the first thing to do?
+    options:
+    - Wait and see
+    - Block card, call bank
+    - Call back the number
+    - Change phone settings
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You made a purchase on a website that now seems fake. What's your immediate
+      action?
+    options:
+    - Wait for delivery
+    - Contact website support
+    - Report to cybercrime
+    - Forget about it
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You downloaded an unknown APK and entered card info. What should you
+      do right away?
+    options:
+    - Delete the app
+    - Restart your phone
+    - Block card, report bank
+    - Scan for viruses
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller demands your OTP to "cancel" a fake charge. What's the correct
+      response?
+    options:
+    - Give the OTP
+    - Ask for proof
+    - Never share OTP
+    - Call the bank
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your card
+      expiry date. What's safe?
+    options:
+    - Give the date
+    - Ask for their name
+    - Refuse to share
+    - Provide partial date
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're shopping online and notice the website address starts with "http"
+      not "https." What does that mean?
+    options:
+    - It's a new site
+    - It's less secure
+    - It's faster
+    - It's a typo
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a WhatsApp message with a link to "upgrade" your card. What
+      should you do with the link?
+    options:
+    - Click it immediately
+    - Ignore and delete
+    - Forward to bank
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card is compromised and asks you to confirm your
+      last transaction. What's the best action?
+    options:
+    - Confirm details
+    - Contact your bank
+    - Ask for more info
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a call asking for your mother's maiden name for "verification."
+      What's safe?
+    options:
+    - Give the name
+    - Ask for ID
+    - Never share personal info
+    - Provide partial name
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You find a website with prices too good to be true. What's a good first
+      step before buying?
+    options:
+    - Buy quickly
+    - Check reviews
+    - Enter card details
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A friend sends you an APK file on WhatsApp for a "new game." What's
+      the safest thing to do?
+    options:
+    - Install it
+    - Ask for details
+    - Don't install it
+    - Scan with antivirus
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call about a "refund" and they ask for your bank account
+      number. What's the best response?
+    options:
+    - Give account number
+    - Ask for details
+    - Never give bank details
+    - Verify with caller
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your date
+      of birth. What's safe?
+    options:
+    - Give the date
+    - Ask for their name
+    - Refuse to share
+    - Provide partial date
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You see a popup on a website asking for your credit card details to
+      "win a prize." What should you do?
+    options:
+    - Enter details
+    - Close the popup
+    - Click "cancel"
+    - Refresh page
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an email with an attachment that says "urgent update."
+      What's the safest action?
+    options:
+    - Open the attachment
+    - Delete the email
+    - Forward to IT
+    - Ask sender to explain
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card is being used fraudulently and asks for your
+      full address. What's the best response?
+    options:
+    - Give full address
+    - Contact your bank
+    - Ask for proof
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call asking for your ATM PIN for "verification." What's the
+      safest response?
+    options:
+    - Give the PIN
+    - Ask for bank name
+    - Never give PIN
+    - Share last two
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're on a website and it asks you to download a "security certificate."
+      What's the safest action?
+    options:
+    - Download it
+    - Close the website
+    - Ask for details
+    - Trust the site
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message offers a "free gift" if you click a link and provide your
+      card details. What should you do?
+    options:
+    - Click the link
+    - Ignore and delete
+    - Share with friends
+    - Reply "stop"
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your account is "frozen" and asks for your security questions
+      answers. What's the best response?
+    options:
+    - Give answers
+    - Contact your bank
+    - Ask for ID
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your account
+      password. What's safe?
+    options:
+    - Give password
+    - Ask for their name
+    - Never share password
+    - Provide partial pass
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an email with a link to "update your billing information"
+      for an online store. What's safe?
+    options:
+    - Click the link
+    - Go directly to site
+    - Reply to email
+    - Forward to spam
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a message saying your bank app needs an "urgent update" via
+      a link. What should you do?
+    options:
+    - Click the link
+    - Update via app store
+    - Forward to bank
+    - Ignore the message
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says there's a "problem" with your card and asks you to install
+      a remote access app. What's the best action?
+    options:
+    - Install the app
+    - Refuse, disconnect call
+    - Ask for details
+    - Call police
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call asking for your full debit card number for "verification."
+      What's the safest response?
+    options:
+    - Give all digits
+    - Ask for bank name
+    - Refuse, call bank
+    - Share last four
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Before entering card details on a website, what's a sign of a secure
+      connection?
+    options:
+    - Green padlock
+    - Bright colors
+    - Many ads
+    - Fast loading
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message offers a "loyalty bonus" if you click a link and enter your
+      card details. What should you do?
+    options:
+    - Click the link
+    - Ignore and delete
+    - Reply "yes"
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card will be "deactivated" if you don't share your
+      PIN. What's the right action?
+    options:
+    - Share the PIN
+    - Ask for details
+    - Never share PIN
+    - Call the bank
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your card's
+      security code. What's safe?
+    options:
+    - Give the code
+    - Ask for their name
+    - Never share code
+    - Provide partial code
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a text with a link to "track your package" from an unknown
+      sender. What's safe?
+    options:
+    - Click the link
+    - Ignore the text
+    - Reply "where"
+    - Forward to police
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a message saying your phone needs a "critical update" via an
+      APK. What should you do?
+    options:
+    - Install immediately
+    - Delete the message
+    - Ask for more info
+    - Forward to tech support
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says you've won a lottery and asks for your bank details to
+      transfer money. What's the best response?
+    options:
+    - Give bank details
+    - Refuse, disconnect call
+    - Ask for proof
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call asking for your full card number and expiry date for
+      "fraud prevention." What's safest?
+    options:
+    - Give all details
+    - Ask for bank name
+    - Refuse, call bank
+    - Share last four
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Before clicking a link in an email, what's a good practice to check
+      its legitimacy?
+    options:
+    - Hover over link
+    - Click it quickly
+    - Reply to sender
+    - Forward to spam
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message offers a "discount voucher" if you download an app from a
+      link. What should you do?
+    options:
+    - Download the app
+    - Ignore and delete
+    - Forward to friends
+    - Ask for details
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card has "suspicious activity" and asks for your
+      full name and date of birth. What's the action?
+    options:
+    - Give all details
+    - Contact your bank
+    - Ask for proof
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your full
+      card number. What's safe?
+    options:
+    - Give the number
+    - Ask for their name
+    - Never share number
+    - Provide partial number
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're on a shopping website and it asks for your social security number.
+      What should you do?
+    options:
+    - Give the number
+    - Close the website
+    - Ask for details
+    - Trust the site
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a message with a link to "verify your account" for an online
+      service. What's the safest action?
+    options:
+    - Click the link
+    - Go directly to service
+    - Reply to message
+    - Forward to spam
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card is "expired" and asks for your new card details.
+      What's the best response?
+    options:
+    - Give new details
+    - Contact your bank
+    - Ask for proof
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call asking for your full debit card number and CVV for "security
+      check." What's safest?
+    options:
+    - Give all details
+    - Ask for bank name
+    - Refuse, call bank
+    - Share last four
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Before making an online payment, what should you look for in the website
+      address?
+    options:
+    - '"https://"'
+    - '"http://"'
+    - '"www."'
+    - '".com"'
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message offers a "cashback reward" if you download an app from a
+      link. What should you do?
+    options:
+    - Download the app
+    - Ignore and delete
+    - Forward to friends
+    - Ask for details
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your account is "under review" and asks for your full
+      name and address. What's the best response?
+    options:
+    - Give all details
+    - Contact your bank
+    - Ask for proof
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your full
+      card number and PIN. What's safe?
+    options:
+    - Give both
+    - Ask for their name
+    - Never share both
+    - Provide partial
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an email with a link to "verify your identity" for an online
+      store. What's safe?
+    options:
+    - Click the link
+    - Go directly to store
+    - Reply to email
+    - Forward to spam
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a message saying your phone needs a "performance update" via
+      an APK. What should you do?
+    options:
+    - Install immediately
+    - Delete the message
+    - Ask for more info
+    - Forward to tech support
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says you have "unclaimed funds" and asks for your bank details
+      to transfer them. What's the best response?
+    options:
+    - Give bank details
+    - Refuse, disconnect call
+    - Ask for proof
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call asking for your full debit card number, expiry date,
+      and CVV for "account update." What's safest?
+    options:
+    - Give all details
+    - Ask for bank name
+    - Refuse, call bank
+    - Share last four
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Before entering any personal information on a website, what should
+      you always check for?
+    options:
+    - '"https://"'
+    - Bright colors
+    - Many ads
+    - Fast loading
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message offers a "special bonus" if you click a link and provide
+      your card details. What should you do?
+    options:
+    - Click the link
+    - Ignore and delete
+    - Reply "yes"
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card is "compromised" and asks you to install a
+      screen-sharing app. What's the best action?
+    options:
+    - Install the app
+    - Refuse, disconnect call
+    - Ask for details
+    - Call police
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your full
+      card number and CVV. What's safe?
+    options:
+    - Give both
+    - Ask for their name
+    - Never share both
+    - Provide partial
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a text with a link to "confirm your details" for an online
+      service. What's safe?
+    options:
+    - Click the link
+    - Ignore the text
+    - Reply "confirm"
+    - Forward to police
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a message saying your bank needs "immediate action" via an
+      APK. What should you do?
+    options:
+    - Install immediately
+    - Delete the message
+    - Ask for more info
+    - Forward to bank
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your account is "locked" and asks for your full name
+      and date of birth. What's the best response?
+    options:
+    - Give all details
+    - Contact your bank
+    - Ask for proof
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call asking for your full debit card number, expiry date,
+      CVV, and PIN for "urgent update." What's safest?
+    options:
+    - Give all details
+    - Ask for bank name
+    - Never share any
+    - Share last four
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Before making any purchase online, what's a key thing to check about
+      the website?
+    options:
+    - '"https://"'
+    - Product reviews
+    - Shipping cost
+    - Return policy
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A message offers a "free gift card" if you download an app from a link.
+      What should you do?
+    options:
+    - Download the app
+    - Ignore and delete
+    - Forward to friends
+    - Ask for details
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A caller says your card is "about to expire" and asks for your new
+      card details. What's the best response?
+    options:
+    - Give new details
+    - Contact your bank
+    - Ask for proof
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Someone calls, claiming to be from your bank, asking for your full
+      card number, expiry, CVV, and PIN. What's safe?
+    options:
+    - Give all
+    - Ask for their name
+    - Never share any
+    - Provide partial
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive an email with a link to "reset your password" for an online
+      account. What's safe?
+    options:
+    - Click the link
+    - Go directly to site
+    - Reply to email
+    - Forward to spam
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You get a call asking card details to link Aadhaar. What's safest?
+    options:
+    - Give details
+    - Refuse, disconnect call
+    - Ask for link
+    - Call Aadhaar office
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An online ad offers a loan, asking upfront fees. What's safe?
+    options:
+    - Pay fee
+    - Research company
+    - Apply immediately
+    - Share bank details
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You won a prize, but need to pay "tax" first. Your action?
+    options:
+    - Pay tax
+    - Ignore message
+    - Ask for details
+    - Share bank info
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: If you suspect a scam with your credit/debit card, what should you
+      do?
+    options:
+    - Wait and see
+    - Report to bank
+    - Post on social media
+    - Call the scammer
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Where is the official portal to report cybercrime in India?
+    options:
+    - cyberreporting.com
+    - Cybercrime.gov.in
+    - Facebook.com
+    - WhatsApp support
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What is the national helpline number for cyber financial fraud in India?
+    options:
+    - 100
+    - 1930
+    - 112
+    - 108
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: After reporting cybercrime on the portal, what's a good next step?
+    options:
+    - Forget about it
+    - Share on social
+    - Call 1930 for status
+    - Delete report
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a fake job offer via email, asking for credit card details
+      for verifcation. What's safe?
+    options:
+    - Reply details
+    - Ignore and delete
+    - Forward to friends
+    - Call company
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: If you lost money in an online fraud, what's the first thing to do?
+    options:
+    - Wait for bank
+    - Inform family
+    - Block card, report fraud
+    - Cry about it
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: What information should you never share over the phone with an unknown
+      caller?
+    options:
+    - Your name
+    - Card number, OTP, CVV
+    - Your city
+    - Your favorite color
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You receive a call claiming to be from RBI, asking to "update" your
+      card details. What's the best action?
+    options:
+    - Provide details
+    - Refuse, call bank
+    - Ask for their ID
+    - Verify with caller
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

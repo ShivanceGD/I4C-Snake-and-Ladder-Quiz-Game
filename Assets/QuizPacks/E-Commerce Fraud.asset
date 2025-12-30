@@ -1,0 +1,1510 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: E-Commerce Fraud
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: You want a teddy, pay advance, then they ask for "GST." What's the
+      first warning sign?
+    options:
+    - Small advance
+    - Instagram page
+    - Extra tax request
+    - Cash on delivery
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: After paying "GST," they ask for your "scanner." What's suspicious
+      here?
+    options:
+    - Refund delay
+    - Asking for scanner
+    - Transaction image
+    - Order cancellation
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You tried to cancel, but they said "parcel not cancel now." What's
+      their goal?
+    options:
+    - Keep your money
+    - Speed up delivery
+    - Avoid paperwork
+    - Change order
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They gave a WhatsApp number after you paid more. What's the purpose
+      of this?
+    options:
+    - Better contact
+    - New scammer
+    - Create distance
+    - Track order
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for a "banking refund fee." Is this normal for a refund?
+    options:
+    - Standard fee
+    - Refund processing
+    - Not a normal fee
+    - Urgent request
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You kept sending money for various "fees." What's the biggest mistake
+      here?
+    options:
+    - Trusting screenshots
+    - Sending small amounts
+    - Continuing payments
+    - Not cancelling
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Finally, they asked for "security purpose" money and threatened you.
+      What's this tactic?
+    options:
+    - Genuine security
+    - Last chance
+    - Intimidation for money
+    - Delivery guarantee
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: After you paid everything, they blocked you. What does this confirm?
+    options:
+    - Order shipped
+    - Technical issue
+    - You were scammed
+    - Refund processed
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received the wrong item from a website. You try to return, but
+      contacts are fake. What's the issue?
+    options:
+    - Delivery error
+    - Bad customer service
+    - Online fraud
+    - Product mismatch
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You bought an item for Rs 1000, got the wrong one, and can't get a
+      refund. What's your immediate step?
+    options:
+    - Keep the item
+    - Try again later
+    - Report to authorities
+    - Post on social media
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A seller asks for an "advance" payment for an online order. What should
+      you be cautious about?
+    options:
+    - Normal practice
+    - Guarantee purchase
+    - Potential scam
+    - Fast delivery
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money via GPay for an advance. What's a risk of using direct
+      payment methods with unknown sellers?
+    options:
+    - Faster transaction
+    - No buyer protection
+    - Easy tracking
+    - Lower fees
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They sent screenshots of "related transactions." What's the purpose
+      of these images?
+    options:
+    - Proof of legitimacy
+    - Show progress
+    - Create false trust
+    - For your records
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for your "scanner." What kind of information might they
+      be trying to get?
+    options:
+    - Bank details
+    - Personal documents
+    - Identity proof
+    - Order confirmation
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "state govt tax" and said it's refundable. Is this a
+      real tax process?
+    options:
+    - Real tax
+    - Refundable tax
+    - Fake tax request
+    - Government fee
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You tried to cancel, but they said "MM parcel not cancel now." What's
+      the legal standing of this?
+    options:
+    - Binding contract
+    - Seller's right
+    - Not legally binding
+    - Delivery rule
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: They gave a WhatsApp number for contact after more payments. What's
+      a risk of this communication?
+    options:
+    - Direct communication
+    - No official record
+    - Quick replies
+    - Personal touch
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: They asked for a "banking refund fee." What should you do when asked
+      for extra fees for a refund?
+    options:
+    - Pay the fee
+    - Ask for details
+    - Refuse to pay
+    - Check with bank
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: You kept sending money for "paper work." What's a common characteristic
+      of these escalating demands?
+    options:
+    - Necessary steps
+    - Legitimate charges
+    - Endless fees
+    - Processing costs
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threatened you for "security purpose" money. What's the best way
+      to handle threats from sellers?
+    options:
+    - Pay to avoid
+    - Report, block contact
+    - Negotiate price
+    - Ask for proof
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: After being blocked, you realized you were cheated. What's the most
+      important thing to do immediately?
+    options:
+    - Delete messages
+    - Inform friends
+    - Report to cybercrime
+    - Forget about it
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: You received the wrong order. The mail ID and phone number given are
+      fake. What does this indicate?
+    options:
+    - Bad customer service
+    - Technical error
+    - Fraudulent seller
+    - Temporary issue
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You can't get your money back for a wrong order from a fake contact.
+      What's the main problem?
+    options:
+    - Product issue
+    - Refund policy
+    - Lack of recourse
+    - Delivery problem
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You ordered a teddy from an Instagram page. What's a risk of buying
+      from social media sellers?
+    options:
+    - Good deals
+    - Less buyer protection
+    - Easy communication
+    - Trendy products
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 499 as advance. What's the initial hook used by scammers?
+    options:
+    - Fair price
+    - Small initial payment
+    - Urgent delivery
+    - Unique product
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "Govt service tax GST" for a refund. What's wrong with
+      this request?
+    options:
+    - Standard tax
+    - Refundable tax
+    - Not a real tax
+    - Processing fee
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They sent screenshots of transactions. What should you do before trusting
+      such images?
+    options:
+    - Trust immediately
+    - Verify independently
+    - Ask for more images
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for your "scanner." What's the danger of sharing remote
+      access tools?
+    options:
+    - Faster support
+    - Control over your device
+    - Easy refund
+    - Technical help
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "state govt tax" again. What's the pattern in these
+      repeated requests?
+    options:
+    - Different taxes
+    - Genuine mistake
+    - Escalating demands
+    - New rules
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You said "pls cancel my order," but they refused. What's the scammer's
+      motivation?
+    options:
+    - Policy restriction
+    - Parcel already sent
+    - Keep you engaged
+    - Customer service
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They gave a WhatsApp number. What's a good practice when given a new
+      contact for a transaction?
+    options:
+    - Add immediately
+    - Verify legitimacy
+    - Share details
+    - Trust the number
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for a "banking refund fee." What's the best way to confirm
+      if a fee is legitimate?
+    options:
+    - Trust seller
+    - Check with your bank
+    - Ask for invoice
+    - Pay and wait
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "paper work" by mistake. What's the importance of
+      careful review before sending?
+    options:
+    - Saves time
+    - Prevents errors
+    - Speeds process
+    - Avoids questions
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "security purpose" money. What's the general rule about
+      paying for "security" in online orders?
+    options:
+    - Always pay
+    - Never pay
+    - Pay if small
+    - Depends on seller
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They blocked you on WhatsApp and Instagram. What's the primary reason
+      for this action by scammers?
+    options:
+    - Order completed
+    - Technical issue
+    - Avoid contact
+    - Account closure
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You lost Rs 9494. What's the main impact of this type of fraud?
+    options:
+    - Minor inconvenience
+    - Financial loss
+    - Learning experience
+    - Time wasted
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a wrong order worth Rs 1000. What's the first thing you
+      should do?
+    options:
+    - Keep the item
+    - Try to sell it
+    - Document the issue
+    - Ignore it
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: The mail ID and phone number for refund are fake. What's the biggest
+      challenge in getting a refund?
+    options:
+    - No contact
+    - No proof
+    - Complex process
+    - Long wait
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're trying to raise a refund but can't contact them. What's the
+      best way to proceed?
+    options:
+    - Keep trying
+    - Give up
+    - Report to bank
+    - Ask friends
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You chose v2teddyboys on Instagram. What's a good way to verify social
+      media sellers?
+    options:
+    - Trust followers
+    - Check reviews elsewhere
+    - Buy small first
+    - Ask for ID
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "Govt service tax GST" which they said was refundable.
+      What's a common scam tactic here?
+    options:
+    - Real tax
+    - Hidden fee
+    - False promise
+    - Delivery charge
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for your "scanner" after you paid. What's the risk of giving
+      remote access?
+    options:
+    - Faster refund
+    - Data theft
+    - Technical support
+    - Order tracking
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "state govt tax." What should you always verify
+      before paying extra taxes online?
+    options:
+    - Seller's word
+    - Official government site
+    - Screenshot proof
+    - Friend's advice
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They refused to cancel your order. What's the importance of a clear
+      cancellation policy before buying?
+    options:
+    - Not important
+    - Essential for trust
+    - Only for big orders
+    - Seller's discretion
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They gave a WhatsApp number. What's the danger of moving communication
+      off official platforms?
+    options:
+    - More personal
+    - Less secure
+    - Faster replies
+    - Easier sharing
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for a "banking refund fee." What's a general rule about
+      fees for refunds?
+    options:
+    - Always required
+    - Never required
+    - Depends on bank
+    - Sometimes needed
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "paper work" by mistake. What's the best way to
+      avoid accidental payments?
+    options:
+    - Pay quickly
+    - Double-check details
+    - Trust seller
+    - Use auto-fill
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threatened you for "security purpose" money. What's the immediate
+      action against threats?
+    options:
+    - Pay the amount
+    - Report, seek help
+    - Ignore the threat
+    - Bargain for less
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They blocked you. What's the best way to recover lost money after being
+      blocked?
+    options:
+    - Try new account
+    - Contact bank
+    - Post on social media
+    - Give up
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a wrong order and can't get a refund because contacts
+      are fake. What's the main takeaway?
+    options:
+    - Be careful online
+    - All sellers are bad
+    - Only buy in store
+    - Refunds are hard
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You ordered a teddy from an Instagram page. What's a good practice
+      before making any payment?
+    options:
+    - Pay immediately
+    - Research seller
+    - Ask for discounts
+    - Check delivery time
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 499 as advance. What's the risk of paying an advance to
+      an unknown online seller?
+    options:
+    - Order guaranteed
+    - Lose money
+    - Faster delivery
+    - Build trust
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "Govt service tax GST." What should you do if a seller
+      asks for unexpected taxes?
+    options:
+    - Pay tax
+    - Refuse, verify
+    - Ask for invoice
+    - Report seller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They sent screenshots of transactions. What's the best way to verify
+      transaction proof?
+    options:
+    - Trust screenshots
+    - Check bank statement
+    - Ask for video
+    - Call bank
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for your "scanner." What kind of information should you
+      never share remotely?
+    options:
+    - Name
+    - Address
+    - Bank details
+    - Favorite color
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "state govt tax." What's the importance of official
+      communication for tax requests?
+    options:
+    - Not important
+    - Crucial for legitimacy
+    - Only for large amounts
+    - Seller's choice
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They refused to cancel your order. What's the best way to handle a
+      seller who won't cancel?
+    options:
+    - Keep trying
+    - Dispute payment
+    - Accept fate
+    - Reorder
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They gave a WhatsApp number. What's the best way to secure your communication
+      with online sellers?
+    options:
+    - WhatsApp only
+    - Official website/app
+    - Phone calls only
+    - Email only
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for a "banking refund fee." What's the general advice for
+      unexpected fees during a refund?
+    options:
+    - Pay for quick refund
+    - Never pay
+    - Negotiate
+    - Ask for discount
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "paper work." What's the best way to prevent being
+      pressured into payments?
+    options:
+    - Pay to avoid conflict
+    - Say no firmly
+    - Ask for more time
+    - Consult friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threatened you for "security purpose" money. What's the primary
+      goal of such threats?
+    options:
+    - Ensure security
+    - Extract more money
+    - Speed up process
+    - Verify identity
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They blocked you. What's the main reason scammers block victims?
+    options:
+    - Order completed
+    - Technical issue
+    - End communication
+    - Account closure
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You lost money and borrowed from friends. What's the emotional impact
+      of such fraud?
+    options:
+    - Minor stress
+    - Significant distress
+    - No impact
+    - Financial gain
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a wrong order and can't get a refund. What's the importance
+      of a clear return policy?
+    options:
+    - Not important
+    - Crucial for trust
+    - Only for expensive items
+    - Seller's choice
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: The mail ID and phone number for refund are fake. What's the best way
+      to find legitimate contact info?
+    options:
+    - Search online
+    - Ask friends
+    - Trust seller
+    - Guess numbers
+    correctAnswerIndex: 0
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're trying to raise a refund but can't contact them. What's the
+      importance of quick action?
+    options:
+    - Not urgent
+    - Time-sensitive
+    - Depends on amount
+    - Wait for response
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You chose v2teddyboys on Instagram. What's a key factor to consider
+      when buying from social media?
+    options:
+    - Popularity
+    - Seller's age
+    - Buyer protection
+    - Product aesthetics
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent Rs 499 as advance. What's the best way to protect yourself
+      with online payments?
+    options:
+    - Direct transfer
+    - Use secure platforms
+    - Cash on delivery
+    - Pay in installments
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "Govt service tax GST." What's the best source to verify
+      tax legitimacy?
+    options:
+    - Seller's claim
+    - Government website
+    - Friend's advice
+    - Social media
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They sent screenshots of transactions. What's the best way to confirm
+      financial transactions?
+    options:
+    - Screenshots
+    - Bank app/statement
+    - Call seller
+    - Email confirmation
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for your "scanner." What's the primary risk of giving remote
+      access to unknown parties?
+    options:
+    - Slow internet
+    - Privacy invasion
+    - System crash
+    - Minor inconvenience
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "state govt tax." What's the importance of official
+      receipts for payments?
+    options:
+    - Not important
+    - Proof of payment
+    - For records only
+    - Tax deduction
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They refused to cancel your order. What's the best way to resolve disputes
+      with online sellers?
+    options:
+    - Argue with seller
+    - Consumer protection
+    - Give up
+    - Complain to friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They gave a WhatsApp number. What's the risk of sharing personal info
+      on unsecured platforms?
+    options:
+    - No risk
+    - Data breach
+    - Faster communication
+    - More convenient
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for a "banking refund fee." What's the best way to avoid
+      being scammed by fake fees?
+    options:
+    - Pay to get refund
+    - Never pay extra fees
+    - Ask for discount
+    - Consult lawyer
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "paper work." What's the best defense against emotional
+      manipulation by scammers?
+    options:
+    - Trust your gut
+    - Seek external advice
+    - Respond immediately
+    - Believe promises
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threatened you for "security purpose" money. What's the legal
+      implication of such threats?
+    options:
+    - Normal business
+    - Extortion
+    - Customer service
+    - Security measure
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They blocked you. What's the best way to get justice after being scammed
+      and blocked?
+    options:
+    - Ignore it
+    - Report to police
+    - Post on social media
+    - Complain to friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You lost Rs 9494. What's the importance of acting quickly after realizing
+      you've been defrauded?
+    options:
+    - Not urgent
+    - Increases recovery chance
+    - Depends on amount
+    - No difference
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a wrong order. The mail ID and phone number are fake.
+      What's the best way to get help?
+    options:
+    - Contact seller again
+    - Report to cybercrime
+    - Ask for new contacts
+    - Wait for response
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're trying to raise a refund but can't contact them. What's the
+      importance of keeping records?
+    options:
+    - Not important
+    - Crucial for evidence
+    - For personal use
+    - Only for large amounts
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You chose v2teddyboys on Instagram. What's a good way to identify trustworthy
+      online sellers?
+    options:
+    - Many followers
+    - Professional photos
+    - Verified badges
+    - Positive reviews
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "Govt service tax GST." What's the best way to confirm
+      official tax payments?
+    options:
+    - Pay through seller
+    - Pay directly to govt
+    - Ask for screenshot
+    - Trust seller
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They sent screenshots of transactions. What's the primary reason scammers
+      use fake screenshots?
+    options:
+    - Proof of payment
+    - Show progress
+    - Deceive victims
+    - For records
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for your "scanner." What's the best way to protect your
+      devices from remote access scams?
+    options:
+    - Share access
+    - Never share access
+    - Use antivirus
+    - Update software
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "state govt tax." What's the best way to avoid being
+      caught in a tax scam?
+    options:
+    - Pay immediately
+    - Verify with authorities
+    - Ask for refund
+    - Trust seller
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They refused to cancel your order. What's the importance of a clear
+      refund process?
+    options:
+    - Not important
+    - Essential for trust
+    - Only for big orders
+    - Seller's choice
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They gave a WhatsApp number. What's the best way to communicate with
+      online sellers for security?
+    options:
+    - WhatsApp only
+    - Official channels
+    - Phone calls only
+    - Email only
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for a "banking refund fee." What's the general rule for
+      any unexpected fees?
+    options:
+    - Pay for quick refund
+    - Never pay
+    - Negotiate
+    - Ask for discount
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "paper work." What's the best way to handle requests
+      for additional payments?
+    options:
+    - Pay to avoid conflict
+    - Refuse, seek advice
+    - Ask for more time
+    - Consult friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They threatened you for "security purpose" money. What's the best way
+      to respond to threats?
+    options:
+    - Pay the amount
+    - Report, block
+    - Ignore the threat
+    - Bargain for less
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They blocked you. What's the best way to prevent future online shopping
+      fraud?
+    options:
+    - Stop online shopping
+    - Research thoroughly
+    - Use only big brands
+    - Cash on delivery
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You lost Rs 9494. What's the importance of informing your bank immediately
+      after fraud?
+    options:
+    - Not urgent
+    - Prevents more loss
+    - Bank will handle
+    - Only for large amounts
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You received a wrong order. The mail ID and phone number are fake.
+      What's the main lesson learned?
+    options:
+    - Don't trust online
+    - Verify seller details
+    - Always use COD
+    - Refunds are impossible
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're trying to raise a refund but can't contact them. What's the
+      best way to track your complaint?
+    options:
+    - Wait for update
+    - Follow up with authorities
+    - Post on social media
+    - Ask friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You chose v2teddyboys on Instagram. What's the best way to avoid social
+      media scams?
+    options:
+    - Trust popular pages
+    - Research reviews
+    - Only buy from ads
+    - Ignore all ads
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for "Govt service tax GST." What's the best way to confirm
+      any unexpected charges?
+    options:
+    - Pay and ask later
+    - Verify with official body
+    - Trust seller
+    - Ask for screenshot
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They sent screenshots of transactions. What's the best way to ensure
+      transaction authenticity?
+    options:
+    - Trust screenshots
+    - Check your bank app
+    - Ask for video proof
+    - Call seller
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: They asked for your "scanner." What's the main danger of giving remote
+      access to your device?
+    options:
+    - Slows down phone
+    - Data theft, control
+    - Minor privacy issue
+    - Technical assistance
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You sent money for "state govt tax." What's the best way to avoid being
+      pressured into payments?
+    options:
+    - Pay quickly
+    - Take time to verify
+    - Trust seller
+    - Ask for discount
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

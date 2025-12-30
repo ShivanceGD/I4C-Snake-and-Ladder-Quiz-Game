@@ -1,0 +1,1510 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Social Media
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: You see a fake profile of someone you know. What's the first thing
+      to do?
+    options:
+    - Ignore it
+    - Report to platform
+    - Message the fake profile
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is damaging a professor's reputation. What's the main
+      harm?
+    options:
+    - Minor inconvenience
+    - Professional distress
+    - Social media fame
+    - No effect
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You can't report a fake profile because of an OTP sent to an unknown
+      email. What's the problem?
+    options:
+    - Technical glitch
+    - Account hacking
+    - User error
+    - Platform issue
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Immediate removal of a fake profile is needed. What's the best way
+      to get quick action?
+    options:
+    - Wait patiently
+    - Contact platform directly
+    - Post on social media
+    - Ask friends for help
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're reporting a fake profile. What information is most helpful?
+    options:
+    - Just the name
+    - Profile URL, details
+    - Only photos
+    - Your feelings
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is sharing your photos and harassing you. What's the
+      immediate concern?
+    options:
+    - Personal embarrassment
+    - Technical issue
+    - Family distress
+    - Social media fame
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your parents are crying because of fake profiles. What's the emotional
+      impact of this fraud?
+    options:
+    - Minor stress
+    - Significant distress
+    - No impact
+    - Financial gain
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake profiles are sharing your photos with written content. What's
+      the crime?
+    options:
+    - Online prank
+    - Digital art
+    - Harassment
+    - Identity theft
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile sends inappropriate messages to your friends. What's
+      the main goal of this?
+    options:
+    - Seek attention
+    - Damage your image
+    - Make new friends
+    - Gain followers
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is sharing your mobile number and home address. What's
+      the biggest risk?
+    options:
+    - Spam calls
+    - Identity theft
+    - Minor inconvenience
+    - More friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is trying to blackmail you. What's the best way to handle
+      blackmail?
+    options:
+    - Pay them
+    - Ignore them
+    - Report to police
+    - Negotiate
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is posting your photos and sending them to others. What's
+      the violation?
+    options:
+    - Privacy breach
+    - Misunderstanding
+    - Technical glitch
+    - Friendly joke
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is impersonating you and gaining followers. What's the main
+      harm?
+    options:
+    - Online fame
+    - Reputation damage
+    - Social media growth
+    - No effect
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is posting vulgar content using your niece's name and
+      photos. What's the issue?
+    options:
+    - Minor inconvenience
+    - Privacy violation
+    - Technical error
+    - Content sharing
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You reported a fake profile on Facebook, but need immediate action.
+      What's your next step?
+    options:
+    - Wait for Facebook
+    - Contact platform directly
+    - Post on social media
+    - Ask friends for help
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You need to block a fake profile. What information helps identify it?
+    options:
+    - Just the name
+    - Profile URL, details
+    - Only photos
+    - Your feelings
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: A fake profile is causing distress to family and friends. What's the
+      best way to support them?
+    options:
+    - Hide the incident
+    - Share openly
+    - Blame them
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: You reported a profile, but need additional verification. What should
+      you do?
+    options:
+    - Ignore request
+    - Provide more info
+    - Ask for details
+    - Refuse
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: A fake profile is using someone's photos without consent. What's the
+      main problem?
+    options:
+    - Flattery
+    - Unauthorized use
+    - Sharing pictures
+    - No harm
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is spreading misleading information. What's the impact?
+    options:
+    - Minor confusion
+    - Tarnished image
+    - Public debate
+    - New ideas
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: You're redirected to a login page for reporting, but can't access it.
+      What's the barrier?
+    options:
+    - Technical glitch
+    - Account hacking
+    - User error
+    - Platform issue
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: Milan
+      characterInfo: Friend
+      characterGender: 0
+  - question: An unknown Gmail ID receives the OTP for reporting. What's the security
+      risk?
+    options:
+    - Account access
+    - Email spam
+    - Password reset
+    - Data loss
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Immediate removal of a fake profile is crucial. What's the benefit
+      of quick action?
+    options:
+    - Saves time
+    - Prevents further harm
+    - Shows power
+    - Gets attention
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're reporting a fake profile. What's the importance of prompt investigation?
+    options:
+    - Not important
+    - Crucial for justice
+    - Time-consuming
+    - Depends on case
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is sharing your photos. What's the best way to protect
+      your online image?
+    options:
+    - Post freely
+    - Be mindful of content
+    - Delete old posts
+    - Share everything
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your mom and dad are crying because of fake profiles. What's the best
+      way to reassure them?
+    options:
+    - Ignore their feelings
+    - Explain the situation
+    - Blame them
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake profiles are sharing photos with written content. What's the best
+      way to deal with this?
+    options:
+    - Ignore it
+    - Report to platform
+    - Share with friends
+    - Confront creator
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile sends inappropriate messages to your contacts. What's
+      the best way to inform them?
+    options:
+    - Ignore it
+    - Warn them directly
+    - Post on social media
+    - Change contacts
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is sharing your personal details. What's the best way
+      to protect your privacy?
+    options:
+    - Share freely
+    - Limit personal info
+    - Use real name
+    - Post daily
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is trying to blackmail you. What's the primary motive?
+    options:
+    - Personal gain
+    - Justice
+    - Revenge
+    - Social experiment
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is posting your photos. What's the best way to regain control
+      of your images?
+    options:
+    - Engage with them
+    - Report to platform
+    - Ignore it
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is impersonating you. What's the best way to prove your real
+      identity?
+    options:
+    - Delete your account
+    - Provide official ID
+    - Post more pictures
+    - Ask friends to vouch
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is posting vulgar content. What's the best way to get
+      it removed?
+    options:
+    - Ignore it
+    - Report to platform
+    - Share with friends
+    - Confront creator
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You reported a fake profile. What's the importance of following up
+      with the platform?
+    options:
+    - Not important
+    - Crucial for action
+    - Time-consuming
+    - Depends on mood
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is causing distress. What's the best way to cope with
+      emotional harm from cybercrime?
+    options:
+    - Ignore feelings
+    - Seek professional help
+    - Blame yourself
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A professor's fake profile is causing professional harm. What's the
+      best way to mitigate this?
+    options:
+    - Ignore it
+    - Issue public statement
+    - Delete social media
+    - Blame others
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You can't report a fake profile due to OTP issues. What's the best
+      alternative reporting method?
+    options:
+    - Give up
+    - Call cybercrime helpline
+    - Post on social media
+    - Ask friends for help
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An unknown Gmail ID receives the OTP. What's the best way to secure
+      your accounts from unauthorized access?
+    options:
+    - Use easy passwords
+    - Enable 2FA
+    - Share passwords
+    - Log out rarely
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Immediate removal of a fake profile is essential. What's the best way
+      to escalate the issue?
+    options:
+    - Wait for response
+    - Contact higher support
+    - Post on social media
+    - Ask friends to help
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're reporting a fake profile. What's the importance of providing
+      all relevant details?
+    options:
+    - Not important
+    - Crucial for investigation
+    - Only for large cases
+    - Depends on mood
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is sharing your photos. What's the best way to remove
+      unwanted images online?
+    options:
+    - Ask them to remove
+    - Report to platform
+    - Delete your account
+    - Post a counter-video
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your mom and dad are crying. What's the best way to protect your family
+      from online harassment?
+    options:
+    - Ignore it
+    - Limit online exposure
+    - Blame them
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake profiles are sharing photos with written content. What's the best
+      way to document this evidence?
+    options:
+    - Delete messages
+    - Screenshot everything
+    - Tell friends
+    - Ignore and forget
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile sends inappropriate messages. What's the best way to
+      prevent this from happening again?
+    options:
+    - Change profile pic
+    - Review privacy settings
+    - Delete social media
+    - Block everyone
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is sharing your personal details. What's the best way
+      to monitor your online presence?
+    options:
+    - Never check
+    - Regular checks
+    - Ask friends to check
+    - Ignore it
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is trying to blackmail you. What's the best way to get
+      legal advice?
+    options:
+    - Ask friends
+    - Search online
+    - Consult a lawyer
+    - Ignore the problem
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is posting your photos. What's the best way to maintain online
+      safety?
+    options:
+    - Trust everyone
+    - Be suspicious
+    - Share everything
+    - Ignore warnings
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is impersonating you. What's the best way to safeguard your
+      online reputation?
+    options:
+    - Engage with them
+    - End call, block, report
+    - Ignore it
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is posting vulgar content. What's the best way to control
+      who can contact you online?
+    options:
+    - Accept all
+    - Adjust privacy settings
+    - Block everyone
+    - Share contact
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You reported a fake profile. What's the best way to get support from
+      friends and family?
+    options:
+    - Hide the incident
+    - Share openly
+    - Blame them
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is causing distress. What's the best way to manage your
+      mental health during a scam?
+    options:
+    - Obsess over it
+    - Seek support
+    - Blame yourself
+    - Isolate yourself
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A professor's fake profile is causing professional harm. What's the
+      best way to prevent future harm?
+    options:
+    - Ignore it
+    - Strengthen online security
+    - Delete social media
+    - Blame others
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You can't report a fake profile due to OTP issues. What's the best
+      way to get help from the platform?
+    options:
+    - Give up
+    - Contact customer support
+    - Post on social media
+    - Ask friends for help
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An unknown Gmail ID receives the OTP. What's the best way to recover
+      a compromised email account?
+    options:
+    - Create new email
+    - Use account recovery
+    - Ignore it
+    - Change password only
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Immediate removal of a fake profile is essential. What's the best way
+      to ensure platform accountability?
+    options:
+    - Wait for response
+    - File formal complaint
+    - Post on social media
+    - Ask friends to help
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're reporting a fake profile. What's the importance of digital literacy
+      in identifying scams?
+    options:
+    - Not important
+    - Essential for safety
+    - Only for techies
+    - Depends on age
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is sharing your photos. What's the best way to protect
+      your digital footprint?
+    options:
+    - Post freely
+    - Be mindful of content
+    - Delete old posts
+    - Share everything
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your mom and dad are crying. What's the best way to get emotional support
+      for your family?
+    options:
+    - Suffer silently
+    - Talk to trusted ones
+    - Blame yourself
+    - Ignore feelings
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake profiles are sharing photos with written content. What's the best
+      way to prevent content misuse?
+    options:
+    - Post freely
+    - Limit sharing
+    - Use public Wi-Fi
+    - Click all links
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile sends inappropriate messages. What's the best way to
+      report online harassment?
+    options:
+    - Ignore it
+    - Block them
+    - Report to platform
+    - Confront them
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is sharing your personal details. What's the best way
+      to manage your online privacy?
+    options:
+    - Share everything
+    - Be selective
+    - Use real name
+    - Post daily
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is trying to blackmail you. What's the best way to deal
+      with online threats?
+    options:
+    - Comply
+    - Report to authorities
+    - Ignore
+    - Negotiate
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is posting your photos. What's the best way to handle unwanted
+      content sent to you?
+    options:
+    - Open and view
+    - Delete, block, report
+    - Forward to friends
+    - Save for evidence
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is impersonating you. What's the best way to protect your
+      online identity?
+    options:
+    - Share everything
+    - Limit personal info
+    - Use real name
+    - Post daily
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is posting vulgar content. What's the best way to get
+      help from law enforcement?
+    options:
+    - Call local police
+    - Contact cyber cell
+    - Post on social media
+    - Ask friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You reported a fake profile. What's the importance of public awareness
+      about cybercrime?
+    options:
+    - Not important
+    - Prevents others
+    - Causes panic
+    - Only for experts
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is causing distress. What's the best way to handle the
+      psychological impact of fraud?
+    options:
+    - Suppress feelings
+    - Talk to a counselor
+    - Blame yourself
+    - Isolate yourself
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A professor's fake profile is causing professional harm. What's the
+      best way to rebuild trust?
+    options:
+    - Ignore rumors
+    - Transparent communication
+    - Delete social media
+    - Blame others
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You can't report a fake profile due to OTP issues. What's the best
+      way to prevent account hacking?
+    options:
+    - Use easy passwords
+    - Enable 2FA
+    - Share passwords
+    - Log out rarely
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An unknown Gmail ID receives the OTP. What's the best way to secure
+      your email accounts?
+    options:
+    - Use easy passwords
+    - Enable 2FA
+    - Share passwords
+    - Log out rarely
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Immediate removal of a fake profile is essential. What's the best way
+      to get media attention?
+    options:
+    - Wait for response
+    - Contact news outlets
+    - Post on social media
+    - Ask friends to help
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're reporting a fake profile. What's the importance of follow-up
+      after reporting?
+    options:
+    - Not important
+    - Crucial for progress
+    - Time-consuming
+    - Depends on mood
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is sharing your photos. What's the best way to monitor
+      your online presence?
+    options:
+    - Never check
+    - Regular checks
+    - Ask friends to check
+    - Ignore it
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your mom and dad are crying. What's the best way to protect your family's
+      emotional well-being?
+    options:
+    - Suffer silently
+    - Talk to trusted ones
+    - Blame yourself
+    - Ignore feelings
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake profiles are sharing photos with written content. What's the best
+      way to get it taken down?
+    options:
+    - Ask them to remove
+    - Report to platform
+    - Delete your account
+    - Post a counter-video
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile sends inappropriate messages. What's the best way to
+      prevent future harassment?
+    options:
+    - Change profile pic
+    - Review privacy settings
+    - Delete social media
+    - Block everyone
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is sharing your personal details. What's the best way
+      to manage your digital identity?
+    options:
+    - Share everything
+    - Be selective
+    - Use real name
+    - Post daily
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is trying to blackmail you. What's the best way to respond
+      to threats?
+    options:
+    - Pay the amount
+    - Report, block
+    - Ignore the threat
+    - Bargain for less
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is posting your photos. What's the best way to protect your
+      online privacy?
+    options:
+    - Share freely
+    - Limit personal info
+    - Use public Wi-Fi
+    - Click all links
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is impersonating you. What's the best way to manage your
+      online reputation?
+    options:
+    - Engage with them
+    - End call, block, report
+    - Ignore it
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is posting vulgar content. What's the best way to get
+      help from a lawyer?
+    options:
+    - Ask friends
+    - Search online
+    - Consult a lawyer
+    - Ignore the problem
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You reported a fake profile. What's the best way to ensure platform
+      accountability?
+    options:
+    - Wait for response
+    - File formal complaint
+    - Post on social media
+    - Ask friends to help
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is causing distress. What's the best way to get emotional
+      support?
+    options:
+    - Suffer silently
+    - Talk to trusted ones
+    - Blame yourself
+    - Ignore feelings
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A professor's fake profile is causing professional harm. What's the
+      best way to rebuild trust?
+    options:
+    - Ignore rumors
+    - Transparent communication
+    - Delete social media
+    - Blame others
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You can't report a fake profile due to OTP issues. What's the best
+      way to secure your online accounts?
+    options:
+    - Use easy passwords
+    - Enable 2FA
+    - Share passwords
+    - Log out rarely
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: An unknown Gmail ID receives the OTP. What's the best way to prevent
+      unauthorized access to your email?
+    options:
+    - Use easy passwords
+    - Enable 2FA
+    - Share passwords
+    - Log out rarely
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Immediate removal of a fake profile is essential. What's the best way
+      to get government intervention?
+    options:
+    - Wait for response
+    - Contact cyber cell
+    - Post on social media
+    - Ask friends to help
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You're reporting a fake profile. What's the importance of keeping records
+      of all communications?
+    options:
+    - Not important
+    - Crucial for evidence
+    - Only for large cases
+    - Time-consuming
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is sharing your photos. What's the best way to prevent
+      future misuse of your images?
+    options:
+    - Post freely
+    - Limit sharing
+    - Use public Wi-Fi
+    - Click all links
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Your mom and dad are crying. What's the best way to support them through
+      online harassment?
+    options:
+    - Suffer silently
+    - Talk to trusted ones
+    - Blame yourself
+    - Ignore feelings
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake profiles are sharing photos with written content. What's the best
+      way to counter false narratives?
+    options:
+    - Ignore it
+    - Issue a statement
+    - Share with friends
+    - Confront creator
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile sends inappropriate messages. What's the best way to
+      educate others about online safety?
+    options:
+    - Ignore it
+    - Share information
+    - Block them
+    - Confront them
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is sharing your personal details. What's the best way
+      to manage your online presence?
+    options:
+    - Never check
+    - Regular checks
+    - Ask friends to check
+    - Ignore it
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake account is trying to blackmail you. What's the best way to protect
+      your mental well-being?
+    options:
+    - Obsess over it
+    - Seek support
+    - Blame yourself
+    - Isolate yourself
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is posting your photos. What's the best way to maintain online
+      safety?
+    options:
+    - Trust everyone
+    - Be suspicious
+    - Share everything
+    - Ignore warnings
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake ID is impersonating you. What's the best way to safeguard your
+      online reputation?
+    options:
+    - Engage with them
+    - End call, block, report
+    - Ignore it
+    - Share with friends
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is posting vulgar content. What's the best way to get
+      help from a counselor?
+    options:
+    - Ask friends
+    - Search online
+    - Consult a counselor
+    - Ignore the problem
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: You reported a fake profile. What's the best way to ensure platform
+      accountability?
+    options:
+    - Wait for response
+    - File formal complaint
+    - Post on social media
+    - Ask friends to help
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A fake profile is causing distress. What's the best way to cope with
+      emotional harm from cybercrime?
+    options:
+    - Ignore feelings
+    - Seek professional help
+    - Blame yourself
+    - Stay silent
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: A professor's fake profile is causing professional harm. What's the
+      best way to prevent future harm?
+    options:
+    - Ignore it
+    - Strengthen online security
+    - Delete social media
+    - Blame others
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

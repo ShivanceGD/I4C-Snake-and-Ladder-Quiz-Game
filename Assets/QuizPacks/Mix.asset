@@ -1,0 +1,1426 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: Mix
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: India ka cybercrime helpline number kya hai?
+    options:
+    - 1800-112-303
+    - 1930
+    - 112
+    - 100
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Cybercrime complaint file karne ke liye official portal kaun sa hai?
+    options:
+    - cybersecure.in
+    - bharatpolice.gov.in
+    - cybercrime.gov.in
+    - mysecurity.in
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Digital Arrest' scam mein scammers kya claim karte hain?
+    options:
+    - Aapka bank balance badh jayega
+    - Aapko jaldi hi lottery milegi
+    - Aapke khilaf ek case hai aur aapko online arrest kiya ja raha hai
+    - Aapka ration card block ho gaya hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Investment scam mein sabse bada lalach kya hota hai?
+    options:
+    - Free mobile
+    - Kam samay mein zyada return
+    - Free recharge
+    - Sasta insurance
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar koi ajnabi video call par aapko kapde utarne ke liye pressure
+      dalta hai, to yeh kaun sa crime hai?
+    options:
+    - Card fraud
+    - Sextortion
+    - Fake delivery
+    - Refund scam
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Work-from-home scam mein scammers kya karte hain?
+    options:
+    - Ek accha office provide karte hain
+    - Fake job offer karte hain aur advance payment mangte hain
+    - Ghar ka kiraya dete hain
+    - Free training dete hain
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake social media ad mein sabse bada khatra kya hai?
+    options:
+    - Bijli ka bill badh jata hai
+    - Aapki location track ho jati hai
+    - Paisa aur data dono chori ho sakte hain
+    - Phone ka temperature badh jata hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Instant loan apps ka sabse bada risk kya hai?
+    options:
+    - Screen damage ho jati hai
+    - Battery jaldi drain hoti hai
+    - Personal data chori karke blackmail kiya jata hai
+    - Calling band ho jati hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Refund scam mein scammers aksar kya kehte hain?
+    options:
+    - "Aapko \u20B910 lakh ka loan mil raha hai"
+    - Aapka package deliver nahi hua
+    - Aapke account mein galat paise aa gaye, link par click karein
+    - Aapki SIM block ho gayi hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Deepfake videos kis technology ka use karke banaye jate hain?
+    options:
+    - Bluetooth
+    - AI aur Machine Learning
+    - GPS
+    - Satellite
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Impersonation scam mein scammers kya karte hain?
+    options:
+    - Aapki internet speed badhate hain
+    - Kisi aur ka dikhawa karke aapse paise mangte hain
+    - Aapke phone ki screen badalte hain
+    - Free games dete hain
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Aapko apna OTP kiske saath share karna chahiye?
+    options:
+    - Bank staff
+    - Police
+    - Dost
+    - Kisi ke saath nahi
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar koi call karke kahe 'Aapka ATM block ho gaya hai, details share
+      karein', to aapko kya karna chahiye?
+    options:
+    - Turant OTP dein
+    - ATM ki photo bhejein
+    - Call disconnect karein
+    - Unhein wapas call karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Anjaan link par click karne ka risk kya hai?
+    options:
+    - Ringtone badal jati hai
+    - Phone hang ho jata hai
+    - Virus attack aur data theft
+    - Battery kam ho jati hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Bank call par kabhi kya nahi puchta?
+    options:
+    - Naam
+    - Umar
+    - OTP aur PIN
+    - Account number
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapko social media par kisi celebrity ka bahut sasta offer dikhe,
+      to aapko kya karna chahiye?
+    options:
+    - Verify karein ki account asli hai
+    - Paise bhejein
+    - turant khariden
+    - Post share karein
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: KYC Update' scam mein scammers kya bhejte hain?
+    options:
+    - Shaadi ka nimantran
+    - Magic video
+    - Fake link/SMS
+    - Photo editing app
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Cybercrime ke sabooton ko kaise surakshit rakhna chahiye?
+    options:
+    - Sab kuch delete kar dein
+    - Screenshot lein aur save karein
+    - Phone switch off kar dein
+    - Mobile format kar dein
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Aapko social media par kiski friend request accept karni chahiye?
+    options:
+    - Kisi ki bhi
+    - Kewal jaane-pehchaane log
+    - Sabhi mutual
+    - Famous log
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Kaun sa password strong mana jata hai?
+    options:
+    - 123456
+    - Aapka apna naam
+    - Janmtithi
+    - Strong (Symbols + Numbers + Letters)
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Koi bhi anjaan mobile app install karne se pehle kya check karna chahiye?
+    options:
+    - Logo accha dikh raha hai ya nahi
+    - Ratings aur permissions
+    - App ka color
+    - Download size
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapko 'Aapne lottery jeeti' ka message mile, to aapko kya karna
+      chahiye?
+    options:
+    - Turant call karein
+    - Message forward karein
+    - Ignore/delete karein
+    - Paise bhejein
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Video KYC fraud mein scammers kya karte hain?
+    options:
+    - Aapka video banate hain aur EMI bharte hain
+    - Aapke documents mangte hain aur account hack karte hain
+    - Online games sikhate hain
+    - Aapka phone repair karte hain
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Cyber fraud se bachne ka pehla kadam kya hai?
+    options:
+    - Ghabraein
+    - Call par bahas karein
+    - Jankari public karein
+    - Alert rahein aur verify karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Cybercrime ke bare mein jaagruk aur alert kaise rahein?
+    options:
+    - Facebook message check karein
+    - WhatsApp status dekhein
+    - Grih Mantralaya ke handle 'CYBERDOST' ko follow karein
+    - Doston se baat karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Phishing email ki pehchan kaise karein?
+    options:
+    - Lambi email
+    - Anjaan sender, urgent request, galat grammar
+    - Email mein achhi spelling
+    - Sirf text wali email
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Malware se bachne ke liye kya karna chahiye?
+    options:
+    - Screenshot lein
+    - Phone ko restart karein
+    - Antivirus software install karein aur update rakhein
+    - Camera off rakhein
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online banking karte samay kya saavdhani baratni chahiye?
+    options:
+    - Public Wi-Fi use karein
+    - Bank staff ko password dein
+    - Hamesha secure (HTTPS) connection use karein
+    - Raat mein transaction karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Public Wi-Fi use karte samay kaun sa kaam avoid karna chahiye?
+    options:
+    - Online shopping ya banking karna
+    - Gaane sunna
+    - News padhna
+    - Videos dekhna
+    correctAnswerIndex: 0
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne passwords ko kitni baar badalna chahiye?
+    options:
+    - Saal mein ek baar
+    - Kabhi nahi
+    - Har mahine
+    - Har 6 mahine mein ya usse zyada bar
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Two-Factor Authentication (2FA) kya hai?
+    options:
+    - Do phones use karna
+    - Do baar password dalna
+    - Login ke liye do alag-alag verification methods
+    - Do dost milkar login karte hain
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar koi aapka social media account impersonate kare, to kya karein?
+    options:
+    - Ignore karein
+    - Usse baat karein
+    - Apne dosto ko batayein
+    - Platform ko report karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online shopping karte samay kaun si website par bharosa karein?
+    options:
+    - Jo sabse sasti ho
+    - Nayi website
+    - Jiske URL mein 'https' ho aur jani-pehchani ho
+    - Jiske ads bahut dikhe
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Deepfake audio calls mein scammers kya karte hain?
+    options:
+    - Gaana sunate hain
+    - Caller id chupate hain
+    - AI ka use karke kisi ki aawaz copy karte hain
+    - Robot ki aawaz mein baat karte hain
+    correctAnswerIndex: 2
+    questionsDifficulty: 0
+    isHintAllowed: 0
+    timeLimit: 30
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apni personal jaankari online share karte samay kya dhyan rakhna chahiye?
+    options:
+    - Sab kuch share karein
+    - Kisi ko bhi dein
+    - Sirf zaroorat ho to aur trusted platform par share karein
+    - Privacy settings ignore karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Antivirus software ka kya kaam hai?
+    options:
+    - Internet speed badhana
+    - Call quality sudharna
+    - Battery life badhana
+    - Virus aur malware se device ko bachana
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Software updates kyu zaroori hain?
+    options:
+    - Naye colors ke liye
+    - Purana version rakhne ke liye
+    - Naye games ke liye
+    - Security vulnerabilities ko theek karne ke liye
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: VPN (Virtual Private Network) ka kya fayda hai?
+    options:
+    - Phone charge karta hai
+    - Gaane download karta hai
+    - Online privacy aur security badhata hai
+    - Photos save karta hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Baccho ki online safety ke liye kya karein?
+    options:
+    - Unhe akela chhod dein
+    - Mobile phone na dein
+    - Unlimited internet dein
+    - Parental controls use karein aur unse baat karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Identity theft se bachne ke liye kya karein?
+    options:
+    - Birthday party pictures share karein
+    - Social media par fake id banayein
+    - Apni saari details online publish karein
+    - Personal documents aur info ko surakshit rakhein
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: QR code scan karte samay kya saavdhani baratni chahiye?
+    options:
+    - Bina dekhe scan karein
+    - Internet band karke scan karein
+    - Kisi bhi QR code ko scan karein
+    - Sirf trusted sources se QR code scan karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake job interview scams mein scammers kya karte hain?
+    options:
+    - Acchi salary offer karte hain
+    - Turant job dete hain
+    - Asli office mein invite karte hain
+    - Interview se pehle paise ya personal info mangte hain
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Tech support scam mein kya hota hai?
+    options:
+    - Phone theek karte hain
+    - Free calling plan dete hain
+    - Fake technical problem batakar paise ya remote access mangte hain
+    - Free software dete hain
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: SIM swap fraud kya hai?
+    options:
+    - Naya SIM kharidna
+    - Old SIM fenk dena
+    - SIM card ka rang badalna
+    - Apke number par duplicate SIM lekar data/bank access karna
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online charity scams mein kya hota hai?
+    options:
+    - Volunteers recruit karte hain
+    - Free food dete hain
+    - Asli donation mangte hain
+    - Fake cause ke naam par paise ikatthe karte hain
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online gaming mein kaun sa risk hota hai?
+    options:
+    - Controller kharab ho jata hai
+    - Internet slow ho jata hai
+    - Game hang ho jata hai
+    - Personal info leak hona ya cyberbullying
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Device encryption ka kya fayda hai?
+    options:
+    - Battery life badhata hai
+    - Screen ki quality sudharta hai
+    - Phone ka size chhota karta hai
+    - Data ko unauthorized access se bachata hai
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Secure browsing ke liye kya zaroori hai?
+    options:
+    - Bina internet ke browse karein
+    - Incognito mode hamesha use karein
+    - Sirf bade brands ki website dekhein
+    - Website URL mein 'https://' check karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Cloud storage mein data rakhte samay kya dhyan rakhna chahiye?
+    options:
+    - Folder delete kar dein
+    - Sirf photos upload karein
+    - Sab kuch public kar dein
+    - Strong passwords aur 2FA use karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne email account ko secure kaise rakhein?
+    options:
+    - Ek hi password sab jagah use karein
+    - Email id share karein
+    - Password kisi ko bhi dein
+    - Strong password, 2FA aur suspicious emails se bachein
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online transactions ke liye kaun sa payment method sabse surakshit
+      hai?
+    options:
+    - Cash on Delivery
+    - UPI/Net Banking (secure gateway)
+    - Bank transfer through unknown app
+    - Crypto currency
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apni online privacy badhane ke liye kya karna chahiye?
+    options:
+    - Public places par personal details share karein
+    - Privacy settings ko ignore karein
+    - Browser history clear karein aur cookies manage karein
+    - Har website par account banayein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Scammers bank ya government official ban kar aksar kya mangte hain?
+    options:
+    - Feedback on services
+    - Password, OTP ya account details
+    - Apka naam aur pata
+    - Bank ka naam
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Kis prakar ke calls par turant vishwas nahi karna chahiye?
+    options:
+    - Apke bank se aaye official calls
+    - Family members ke calls
+    - Friends ke calls
+    - Urgent paise mangne wale ya lottery jeetne wale calls
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online gaming platforms par personal information share karne ka kya
+      risk hai?
+    options:
+    - Game slow ho jata hai
+    - Phone garam ho jata hai
+    - Identity theft ya cyberbullying
+    - Controller toot jata hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne smart devices (IoT) ko secure kaise rakhein?
+    options:
+    - Default passwords use karein
+    - Unhe public network se jodein
+    - Strong passwords use karein aur regular updates karein
+    - Unhe kabhi update na karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Social engineering attack mein scammers kis cheez ka fayda uthate hain?
+    options:
+    - Technical loopholes
+    - Aapki bhavnao aur trust ka
+    - Network speed
+    - Device hardware
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapko koi fake invoice ya bill mile, to aapko kya karna chahiye?
+    options:
+    - Payment kar dein
+    - Ignore kar dein
+    - Sender ki authenticity verify karein aur report karein
+    - Bill ko delete kar dein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Kis tarah ke software download karne se bachna chahiye?
+    options:
+    - Official app store se
+    - Trusted websites se
+    - Cracked ya pirated software
+    - Free antivirus
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online defamation se bachne ke liye kya karein?
+    options:
+    - Sab kuch online share karein
+    - Anonymous accounts banayein
+    - Apni online presence ko manage karein aur respectful rahein
+    - Dusron ke baare mein galat information failayein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Public charging stations use karte samay kya risk hota hai?
+    options:
+    - Phone ki battery jaldi charge hoti hai
+    - Data theft (juice jacking) ka risk
+    - Phone ka display kharab ho jata hai
+    - Network issue hota hai
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapka email account hack ho jaye, to pehla kadam kya hona chahiye?
+    options:
+    - Sabhi emails delete kar dein
+    - Password turant badlein aur security check karein
+    - Naya email account banayein
+    - Computer ko format kar dein
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online 'giveaway' ya 'contest' scams mein scammers aksar kya mangte
+      hain?
+    options:
+    - Apka naam aur photo
+    - Koi personal details nahi
+    - Sharing contest link with friends
+    - Registration fees ya personal details
+    correctAnswerIndex: 3
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Data breach hone par kya karna chahiye?
+    options:
+    - Apne saare accounts delete kar dein
+    - Ignore karein
+    - Affected services ke passwords badlein aur alerts set karein
+    - Nayi device kharid lein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Remote access scam mein scammers kya karte hain?
+    options:
+    - Apko free software dete hain
+    - Apke computer ka remote control le lete hain
+    - Aapko computer repair karna sikhate hain
+    - Apki internet speed badhate hain
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Children's online safety ke liye parental controls ka kya fayda hai?
+    options:
+    - Baccho ko zyada internet access milta hai
+    - Internet speed badhati hai
+    - Content filter aur screen time management me help karta hai
+    - Games free ho jate hain
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar koi aapko cryptocurrency investment ka bahut uncha return offer
+      kare, to kya karein?
+    options:
+    - Turant invest kar dein
+    - Apne doston ko batayein
+    - Offer ki validity check karein aur scam ho sakta hai
+    - Zyada loan le kar invest karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Strong password banate samay kya dhyan rakhna chahiye?
+    options:
+    - Chhota aur aasan ho
+    - Apka naam ya janmtithi ho
+    - Numbers, symbols aur capital/small letters ka combination
+    - Sirf numbers ho
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Vishing (Voice Phishing) kya hai?
+    options:
+    - Email ke through fraud
+    - SMS ke through fraud
+    - Phone call ke through personal info churana
+    - Video call ke through fraud
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne digital footprint ko manage kaise karein?
+    options:
+    - Sabhi online activities ko record karein
+    - Publicly apni saari information share karein
+    - Privacy settings use karein aur soch samajh kar share karein
+    - Purani photos delete kar dein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online romance scams mein scammers kya karte hain?
+    options:
+    - True love find karte hain
+    - Financial help mangte hain aur kabhi milte nahi
+    - Gift bhejte hain
+    - Dates plan karte hain
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Ek phishing email ki common nishani kya hai?
+    options:
+    - Perfectly formatted design
+    - Urgent tone, spelling mistakes, unknown sender
+    - Personalised greeting
+    - Official looking sender address
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Browser extensions install karte samay kya saavdhani baratni chahiye?
+    options:
+    - Kisi bhi extension ko install karein
+    - Sirf trusted source se aur permissions check karein
+    - Free wale hi install karein
+    - Bahut saare install karein
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Mobile phone mein app permissions check karna kyu zaroori hai?
+    options:
+    - Apps ka colour badalne ke liye
+    - Apps ko zyada features dene ke liye
+    - Personal data access ko control karne ke liye
+    - Phone ki speed badhane ke liye
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aap online kisi fraud ka shikar ho jayein, to sabse pehle kya
+      karein?
+    options:
+    - Apne doston ko batayein
+    - Social media par post karein
+    - Cybercrime helpline 1930 par call karein aur cybercrime.gov.in par report karein
+    - Screenshot le kar phone band kar dein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online fraud se bachne ke liye sabse accha tareeka kya hai?
+    options:
+    - Apni personal details sabko batayein
+    - Anjaan links par click karein
+    - Hamesha alert rahein aur jaankari verify karein
+    - Public Wi-Fi par banking karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 1
+    isHintAllowed: 0
+    timeLimit: 25
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Kisi bhi app ko download karne se pehle kya check karna chahiye?
+    options:
+    - App ka color
+    - App ka icon
+    - Developer ka naam aur reviews
+    - App ka size
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapko koi suspicious email mile, to kya karein?
+    options:
+    - Email ko forward karein
+    - Turant reply karein
+    - Email ko delete karein aur report karein
+    - Link par click karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online shopping karte samay credit card details kahan enter nahi karni
+      chahiye?
+    options:
+    - Public computers par ya unsecured websites par
+    - Trusted e-commerce websites par
+    - Secure payment gateways par
+    - Apne personal device par
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne social media accounts ko secure kaise rakhein?
+    options:
+    - Apni location hamesha share karein
+    - Sabko friend request bhejein
+    - Strong passwords aur 2FA use karein
+    - Privacy settings ko public rakhein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Kaun sa cybercrime ka ek udaharan hai?
+    options:
+    - Email bhejna
+    - Video dekhna
+    - Online game khelna
+    - Phishing
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapko koi anjaan number se video call aaye, to kya karein?
+    options:
+    - Screenshot lein
+    - Baat karein
+    - Turant uthayein
+    - Block karein aur report karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Work-from-home scams mein kya lalach diya jata hai?
+    options:
+    - Office space
+    - Free laptop
+    - Bahut kam kaam aur zyada paise
+    - Travel allowance
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Fake news aur misinformation ko kaise pehchanein?
+    options:
+    - Source check karein aur cross-verify karein
+    - Jo man kare maan lein
+    - Sirf headline padhein
+    - Social media par share kar dein
+    correctAnswerIndex: 0
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne data ko online surakshit rakhne ke liye kya karein?
+    options:
+    - Data ko public kar dein
+    - Sab kuch cloud par save karein
+    - Regular data backup lein
+    - Kisi bhi website par upload kar dein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Mobile banking apps use karte samay kya zaroori hai?
+    options:
+    - Rooted phone par use karein
+    - Public Wi-Fi par use karein
+    - Official app store se download karein aur secure network par use karein
+    - App ko update na karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapko koi anjaan OTP ya PIN mange, to kya karein?
+    options:
+    - Dost se puch kar dein
+    - Turant de dein
+    - Kabhi na dein
+    - Soch kar dein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Cyberbullying se bachne ke liye kya karein?
+    options:
+    - Bully ko reply karein
+    - Ignore karein
+    - Online fight karein
+    - Evidence collect karein aur report karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne computer ko virus se kaise bachayein?
+    options:
+    - Internet band kar dein
+    - Antivirus software install karein aur update rakhein
+    - Koi bhi software install na karein
+    - Computer ko hamesha on rakhein
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online surveys ya quizzes mein personal details share karne ka kya
+      risk hai?
+    options:
+    - Entertainment milta hai
+    - Free gifts milte hain
+    - Data theft ya identity theft
+    - Time waste hota hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Email spoofing kya hai?
+    options:
+    - Email ko encrypt karna
+    - Email ka color badalna
+    - Fake sender address se email bhejna
+    - Email ko delete karna
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne Wi-Fi network ko secure kaise rakhein?
+    options:
+    - Default password rakhein
+    - Wi-Fi ko open rakhein
+    - Password share karein
+    - Strong password aur encryption (WPA2/WPA3) use karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: ATM card fraud se bachne ke liye kya karein?
+    options:
+    - Apna card kisi ko bhi de dein
+    - ATM par anjaan logo se baat karein
+    - Card details kisi ko bhi dein
+    - ATM machine par skimmer check karein aur pin chupakar enter karein
+    correctAnswerIndex: 3
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online job scams mein kya hota hai?
+    options:
+    - Turant joining dete hain
+    - Interview ke liye paise mangte hain ya personal details
+    - Asli job offer milte hain
+    - Free training dete hain
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Ransomware attack se bachne ke liye kya karein?
+    options:
+    - Internet se disconnect kar dein
+    - Data ko encrypt kar dein
+    - Antivirus aur regular data backup rakhein
+    - Backup na lein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Apne mobile phone ko secure kaise rakhein?
+    options:
+    - Public Wi-Fi par sab kuch karein
+    - Screen lock na lagayein
+    - Strong screen lock, regular updates aur trusted apps use karein
+    - Anjaan apps install karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Online impersonation mein kya hota hai?
+    options:
+    - Koi aur aapki jagah kaam karta hai
+    - Koi aur aapka naam use karta hai
+    - Koi aur aapka roop le kar fraud karta hai
+    - Koi aur aapki photos use karta hai
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: SMS phishing (Smishing) kya hai?
+    options:
+    - Video call ke through fraud
+    - Phone call ke through fraud
+    - SMS ke through fake links ya messages bhejna
+    - Email ke through fraud
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Agar aapko koi unknown software install karne ko kahe, to kya karein?
+    options:
+    - Turant install karein
+    - Ignore karein
+    - Verify karein aur sirf trusted sources se install karein
+    - Soch kar install karein
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2
+  - question: Cybersecurity ke liye sabse important cheez kya hai?
+    options:
+    - Fast internet
+    - Bahut saare apps
+    - Jaagrukta aur saavdhani
+    - Naya phone
+    correctAnswerIndex: 2
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 20
+    characterData:
+      characterName: ?????
+      characterInfo: ?????
+      characterGender: 2

@@ -10,6 +10,8 @@ public class RemoteConfigLoadManager : MonoBehaviour
     [Header("Remote Config Key")]
     public string DefaultUnlockedLevelKey = "LevelsToBeUnlocked";
 
+    public string TournamentAdminsKey = "TournamentHostsId";
+
     
     //public List<int> unlockedLevels;
     //public struct userAttribute { }
@@ -50,8 +52,26 @@ public class RemoteConfigLoadManager : MonoBehaviour
 
         return Task.FromResult(new List<int>()); // return empty if not found
     }
+
+    public Task<List<string>> GetTournamentAdmins()
+    {
+        string result = RemoteConfigService.Instance.appConfig.GetJson(TournamentAdminsKey);
+        Debug.Log(result);
+        if (!string.IsNullOrEmpty(result))
+        {
+            TorunamentAdminsConfigWrapper wrapper = JsonUtility.FromJson<TorunamentAdminsConfigWrapper>(result);
+            return Task.FromResult(wrapper.TournamentHostIDs);
+        }
+        Debug.Log("EmptyList");
+        return Task.FromResult(new List<string>());
+    }
 }
 
+[Serializable]
+public class TorunamentAdminsConfigWrapper
+{
+    public List<string> TournamentHostIDs = new List<string>();
+}
 [Serializable]
 public class LevelsToBeUnlockedConfigWrapper
 {

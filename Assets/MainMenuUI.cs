@@ -19,7 +19,7 @@ public class MainMenuUI : MonoBehaviour
    public GameObject StoryModeButton;
    public GameObject MultiplayerButton;
    public Color LockColor;
-   
+   public TournamentManager tournamentManager;
    [Header("Scenes")]
    public string practiceSceneName = "PracticeScene";
    public string passNPlaySceneName = "PassNPlayScene";
@@ -34,6 +34,7 @@ public class MainMenuUI : MonoBehaviour
    
    [Header("Profile References")]
    public TMP_InputField username;
+   public TMP_Text placeholderUsername;
    public TMP_Text id;
    public Button updateNameButton;
    [Header("HyperLinks")] 
@@ -45,6 +46,7 @@ public class MainMenuUI : MonoBehaviour
    public void Start()
    {
       username.text = AuthExtensions.GetCachedPlayerName();
+      placeholderUsername.text = AuthExtensions.GetCachedPlayerName();
       id.text = AuthExtensions.GetPlayerID();
 
       if (IsInternetReachable())
@@ -52,6 +54,10 @@ public class MainMenuUI : MonoBehaviour
          LockModes(StoryModeButton);
          LockModes(MultiplayerButton);
       }
+   }
+   public void OnCreateTournamentMenuOpened()
+   {
+      tournamentManager.GenerateQuizPackButtons(availableQuizPacks,quizPackButtonPrefab,quizPackButtonParent);
    }
    public void OnPracticeClicked()
    {
@@ -101,7 +107,7 @@ public class MainMenuUI : MonoBehaviour
       foreach (var pack in availableQuizPacks)
       {
          GameObject btnObj = Instantiate(quizPackButtonPrefab, quizPackButtonParent);
-         btnObj.GetComponentInChildren<TMPro.TMP_Text>().text = pack.name;
+         btnObj.GetComponentInChildren<TMP_Text>().text = pack.name;
 
          Button btn = btnObj.GetComponent<Button>();
          btn.onClick.AddListener(() =>

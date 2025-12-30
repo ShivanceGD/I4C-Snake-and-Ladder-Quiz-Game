@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using TMPro;
+using Unity.Netcode;
+using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
@@ -18,11 +21,15 @@ public class GameModeManager : MonoBehaviour
 
        [Header("Unlock System")] public Dictionary<int, int> CachedLevelStarsData;
        public List<int> LevelsToBeUnlocked;
+       public List<string> TournamentAdminsUID;
 
        [Header("Game Mode Buttons")] [SerializeField]
        private GameObject StoryMode;
 
        [SerializeField] private GameObject Multiplayer;
+
+       public Button Tournament;
+       public Button Test;
 
        public bool IsPrivateRoom;
 
@@ -153,6 +160,17 @@ public class GameModeManager : MonoBehaviour
                      }
 
               }
+       
+[ContextMenu("Create Tournament Button")]
+       public async void SetTournamentAdmins()
+       {
+              TournamentAdminsUID = await RemoteConfigLoadManager.Instance.GetTournamentAdmins();
+              if (TournamentAdminsUID.Contains(AuthenticationService.Instance.PlayerId))
+              {
+                     Tournament.interactable = true;
+                     Tournament.onClick.AddListener(()=>Debug.Log("Create Button Clicked"));
+              }
+       }
 
               [ContextMenu("SaveGameData")]
               public void SaveGameData()

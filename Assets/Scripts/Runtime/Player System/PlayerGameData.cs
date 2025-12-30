@@ -9,6 +9,12 @@ public class PlayerGameData
     public PlayerType PlayerType;
     public string Name;
     public Color Color;
+    public bool HasShield { get; private set; }
+
+    public void SetShield(bool value)
+    {
+        HasShield = value;
+    }
     public PlayerGameStateData PlayerCurrentGameStateData;
 
     public PlayerGameData() { PlayerCurrentGameStateData = new PlayerGameStateData(); }
