@@ -15,7 +15,7 @@ MonoBehaviour:
   LevelNumber: 1
   LevelName: CSAM
   IsUnlockable: 1
-  TotalAvailableMoves: 30
+  TotalAvailableMoves: 45
   GameMode: 2
   LevelStars: 0
   StarsToUnlockLevel: 0

@@ -15,10 +15,10 @@ MonoBehaviour:
   LevelNumber: 2
   LevelName: CSAM
   IsUnlockable: 1
-  TotalAvailableMoves: 30
+  TotalAvailableMoves: 40
   GameMode: 2
   LevelStars: 0
-  StarsToUnlockLevel: 3
+  StarsToUnlockLevel: 2
   LevelQuizSCO: {fileID: 11400000, guid: ac3b1893b7c18ce49bbd5a62317701e2, type: 2}
   NoHintDifficulty: 00000000
   OptionsToRemoveOnHint: 1

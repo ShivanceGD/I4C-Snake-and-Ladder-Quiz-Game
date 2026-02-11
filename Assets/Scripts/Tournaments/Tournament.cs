@@ -1,29 +1,73 @@
 using System;
+using System.Collections.Generic;
+using UnityEngine;
 
-[System.Serializable]
-public class Tournament
+[Serializable]
+public class TournamentData
 {
-    //public string tournamentId;
-    public string tournamentname;
-    public string leaderboardId;
-    public string HostedBy;
+    public string tournamentId;
+    public string tournamentName;
+    public string startTimeString;
+    public string endTimeString;
     public bool isPrivate;
-    public string AccessKey; // Only Required if The Tournament is Private
-    public QuizPackSO quizPack;
-    public int NumberOfTimesPlayerCanPlay;
-    public DateTime StartTime;
-    public DateTime EndTime;
-
-    public Tournament(string name, string leaderboardis, string hostName, bool isprivate = false, string accessKey = null, int numberOfTimesPlayerCanPlay = 1, DateTime? startTime = null, DateTime? endTime = null, QuizPackSO quizpack = null)
+    public string password;
+    public string creatorUID;
+    public int maxPlayers;
+    public TournamentStatus status;
+    public List<string> participantUIDs = new List<string>();
+    public List<string> playersWhoPlayed = new List<string>();
+    
+    // LOCAL LEADERBOARD - Saved with tournament
+    public List<CustomLeaderboardEntry> localLeaderboard = new List<CustomLeaderboardEntry>();
+    
+    public string selectedQuizPackName = "";
+    
+    // Helper properties for DateTime access
+    public DateTime startTime
     {
-        tournamentname = name;
-        leaderboardId = leaderboardis;
-        HostedBy = hostName;
-        isPrivate = isprivate;
-        AccessKey = accessKey;
-        NumberOfTimesPlayerCanPlay = numberOfTimesPlayerCanPlay;
-        StartTime = startTime ?? DateTime.Now.AddMinutes(2);
-        EndTime = endTime ?? StartTime.AddMinutes(30);
-        quizPack = quizpack;
+        get => string.IsNullOrEmpty(startTimeString) ? DateTime.UtcNow : DateTime.Parse(startTimeString);
+        set => startTimeString = value.ToString("o");
+    }
+
+    public DateTime endTime
+    {
+        get => string.IsNullOrEmpty(endTimeString) ? DateTime.UtcNow.AddHours(1) : DateTime.Parse(endTimeString);
+        set => endTimeString = value.ToString("o");
+    }
+
+    public TournamentData()
+    {
+        tournamentId = Guid.NewGuid().ToString();
+        status = TournamentStatus.Upcoming;
+        playersWhoPlayed = new List<string>();
+        localLeaderboard = new List<CustomLeaderboardEntry>();
+    }
+}
+
+[Serializable]
+public enum TournamentStatus
+{
+    Upcoming,    // 0
+    Active,      // 1
+    Ended        // 2
+}
+
+// Local Leaderboard Entry
+[Serializable]
+public class CustomLeaderboardEntry
+{
+    public string playerId;
+    public string playerName;
+    public int score;
+    public string timestamp;
+    public int rank; // Changed to lowercase to match C# naming conventions
+    
+    public CustomLeaderboardEntry(string id, string name, int scoreValue)
+    {
+        playerId = id;
+        playerName = name;
+        score = scoreValue;
+        timestamp = DateTime.UtcNow.ToString("o");
+        rank = 0; // Will be set when leaderboard is sorted
     }
 }
