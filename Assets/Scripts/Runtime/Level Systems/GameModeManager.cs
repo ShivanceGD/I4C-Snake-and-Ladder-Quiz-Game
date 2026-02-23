@@ -15,7 +15,8 @@ public class GameModeManager : MonoBehaviour
        public int NumberOfPlayersToBeSpawned = 1;
        public QuizPackSO QuizPack;
        public LevelDataSO level;
-
+       public bool IsTournamentMode { get; set; } = false;
+       public string CurrentTournamentId { get; set; } = ""; // NEW: Store tournament ID
        [Header("All Levels (assign in inspector)")]
        public List<LevelDataSO> AllLevels;
 
@@ -44,7 +45,11 @@ public class GameModeManager : MonoBehaviour
               Instance = this;
               DontDestroyOnLoad(gameObject);
        }
-
+// Call this to reset after tournament game
+       public void ResetTournamentMode()
+       {
+              IsTournamentMode = false;
+       }
        private void Start()
        {
               MainMenuUI mainMenuUI = GameObject.FindFirstObjectByType<MainMenuUI>();

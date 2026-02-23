@@ -58,6 +58,12 @@ public class Leaderboard : MonoBehaviour
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
         
     }
+    public async void AddScore(int score,string leaderBoardID)
+    {
+        var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderBoardID, score);
+        Debug.Log(JsonConvert.SerializeObject(scoreResponse));
+        
+    }
 
     /*public async Task<LeaderboardEntry> GetScores()
     {
@@ -71,6 +77,13 @@ public class Leaderboard : MonoBehaviour
         Offset = offset;
         Limit = limit;
         var Scores=await LeaderboardsService.Instance.GetScoresAsync(LeaderboardId, new GetScoresOptions{Offset = Offset, Limit = Limit});
+        //Debug.Log(JsonConvert.SerializeObject(scoresResponse));
+        return Scores;
+    }public async Task<LeaderboardScoresPage> GetPaginatedScores(string LeaderboardId)
+    {
+        Offset = offset;
+        Limit = limit;
+        var Scores=await LeaderboardsService.Instance.GetScoresAsync(LeaderboardId,new GetScoresOptions{Offset = Offset, Limit = Limit});
         //Debug.Log(JsonConvert.SerializeObject(scoresResponse));
         return Scores;
     }
@@ -101,6 +114,32 @@ public class Leaderboard : MonoBehaviour
             }
         }
     }
+    /*public async Task<LeaderboardEntry> GetPlayerScore(string leaderboardID)
+    {
+        
+        try
+        {
+            var playerScore = await LeaderboardsService.Instance.GetPlayerScoreAsync(leaderboardID);
+            Debug.Log($"Player ID: {playerScore.PlayerId},Player Name:{playerScore.PlayerName}, Score: {playerScore.Score}");
+            return playerScore;
+        }
+        catch (LeaderboardsException ex)
+        {
+            if (ex.Reason == LeaderboardsExceptionReason.EntryNotFound)
+            {
+                // Optionally set default score
+                Debug.Log("Player has no score yet. Setting default score = 0");
+                await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderboardID, 0);
+                var playerScore = await LeaderboardsService.Instance.GetPlayerScoreAsync(leaderboardID);
+                return playerScore;
+            }
+            else
+            {
+                Debug.LogError($"Leaderboard error: {ex.Message}");
+                return null;
+            }
+        }
+    }*/
     /*public async void GetsPlayerScore()
     {
         
