@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class OfflineFlowManager : MonoBehaviour, IFlowManager
+public class OfflineFlowManager : MonoBehaviour,IFlowManager
 {
     [Header("References (assign in inspector)")]
     public LevelDataSO CurrentLevelData;
@@ -39,8 +39,6 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     [Header("Settings")]
     public int TotalPlayersToSpawn = 1;
 
-    [SerializeField] private float cpuDifficulty = 0.7f;
-
     [Header("Player Colors (assigned in order)")]
     public Color[] PlayerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
 
@@ -50,7 +48,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     [SerializeField] private TMP_Text InfoText;
     [SerializeField] private List<string> LadderTexts;
     [SerializeField] private List<string> SnakeTexts;
-
+    
     [Header("GameOver Panel (Only Story Mode)")]
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private List<GameObject> StarsInPanel;
@@ -58,18 +56,14 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     [SerializeField] private Button RetryButton;
     [SerializeField] private Button MenuButton;
 
-    // Tournament state
-    private bool isTournamentMode = false;
-    private string currentTournamentId = "";
-
     // store HUDs per player (not in PlayerData, just cached here)
     private Dictionary<Player, GameObject> playerHuds = new();
     private Player CurrentPlayer;
-
+    //[SerializeField] private int MovesTaken;
+    
     private async void Start()
     {
         GetLevelData();
-        CheckTournamentMode(); // Check if tournament mode
         await BootstrapLevel();
         BootStrapAllPlayers();
     }
@@ -78,18 +72,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     {
         TotalPlayersToSpawn = GameModeManager.Instance.NumberOfPlayersToBeSpawned;
         CurrentQuizPack = GameModeManager.Instance.QuizPack;
-        if (GameModeManager.Instance.level != null) CurrentLevelData = GameModeManager.Instance.level;
-    }
-
-    // Check if playing in tournament mode
-    private void CheckTournamentMode()
-    {
-        if (GameModeManager.Instance != null && GameModeManager.Instance.IsTournamentMode)
-        {
-            isTournamentMode = true;
-            currentTournamentId = GameModeManager.Instance.CurrentTournamentId; // Get from GameModeManager
-            Debug.Log($"[OfflineFlowManager] Tournament Mode Active - ID: {currentTournamentId}");
-        }
+        if(GameModeManager.Instance.level != null) CurrentLevelData = GameModeManager.Instance.level;
     }
 
     public void StartTurn()
@@ -111,17 +94,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
             .GetComponent<Button>().onClick.AddListener(StartTurn);
         GameObject.FindGameObjectWithTag("StartGameCloseButton").SetActive(false);
 
-        if (CurrentLevelData.GameMode == GameMode.StoryMode) Analytics_Manager.Instance.LogEvent("StoryModeGameStarted");
-
-        // Log tournament game start
-        if (isTournamentMode)
-        {
-            if (Application.internetReachability != NetworkReachability.NotReachable)
-            {
-                Analytics_Manager.Instance.LogEvent("TournamentGameStarted");
-            }
-        }
-
+        if(CurrentLevelData.GameMode == GameMode.StoryMode) Analytics_Manager.Instance.LogEvent("StoryModeGameStarted");
         // 1) Board
         if (CurrentLevelData.Board?.BoardPrefab != null)
         {
@@ -154,8 +127,8 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
         // spawn human players
         SpawnHumanPlayerOffline(paletteLen);
 
-        // spawn CPU if < 4 (but not in tournament mode - tournament is always single player)
-        if (TotalPlayersToSpawn < 4 || isTournamentMode)
+        // spawn CPU if < 4
+        if (TotalPlayersToSpawn < 4)
         {
             SpawnCPUPlayerOffline(paletteLen);
         }
@@ -222,13 +195,13 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
 
             // set player name text
             hud.transform.GetComponentInChildren<TMP_Text>().text = i.ToString();
-            if (CurrentLevelData.GameMode == GameMode.StoryMode || isTournamentMode)
+            if (CurrentLevelData.GameMode == GameMode.StoryMode) 
                 hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.IsCpu ? "CPU" : "You";
-
-            else
+            
+            else 
                 hud.transform.GetChild(3).GetComponent<TMP_Text>().text = p.IsCpu ? "CPU" : p.PlayerName;
             // set player color if UI has Image
-
+            
             hud.transform.GetChild(2).GetComponentInChildren<Image>().color = kv.Value.Color;
 
             // ensure TurnIndicator starts off
@@ -295,7 +268,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
         bool canUseHint = q != null && q.isHintAllowed &&
                           AllPlayers.TryGetValue(p, out var pd) &&
                           !pd.PlayerCurrentGameStateData.IsFinished;
-
+    
         quizManager.ShowQuizForPlayer(q, p, canUseHint, () => { }, (qr) =>
         {
             movementManager.ProcessPostQuizMovement(
@@ -315,13 +288,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
                     if (CheckForGameEnd())
                     {
                         ShowLeaderboard();
-
-                        // Tournament Mode: Calculate and submit score
-                        if (isTournamentMode)
-                        {
-                            HandleTournamentGameEnd(p);
-                        }
-                        else if (CurrentLevelData.GameMode == GameMode.StoryMode)
+                        if (CurrentLevelData.GameMode == GameMode.StoryMode)
                         {
                             Analytics_Manager.Instance.LogEvent("StoryModeLevelCompleted");
                             UpdateStarRating(p);
@@ -352,7 +319,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     private IEnumerator CpuSequence(Player cpu)
     {
         yield return new WaitForSeconds(0.5f);
-        bool correct = Random.value > cpuDifficulty;
+        bool correct = Random.value > 0.2f;
         float t = Random.Range(2f, 8f);
         QuestionsDifficulty d = QuestionsDifficulty.Easy;
 
@@ -397,7 +364,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
         {
             Analytics_Manager.Instance.LogEvent(quizResult.IsCorrect ? "CorrectAnswerGiven" : "InCorrectAnswerGiven");
         }
-
+        //test
         if (movementResult.FinalTileIndex >= 0)
         {
             data.UpdatePlayersDataIndexData(movementResult.FinalTileIndex);
@@ -411,75 +378,6 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     {
         int notFinished = AllPlayers.Values.Count(x => !x.PlayerCurrentGameStateData.IsFinished);
         return notFinished <= 1;
-    }
-
-    // NEW: Handle tournament game end
-    private async void HandleTournamentGameEnd(Player winner)
-    {
-        if (string.IsNullOrEmpty(currentTournamentId))
-        {
-            Debug.LogError("[OfflineFlowManager] Tournament ID is missing!");
-            return;
-        }
-
-        // Calculate tournament score
-        int tournamentScore = CalculateTournamentScore(winner);
-        Debug.Log($"[OfflineFlowManager] Tournament Score: {tournamentScore}");
-
-        // Log analytics
-        if (Application.internetReachability != NetworkReachability.NotReachable)
-        {
-            Analytics_Manager.Instance.LogEvent("TournamentGameCompleted");
-        }
-
-        // Submit score to tournament
-        bool success = await TournamentManager.Instance.SubmitScore(currentTournamentId, tournamentScore);
-
-        if (success)
-        {
-            Debug.Log("[OfflineFlowManager] Tournament score submitted successfully!");
-        }
-        else
-        {
-            Debug.LogError("[OfflineFlowManager] Failed to submit tournament score!");
-        }
-
-        // Reset tournament mode in GameModeManager
-        GameModeManager.Instance.ResetTournamentMode();
-
-        // Update leaderboard exit button to show tournament results
-        Button ExitButton = LeaderBoard.transform.Find("Exit_Button").GetComponent<Button>();
-        ExitButton.onClick.RemoveAllListeners();
-        ExitButton.onClick.AddListener(() =>
-        {
-            // Return to main menu
-            SwitchScene("New_Menu");
-        });
-    }
-
-    // NEW: Calculate tournament score
-    private int CalculateTournamentScore(Player p)
-    {
-        if (!AllPlayers.TryGetValue(p, out var data))
-        {
-            return 0;
-        }
-
-        // Tournament scoring formula (customize as needed):
-        // Base score = (Correct Answers * 100) + (Final Position * 50) - (Moves Taken * 2)
-        
-        int correctAnswers = data.PlayerCurrentGameStateData.TotalCorrectAnswered;
-        int finalPosition = data.PlayerCurrentGameStateData.CurrentIndex;
-        int movesTaken = data.PlayerCurrentGameStateData.MovesCounter;
-
-        int score = (correctAnswers * 100) + (finalPosition * 50) - (movesTaken * 2);
-        
-        // Ensure score is not negative
-        score = Mathf.Max(0, score);
-
-        Debug.Log($"[Tournament Score Calculation] Correct: {correctAnswers}, Position: {finalPosition}, Moves: {movesTaken} = Score: {score}");
-
-        return score;
     }
 
     private void ShowLeaderboard()
@@ -499,15 +397,9 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
             SetSummaryData(kv);
             rank++;
         }
-
-        if (isTournamentMode)
+        if (CurrentLevelData.GameMode == GameMode.StoryMode)
         {
-            // Tournament mode handled in HandleTournamentGameEnd
-            return;
-        }
-        else if (CurrentLevelData.GameMode == GameMode.StoryMode)
-        {
-            ExitButton.onClick.AddListener(() =>
+            ExitButton.onClick.AddListener(()=>
             {
                 LeaderBoard.SetActive(false);
                 ShowGameOverPanel();
@@ -520,10 +412,10 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
         }
         else
         {
-            ExitButton.onClick.AddListener(() => SwitchScene("New_Menu"));
+            ExitButton.onClick.AddListener(()=>SwitchScene("New_Menu"));
         }
     }
-
+    
     private void SetLeaderBoardRankings(int rank, KeyValuePair<Player, PlayerGameData> kv)
     {
         GameObject ranks = Instantiate(RankPrefab, RankingTransform);
@@ -551,9 +443,10 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     {
         GameOverPanel.SetActive(true);
     }
-
     private void SetGameOverPanel(bool playerWon)
     {
+        //GameOverPanel.SetActive(true);
+
         if (playerWon)
         {
             GameOverText.text = "<color=blue>Level Completed!</color>   ";
@@ -574,8 +467,8 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
         else
         {
             GameOverText.text = "<color=red>Level Failed!</color>";
-
-
+            
+        
             // Hide stars on failure
             foreach (var star in StarsInPanel)
                 star.SetActive(false);
@@ -588,16 +481,17 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
             RetryButton.onClick.AddListener(() =>
             {
                 LoadingSceneManager.Instance.LoadofflineScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+                //SwitchScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
             });
 
             MenuButton.onClick.RemoveAllListeners();
             MenuButton.onClick.AddListener(() =>
             {
-                SwitchScene("MainMenu");
+                SwitchScene("MainMenu"); // replace with your menu scene
             });
         }
     }
-
+    
     public void SwitchScene(string SceneName)
     {
         LoadingSceneManager.Instance.LoadofflineScene(SceneName);
@@ -608,24 +502,22 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     {
         Time.timeScale = f;
     }
-
     /// <summary>
     /// Updates HUD with a combined string: Player Name/Your Turn + steps + snake/ladder info
     /// </summary>
-    public void UpdateHUD(int stepsMoved = 0, bool snake = false, bool ladder = false)
+    public void UpdateHUD( int stepsMoved = 0, bool snake = false, bool ladder = false)
     {
         string baseText = $"{CurrentPlayer.PlayerName}'s Turn ";
 
         // Add details
         string details = "";
         if (stepsMoved > 0) details += $"\n Moved {stepsMoved} steps.";
-        if (ladder) details += $"\n <color=green>{LadderTexts[Random.Range(0, LadderTexts.Count)]}</color>";
-        if (snake) details += $"\n <color=red>{SnakeTexts[Random.Range(0, SnakeTexts.Count)]}</color>";
+        if (ladder) details += $"\n <color=green>{LadderTexts[Random.Range(0,LadderTexts.Count)]}</color>";
+        if (snake) details += $"\n <color=red>{SnakeTexts[Random.Range(0,SnakeTexts.Count)]}</color>";
 
         // Final HUD text
-        InfoText.text = baseText + details;
+        InfoText.text = baseText + details; 
     }
-
     private int GetStarRating(int movesTaken, int maxMoves, int maxStars)
     {
         if (movesTaken <= 0)

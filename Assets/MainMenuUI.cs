@@ -23,7 +23,6 @@ public class MainMenuUI : MonoBehaviour
    [Header("Scenes")]
    public string practiceSceneName = "PracticeScene";
    public string passNPlaySceneName = "PassNPlayScene";
-   public string TournamentScene;
 
    private GameModeUIManager currentMode = GameModeUIManager.None;
 
@@ -44,12 +43,6 @@ public class MainMenuUI : MonoBehaviour
    [SerializeField]private string FaceBookHyperLink;
    [SerializeField]private string CyberCrimePortalHyperLink;
 
-   
-   
-
-   private string currentSelectingTournamentId;
-   private string currentPlayingTournamentId;
-   
    public void Start()
    {
       username.text = AuthExtensions.GetCachedPlayerName();
@@ -61,11 +54,10 @@ public class MainMenuUI : MonoBehaviour
          LockModes(StoryModeButton);
          LockModes(MultiplayerButton);
       }
-     
    }
    public void OnCreateTournamentMenuOpened()
    {
-      //tournamentManager.GenerateQuizPackButtons(availableQuizPacks,quizPackButtonPrefab,quizPackButtonParent);
+      tournamentManager.GenerateQuizPackButtons(availableQuizPacks,quizPackButtonPrefab,quizPackButtonParent);
    }
    public void OnPracticeClicked()
    {
@@ -73,151 +65,7 @@ public class MainMenuUI : MonoBehaviour
       GameModeManager.Instance.NumberOfPlayersToBeSpawned = 1;
       ShowQuizPackButtons();
    }
-// Called by TournamentUI when admin clicks "Select Quiz Pack"
-public void ShowTournamentQuizPackSelection(string tournamentId)
-{
-    if (!TournamentManager.Instance.IsAdmin())
-    {
-        Debug.LogError("Only admins can select quiz packs!");
-        return;
-    }
 
-    var tournament = TournamentManager.Instance.GetTournament(tournamentId);
-    
-    if (tournament == null)
-    {
-        Debug.LogError("Tournament not found!");
-        return;
-    }
-
-    if (tournament.status != TournamentStatus.Upcoming)
-    {
-        Debug.LogError("Cannot change quiz pack for active/ended tournament!");
-        return;
-    }
-
-    currentSelectingTournamentId = tournamentId;
-    //tournamentQuizPackPanelTitle.text = $"Select Quiz Pack for: {tournament.tournamentName}";
-    
-    GenerateTournamentQuizPackButtons();
-    ChooseQuizPanel.SetActive(true);
-}
-
-private void GenerateTournamentQuizPackButtons()
-{
-    // Clear old buttons
-    foreach (Transform child in quizPackButtonParent)
-        Destroy(child.gameObject);
-
-    // Spawn new quiz pack buttons
-    foreach (var pack in availableQuizPacks)
-    {
-        GameObject btnObj = Instantiate(quizPackButtonPrefab, quizPackButtonParent);
-        btnObj.GetComponentInChildren<TMP_Text>().text = pack.name;
-
-        Button btn = btnObj.GetComponent<Button>();
-        btn.onClick.AddListener(async () =>
-        {
-            bool success = await TournamentManager.Instance.SetTournamentQuizPack(
-                currentSelectingTournamentId, 
-                pack.name
-            );
-
-            if (success)
-            {
-                ChooseQuizPanel.SetActive(false);
-                Debug.Log($"Quiz pack '{pack.name}' selected for tournament");
-            }
-        });
-    }
-}
-
-// Update StartTournamentGame method in MainMenuUI
-
-public void StartTournamentGame(string tournamentId)
-{
-    if (!TournamentManager.Instance.CanPlayerPlayTournament(tournamentId))
-    {
-        Debug.LogError("Cannot start tournament game!");
-        return;
-    }
-
-    var tournament = TournamentManager.Instance.GetTournament(tournamentId);
-    
-    if (tournament == null)
-    {
-        Debug.LogError("Tournament not found!");
-        return;
-    }
-
-    // Find the quiz pack by name
-    QuizPackSO selectedQuizPack = null;
-    foreach (var pack in availableQuizPacks)
-    {
-        if (pack.name == tournament.selectedQuizPackName)
-        {
-            selectedQuizPack = pack;
-            break;
-        }
-    }
-
-    if (selectedQuizPack == null)
-    {
-        Debug.LogError($"Quiz pack '{tournament.selectedQuizPackName}' not found!");
-        return;
-    }
-
-    // Set up game mode manager
-    GameModeManager.Instance.NumberOfPlayersToBeSpawned = 1;
-    GameModeManager.Instance.QuizPack = selectedQuizPack;
-    GameModeManager.Instance.IsTournamentMode = true;
-    GameModeManager.Instance.CurrentTournamentId = tournamentId; // STORE TOURNAMENT ID
-    
-    Debug.Log($"Starting tournament: {tournament.tournamentName}");
-    Debug.Log($"Tournament ID: {tournamentId}");
-    Debug.Log($"Quiz Pack: {tournament.selectedQuizPackName}");
-    
-    // Load tournament scene
-    LoadingSceneManager.Instance.LoadofflineScene(TournamentScene);
-}
-
-// Remove this method - no longer needed
-/*
-public string GetCurrentPlayingTournamentId()
-{
-    return currentPlayingTournamentId;
-}
-*/
-
-// Call this from your game scene when game ends
-public async void SubmitTournamentScore(int score)
-{
-    if (string.IsNullOrEmpty(currentPlayingTournamentId))
-    {
-        Debug.LogError("Not playing a tournament!");
-        return;
-    }
-
-    Debug.Log($"Submitting tournament score: {score}");
-    
-    bool success = await TournamentManager.Instance.SubmitScore(currentPlayingTournamentId, score);
-    
-    if (success)
-    {
-        Debug.Log("Tournament score submitted successfully!");
-    }
-    else
-    {
-        Debug.LogError("Failed to submit tournament score!");
-    }
-
-    currentPlayingTournamentId = "";
-}
-
-public string GetCurrentPlayingTournamentId()
-{
-    return currentPlayingTournamentId;
-}
    // Called when PassNPlay button is clicked
    public void OnPassNPlayClicked()
    {
@@ -283,7 +131,7 @@ public string GetCurrentPlayingTournamentId()
    public async void LeaderBoardSetUp()
    {
       var playerScore = await Leaderboard.Instance.GetPlayerScore();
-      LeaderboardItemSetUp(CurrentPlayerLeaderBoardItem,playerScore.Rank,(int)playerScore.Score,playerScore.PlayerName);
+      LeaderboardItemSetUp(CurrentPlayerLeaderBoardItem,playerScore.Rank+1,(int)playerScore.Score,playerScore.PlayerName);
       var Scores = await Leaderboard.Instance.GetPaginatedScores();
       foreach(var entry in Scores.Results)
       {

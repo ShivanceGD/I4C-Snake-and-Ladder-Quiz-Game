@@ -60,8 +60,7 @@ public class RemoteConfigLoadManager : MonoBehaviour
         if (!string.IsNullOrEmpty(result))
         {
             TorunamentAdminsConfigWrapper wrapper = JsonUtility.FromJson<TorunamentAdminsConfigWrapper>(result);
-            Debug.Log(wrapper.TournamentHostsId.Count);
-            return Task.FromResult(wrapper.TournamentHostsId);
+            return Task.FromResult(wrapper.TournamentHostIDs);
         }
         Debug.Log("EmptyList");
         return Task.FromResult(new List<string>());
@@ -71,7 +70,7 @@ public class RemoteConfigLoadManager : MonoBehaviour
 [Serializable]
 public class TorunamentAdminsConfigWrapper
 {
-    public List<string> TournamentHostsId = new List<string>();
+    public List<string> TournamentHostIDs = new List<string>();
 }
 [Serializable]
 public class LevelsToBeUnlockedConfigWrapper
