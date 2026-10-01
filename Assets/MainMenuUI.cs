@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +17,7 @@ public class MainMenuUI : MonoBehaviour
    public Transform quizPackButtonParent;    // Where quiz pack buttons will spawn
    public GameObject quizPackButtonPrefab;   // A button prefab with TMP_Text + Button
    public QuizPackSO[] availableQuizPacks;   // Assign in inspector
+   public OnlineQuizConfigSO onlineQuizConfig;
    public GameObject ChooseQuizPanel;
    public GameObject StoryModeButton;
    public GameObject MultiplayerButton;
@@ -49,9 +52,12 @@ public class MainMenuUI : MonoBehaviour
 
    private string currentSelectingTournamentId;
    private string currentPlayingTournamentId;
+   private OnlineQuizRepository onlineQuizRepository;
+   private CancellationTokenSource onlineQuizCts;
    
    public void Start()
    {
+      onlineQuizRepository = new OnlineQuizRepository(onlineQuizConfig, availableQuizPacks);
       username.text = AuthExtensions.GetCachedPlayerName();
       placeholderUsername.text = AuthExtensions.GetCachedPlayerName();
       id.text = AuthExtensions.GetPlayerID();
@@ -62,6 +68,11 @@ public class MainMenuUI : MonoBehaviour
          LockModes(MultiplayerButton);
       }
      
+   }
+
+   private void OnDestroy()
+   {
+      ResetOnlineQuizRequest();
    }
    public void OnCreateTournamentMenuOpened()
    {
@@ -105,31 +116,7 @@ public void ShowTournamentQuizPackSelection(string tournamentId)
 
 private void GenerateTournamentQuizPackButtons()
 {
-    // Clear old buttons
-    foreach (Transform child in quizPackButtonParent)
-        Destroy(child.gameObject);
-
-    // Spawn new quiz pack buttons
-    foreach (var pack in availableQuizPacks)
-    {
-        GameObject btnObj = Instantiate(quizPackButtonPrefab, quizPackButtonParent);
-        btnObj.GetComponentInChildren<TMP_Text>().text = pack.name;
-
-        Button btn = btnObj.GetComponent<Button>();
-        btn.onClick.AddListener(async () =>
-        {
-            bool success = await TournamentManager.Instance.SetTournamentQuizPack(
-                currentSelectingTournamentId, 
-                pack.name
-            );
-
-            if (success)
-            {
-                ChooseQuizPanel.SetActive(false);
-                Debug.Log($"Quiz pack '{pack.name}' selected for tournament");
-            }
-        });
-    }
+    _ = GenerateTournamentQuizPackButtonsAsync();
 }
 
 // Update StartTournamentGame method in MainMenuUI
@@ -150,26 +137,49 @@ public void StartTournamentGame(string tournamentId)
         return;
     }
 
-    // Find the quiz pack by name
-    QuizPackSO selectedQuizPack = null;
-    foreach (var pack in availableQuizPacks)
-    {
-        if (pack.name == tournament.selectedQuizPackName)
-        {
-            selectedQuizPack = pack;
-            break;
-        }
-    }
+    _ = StartTournamentGameAsync(tournamentId, tournament);
+}
 
-    if (selectedQuizPack == null)
+private async System.Threading.Tasks.Task StartTournamentGameAsync(string tournamentId, TournamentData tournament)
+{
+    QuizPackSO selectedQuizPack = null;
+    EnsureOnlineRepository();
+
+    if (tournament.usesOnlineQuizPack)
     {
-        Debug.LogError($"Quiz pack '{tournament.selectedQuizPackName}' not found!");
-        return;
+        selectedQuizPack = await onlineQuizRepository.LoadRuntimeQuizPackAsync(tournament.quizPackId);
+        if (selectedQuizPack == null)
+        {
+            Debug.LogError($"Online quiz pack '{tournament.quizPackId}' not found!");
+            return;
+        }
+
+        GameModeManager.Instance.SetSelectedRuntimeOnlineQuizPack(tournament.quizPackId, selectedQuizPack);
+        GameModeManager.Instance.SelectedOnlineQuizPackName = tournament.quizPackDisplayName;
+        GameModeManager.Instance.SelectedOnlineQuizCategoryName = tournament.quizCategoryName;
+    }
+    else
+    {
+        foreach (var pack in availableQuizPacks)
+        {
+            if (pack.name == tournament.selectedQuizPackName)
+            {
+                selectedQuizPack = pack;
+                break;
+            }
+        }
+
+        if (selectedQuizPack == null)
+        {
+            Debug.LogError($"Quiz pack '{tournament.selectedQuizPackName}' not found!");
+            return;
+        }
+
+        GameModeManager.Instance.SetSelectedLocalQuizPack(selectedQuizPack);
     }
 
     // Set up game mode manager
     GameModeManager.Instance.NumberOfPlayersToBeSpawned = 1;
-    GameModeManager.Instance.QuizPack = selectedQuizPack;
     GameModeManager.Instance.IsTournamentMode = true;
     GameModeManager.Instance.CurrentTournamentId = tournamentId; // STORE TOURNAMENT ID
     
@@ -248,23 +258,95 @@ public string GetCurrentPlayingTournamentId()
    {
       Application.OpenURL(Link);
    }
-   private void ShowQuizPackButtons()
+   private async void ShowQuizPackButtons()
    {
-      // Clear old buttons
-      foreach (Transform child in quizPackButtonParent)
-         Destroy(child.gameObject);
-
+      EnsureOnlineRepository();
+      ResetOnlineQuizRequest();
+      onlineQuizCts = new CancellationTokenSource();
+      
       ChooseQuizPanel.SetActive(true);
-      // Spawn new ones
+      ClearQuizButtons();
+      SetStatusButton("Loading quiz packs...", false);
+
+      try
+      {
+         List<QuizPackManifestEntryDTO> entries = await onlineQuizRepository.GetSortedActiveEntriesAsync(onlineQuizCts.Token);
+         ClearQuizButtons();
+
+         if (entries.Count > 0)
+         {
+            foreach (var entry in entries)
+            {
+               GenerateOnlineQuizPackButton(entry, false);
+            }
+            return;
+         }
+
+         SetStatusButton("No online quiz packs available.", false);
+      }
+      catch (OperationCanceledException)
+      {
+         return;
+      }
+      catch (Exception e)
+      {
+         Debug.LogWarning($"Online quiz list unavailable: {e.Message}");
+      }
+
+      GenerateLocalQuizPackButtons();
+   }
+
+   private async System.Threading.Tasks.Task GenerateTournamentQuizPackButtonsAsync()
+   {
+      EnsureOnlineRepository();
+      ResetOnlineQuizRequest();
+      onlineQuizCts = new CancellationTokenSource();
+
+      ClearQuizButtons();
+      SetStatusButton("Loading quiz packs...", false);
+
+      try
+      {
+         List<QuizPackManifestEntryDTO> entries = await onlineQuizRepository.GetSortedActiveEntriesAsync(onlineQuizCts.Token);
+         ClearQuizButtons();
+
+         if (entries.Count > 0)
+         {
+            foreach (var entry in entries)
+            {
+               GenerateOnlineQuizPackButton(entry, true);
+            }
+            return;
+         }
+
+         SetStatusButton("No online quiz packs available.", false);
+      }
+      catch (OperationCanceledException)
+      {
+         return;
+      }
+      catch (Exception e)
+      {
+         Debug.LogWarning($"Online tournament quiz list unavailable: {e.Message}");
+      }
+
+      GenerateLocalTournamentQuizPackButtons();
+   }
+
+   private void GenerateLocalQuizPackButtons()
+   {
+      ClearQuizButtons();
+
       foreach (var pack in availableQuizPacks)
       {
+         if (pack == null) continue;
          GameObject btnObj = Instantiate(quizPackButtonPrefab, quizPackButtonParent);
          btnObj.GetComponentInChildren<TMP_Text>().text = pack.name;
 
          Button btn = btnObj.GetComponent<Button>();
          btn.onClick.AddListener(() =>
          {
-            GameModeManager.Instance.QuizPack = pack;
+            GameModeManager.Instance.SetSelectedLocalQuizPack(pack);
 
             if (currentMode == GameModeUIManager.Practice)
                LoadingSceneManager.Instance.LoadofflineScene(practiceSceneName);
@@ -272,6 +354,119 @@ public string GetCurrentPlayingTournamentId()
                LoadingSceneManager.Instance.LoadofflineScene(passNPlaySceneName);
          });
       }
+   }
+
+   private void GenerateLocalTournamentQuizPackButtons()
+   {
+      ClearQuizButtons();
+
+      foreach (var pack in availableQuizPacks)
+      {
+         if (pack == null) continue;
+         GameObject btnObj = Instantiate(quizPackButtonPrefab, quizPackButtonParent);
+         btnObj.GetComponentInChildren<TMP_Text>().text = pack.name;
+
+         Button btn = btnObj.GetComponent<Button>();
+         btn.onClick.AddListener(async () =>
+         {
+            bool success = await TournamentManager.Instance.SetTournamentQuizPack(
+               currentSelectingTournamentId,
+               pack.name
+            );
+
+            if (success)
+            {
+               ChooseQuizPanel.SetActive(false);
+               Debug.Log($"Quiz pack '{pack.name}' selected for tournament");
+            }
+         });
+      }
+   }
+
+   private void GenerateOnlineQuizPackButton(QuizPackManifestEntryDTO entry, bool isTournamentSelection)
+   {
+      GameObject btnObj = Instantiate(quizPackButtonPrefab, quizPackButtonParent);
+      btnObj.GetComponentInChildren<TMP_Text>().text = FormatManifestButtonText(entry);
+
+      Button btn = btnObj.GetComponent<Button>();
+      btn.onClick.AddListener(async () =>
+      {
+         btn.interactable = false;
+         GameModeManager.Instance.SetSelectedOnlineQuizPackEntry(entry);
+
+         if (isTournamentSelection)
+         {
+            bool success = await TournamentManager.Instance.SetTournamentQuizPack(currentSelectingTournamentId, entry);
+            if (success)
+            {
+               ChooseQuizPanel.SetActive(false);
+               Debug.Log($"Online quiz pack '{entry.displayName}' selected for tournament");
+            }
+            else
+            {
+               btn.interactable = true;
+            }
+
+            return;
+         }
+
+         QuizPackSO runtimePack = await onlineQuizRepository.LoadRuntimeQuizPackAsync(entry.packId);
+         if (runtimePack == null)
+         {
+            Debug.LogError($"Failed to load online quiz pack '{entry.packId}'.");
+            btn.interactable = true;
+            return;
+         }
+
+         GameModeManager.Instance.SetSelectedRuntimeOnlineQuizPack(entry.packId, runtimePack);
+         GameModeManager.Instance.SelectedOnlineQuizPackName = entry.displayName;
+         GameModeManager.Instance.SelectedOnlineQuizCategoryName = entry.categoryName;
+
+         if (currentMode == GameModeUIManager.Practice)
+            LoadingSceneManager.Instance.LoadofflineScene(practiceSceneName);
+         else if (currentMode == GameModeUIManager.PassNPlay)
+            LoadingSceneManager.Instance.LoadofflineScene(passNPlaySceneName);
+      });
+   }
+
+   private string FormatManifestButtonText(QuizPackManifestEntryDTO entry)
+   {
+      string displayName = !string.IsNullOrWhiteSpace(entry.displayName) ? entry.displayName : entry.packId;
+      string category = !string.IsNullOrWhiteSpace(entry.categoryName) ? entry.categoryName : onlineQuizConfig != null ? onlineQuizConfig.defaultCategoryName : "General";
+      return $"{displayName}\n{category} - {entry.questionCount} Questions";
+   }
+
+   private void SetStatusButton(string message, bool interactable)
+   {
+      GameObject btnObj = Instantiate(quizPackButtonPrefab, quizPackButtonParent);
+      btnObj.GetComponentInChildren<TMP_Text>().text = message;
+      Button btn = btnObj.GetComponent<Button>();
+      if (btn != null) btn.interactable = interactable;
+   }
+
+   private void ClearQuizButtons()
+   {
+      foreach (Transform child in quizPackButtonParent)
+         Destroy(child.gameObject);
+   }
+
+   private void EnsureOnlineRepository()
+   {
+      if (onlineQuizRepository == null)
+      {
+         onlineQuizRepository = new OnlineQuizRepository(onlineQuizConfig, availableQuizPacks);
+      }
+      else
+      {
+         onlineQuizRepository.SetLocalFallbackPacks(availableQuizPacks);
+      }
+   }
+
+   private void ResetOnlineQuizRequest()
+   {
+      onlineQuizCts?.Cancel();
+      onlineQuizCts?.Dispose();
+      onlineQuizCts = null;
    }
    
    public void SignOut()

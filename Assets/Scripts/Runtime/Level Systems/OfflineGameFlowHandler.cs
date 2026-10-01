@@ -23,6 +23,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     private GameObject HowToPlayPanel;
     public BoardLogicManager boardManager;
     public QuizPackSO CurrentQuizPack;
+    public OnlineQuizConfigSO onlineQuizConfig;
 
     [Header("LeaderBoard References")]
     [SerializeField] private GameObject LeaderBoard;
@@ -70,6 +71,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     {
         GetLevelData();
         CheckTournamentMode(); // Check if tournament mode
+        await EnsureSelectedQuizPackLoadedAsync();
         await BootstrapLevel();
         BootStrapAllPlayers();
     }
@@ -77,8 +79,34 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
     private void GetLevelData()
     {
         TotalPlayersToSpawn = GameModeManager.Instance.NumberOfPlayersToBeSpawned;
-        CurrentQuizPack = GameModeManager.Instance.QuizPack;
+        CurrentQuizPack = GameModeManager.Instance.SelectedRuntimeQuizPack != null
+            ? GameModeManager.Instance.SelectedRuntimeQuizPack
+            : GameModeManager.Instance.QuizPack;
         if (GameModeManager.Instance.level != null) CurrentLevelData = GameModeManager.Instance.level;
+    }
+
+    private async Task EnsureSelectedQuizPackLoadedAsync()
+    {
+        if (GameModeManager.Instance == null || !GameModeManager.Instance.UseOnlineQuizPack) return;
+        if (!string.IsNullOrWhiteSpace(GameModeManager.Instance.SelectedOnlineQuizPackId) &&
+            GameModeManager.Instance.SelectedRuntimeQuizPack == null)
+        {
+            var repository = new OnlineQuizRepository(onlineQuizConfig, null);
+            QuizPackSO runtimePack = await repository.LoadRuntimeQuizPackAsync(GameModeManager.Instance.SelectedOnlineQuizPackId);
+
+            if (runtimePack != null)
+            {
+                GameModeManager.Instance.SetSelectedRuntimeOnlineQuizPack(GameModeManager.Instance.SelectedOnlineQuizPackId, runtimePack);
+            }
+            else
+            {
+                Debug.LogError($"[OfflineFlowManager] Failed to load online quiz pack '{GameModeManager.Instance.SelectedOnlineQuizPackId}'.");
+            }
+        }
+
+        CurrentQuizPack = GameModeManager.Instance.SelectedRuntimeQuizPack != null
+            ? GameModeManager.Instance.SelectedRuntimeQuizPack
+            : GameModeManager.Instance.QuizPack;
     }
 
     // Check if playing in tournament mode
@@ -634,8 +662,7 @@ public class OfflineFlowManager : MonoBehaviour, IFlowManager
         int bandSize = Mathf.CeilToInt(maxMoves / (float)maxStars);
         int band = (movesTaken - 1) / bandSize;
         int stars = maxStars - band;
-        int stas = Mathf.Clamp(stars, 1, maxStars);
-        Debug.Log(stas);
-        return stas;
+        int clamped = Mathf.Clamp(stars, 1, maxStars);
+        return clamped;
     }
 }

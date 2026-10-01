@@ -4203,6 +4203,7 @@ MonoBehaviour:
   CanvasTransform: {fileID: 1542624319}
   boardManager: {fileID: 0}
   CurrentQuizPack: {fileID: 0}
+  onlineQuizConfig: {fileID: 11400000, guid: 3156893a0765be74cbfbc0855589d792, type: 2}
   LeaderBoard: {fileID: 425463355}
   RankPrefab: {fileID: 2283468471138548295, guid: 926cb1b80f74a684fbaafd41fe643d50, type: 3}
   RankingTransform: {fileID: 2031256126}
@@ -5233,6 +5234,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   foundButtons: []
   isPrivateRoom: 0
+  sessionNameInput: {fileID: 0}
   multiplayerSceneName: Multiplayer_Level_New
 --- !u!114 &1542624321
 MonoBehaviour:

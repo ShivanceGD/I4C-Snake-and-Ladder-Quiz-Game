@@ -13,7 +13,7 @@ public class BoardLogicManager : MonoBehaviour
     public static List<Vector3> TilePositions { get; } = new();
     
 
-    private void OnEnable()
+    private void Awake()
     {
         if (Instance != null && Instance != this)
         {

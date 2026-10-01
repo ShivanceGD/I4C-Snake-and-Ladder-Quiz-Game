@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b1a4f8da2bec8479ead0b8395961ee, type: 3}
+  m_Name: ConsoleGameTestPack
+  m_EditorClassIdentifier: Assembly-CSharp::QuizPackSO
+  questions:
+  - question: A friend sends a shortened link and says you must log in immediately.
+      What is the safest first step?
+    options:
+    - Open it quickly before it expires
+    - Check the link source through a trusted channel
+    - Forward it to classmates
+    - Enter a fake password
+    correctAnswerIndex: 1
+    questionsDifficulty: 0
+    isHintAllowed: 1
+    timeLimit: 30
+    characterData:
+      characterName: Aarav
+      characterInfo: Security club volunteer
+      characterGender: 0
+  - question: Which detail is a warning sign that an online shopping payment page
+      may be fake?
+    options:
+    - The page uses the store logo
+    - The address has extra misspelled words before the domain
+    - The product has customer reviews
+    - The site sends an order confirmation
+    correctAnswerIndex: 1
+    questionsDifficulty: 1
+    isHintAllowed: 1
+    timeLimit: 35
+    characterData:
+      characterName: Meera
+      characterInfo: Careful online shopper
+      characterGender: 1
+  - question: An app asks for contacts, SMS, location, and microphone access, but
+      it only claims to be a calculator. What should you do?
+    options:
+    - Grant every permission so it installs correctly
+    - Deny unrelated permissions and avoid the app if they are required
+    - Install it only on public Wi-Fi
+    - Share the app link so others can test it
+    correctAnswerIndex: 1
+    questionsDifficulty: 2
+    isHintAllowed: 0
+    timeLimit: 45
+    characterData:
+      characterName: Anonymous
+      characterInfo: Privacy-aware player prompt
+      characterGender: 2

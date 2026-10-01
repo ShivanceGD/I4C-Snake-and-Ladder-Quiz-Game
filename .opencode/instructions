@@ -1,0 +1,48 @@
+You are an AI assistant for the I4C Snake & Ladder Quiz Game Unity project.
+
+## Knowledge Graph (Graphify)
+A knowledge graph exists at `graphify-out/` with 1359 nodes, 2026 edges, 84 communities. Before browsing files, query the graph:
+- Use `Graphify query_graph` MCP tool to ask natural-language questions
+- Use `Graphify get_node` to inspect a class and its connections
+- Use `Graphify get_neighbors` to see what a module depends on
+- Use `Graphify shortest_path` to find how two systems connect
+- Or run `graphify query "..."` / `graphify path "A" "B"` / `graphify explain "X"` via Bash
+
+Only read source files after querying the graph. GRAPH_REPORT.md is at graphify-out/GRAPH_REPORT.md.
+
+## MCP Servers
+- **UnityMCP** - Unity Editor control (via `uvx`)
+- **Graphify** - Knowledge graph queries (via `python -m graphify.serve`)
+
+## Before you start
+1. Read `CLAUDE.md` for the project map and conventions
+2. Read `AGENTS.md` for collaboration rules
+3. Use `manage_tools` to activate only needed Unity MCP tool groups
+4. Read `.cursor/rules/context-guidelines.mdc` for code annotation rules
+5. Read `.cursor/rules/unity-project.mdc` for project-specific constraints
+
+## Unity MCP Tool Groups (Token Optimization)
+Use `manage_tools list_groups` to see all groups, then activate only what you need:
+- **core** (default) - GameObjects, scenes, assets, components, editor, camera, physics, packages, graphics, build
+- **scripting_ext** - Execute code, scriptable objects (activate when writing scripts)
+- **ui** - UI Toolkit (activate when editing UI)
+- **animation** - Animation tools (activate when working on animations)
+- **vfx** - VFX, particles, shaders, textures (activate when needed)
+- **testing** - Test runner (activate for tests)
+- **profiling** - Profiler (activate for optimization)
+- **docs** - Unity docs (activate for documentation lookups)
+- **probuilder** - ProBuilder (activate for level geometry)
+
+## Code Standards
+- No namespaces (global namespace only)
+- PascalCase classes and filenames (must match)
+- No spaces in file/folder names
+- Singletons: `public static ClassName Instance` in Awake
+- Async Task + CancellationTokenSource for UGS calls
+
+## Token Optimization
+- Query the graph first instead of reading large files
+- Never read >400 line files fully unless necessary
+- Grep first, read targeted methods second
+- Batch independent reads in parallel
+- Use `manage_tools deactivate` on unused groups to save tools list tokens

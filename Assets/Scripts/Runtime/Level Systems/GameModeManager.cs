@@ -1,189 +1,196 @@
 using System;
 using System.Collections.Generic;
-using System.Net;
 using TMPro;
-using Unity.Netcode;
 using Unity.Services.Authentication;
-using Unity.Services.Core;
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
 
 public class GameModeManager : MonoBehaviour
 {
-       public static GameModeManager Instance;
-       public int NumberOfPlayersToBeSpawned = 1;
-       public QuizPackSO QuizPack;
-       public LevelDataSO level;
-       public bool IsTournamentMode { get; set; } = false;
-       public string CurrentTournamentId { get; set; } = ""; // NEW: Store tournament ID
-       [Header("All Levels (assign in inspector)")]
-       public List<LevelDataSO> AllLevels;
+    public static GameModeManager Instance;
+    public int NumberOfPlayersToBeSpawned = 1;
+    public QuizPackSO QuizPack;
+    public bool UseOnlineQuizPack;
+    public string SelectedOnlineQuizPackId;
+    public string SelectedOnlineQuizPackName;
+    public string SelectedOnlineQuizCategoryName;
+    public QuizPackSO SelectedRuntimeQuizPack;
+    public QuizPackSO SelectedLocalQuizPack;
+    public LevelDataSO level;
+    public bool IsTournamentMode { get; set; } = false;
+    public string CurrentTournamentId { get; set; } = "";
+    [Header("All Levels (assign in inspector)")]
+    public List<LevelDataSO> AllLevels;
 
-       [Header("Unlock System")] public Dictionary<int, int> CachedLevelStarsData;
-       public List<int> LevelsToBeUnlocked;
-       public List<string> TournamentAdminsUID;
+    [Header("Unlock System")] public Dictionary<int, int> CachedLevelStarsData;
+    public List<int> LevelsToBeUnlocked;
+    public List<string> TournamentAdminsUID;
 
-       [Header("Game Mode Buttons")] [SerializeField]
-       private GameObject StoryMode;
+    [Header("Game Mode Buttons")]
+    [SerializeField] private GameObject StoryMode;
+    [SerializeField] private GameObject Multiplayer;
 
-       [SerializeField] private GameObject Multiplayer;
+    public Button Tournament;
+    public Button Test;
 
-       public Button Tournament;
-       public Button Test;
+    public bool IsPrivateRoom;
 
-       public bool IsPrivateRoom;
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-       private void Awake()
-       {
-              if (Instance != null && Instance != this)
-              {
-                     Destroy(gameObject);
-                     return;
-              }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
-              Instance = this;
-              DontDestroyOnLoad(gameObject);
-       }
-// Call this to reset after tournament game
-       public void ResetTournamentMode()
-       {
-              IsTournamentMode = false;
-       }
-       private void Start()
-       {
-              MainMenuUI mainMenuUI = GameObject.FindFirstObjectByType<MainMenuUI>();
-              if (Application.internetReachability == NetworkReachability.NotReachable)
-              {
-                     DisableGameModeButtons(mainMenuUI.StoryModeButton);
-                     DisableGameModeButtons(mainMenuUI.MultiplayerButton);
-              }
-       }
+    public void ResetTournamentMode()
+    {
+        IsTournamentMode = false;
+    }
 
-       private void DisableGameModeButtons(GameObject gameModeButton)
-       {
-              gameModeButton.GetComponent<Button>().interactable = false;
-              gameModeButton.GetComponent<Image>().color = Color.grey;
-              gameModeButton.GetComponentInChildren<Image>().color = Color.grey;
-              gameModeButton.GetComponentInChildren<TMP_Text>().color = Color.black;
-              gameModeButton.transform.Find("Lock_Image").gameObject.SetActive(true);
-       }
+    public void SetSelectedOnlineQuizPackEntry(QuizPackManifestEntryDTO entry)
+    {
+        if (entry == null) return;
 
-       /*public void ChooseNumberOfPlayersForPassNPlayMode(int NumberOfPlayers)
-       {
-              NumberOfPlayersToBeSpawned = NumberOfPlayers;
-              Debug.Log($"[GameModeManager] NumberOfPlayers set to {NumberOfPlayers}");
-       }
+        UseOnlineQuizPack = true;
+        SelectedOnlineQuizPackId = entry.packId;
+        SelectedOnlineQuizPackName = entry.displayName;
+        SelectedOnlineQuizCategoryName = entry.categoryName;
+        SelectedLocalQuizPack = null;
+        OnlineQuizEvents.QuizPackSelected(entry);
+        OnlineQuizEvents.OnlineQuizModeChanged(true);
+    }
 
-       public void ChooseModusOperandiToOfflineLevel(QuizPackSO quizPack)
-       {
-              QuizPack = quizPack;
-              Debug.Log($"[GameModeManager] QuizPack set to {quizPack?.name}");
-       }*/
+    public void SetSelectedRuntimeOnlineQuizPack(string packId, QuizPackSO runtimePack)
+    {
+        UseOnlineQuizPack = true;
+        SelectedOnlineQuizPackId = packId;
+        SelectedRuntimeQuizPack = runtimePack;
+        SelectedLocalQuizPack = null;
+        QuizPack = runtimePack;
+        OnlineQuizEvents.OnlineQuizModeChanged(true);
+    }
 
-       [ContextMenu("Generate All Offline Buttons")]
-       public async void GenerateAllOfflineLevels()
-       {
-             
+    public void SetSelectedLocalQuizPack(QuizPackSO localPack)
+    {
+        UseOnlineQuizPack = false;
+        SelectedOnlineQuizPackId = string.Empty;
+        SelectedOnlineQuizPackName = string.Empty;
+        SelectedOnlineQuizCategoryName = string.Empty;
+        SelectedRuntimeQuizPack = null;
+        SelectedLocalQuizPack = localPack;
+        QuizPack = localPack;
+        OnlineQuizEvents.OnlineQuizModeChanged(false);
+    }
 
-              // Load unlocked levels
-                     LevelsToBeUnlocked = await RemoteConfigLoadManager.Instance.GetDefaultUnlockedLevels();
+    public void ClearQuizPackSelection()
+    {
+        UseOnlineQuizPack = false;
+        SelectedOnlineQuizPackId = string.Empty;
+        SelectedOnlineQuizPackName = string.Empty;
+        SelectedOnlineQuizCategoryName = string.Empty;
+        SelectedRuntimeQuizPack = null;
+        SelectedLocalQuizPack = null;
+        QuizPack = null;
+        OnlineQuizEvents.OnlineQuizModeChanged(false);
+    }
 
-                     // Clear old buttons
-                     UiLogicManager.Instance.RemoveAllChildInsideParent(UIManager.Instance.OfflineLevelsButtonParentTransform);
+    private void Start()
+    {
+        MainMenuUI mainMenuUI = GameObject.FindFirstObjectByType<MainMenuUI>();
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            DisableGameModeButtons(mainMenuUI.StoryModeButton);
+            DisableGameModeButtons(mainMenuUI.MultiplayerButton);
+        }
+    }
 
-                     // Load cached stars
-                     CachedLevelStarsData = await SaveAndLoadManager.Instance.ReturnLevelAndStars();
+    private void DisableGameModeButtons(GameObject gameModeButton)
+    {
+        gameModeButton.GetComponent<Button>().interactable = false;
+        gameModeButton.GetComponent<Image>().color = Color.grey;
+        gameModeButton.GetComponentInChildren<Image>().color = Color.grey;
+        gameModeButton.GetComponentInChildren<TMP_Text>().color = Color.black;
+        gameModeButton.transform.Find("Lock_Image").gameObject.SetActive(true);
+    }
 
-                     // Iterate levels
-                     for (int i = 0; i < AllLevels.Count; i++)
-                     {
-                            if (AllLevels[i].GameMode != GameMode.StoryMode)
-                                   continue;
-                            if (AllLevels[i].IsUnlockable==false)
-                            {
-                                   Debug.Log("Coming Soon Button");
-                                   UiLogicManager.Instance.GenerateOfflineLevelButton(
-                                          AllLevels[i],
-                                          //GameManager.Instance.LoadSinglePlayerLevel, // uses GameManager’s method
-                                          UiLogicManager.Instance.ComingSoonPanel,
-                                          UIManager.Instance.OfflineLevelsButtonParentTransform,
-                                          false
-                                   );
-                                   continue;
-                            }
+    [ContextMenu("Generate All Offline Buttons")]
+    public async void GenerateAllOfflineLevels()
+    {
+        LevelsToBeUnlocked = await RemoteConfigLoadManager.Instance.GetDefaultUnlockedLevels();
+        UiLogicManager.Instance.RemoveAllChildInsideParent(UIManager.Instance.OfflineLevelsButtonParentTransform);
+        CachedLevelStarsData = await SaveAndLoadManager.Instance.ReturnLevelAndStars();
 
-                            bool isUnlocked = false;
+        int lastUnlockableLevelIndex = -1;
 
-                            // Rule 1: Always unlock first level
-                            if (i == 0)
-                            {
-                                   isUnlocked = true;
-                            }
-                            // Rule 2: Check RemoteConfig
-                            else if (LevelsToBeUnlocked != null)
-                            {
-                                   if (LevelsToBeUnlocked != null && LevelsToBeUnlocked.Contains(AllLevels[i].LevelNumber))
-                                   {
-                                          Debug.Log($"[Unlock] Level {AllLevels[i].LevelNumber} unlocked via RemoteConfig ✅");
-                                          isUnlocked = true;
-                                   }
-                                   else
-                                   {
-                                          Debug.Log($"[Lock] Level {AllLevels[i].LevelNumber} not in RemoteConfig. Checking stars...");
-                                          int prevLevelStars = SaveAndLoadManager.Instance.GetSavedStarsForLevel(
-                                                 CachedLevelStarsData,
-                                                 AllLevels[i - 1].LevelNumber
-                                          );
+        for (int i = 0; i < AllLevels.Count; i++)
+        {
+            if (AllLevels[i].GameMode != GameMode.StoryMode)
+                continue;
 
-                                          Debug.Log($"[Stars] Previous level {AllLevels[i - 1].LevelNumber} has {prevLevelStars} stars. Needs {AllLevels[i].StarsToUnlockLevel}.");
-                                          isUnlocked = UiLogicManager.Instance.CheckIfLevelIsCompleted(AllLevels[i].StarsToUnlockLevel, prevLevelStars);
-                                   }
-                            }
-                            
-                            // Rule 3: Check star requirement
-                            else
-                            {
-                                   int prevLevelStars = SaveAndLoadManager.Instance.GetSavedStarsForLevel(
-                                          CachedLevelStarsData,
-                                          AllLevels[i - 1].LevelNumber
-                                   );
+            if (!AllLevels[i].IsUnlockable)
+            {
+                UiLogicManager.Instance.GenerateOfflineLevelButton(
+                    AllLevels[i],
+                    UiLogicManager.Instance.ComingSoonPanel,
+                    UIManager.Instance.OfflineLevelsButtonParentTransform,
+                    false
+                );
+                continue;
+            }
 
-                                   isUnlocked =
-                                          UiLogicManager.Instance.CheckIfLevelIsCompleted(
-                                                 AllLevels[i].StarsToUnlockLevel, prevLevelStars);
-                            }
+            bool isUnlocked = false;
 
-                            // ✅ Generate button
-                            UiLogicManager.Instance.GenerateOfflineLevelButton(
-                                   AllLevels[i],
-                                   //GameManager.Instance.LoadSinglePlayerLevel, // uses GameManager’s method
-                                   UiLogicManager.Instance.StoryModeButton,
-                                   UIManager.Instance.OfflineLevelsButtonParentTransform,
-                                   isUnlocked
-                            );
-                     }
+            if (i == 0)
+            {
+                isUnlocked = true;
+            }
+            else if (LevelsToBeUnlocked != null && LevelsToBeUnlocked.Contains(AllLevels[i].LevelNumber))
+            {
+                isUnlocked = true;
+            }
+            else
+            {
+                int prevLevelIndex = lastUnlockableLevelIndex >= 0 ? lastUnlockableLevelIndex : i - 1;
+                int prevLevelStars = SaveAndLoadManager.Instance.GetSavedStarsForLevel(
+                    CachedLevelStarsData,
+                    AllLevels[prevLevelIndex].LevelNumber
+                );
 
-              }
-       
-[ContextMenu("Create Tournament Button")]
-       public async void SetTournamentAdmins()
-       {
-              TournamentAdminsUID = await RemoteConfigLoadManager.Instance.GetTournamentAdmins();
-              if (TournamentAdminsUID.Contains(AuthenticationService.Instance.PlayerId))
-              {
-                     Tournament.interactable = true;
-                     Tournament.onClick.AddListener(()=>Debug.Log("Create Button Clicked"));
-              }
-       }
+                isUnlocked = UiLogicManager.Instance.CheckIfLevelIsCompleted(
+                    AllLevels[i].StarsToUnlockLevel, prevLevelStars);
+            }
 
-              [ContextMenu("SaveGameData")]
-              public void SaveGameData()
-              {
-                     /*UnityServices.InitializeAsync();
-                     AuthExtensions.SignInAnonymouslyAsync();*/
-                     SaveAndLoadManager.Instance.SavePlayerCommonData(AuthExtensions.GetCachedPlayerName(), 5);
-                     SaveAndLoadManager.Instance.SaveLevelData(AllLevels);
-              }
-       }
+            UiLogicManager.Instance.GenerateOfflineLevelButton(
+                AllLevels[i],
+                UiLogicManager.Instance.StoryModeButton,
+                UIManager.Instance.OfflineLevelsButtonParentTransform,
+                isUnlocked
+            );
 
+            lastUnlockableLevelIndex = i;
+        }
+    }
+
+    [ContextMenu("Create Tournament Button")]
+    public async void SetTournamentAdmins()
+    {
+        TournamentAdminsUID = await RemoteConfigLoadManager.Instance.GetTournamentAdmins();
+        if (TournamentAdminsUID.Contains(AuthenticationService.Instance.PlayerId))
+        {
+            Tournament.interactable = true;
+            Tournament.onClick.AddListener(() => Debug.Log("Create Button Clicked"));
+        }
+    }
+
+    [ContextMenu("SaveGameData")]
+    public void SaveGameData()
+    {
+        SaveAndLoadManager.Instance.SavePlayerCommonData(AuthExtensions.GetCachedPlayerName(), 5);
+        SaveAndLoadManager.Instance.SaveLevelData(AllLevels);
+    }
+}

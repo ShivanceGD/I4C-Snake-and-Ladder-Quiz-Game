@@ -25,6 +25,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     public BoardLogicManager BoardLogicManager;
     public BoardDataSO currentBoardData;
     public QuizPackSO currentQuizPack;
+    public OnlineQuizConfigSO onlineQuizConfig;
 
     [Header("LeaderBoard References")]
     [SerializeField] private GameObject LeaderBoard;
@@ -59,8 +60,9 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     [SerializeField] private int penaltyPerMove;
     [SerializeField] private int WinnerScore;
 
-    public NetworkVariable<int> currentBoardIndex = new NetworkVariable<int>();
-    public NetworkVariable<int> currentQuizIndex = new NetworkVariable<int>();
+    public NetworkVariable<int> currentBoardIndex = new NetworkVariable<int>(-1);
+    public NetworkVariable<int> currentQuizIndex = new NetworkVariable<int>(-1);
+    public NetworkVariable<FixedString128Bytes> selectedOnlineQuizPackId = new NetworkVariable<FixedString128Bytes>();
 
     // Added
     private bool bootstrapped = false;
@@ -69,6 +71,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     {
         currentBoardIndex.OnValueChanged += OnBoardChanged;
         currentQuizIndex.OnValueChanged += OnQuizChanged;
+        selectedOnlineQuizPackId.OnValueChanged += OnOnlineQuizPackChanged;
         FindingManagersInScene();
     }
 
@@ -76,6 +79,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
     {
         currentBoardIndex.OnValueChanged -= OnBoardChanged;
         currentQuizIndex.OnValueChanged -= OnQuizChanged;
+        selectedOnlineQuizPackId.OnValueChanged -= OnOnlineQuizPackChanged;
     }
 
     private void Start()
@@ -95,7 +99,7 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         // For host, values are immediately available locally
         if (IsHost)
         {
-            if (quizPacks != null && currentQuizIndex.Value >= 0 && currentQuizIndex.Value < quizPacks.Count)
+            if (!IsUsingOnlineQuizPack() && quizPacks != null && currentQuizIndex.Value >= 0 && currentQuizIndex.Value < quizPacks.Count)
                 currentQuizPack = quizPacks[currentQuizIndex.Value];
 
             if (boardManagers != null && currentBoardIndex.Value >= 0 && currentBoardIndex.Value < boardManagers.Count)
@@ -117,6 +121,8 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
 
     private void OnQuizChanged(int oldVal, int newVal)
     {
+        if (IsUsingOnlineQuizPack()) return;
+
         FindingManagersInScene();
         if (quizPacks != null && newVal >= 0 && newVal < quizPacks.Count)
         {
@@ -127,12 +133,28 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         TryBootstrapIfReady();
     }
 
+    private void OnOnlineQuizPackChanged(FixedString128Bytes oldVal, FixedString128Bytes newVal)
+    {
+        string packId = newVal.ToString();
+        if (string.IsNullOrWhiteSpace(packId)) return;
+        _ = LoadOnlineQuizPackForNetworkAsync(packId);
+    }
+
     [ContextMenu("randomBoardAndQuiz")]
     [ServerRpc(RequireOwnership = false)]
     private void SelectRandomBoardAndQuizServerRpc()
     {
         if (boardManagers != null && boardManagers.Count > 0)
             currentBoardIndex.Value = Random.Range(0, boardManagers.Count);
+
+        if (GameModeManager.Instance != null &&
+            GameModeManager.Instance.UseOnlineQuizPack &&
+            !string.IsNullOrWhiteSpace(GameModeManager.Instance.SelectedOnlineQuizPackId))
+        {
+            selectedOnlineQuizPackId.Value = GameModeManager.Instance.SelectedOnlineQuizPackId;
+            _ = LoadOnlineQuizPackForNetworkAsync(GameModeManager.Instance.SelectedOnlineQuizPackId);
+            return;
+        }
 
         if (quizPacks != null && quizPacks.Count > 0)
             currentQuizIndex.Value = Random.Range(0, quizPacks.Count);
@@ -158,14 +180,17 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
         if (bootstrapped) return;
 
         bool boardReady = boardManagers != null && currentBoardIndex.Value >= 0 && currentBoardIndex.Value < boardManagers.Count;
-        bool quizReady = quizPacks != null && currentQuizIndex.Value >= 0 && currentQuizIndex.Value < quizPacks.Count;
+        bool useOnlineQuiz = IsUsingOnlineQuizPack();
+        bool quizReady = useOnlineQuiz
+            ? currentQuizPack != null
+            : quizPacks != null && currentQuizIndex.Value >= 0 && currentQuizIndex.Value < quizPacks.Count;
 
         FindingManagersInScene();
 
         if (boardReady)
             currentBoardData = boardManagers[currentBoardIndex.Value];
 
-        if (quizReady)
+        if (!useOnlineQuiz && quizReady)
         {
             currentQuizPack = quizPacks[currentQuizIndex.Value];
             quizManager?.LoadQuestions(currentQuizPack);
@@ -176,6 +201,36 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
             bootstrapped = true;
             _ = BootstrapLevel();
         }
+    }
+
+    private bool IsUsingOnlineQuizPack()
+    {
+        return selectedOnlineQuizPackId.Value.Length > 0 ||
+               GameModeManager.Instance != null && GameModeManager.Instance.UseOnlineQuizPack;
+    }
+
+    private async Task LoadOnlineQuizPackForNetworkAsync(string packId)
+    {
+        if (string.IsNullOrWhiteSpace(packId)) return;
+
+        var repository = new OnlineQuizRepository(onlineQuizConfig, quizPacks);
+        QuizPackSO runtimePack = await repository.LoadRuntimeQuizPackAsync(packId);
+
+        if (runtimePack == null)
+        {
+            Debug.LogError($"[MultiplayerFlowManager] Failed to load online quiz pack '{packId}'.");
+            return;
+        }
+
+        currentQuizPack = runtimePack;
+        quizManager?.LoadQuestions(currentQuizPack);
+
+        if (GameModeManager.Instance != null)
+        {
+            GameModeManager.Instance.SetSelectedRuntimeOnlineQuizPack(packId, runtimePack);
+        }
+
+        TryBootstrapIfReady();
     }
 
     [ContextMenu("Start Game Online")]
@@ -400,16 +455,17 @@ public class MultiplayerFlowManager : NetworkBehaviour, IFlowManager
             Debug.LogWarning("[SubmitQuizResultServerRpc] Player not found for clientId: " + clientId);
             return;
         }
-        Analytics_Manager.Instance.LogEvent(isCorrect ? "CorrectAnswerGiven" : "IncorrectAnswerGiven");
         var q = quizManager != null ? quizManager.GetQuestionByIndex(qIdx) : null;
+        bool serverValidatedCorrect = q != null && selectedIdx == q.correctAnswerIndex;
+        Analytics_Manager.Instance.LogEvent(serverValidatedCorrect ? "CorrectAnswerGiven" : "IncorrectAnswerGiven");
         var qr = new QuizResult
         {
-            IsCorrect = isCorrect,
+            IsCorrect = serverValidatedCorrect,
             TimeTaken = time,
             SelectedIndex = selectedIdx
         };
 
-        movementManager?.ProcessPostQuizMovement(player, isCorrect, q != null ? q.questionsDifficulty : 0,
+        movementManager?.ProcessPostQuizMovement(player, serverValidatedCorrect, q != null ? q.questionsDifficulty : 0,
             time, currentBoardData,
             CurrentLevelData != null ? CurrentLevelData.DiceRollRangePerQuizDifficulty : null,
             (mres) =>

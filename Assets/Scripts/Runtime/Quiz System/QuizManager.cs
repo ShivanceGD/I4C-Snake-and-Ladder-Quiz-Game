@@ -25,6 +25,15 @@ public class QuizManager : MonoBehaviour
     public void LoadQuestions(QuizPackSO quizSCO)
     {
         questions = quizSCO?.questions ?? new List<QuizQuestionData>();
+        if (questions.Count == 0)
+        {
+            Debug.LogWarning("[QuizManager] Loaded quiz pack has no questions.");
+        }
+    }
+
+    public void SetQuizPack(QuizPackSO quizPack)
+    {
+        LoadQuestions(quizPack);
     }
 
     public void ShowQuizForPlayer(
@@ -34,7 +43,7 @@ public class QuizManager : MonoBehaviour
         Action onUseHint,
         Action<QuizResult> onComplete)
     {
-        Analytics_Manager.Instance.LogEvent("QuestionsAnswered");
+        Analytics_Manager.Instance.LogEvent("QuestionsShown");
         if (q == null)
         {
             Debug.LogError("[QuizManager] null question");

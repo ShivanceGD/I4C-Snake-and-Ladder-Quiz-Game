@@ -4,11 +4,12 @@ using System.Threading.Tasks;
 using Unity.Services.Core;
 using Unity.Services.RemoteConfig;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-100)]
 public class GameBootStrapper : MonoBehaviour
 {
+    public static GameBootStrapper Instance { get; private set; }
+
     [SerializeField] private string FirstSceneToLoad;
     [SerializeField] private string BootStrapperSceneName;
     
@@ -23,11 +24,24 @@ public class GameBootStrapper : MonoBehaviour
 
     private async void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         try
         {
-            await CloneEverything();
+            LoadingSceneManager loadingSceneManager = await CloneEverything();
             cts = new CancellationTokenSource();
-            _ = InitializeGameAsync(cts.Token);
+            await InitializeGameAsync(cts.Token);
+
+            if (loadingSceneManager != null)
+            {
+                loadingSceneManager.LoadofflineScene(FirstSceneToLoad);
+            }
         }
         catch (Exception e)
         {
@@ -35,7 +49,7 @@ public class GameBootStrapper : MonoBehaviour
         }
     }
 
-    private async Task CloneEverything()
+    private async Task<LoadingSceneManager> CloneEverything()
     {
         LoadingSceneManager loadedSceneManager = Instantiate(LoadingSceneManagerPrefab);
         SoundManager loadedSoundManager = Instantiate(SoundManagerPrefab);
@@ -44,17 +58,7 @@ public class GameBootStrapper : MonoBehaviour
         Analytics_Manager analyticsManager = Instantiate(AnalyticsManagerPrefab);
         
         await Task.Yield();
-        
-        if (!string.IsNullOrEmpty(BootStrapperSceneName))
-        {
-            var unloadOp = SceneManager.UnloadSceneAsync(BootStrapperSceneName);
-            if (unloadOp != null)
-            {
-                while (!unloadOp.isDone) await Task.Yield();
-            }
-        }
-        // Load the first scene
-        loadedSceneManager.LoadofflineScene(FirstSceneToLoad);
+        return loadedSceneManager;
     }
 
 
@@ -62,24 +66,57 @@ public class GameBootStrapper : MonoBehaviour
     {
         try
         {
-            await UnityServices.InitializeAsync();
-            Analytics_Manager.Instance.StartCollection();
-            RemoteConfigService.Instance.FetchConfigs(new userAttribute(), new appAttribute());
+            if (UnityServices.State != ServicesInitializationState.Initialized)
+            {
+                await UnityServices.InitializeAsync();
+            }
+
             if (token.IsCancellationRequested) return;
-            
-            IsBootStrapped = true;
-            Debug.Log("[BootStrapper] Initialization complete.");
+
+            try
+            {
+                if (Analytics_Manager.Instance != null)
+                {
+                    Analytics_Manager.Instance.StartCollection();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[BootStrapper] Analytics startup failed: {ex.Message}");
+            }
+
+            try
+            {
+                RemoteConfigService.Instance.FetchConfigs(new userAttribute(), new appAttribute());
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[BootStrapper] Remote Config startup failed: {ex.Message}");
+            }
         }
         catch (Exception ex)
         {
             Debug.LogError($"[BootStrapper] Initialization failed: {ex}");
         }
+        finally
+        {
+            if (!token.IsCancellationRequested)
+            {
+                IsBootStrapped = true;
+                Debug.Log("[BootStrapper] Initialization complete.");
+            }
+        }
     }
 
     private void OnDestroy()
     {
-        cts.Cancel();
-        cts.Dispose();
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+
+        cts?.Cancel();
+        cts?.Dispose();
     }
 
     private struct userAttribute { }

@@ -1,5 +1,22 @@
 {
   "dependencies": {
+    "com.boxqkrtm.ide.cursor": {
+      "version": "file:C:/Users/Asus/Desktop/com.unity.ide.cursor-2.0.27",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      }
+    },
+    "com.coplaydev.unity-mcp": {
+      "version": "file:C:/Users/Asus/Desktop/unity-mcp-9.7.1/MCPForUnity",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.test-framework": "1.1.31"
+      }
+    },
     "com.unity.2d.animation": {
       "version": "13.0.4",
       "depth": 1,
@@ -109,7 +126,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.28",
+      "version": "1.8.27",
       "depth": 2,
       "source": "registry",
       "dependencies": {

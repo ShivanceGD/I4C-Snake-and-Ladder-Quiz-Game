@@ -42,6 +42,8 @@ public class TournamentManager : MonoBehaviour
 
     private float statusCheckTimer = 0f;
     private const float STATUS_CHECK_INTERVAL = 5f; // Check every 5 seconds
+    private float refreshTimer = 0f;
+    private const float REFRESH_INTERVAL = 30f; // Refresh tournaments from cloud every 30 seconds
 
     private async void Awake()
     {
@@ -169,11 +171,12 @@ public class TournamentManager : MonoBehaviour
 
             TournamentData newTournament = new TournamentData
             {
+                tournamentId = Guid.NewGuid().ToString(),
                 tournamentName = name,
                 startTime = startTimeUTC,
                 endTime = endTimeUTC,
                 isPrivate = isPrivate,
-                password = password,
+                password = string.IsNullOrEmpty(password) ? "" : password.GetHashCode().ToString(),
                 creatorUID = AuthenticationService.Instance.PlayerId,
                 maxPlayers = maxPlayers,
                 status = TournamentStatus.Upcoming
@@ -248,7 +251,7 @@ public class TournamentManager : MonoBehaviour
                 return false;
             }
 
-            if (tournament.isPrivate && tournament.password != password)
+            if (tournament.isPrivate && tournament.password != password.GetHashCode().ToString())
             {
                 Debug.LogError("Incorrect password!");
                 return false;
@@ -439,6 +442,11 @@ public class TournamentManager : MonoBehaviour
             }
 
             tournament.selectedQuizPackName = quizPackName;
+            tournament.quizPackId = "";
+            tournament.quizPackDisplayName = quizPackName;
+            tournament.quizCategoryName = "";
+            tournament.quizVersion = "";
+            tournament.usesOnlineQuizPack = false;
             await SaveTournaments();
 
             Debug.Log($"Quiz Pack '{quizPackName}' set for tournament '{tournament.tournamentName}'");
@@ -448,6 +456,55 @@ public class TournamentManager : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError($"Failed to set quiz pack: {e.Message}");
+            return false;
+        }
+    }
+
+    public async Task<bool> SetTournamentQuizPack(string tournamentId, QuizPackManifestEntryDTO entry)
+    {
+        if (entry == null || string.IsNullOrWhiteSpace(entry.packId))
+        {
+            Debug.LogError("Invalid online quiz pack entry.");
+            return false;
+        }
+
+        try
+        {
+            TournamentData tournament = allTournaments.FirstOrDefault(t => t.tournamentId == tournamentId);
+
+            if (tournament == null)
+            {
+                Debug.LogError("Tournament not found!");
+                return false;
+            }
+
+            if (!IsCreatorOfTournament(tournamentId))
+            {
+                Debug.LogError("Only the tournament creator can set quiz packs!");
+                return false;
+            }
+
+            if (tournament.status != TournamentStatus.Upcoming)
+            {
+                Debug.LogError("Cannot change quiz pack for active or ended tournament!");
+                return false;
+            }
+
+            tournament.selectedQuizPackName = !string.IsNullOrWhiteSpace(entry.displayName) ? entry.displayName : entry.packId;
+            tournament.quizPackId = entry.packId;
+            tournament.quizPackDisplayName = tournament.selectedQuizPackName;
+            tournament.quizCategoryName = entry.categoryName;
+            tournament.quizVersion = entry.version;
+            tournament.usesOnlineQuizPack = true;
+            await SaveTournaments();
+
+            Debug.Log($"Online Quiz Pack '{tournament.quizPackDisplayName}' set for tournament '{tournament.tournamentName}'");
+            OnTournamentsUpdated?.Invoke(allTournaments);
+            return true;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Failed to set online quiz pack: {e.Message}");
             return false;
         }
     }
@@ -1006,6 +1063,26 @@ public async Task LoadTournaments()
         {
             statusCheckTimer = 0f;
             CheckTournamentStatus();
+        }
+
+        refreshTimer += Time.deltaTime;
+        if (refreshTimer >= REFRESH_INTERVAL)
+        {
+            refreshTimer = 0f;
+            _ = RefreshTournamentsAsync();
+        }
+    }
+
+    private async Task RefreshTournamentsAsync()
+    {
+        try
+        {
+            await LoadTournaments();
+            OnTournamentsUpdated?.Invoke(allTournaments);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Failed to refresh tournaments: {e.Message}");
         }
     }
 

@@ -1,19 +1,23 @@
 using System;
-using UnityEngine;
-using UnityEngine.Events;
+using System.Threading;
+using System.Threading.Tasks;
 using TMPro;
 using Unity.Services.Authentication;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Unity.Services.Core;
 
 public class AuthManager : MonoBehaviour
 {
     [Header("Scenes to load after success")]
     public string OfflineSceneName;
-    
+
     [Header("Panels")]
     public GameObject SuccessFailPanel;
     public TMP_Text SuccessFailText;
+    public GameObject SignUpPanel;
+    public GameObject SignInPanel;
 
     [Header("Profile")]
     public TMP_Text UserName;
@@ -23,6 +27,7 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField Username_SignIn;
     public TMP_InputField Password_SignIn;
     public Button UsernameSignInButton;
+
     [Header("SignUp References")]
     public TMP_InputField Username_SignUp;
     public TMP_InputField Password_SignUp;
@@ -30,177 +35,253 @@ public class AuthManager : MonoBehaviour
     public Button GuestButton;
     public Button GooglePlaySignInButton;
 
-    [Header("Logout")]
-   // public Button Logout;
-
     [Header("Events")]
     public UnityEvent OnSignedIn;
     public UnityEvent OnExpired;
     public UnityEvent OnSignedOut;
     public UnityEvent<string> OnAuthMessage;
-    
+
     [Header("Show Password - Sign In")]
     public Toggle ShowPasswordSignInToggle;
     public TMP_InputField ShowPasswordSignInText;
-    private bool isSignInPasswordVisible = false;
 
     [Header("Show Password - Sign Up")]
     public Toggle ShowPasswordSignUpToggle;
     public TMP_InputField ShowPasswordSignUpText;
-    private bool isSignUpPasswordVisible = false;
 
-
-    
+    private static bool eventsRegistered;
+    private CancellationTokenSource cts;
+    private bool isSigningIn;
 
     private async void Start()
     {
-        UnityServices.InitializeAsync();
+        cts = new CancellationTokenSource();
 
-#if Unity_Editor || UNITY_STANDALONE_WIN || UNITY_ANDROID
+        try
         {
-        GooglePlaySignInButton.gameObject.SetActive(false);
+            await WaitForBootstrapAsync(cts.Token);
         }
-#endif
-        UsernameSignUpButton.onClick.AddListener(SignUpProfile);
-        UsernameSignInButton.onClick.AddListener(SignInButton);
-        GuestButton.onClick.AddListener(GuestSignIn);
-
-        // Register auth events
-        AuthExtensions.RegisterEvents(
-            onSignedIn: () => ShowMessage("Signed in successfully!", Color.green),
-            onExpired: () => ShowMessage("Session expired. Please sign in again.", Color.yellow),
-            onSignedOut: () => ShowMessage("Signed out.", Color.blue),
-            onSignInFailed: (msg) => ShowMessage($"Sign-in failed: {msg}", Color.red)
-        );
-        ShowPasswordSignInToggle.onValueChanged.AddListener(ToggleSignInPassword);
-        ShowPasswordSignUpToggle.onValueChanged.AddListener(ToggleSignUpPassword);
-        if (AuthenticationService.Instance.SessionTokenExists)
+        catch (OperationCanceledException)
         {
-            try
-            {
-                await AuthenticationService.Instance.SignInAnonymouslyAsync();
-                LoadingSceneManager.Instance.LoadofflineScene(OfflineSceneName);
-                Debug.Log("Signed in with cached session.");
-                return;
-            }
-            catch
-            {
-                Debug.Log("Cached session invalid, signing in anonymously...");
-            }
+            return;
+        }
+
+        if (!eventsRegistered)
+        {
+            eventsRegistered = true;
+            AuthExtensions.RegisterEvents(
+                onSignedIn: () =>
+                {
+                    HideAuthPanels();
+                    UpdateProfileUI();
+                },
+                onExpired: () => ShowMessage("Session expired. Please sign in again.", Color.yellow),
+                onSignedOut: () => ShowMessage("Signed out.", Color.blue),
+                onSignInFailed: msg => ShowMessage($"Sign-in failed: {msg}", Color.red)
+            );
+        }
+
+        DisableManualAuthControls();
+
+        if (AuthenticationService.Instance.IsSignedIn)
+        {
+            HideAuthPanels();
+            UpdateProfileUI();
+            LoadScene();
+            return;
+        }
+
+        bool restored = await AuthExtensions.TryRestoreGooglePlayGamesSignInAsync(cts.Token);
+        if (restored)
+        {
+            HideAuthPanels();
+            UpdateProfileUI();
+            LoadScene();
+            return;
+        }
+
+        if (GooglePlaySignInButton != null)
+        {
+            GooglePlaySignInButton.onClick.RemoveAllListeners();
+            GooglePlaySignInButton.onClick.AddListener(() => _ = SignInWithGooglePlayGamesAsync());
         }
     }
 
     public void LoadScene()
     {
+        if (string.IsNullOrWhiteSpace(OfflineSceneName)) return;
+        if (SceneManager.GetActiveScene().name == OfflineSceneName) return;
+
         if (LoadingSceneManager.Instance != null)
             LoadingSceneManager.Instance.LoadofflineScene(OfflineSceneName);
         else
             Debug.LogError("LoadingSceneManager instance not found!");
     }
-    public async void SignUpProfile()
-    {
-        if (string.IsNullOrEmpty(Username_SignUp.text) || string.IsNullOrEmpty(Password_SignUp.text))
-        {
-            ShowMessage("Username and Password cannot be empty!", Color.red);
-            return;
-        }
-
-        string result = await AuthExtensions.SignUpWithUsernamePasswordAsync(Username_SignUp.text, Password_SignUp.text);
-        //ShowMessage(result, Color.red);
-        //UpdateProfileUI();*/
-        if (result.StartsWith("Success", StringComparison.OrdinalIgnoreCase))
-        {
-            ShowMessage("Account created successfully!", Color.green);
-            new WaitForSeconds(2f); // small delay for UI feedback (optional)
-            LoadScene();
-        }
-        else if (result.Contains("password", StringComparison.OrdinalIgnoreCase) ||
-                 result.Contains("weak", StringComparison.OrdinalIgnoreCase) ||
-                 result.Contains("requirements", StringComparison.OrdinalIgnoreCase))
-        {
-            ShowMessage(result, Color.red);
-            Analytics_Manager.Instance.LogEvent("WeakPasswordEntered");
-        }
-        else
-        {
-            ShowMessage(result, Color.red);
-            
-        }
-    }
-
-    public async void GuestSignIn()
-    {
-        try
-        {
-            await AuthExtensions.SignInAnonymouslyAsync();
-            LoadingSceneManager.Instance.LoadofflineScene(OfflineSceneName);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
-        
-    }
-    public async void SignInButton()
-    {
-        if (string.IsNullOrEmpty(Username_SignIn.text) || string.IsNullOrEmpty(Password_SignIn.text))
-        {
-            ShowMessage("Username and Password cannot be empty!", Color.red);
-            return;
-        }
-
-        string result = await AuthExtensions.SignInWithUsernamePasswordAsync(Username_SignIn.text, Password_SignIn.text);
-        if (result.StartsWith("Success"))
-        {
-            ShowMessage("Signed in successfully!", Color.green);
-             new WaitForSeconds(2f);
-            LoadScene();
-        }
-        
-        else
-            ShowMessage(result, Color.red);
-
-        //UpdateProfileUI();
-    }
 
     public void SignoutButton()
     {
         AuthExtensions.SignOut(true);
-        //ShowMessage("Signed out successfully.", Color.yellow);
-        //UpdateProfileUI();
-    }
-
-    private void UpdateProfileUI()
-    {
-        UserName.text = AuthExtensions.GetCachedPlayerName() ?? "Not Signed In";
-        UID.text = AuthExtensions.GetPlayerID() ?? "N/A";
     }
 
     public void ShowMessage(string msg, Color color)
     {
-        SuccessFailPanel.SetActive(true);
-        SuccessFailText.color = color;
-        SuccessFailText.text = msg;
+        if (SuccessFailPanel != null) SuccessFailPanel.SetActive(true);
+
+        if (SuccessFailText != null)
+        {
+            SuccessFailText.color = color;
+            SuccessFailText.text = msg;
+        }
+
+        OnAuthMessage?.Invoke(msg);
     }
+
     public void ToggleSignInPassword(bool isOn)
     {
-        Password_SignIn.contentType = isOn
-            ? TMP_InputField.ContentType.Standard
-            : TMP_InputField.ContentType.Password;
-
-        Password_SignIn.ForceLabelUpdate();
+        SetPasswordVisibility(Password_SignIn, isOn);
     }
 
     public void ToggleSignUpPassword(bool isOn)
     {
-        Password_SignUp.contentType = isOn
-            ? TMP_InputField.ContentType.Standard
-            : TMP_InputField.ContentType.Password;
-
-        Password_SignUp.ForceLabelUpdate();
+        SetPasswordVisibility(Password_SignUp, isOn);
     }
 
+    public void SignInButton()
+    {
+        _ = SignInWithGooglePlayGamesAsync();
+    }
 
+    public void SignUpProfile()
+    {
+        _ = SignInWithGooglePlayGamesAsync();
+    }
 
+    private async Task SignInWithGooglePlayGamesAsync()
+    {
+        if (isSigningIn || cts == null || cts.IsCancellationRequested) return;
+
+        try
+        {
+            isSigningIn = true;
+            SetGoogleButtonInteractable(false);
+            ShowMessage("Signing in with Google Play Games...", Color.white);
+
+            string result = await AuthExtensions.SignInWithGooglePlayGamesAsync(cts.Token);
+            bool success = result.StartsWith("Success", StringComparison.OrdinalIgnoreCase);
+
+            if (success)
+            {
+                UpdateProfileUI();
+                HideAuthPanels();
+                await Task.Delay(500, cts.Token);
+                LoadScene();
+            }
+            else
+            {
+                ShowMessage(result, Color.red);
+                SetGoogleButtonInteractable(true);
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            ShowMessage("Google Play Games sign-in cancelled.", Color.yellow);
+        }
+        finally
+        {
+            isSigningIn = false;
+        }
+    }
+
+    private async Task WaitForBootstrapAsync(CancellationToken token)
+    {
+        int attempts = 0;
+        while (GameBootStrapper.Instance != null && !GameBootStrapper.Instance.IsBootStrapped && attempts < 100)
+        {
+            token.ThrowIfCancellationRequested();
+            await Task.Yield();
+            attempts++;
+        }
+    }
+
+    private void DisableManualAuthControls()
+    {
+        DisableInput(Username_SignIn);
+        DisableInput(Password_SignIn);
+        DisableInput(Username_SignUp);
+        DisableInput(Password_SignUp);
+        DisableInput(ShowPasswordSignInText);
+        DisableInput(ShowPasswordSignUpText);
+
+        DisableButton(UsernameSignInButton);
+        DisableButton(UsernameSignUpButton);
+        DisableButton(GuestButton);
+
+        DisableToggle(ShowPasswordSignInToggle);
+        DisableToggle(ShowPasswordSignUpToggle);
+    }
+
+    private void HideAuthPanels()
+    {
+        if (SuccessFailPanel != null) SuccessFailPanel.SetActive(false);
+        if (SignUpPanel != null) SignUpPanel.SetActive(false);
+        if (SignInPanel != null) SignInPanel.SetActive(false);
+
+        HideParentPanel(Username_SignUp);
+        HideParentPanel(Password_SignUp);
+        HideParentPanel(Username_SignIn);
+        HideParentPanel(Password_SignIn);
+    }
+
+    private void UpdateProfileUI()
+    {
+        if (UserName != null) UserName.text = AuthExtensions.GetCachedPlayerName();
+        if (UID != null) UID.text = AuthExtensions.GetPlayerID();
+    }
+
+    private void SetGoogleButtonInteractable(bool interactable)
+    {
+        if (GooglePlaySignInButton != null) GooglePlaySignInButton.interactable = interactable;
+    }
+
+    private static void DisableInput(TMP_InputField input)
+    {
+        if (input == null) return;
+        input.interactable = false;
+        input.gameObject.SetActive(false);
+    }
+
+    private static void HideParentPanel(TMP_InputField input)
+    {
+        if (input == null) return;
+        Transform parent = input.transform.parent;
+        if (parent != null) parent.gameObject.SetActive(false);
+    }
+
+    private static void DisableButton(Button button)
+    {
+        if (button == null) return;
+        button.interactable = false;
+        button.gameObject.SetActive(false);
+    }
+
+    private static void DisableToggle(Toggle toggle)
+    {
+        if (toggle == null) return;
+        toggle.interactable = false;
+        toggle.gameObject.SetActive(false);
+    }
+
+    private static void SetPasswordVisibility(TMP_InputField input, bool visible)
+    {
+        if (input == null) return;
+        input.contentType = visible ? TMP_InputField.ContentType.Standard : TMP_InputField.ContentType.Password;
+        input.ForceLabelUpdate();
+    }
+
+    private void OnDestroy()
+    {
+        cts?.Cancel();
+        cts?.Dispose();
+        cts = null;
+    }
 }
-

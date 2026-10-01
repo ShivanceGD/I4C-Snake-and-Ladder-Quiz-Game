@@ -1,0 +1,44 @@
+---
+description: Guidelines for adding ContextCodeAnalyzer annotations to code
+globs: *.cs
+alwaysApply: true
+---
+
+## Core Principles
+- Use structured format with sections: `@purpose`, `@usage`, `@params`, `@returns`, `@notes`
+- Write in English for all annotations
+- Be concise but informative — each section contains necessary info to understand purpose and usage
+
+## Section Structure
+- **@purpose**: Why the class/method/field exists
+- **@usage**: When and how to call or use it
+- **@params**: Parameter name and description (omit if none)
+- **@returns**: What's returned (omit if void)
+- **@notes**: Limitations, side effects, implementation specifics
+
+## When to Annotate
+- Methods with non-obvious logic, complex behavior, or important side effects
+- Parameters/fields that affect class behavior
+- Any place where context helps avoid errors
+
+## When to Update
+- Logic has changed
+- Parameters added/changed
+- After refactoring
+- When context is not clear enough
+
+## When to Remove
+- Code is so simple the purpose is obvious from name/signature
+- Context adds no new information
+- Method/class is deleted or deprecated
+
+## Example
+```csharp
+[ContextCodeAnalyzer(
+  @purpose: "Attempts to generate a new chip if the generator is charged and free space exists",
+  @usage: "Call when generator is charged and a chip needs to be generated",
+  @params: "chargeAmount - amount to deduct on generation",
+  @returns: "True if chip was generated, false otherwise",
+  @notes: "Handles state transitions and chip creation. Sets waiting state if no space."
+)]
+```

@@ -10,11 +10,46 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 public class ClampUIWithinSafeArea : NetworkBehaviour
 {
+    public static ClampUIWithinSafeArea Instance { get; private set; }
+
     public GameObject[] foundButtons;
     public bool isPrivateRoom = false;
-     private void Awake()
+    public InputField sessionNameInput;
+
+    private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
         ClampUi();
+    }
+
+    private void Start()
+    {
+        WireCreateButton();
+    }
+
+    private void WireCreateButton()
+    {
+        var go = GameObject.Find("CreateSession_Button");
+        if (go != null)
+        {
+            var btn = go.GetComponent<Button>();
+            if (btn != null)
+            {
+                btn.onClick.AddListener(() => CreatePrivateSession(GetSessionName()));
+            }
+        }
+    }
+
+    private string GetSessionName()
+    {
+        if (sessionNameInput != null && !string.IsNullOrEmpty(sessionNameInput.text))
+            return sessionNameInput.text;
+        return "MyRoom";
     }
 
     public void FindButtons()
@@ -22,7 +57,7 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         foundButtons = GameObject.FindGameObjectsWithTag("CloseButton");
         foreach (GameObject obj in foundButtons)
         {
-                obj.GetComponent<Button>().onClick.AddListener(()=> SoundManager.Instance.PlayCloseSound());
+            obj.GetComponent<Button>().onClick.AddListener(() => SoundManager.Instance.PlayCloseSound());
         }
     }
 
@@ -51,50 +86,33 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
     public void LoadonlineScene(string SceneName)
     {
         if (!NetworkManager.Singleton.IsServer)
-            return; 
+            return;
         NetworkManager.Singleton.SceneManager.LoadScene("Multiplayer_Level_New", LoadSceneMode.Single);
-        /*LoadingSceneManager.Instance.LoadOnlineScene(SceneName);
-        LoadingSceneManager.Instance.SetLoadingScreenMessage("Loading...");*/
     }
-    
+
     public string multiplayerSceneName = "Multiplayer_Level_New";
 
     private ISession currentSession;
 
-    // Hook this up in the Inspector to "Joined Session (ISession)"
     public void OnJoinedSession(ISession session)
     {
         currentSession = session;
 
         if (session.IsHost)
         {
-            //NetworkManager.Singleton.StartHost();
             session.PlayerJoined += (player) =>
             {
-                //Debug.Log($"SDK Player joined: {player.Id}");
                 CheckPlayers();
             };
         }
-        else
-        {
-            //NetworkManager.Singleton.StartClient();
-        }
     }
 
-    /*private void CheckPlayers()
-    {
-        if (currentSession != null && currentSession.Players.Count >= 2 && NetworkManager.Singleton.IsHost)
-        {
-            Debug.Log("Two players are in session! Loading multiplayer scene...");
-            NetworkManager.Singleton.SceneManager.LoadScene(multiplayerSceneName, LoadSceneMode.Single);
-        }
-    }*/
     private void CheckPlayers()
     {
         if (currentSession == null || !NetworkManager.Singleton.IsHost)
             return;
 
-        if (!isPrivateRoom) // ✅ Auto-start only if NOT private
+        if (!isPrivateRoom)
         {
             if (currentSession.Players.Count >= 2)
             {
@@ -108,7 +126,6 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         }
     }
 
-    // 🔘 Call this from your UI "Start Game" button in private rooms
     public void StartPrivateRoomGame()
     {
         if (NetworkManager.Singleton.IsHost)
@@ -118,9 +135,40 @@ public class ClampUIWithinSafeArea : NetworkBehaviour
         }
     }
 
-    // Optional: expose this to set when creating/joining sessions
     public void SetPrivateRoom(bool isPrivate)
     {
         isPrivateRoom = isPrivate;
+        if (GameModeManager.Instance != null)
+        {
+            GameModeManager.Instance.IsPrivateRoom = isPrivate;
+        }
+    }
+
+    public async void CreatePrivateSession(string sessionName)
+    {
+        EnsureCustomSessionController();
+        if (CustomSessionController.Instance != null)
+        {
+            await CustomSessionController.Instance.CreatePrivateSessionAsync(sessionName);
+        }
+    }
+
+    public async void QuickJoin()
+    {
+        EnsureCustomSessionController();
+        if (CustomSessionController.Instance != null)
+        {
+            await CustomSessionController.Instance.QuickJoinAsync();
+        }
+    }
+
+    private void EnsureCustomSessionController()
+    {
+        if (CustomSessionController.Instance == null)
+        {
+            var go = new GameObject("CustomSessionController");
+            go.AddComponent<CustomSessionController>();
+            DontDestroyOnLoad(go);
+        }
     }
 }

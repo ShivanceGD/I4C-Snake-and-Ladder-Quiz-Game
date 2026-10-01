@@ -1,0 +1,43 @@
+# Ignore Unity game assets (textures, sprites, audio, models)
+Assets/20 Logos PSD/
+Assets/Game Assets/
+Assets/GUIPackCartoon/
+Assets/HardArtcore/
+Assets/Layer Lab/
+Assets/UI Sprite Sheets/
+Assets/EasyTransitions/
+Assets/LeanTween/
+Assets/TextMesh Pro/
+
+# Ignore third-party packages
+Assets/Plugins/
+Assets/Multiplayer Widgets/
+
+# Ignore generated/build output
+Library/
+Temp/
+obj/
+Logs/
+Build/
+Builds/
+*.meta
+*.csproj
+*.sln
+
+# Ignore IDE configs
+.idea/
+.vscode/
+UserSettings/
+
+# Ignore key store
+Key/
+
+# Ignore non-code docs/assets that need LLM
+Assets/Resources/
+Assets/TutorialInfo/
+Assets/CloudCode/
+Assets/ExcelReaderUtility.cs
+
+# Ignore MCP server files
+new_module_reference/
+TournamentModule/

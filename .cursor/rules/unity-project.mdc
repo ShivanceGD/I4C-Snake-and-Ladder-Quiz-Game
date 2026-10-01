@@ -1,0 +1,38 @@
+---
+description: Unity project rules and constraints for I4C Snake & Ladder
+globs: *.cs
+alwaysApply: true
+---
+
+## Unity Version & Packages
+- Unity 6000.3.9f1, URP 17.3.0
+- Netcode for GameObjects (NGO) 2.9.1 — use `NetworkBehaviour`, `NetworkVariable<>`, RPCs
+- UGS: Authentication, CloudSave, CloudCode, Leaderboards, RemoteConfig, Analytics
+- LeanTween for tweening/animation
+- TextMeshPro for all UI text
+- EasyTransition for scene transitions
+- AYellowpaper.SerializedCollections for dictionary serialization in ScriptableObjects
+
+## Project Constraints
+- **No namespaces** — all C# classes in global namespace
+- **PascalCase** for class names, filenames must match class names exactly
+- **No spaces** in file or folder names
+- **Singletons** use `public static ClassName Instance { get; private set; }` in Awake
+- **ScriptableObjects**: create via `[CreateAssetMenu]`, store in Resources or referenced directly
+
+## Code Style
+- Fields: `_camelCase` for private, `[SerializeField] private` for serialized
+- Properties: PascalCase
+- Async methods: suffix `Async`, return `Task`, include `CancellationToken` parameter
+- No XML doc comments — use `[ContextCodeAnalyzer]` attribute for annotations
+- Avoid regions; prefer partial classes near 400-line limit
+
+## File Organization
+- One class per file (file name = class name)
+- System-specific folders under `Assets/Scripts/Runtime/`
+- Legacy code in `Assets/Scripts/{System}_Scripts/` — prefer editing Runtime versions
+
+## MCP Tool Usage
+- `com.coplaydev.unity-mcp` (IvanMurzak) installed
+- Enable only the tool categories needed for the current task
+- Disable unused tools to save token budget

@@ -1,0 +1,997 @@
+{
+  ".cursor/mcp.json": {
+    "mtime": 1780856556.997533,
+    "ast_hash": "8e1d9a4736ee72918fcad43016f316fc",
+    "semantic_hash": ""
+  },
+  ".opencode.json": {
+    "mtime": 1780856989.9325902,
+    "ast_hash": "c84f21762411cbd91522a5b6e13ebb5d",
+    "semantic_hash": ""
+  },
+  "Assets/Editor/QuizImporter.cs": {
+    "mtime": 1771517242.4656932,
+    "ast_hash": "b881b6590f8a8661f9572ca04c8ef0ea",
+    "semantic_hash": ""
+  },
+  "Assets/MainMenuUI.cs": {
+    "mtime": 1782740867.4607413,
+    "ast_hash": "15f3c177711af63d5cb5af4790d065f4",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Analytics_Manager.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "65f7dbccef0d95a7d4366f4721fdb72b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Board_Scripts/BoardManager.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "94316cacd36fba1bf4860b21473471cd",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Core_Scripts/UIManager.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "3852dbdd2f480d1902a1283418a32160",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Core_Scripts/UiLogicManager.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "fcac5701a7863944c62a26e18d591da1",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Menu_Scripts/CharacterMovement.cs": {
+    "mtime": 1771517228.8898704,
+    "ast_hash": "d909975384c052bb259d9b41c86264a2",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Menu_Scripts/CharacterMoverOnPath.cs": {
+    "mtime": 1771517228.8898704,
+    "ast_hash": "fd7f83b397e0f550ee799f52673aa528",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Menu_Scripts/Lvl.cs": {
+    "mtime": 1782757770.0377498,
+    "ast_hash": "df18c6b7aeb470e31bb8870b63a08057",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Menu_Scripts/PathMaps.cs": {
+    "mtime": 1771517228.899478,
+    "ast_hash": "1413aa51605c8d01cb107148b8f835a2",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Menu_Scripts/SplineCurve.cs": {
+    "mtime": 1771517228.899478,
+    "ast_hash": "5bbd92bb52e8be7c53b7ab0387e2275d",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Player_Script/DataSavingAndLoadingStructure.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "48bf5e428baacbe5e5a7193b6f235270",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Quiz_Scripts/CharacterSCO.cs": {
+    "mtime": 1782757766.3037632,
+    "ast_hash": "2a2ece1b12e6563df43ac25f67ecf924",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Quiz_Scripts/QuizQuestionData.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "a391a63ce4f8301b0c9789145fbacfbb",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Refactored_Scripts/GlobalGameDataSettingsSO.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "adcdefca0c9b9d56f4298f761e1629e5",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Refactored_Scripts/LevelDataHolder.cs": {
+    "mtime": 1771517243.5645418,
+    "ast_hash": "d613d0a9568382b9e7a958dfa2c13bbc",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Authentication System/AuthExtension.cs": {
+    "mtime": 1783351484.9610202,
+    "ast_hash": "794cbe61d3e8576f3e0d89c330856aec",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Authentication System/AuthManager.cs": {
+    "mtime": 1783351320.0583575,
+    "ast_hash": "47b223314ad5ae24519b72e51178d59c",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Board System/BoardLogicManager.cs": {
+    "mtime": 1780859593.3213286,
+    "ast_hash": "00f9750d4494361c1e6a469a0ace6ecb",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Board System/BoardNumbering.cs": {
+    "mtime": 1771517243.5811546,
+    "ast_hash": "ff3d4bb4bfb4c67086fe5f4b1b6cc460",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Global Systems/GameBootStrapper.cs": {
+    "mtime": 1783343659.7069745,
+    "ast_hash": "aa680d200880c8269f59dce9ec006c05",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Global Systems/GameManager.cs": {
+    "mtime": 1780859315.9773169,
+    "ast_hash": "f643bc46c8788519e944e2a149ee3850",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Global Systems/GlobalColourManager.cs": {
+    "mtime": 1771517243.583668,
+    "ast_hash": "6e595bd245bf35c437bffe3d72894efc",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Global Systems/LoadingSceneManager.cs": {
+    "mtime": 1771517243.5865414,
+    "ast_hash": "18fa9371436de6f082abaf2dc93e9372",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Global Systems/SoundManager.cs": {
+    "mtime": 1771517243.5865414,
+    "ast_hash": "d39d5344b2a8888024e8a6a562fa4574",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/IFlowManager.cs": {
+    "mtime": 1771517243.5865414,
+    "ast_hash": "a07df920e6a68f89c165b8658cd81a37",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Leaderboard.cs": {
+    "mtime": 1771845247.9245267,
+    "ast_hash": "729a49726f24b9f1eae31091f08f609b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Level Systems/GameModeManager.cs": {
+    "mtime": 1782740595.913592,
+    "ast_hash": "9e5d15441c57f729d6043442b385e90b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Level Systems/ILevelFlow.cs": {
+    "mtime": 1771517243.590557,
+    "ast_hash": "49fc39f9040531dd008822a2afb57405",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Level Systems/MovementManager.cs": {
+    "mtime": 1780859396.2946048,
+    "ast_hash": "f9ae3018a0e28f753f2fc7880a5eb504",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Level Systems/MultiplayerFlowManager.cs": {
+    "mtime": 1782740747.1375523,
+    "ast_hash": "7b54b4807f2722c1c4532eabe16b8b0b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Level Systems/OfflineGameFlowHandler.cs": {
+    "mtime": 1782740682.5944574,
+    "ast_hash": "7af02f824d77bf3eeee34056a8596174",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Player System/Player.cs": {
+    "mtime": 1771517243.594886,
+    "ast_hash": "12dd7737bde8e38c861f49d7cf0b2f0e",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Player System/PlayerGameData.cs": {
+    "mtime": 1771517243.5973208,
+    "ast_hash": "8768dfe4bcba0dd9eefc620a4014ce25",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Player System/PlayerHUD.cs": {
+    "mtime": 1771517243.597811,
+    "ast_hash": "39fb92d32f5bc63192ba80dc33d87ec6",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Player System/PlayerMovement.cs": {
+    "mtime": 1771517243.5998535,
+    "ast_hash": "118a6234ec290f9a22abad6adcfbc3cb",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/QuizHintSystem.cs": {
+    "mtime": 1771517243.5998535,
+    "ast_hash": "080d7673cafe33d42014381131d1a9b9",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/QuizManager.cs": {
+    "mtime": 1782740691.076581,
+    "ast_hash": "47a83dd28c4ab946e3b8998363edf95f",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/QuizTimer.cs": {
+    "mtime": 1771517243.6018605,
+    "ast_hash": "f68877a3d4c2a7dfd07d5325eaeb5526",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/QuizUI.cs": {
+    "mtime": 1782757768.2427182,
+    "ast_hash": "b0d522002e076fcbd7a742b9df106c86",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Save Load System/OfflineUGSSaveManager.cs": {
+    "mtime": 1771517243.6038282,
+    "ast_hash": "07d9661ad8bc058912f4c8f9cf996c5c",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Save Load System/RemoteConfigLoadManager.cs": {
+    "mtime": 1771845247.928136,
+    "ast_hash": "d5dec7af7fa5d6fa966879c23ea30895",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Save Load System/SaveAndLoadManager.cs": {
+    "mtime": 1780859352.2277796,
+    "ast_hash": "a717780ab56acbea3e2739ece7e4e32c",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Save Load System/SerializableDictionaryForJson.cs": {
+    "mtime": 1771517243.608635,
+    "ast_hash": "ba8b5ea9c2dfc69ec3f40ff16e531d5e",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/ScriptableObjects/BoardDataSO.cs": {
+    "mtime": 1771517243.608635,
+    "ast_hash": "8d09cc4ba2c344eb9dd41731dbd9136b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/ScriptableObjects/LevelDataSO.cs": {
+    "mtime": 1771517243.610643,
+    "ast_hash": "bdb31f988749a575a14f92eda137daed",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/ScriptableObjects/QuizPackSO.cs": {
+    "mtime": 1771517243.610643,
+    "ast_hash": "351a1027a174956c45472b684d11975c",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/SpriteSwapper.cs": {
+    "mtime": 1771517243.612636,
+    "ast_hash": "997a407d77a5a66e8ba0ed84de09cd32",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Turn Logics/OfflineTurnLogic.cs": {
+    "mtime": 1780859470.1340907,
+    "ast_hash": "578dcf36883f2653877f79b8308bc5b6",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Turn Logics/OnlineTurnLogic.cs": {
+    "mtime": 1771517243.614417,
+    "ast_hash": "53262abffe5e6ff6607aa42ad5e7c228",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/UiClamp/ClampUIWithinSafeArea.cs": {
+    "mtime": 1780860910.6230576,
+    "ast_hash": "43b6102d2555ff5561f8a4bdb0a9ea5b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/SimpleTournamentDebugger.cs": {
+    "mtime": 1771845247.929169,
+    "ast_hash": "1c0ea141cb9045ea3f7d6a1dbd70758d",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Tournaments/LeaderboardAPIManager.cs": {
+    "mtime": 1771845247.9312341,
+    "ast_hash": "0c7d26f884acd86396358a4fd491a850",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Tournaments/Tournament.cs": {
+    "mtime": 1782740665.2649374,
+    "ast_hash": "e23e6ab8eb12181e47ded9462946796f",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Tournaments/TournamentItem.cs": {
+    "mtime": 1771845247.9339132,
+    "ast_hash": "ac21da4fd3eed7ea93d5fa25d6ee91e8",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Tournaments/TournamentManager.cs": {
+    "mtime": 1782740666.5294547,
+    "ast_hash": "45a071143b4ec02276f9b4646de051b8",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Tournaments/TournamentUI.cs": {
+    "mtime": 1771845247.9365509,
+    "ast_hash": "777ef150aad908715ffeb4822e37c9a7",
+    "semantic_hash": ""
+  },
+  "Packages/manifest.json": {
+    "mtime": 1780855057.6036181,
+    "ast_hash": "8a5f58c0f91dcf844733ffc7eaa13a85",
+    "semantic_hash": ""
+  },
+  "Packages/packages-lock.json": {
+    "mtime": 1783342768.6035075,
+    "ast_hash": "06bf7d0c6215bb674f2c5548c47812c0",
+    "semantic_hash": ""
+  },
+  "ProjectSettings/Packages/com.unity.services.core/Settings.json": {
+    "mtime": 1771845247.9462745,
+    "ast_hash": "0a808356f35ba024a78d9740c7d33309",
+    "semantic_hash": ""
+  },
+  "ProjectSettings/Packages/com.unity.services.vivox/Settings.json": {
+    "mtime": 1771517229.0382535,
+    "ast_hash": "b9fdbc42c70f2d82b9fadcc4e0fd8379",
+    "semantic_hash": ""
+  },
+  "ProjectSettings/SceneTemplateSettings.json": {
+    "mtime": 1771517229.0382535,
+    "ast_hash": "3620a2b0a1c79cc4ae4b6b6ad599ff4d",
+    "semantic_hash": ""
+  },
+  "ProjectSettings/VirtualProjectsConfig.json": {
+    "mtime": 1783342925.247469,
+    "ast_hash": "df7bd19794913d872b92e2f2b46bc5d4",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1780857449.8638291,
+    "ast_hash": "3f6496e3d91734a4f42735b7c0223d2d",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1780857448.4916275,
+    "ast_hash": "396c1390d0b0f2e7d462aac2ff0a6877",
+    "semantic_hash": ""
+  },
+  "ProjectSettings/ProjectVersion.txt": {
+    "mtime": 1783342974.9011471,
+    "ast_hash": "be540b6786976bcb0499d8a4aa6d5e93",
+    "semantic_hash": ""
+  },
+  "Assets/Cyber_Ladder_Logo.png": {
+    "mtime": 1771517242.2144513,
+    "ast_hash": "1a075cc0dcc1d1374d40bb96dbdc7cd5",
+    "semantic_hash": ""
+  },
+  "Assets/Menu/ChatGPT Image Aug 17, 2025, 11_54_25 PM.png": {
+    "mtime": 1771517228.6005466,
+    "ast_hash": "76d62e9f6d0f3985d997e621bfab2236",
+    "semantic_hash": ""
+  },
+  ".opencode/opencode.json": {
+    "mtime": 1780856966.287562,
+    "ast_hash": "f2ae21510d07365eb2bce8159272c7a0",
+    "semantic_hash": ""
+  },
+  ".opencode/plugins/graphify.js": {
+    "mtime": 1780856966.287562,
+    "ast_hash": "32b67963417a30cb80544e0b2a56a98d",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/directory-.-RelWithDebInfo-d0094a50bb2071803777.json": {
+    "mtime": 1783348741.1083484,
+    "ast_hash": "9f40cd23d42f6f64a253672a38c7ce57",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/directory-FramePacing-RelWithDebInfo-7f9c8865fd027a154c90.json": {
+    "mtime": 1783348741.128536,
+    "ast_hash": "e1b996f8721379cb17b2a282cf0bc7d2",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/directory-GameActivity-RelWithDebInfo-3edf2ef9e25ca0503118.json": {
+    "mtime": 1783348741.1194148,
+    "ast_hash": "db917eb4136c4a97e2bff4eabb7fa762",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp": {
+    "mtime": 1783348737.1664555,
+    "ast_hash": "493a7cc5e29a3cf2b0d95a50ee58d987",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId.c": {
+    "mtime": 1783348735.5849102,
+    "ast_hash": "245b894a1d9b5e1b569506b0cfe5d36b",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/android_gradle_build.json": {
+    "mtime": 1783348741.2972333,
+    "ast_hash": "23cff33f44d3624443c22b62cfb3243a",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/android_gradle_build_mini.json": {
+    "mtime": 1783348741.3605287,
+    "ast_hash": "53e0298f4cd1436a7f3a5d515bd271d5",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/compile_commands.json": {
+    "mtime": 1783348740.9933186,
+    "ast_hash": "c152696877fdcd624478650dae280f32",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/prefab_config.json": {
+    "mtime": 1783348741.3672123,
+    "ast_hash": "71f42ec7613f20c1b8cf4771a677435c",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/directory-.-RelWithDebInfo-d0094a50bb2071803777.json": {
+    "mtime": 1783348750.6353588,
+    "ast_hash": "9f40cd23d42f6f64a253672a38c7ce57",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/directory-FramePacing-RelWithDebInfo-7f9c8865fd027a154c90.json": {
+    "mtime": 1783348750.641339,
+    "ast_hash": "e1b996f8721379cb17b2a282cf0bc7d2",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/directory-GameActivity-RelWithDebInfo-3edf2ef9e25ca0503118.json": {
+    "mtime": 1783348750.6387818,
+    "ast_hash": "db917eb4136c4a97e2bff4eabb7fa762",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp": {
+    "mtime": 1783348749.0460224,
+    "ast_hash": "493a7cc5e29a3cf2b0d95a50ee58d987",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId.c": {
+    "mtime": 1783348748.7664018,
+    "ast_hash": "245b894a1d9b5e1b569506b0cfe5d36b",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/android_gradle_build.json": {
+    "mtime": 1783348750.6840758,
+    "ast_hash": "cc4528999856875db93d134034564716",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/android_gradle_build_mini.json": {
+    "mtime": 1783348750.7179966,
+    "ast_hash": "ad31b1806b0a80a27264cc1c27b069fb",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/compile_commands.json": {
+    "mtime": 1783348750.5266685,
+    "ast_hash": "66931f25288e65de04b2066db46a7408",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/prefab_config.json": {
+    "mtime": 1783348750.7195141,
+    "ast_hash": "71f42ec7613f20c1b8cf4771a677435c",
+    "semantic_hash": ""
+  },
+  ".utmp/tools/release/arm64-v8a/compile_commands.json": {
+    "mtime": 1783348740.9933186,
+    "ast_hash": "c152696877fdcd624478650dae280f32",
+    "semantic_hash": ""
+  },
+  ".utmp/tools/release/armeabi-v7a/compile_commands.json": {
+    "mtime": 1783348750.5266685,
+    "ast_hash": "66931f25288e65de04b2066db46a7408",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GPGSAndroidSetupUI.cs": {
+    "mtime": 1751963627.3562288,
+    "ast_hash": "161906ea33a2f782d6763d3785bbf57c",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GPGSDocsUI.cs": {
+    "mtime": 1751963627.3658714,
+    "ast_hash": "4452c18161fc8b43a6dd97daa19f784e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GPGSPostBuild.cs": {
+    "mtime": 1751963627.3572407,
+    "ast_hash": "7305e4fc1ec854517559c793507a3efa",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GPGSProjectSettings.cs": {
+    "mtime": 1751963627.366428,
+    "ast_hash": "3aefc1367baf792e18a8f3e0f09f8f8e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GPGSStrings.cs": {
+    "mtime": 1751963627.3653455,
+    "ast_hash": "87e922b4b7ac4f64625763e56a80f1a9",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUpgrader.cs": {
+    "mtime": 1751963627.3620062,
+    "ast_hash": "5120c690735ff8c41064a22890b04345",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GPGSUtil.cs": {
+    "mtime": 1751963627.3595195,
+    "ast_hash": "ef663dcfeae923356782024e629d1808",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/NearbyConnectionUI.cs": {
+    "mtime": 1751963627.3551328,
+    "ast_hash": "8bb69571cb655e6a3b95ac5580200c23",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Achievement.cs": {
+    "mtime": 1751963627.3138711,
+    "ast_hash": "48a7119f0e0d5cfbc2251ca4b19073f7",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/AuthResponse.cs": {
+    "mtime": 1751963627.3167841,
+    "ast_hash": "3683417ecef3a51f06a68300775a15f4",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/AuthScope.cs": {
+    "mtime": 1751963627.3142428,
+    "ast_hash": "28f37ce3b1fe28c5e5cec91c83877ec0",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/CommonStatusCodes.cs": {
+    "mtime": 1751963627.3229265,
+    "ast_hash": "eddcc374ffbdd63bd47364e9bb4843c6",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/CommonTypes.cs": {
+    "mtime": 1751963627.3437266,
+    "ast_hash": "38f228c77e9f8b49583966be69bf0f14",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/DummyClient.cs": {
+    "mtime": 1751963627.316151,
+    "ast_hash": "a85b5425024dc31638ed43906569a0fd",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Events/Event.cs": {
+    "mtime": 1751963627.3394086,
+    "ast_hash": "f337242d7511e1b15dbda681546337ea",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Events/IEvent.cs": {
+    "mtime": 1751963627.340279,
+    "ast_hash": "03ff0e486d8ce21f6575b4056979de54",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Events/IEventsClient.cs": {
+    "mtime": 1751963627.3407042,
+    "ast_hash": "cd2e1128dccc482854a60cc5125ef50e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/IPlayGamesClient.cs": {
+    "mtime": 1751963627.3363843,
+    "ast_hash": "def4dcc63b55db3363fa3d820c4bbc69",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/LeaderboardScoreData.cs": {
+    "mtime": 1751963627.337624,
+    "ast_hash": "66385277435854dfdc07aa78ee70a3e7",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Nearby/AdvertisingResult.cs": {
+    "mtime": 1751963627.3273904,
+    "ast_hash": "bd07fb186b45c780a244c21fb793818a",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Nearby/ConnectionRequest.cs": {
+    "mtime": 1751963627.3289895,
+    "ast_hash": "f492503f85e83fdd2e3db8a4f504a5d4",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Nearby/ConnectionResponse.cs": {
+    "mtime": 1751963627.3302,
+    "ast_hash": "65c8f06a89b52f7676530588b1c7af67",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Nearby/DummyNearbyConnectionClient.cs": {
+    "mtime": 1751963627.326218,
+    "ast_hash": "d826a3483079c6ef08d53a442fd3a8e6",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Nearby/EndpointDetails.cs": {
+    "mtime": 1751963627.3285577,
+    "ast_hash": "50c950826d3d92acbdb1e948c52e380b",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Nearby/INearbyConnectionClient.cs": {
+    "mtime": 1751963627.3296213,
+    "ast_hash": "3509e689e6603f7e4fec0ab3c152a03a",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Nearby/NearbyConnectionConfiguration.cs": {
+    "mtime": 1751963627.3326383,
+    "ast_hash": "0ca1a0a90836659f426440e67e5e215d",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/Player.cs": {
+    "mtime": 1751963627.342821,
+    "ast_hash": "8e1c12fbc422858c11ed72b39bf94509",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/PlayerProfile.cs": {
+    "mtime": 1751963627.3357313,
+    "ast_hash": "324fe4a167e520df5a259dcdcc09f15b",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/PlayerStats.cs": {
+    "mtime": 1751963627.3448,
+    "ast_hash": "af6d305c6ae4e4f4af187f7b019cdc6a",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/RecallAccess.cs": {
+    "mtime": 1751963627.3178167,
+    "ast_hash": "ab3ab227cf4ec21f08704c8ad96fc6bd",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/SavedGame/ISavedGameClient.cs": {
+    "mtime": 1751963627.319874,
+    "ast_hash": "94879b74faee8c4c1efa162b8a545cf5",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/SavedGame/ISavedGameMetadata.cs": {
+    "mtime": 1751963627.3213503,
+    "ast_hash": "fbbe57a42fb95ce3b4d9433e08afd872",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/SavedGame/SavedGameMetadataUpdate.cs": {
+    "mtime": 1751963627.3224738,
+    "ast_hash": "145597bee87dab92f5dc0845be690bef",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/ScorePageToken.cs": {
+    "mtime": 1751963627.3146422,
+    "ast_hash": "71f9b6e8337242253b86937002b71a7e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/SignInInteractivity.cs": {
+    "mtime": 1751963627.338444,
+    "ast_hash": "77534c2d7379ba59cab9229b976d98de",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/BasicApi/SignInStatus.cs": {
+    "mtime": 1751963627.3432255,
+    "ast_hash": "3c283f9fe83536f1e6a985aabc16f9f4",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/GameInfo.cs": {
+    "mtime": 1780871431.7267094,
+    "ast_hash": "05d07b0296276f4a5fd42e0ec2daf82d",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/ISocialPlatform/PlayGamesAchievement.cs": {
+    "mtime": 1751963627.3112738,
+    "ast_hash": "a6d94ed8f65bdbdaf9068264a5743abe",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/ISocialPlatform/PlayGamesLeaderboard.cs": {
+    "mtime": 1751963627.30919,
+    "ast_hash": "b77227de487484c242627aa1555d361a",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/ISocialPlatform/PlayGamesLocalUser.cs": {
+    "mtime": 1751963627.310698,
+    "ast_hash": "4abca022b3214804c4081af5b04d6652",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/ISocialPlatform/PlayGamesPlatform.cs": {
+    "mtime": 1751963627.3059855,
+    "ast_hash": "f344c678f45115ecec6d75db3bf61e1e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/ISocialPlatform/PlayGamesScore.cs": {
+    "mtime": 1751963627.3078241,
+    "ast_hash": "b9ca78a8756da49e37918169150b9150",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/ISocialPlatform/PlayGamesUserProfile.cs": {
+    "mtime": 1751963627.3098233,
+    "ast_hash": "8d1062b078205b7b8fab081ae1c42f92",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/OurUtils/Logger.cs": {
+    "mtime": 1751963627.3001053,
+    "ast_hash": "2ca38575376e0158a168fe71b680f7e8",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/OurUtils/Misc.cs": {
+    "mtime": 1751963627.302268,
+    "ast_hash": "f365359ed228baa8a83b06e47d6782d7",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/OurUtils/NearbyHelperObject.cs": {
+    "mtime": 1751963627.3032033,
+    "ast_hash": "e612c28c1ad376c38c7aa1cf9ce10582",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/OurUtils/PlatformUtils.cs": {
+    "mtime": 1751963627.299683,
+    "ast_hash": "fba5662960b5e4a77700d4ca5e392b47",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/OurUtils/PlayGamesHelperObject.cs": {
+    "mtime": 1751963627.299242,
+    "ast_hash": "dce8defc6ded2b3f673a8de62ba86f8e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidClient.cs": {
+    "mtime": 1751963627.2854066,
+    "ast_hash": "3f03a67139f11795cf93c06c273d1f84",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidEventsClient.cs": {
+    "mtime": 1751963627.288616,
+    "ast_hash": "8a66805a195881aef8f244763fbf5239",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidHelperFragment.cs": {
+    "mtime": 1751963627.29214,
+    "ast_hash": "eb806015056fa55d2a5e898521f52353",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidJavaConverter.cs": {
+    "mtime": 1751963627.2870486,
+    "ast_hash": "d9599ddc7be2ce5c2f63974cb51519d2",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidNearbyConnectionClient.cs": {
+    "mtime": 1751963627.29028,
+    "ast_hash": "651aa7ddf54d8cfe8c3fb065a072f55e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidSavedGameClient.cs": {
+    "mtime": 1751963627.2842555,
+    "ast_hash": "ec8ca1e5587873062118e6e9ba83092c",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidSnapshotMetadata.cs": {
+    "mtime": 1751963627.286458,
+    "ast_hash": "833a33ed95d0e3f37d47ffddfa93020e",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/Android/AndroidTaskUtils.cs": {
+    "mtime": 1751963627.2959647,
+    "ast_hash": "e5ee7ab36d093c6e46c6a93e0b841af1",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/NearbyConnectionClientFactory.cs": {
+    "mtime": 1751963627.2820792,
+    "ast_hash": "ef15017e671f95cdd34ad86aec43eff9",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/Platforms/PlayGamesClientFactory.cs": {
+    "mtime": 1751963627.2975743,
+    "ast_hash": "e0dc8b3b32621b335c541b31c8d0244c",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Runtime/Scripts/PluginVersion.cs": {
+    "mtime": 1751963627.2980144,
+    "ast_hash": "646c44bc03458ccc065a1b53883ac0b1",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/package.json": {
+    "mtime": 1751963627.3514996,
+    "ast_hash": "6bc6f5601297d7237c93038128c2b18d",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/GooglePlayGames/GooglePlayGamesIds.cs": {
+    "mtime": 1780865509.5939014,
+    "ast_hash": "3702dd674e439f8bbedb067dabe66e61",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Multiplayer/CustomSessionController.cs": {
+    "mtime": 1780861768.3698945,
+    "ast_hash": "fed8a8710e2813928c70d30fc1cee23a",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/CMakeCache.txt": {
+    "mtime": 1783348740.9420211,
+    "ast_hash": "40b25ac9bf2e55c01bf8a75f8ce703ab",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/CMakeFiles/TargetDirectories.txt": {
+    "mtime": 1783348740.9879656,
+    "ast_hash": "9acab8d385cf281a46d981681c86fe54",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/additional_project_files.txt": {
+    "mtime": 1783348741.2851257,
+    "ast_hash": "e1d09c2bc4fb1af67b2e2f9788641745",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/build_file_index.txt": {
+    "mtime": 1783348741.368231,
+    "ast_hash": "108fb4a80cd02e910f7517fc7ef0c3ad",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/metadata_generation_command.txt": {
+    "mtime": 1783348741.3666651,
+    "ast_hash": "518b6859054713d04210dd9974d58d9e",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/symbol_folder_index.txt": {
+    "mtime": 1783348741.3672123,
+    "ast_hash": "2435febf52234f1efbc83669f05389c8",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/CMakeCache.txt": {
+    "mtime": 1783348750.4749177,
+    "ast_hash": "77129137c666d9b0428ad51effa340a5",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/CMakeFiles/TargetDirectories.txt": {
+    "mtime": 1783348750.5193639,
+    "ast_hash": "c77fd4ca15b6b9bb2176b020b2823d51",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/additional_project_files.txt": {
+    "mtime": 1783348750.681558,
+    "ast_hash": "e1d09c2bc4fb1af67b2e2f9788641745",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/build_file_index.txt": {
+    "mtime": 1783348750.7205186,
+    "ast_hash": "108fb4a80cd02e910f7517fc7ef0c3ad",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/metadata_generation_command.txt": {
+    "mtime": 1783348750.7195141,
+    "ast_hash": "a8cd5756e0d4ec9974b13e812dbb80b1",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/symbol_folder_index.txt": {
+    "mtime": 1783348750.7205186,
+    "ast_hash": "a111e330fc926b01790825b62c03ae40",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/hash_key.txt": {
+    "mtime": 1780871116.578375,
+    "ast_hash": "f2c8ca2430d63558b911f888d0cdfd2c",
+    "semantic_hash": ""
+  },
+  "Assets/ExternalDependencyManager/Editor/CHANGELOG.md": {
+    "mtime": 1480838400.0,
+    "ast_hash": "3a98971f831abe3a06abd3fcdd286fe8",
+    "semantic_hash": ""
+  },
+  "Assets/ExternalDependencyManager/Editor/README.md": {
+    "mtime": 1480838400.0,
+    "ast_hash": "0209d80cca9389608755eebe31087fa7",
+    "semantic_hash": ""
+  },
+  "Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.182_manifest.txt": {
+    "mtime": 1480838400.0,
+    "ast_hash": "7b319cb4c123ee60718b79392179258c",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/GooglePlayGamesPlugin_v2.1.0.txt": {
+    "mtime": 1780871427.6452913,
+    "ast_hash": "af100ef1da476dc421d7474efdb45e29",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/template-AndroidManifest.txt": {
+    "mtime": 1751963627.354624,
+    "ast_hash": "5c77983cd594ae20d0e7965de092af88",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/template-Constants.txt": {
+    "mtime": 1751963627.3566768,
+    "ast_hash": "1e72b30a390e57a353cc1f7230f3b7c3",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Editor/template-GameInfo.txt": {
+    "mtime": 1751963627.3599625,
+    "ast_hash": "96ab83591b822a9a31fa84d9b7b9dfc5",
+    "semantic_hash": ""
+  },
+  "Assets/GooglePlayGames/com.google.play.games/Proguard/games.txt": {
+    "mtime": 1751963627.3530457,
+    "ast_hash": "6468d5dcedc03da31daf3c79c9320597",
+    "semantic_hash": ""
+  },
+  "ProjectSettings/GooglePlayGameSettings.txt": {
+    "mtime": 1783351549.7519498,
+    "ast_hash": "df2815e6e3f8c890388ddda0a9bb0fff",
+    "semantic_hash": ""
+  },
+  "Assets/Editor/OnlineQuiz/QuizPackSOToUGSJsonExporter.cs": {
+    "mtime": 1782740776.6050131,
+    "ast_hash": "e047c51669a51e41049730e7775a62fb",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/Online/OnlineQuizConfigSO.cs": {
+    "mtime": 1782740509.6394074,
+    "ast_hash": "900d3fb9f1f36f1126571fe506a0089b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/Online/OnlineQuizDataService.cs": {
+    "mtime": 1782740578.7127795,
+    "ast_hash": "fd5c4e8d9b63f8730e71d54f93447b0f",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/Online/OnlineQuizEvents.cs": {
+    "mtime": 1782740513.8377717,
+    "ast_hash": "1f1f9cbf79b445cc7c8d92575cbe578d",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/Online/OnlineQuizRepository.cs": {
+    "mtime": 1782740580.0607643,
+    "ast_hash": "aa9d15862513872a06063fef1a4d51af",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/Online/QuizPackManifestDTO.cs": {
+    "mtime": 1782740512.3737187,
+    "ast_hash": "cab5fb69bfe886315fea2638264c7631",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/Online/QuizPackOnlineConverter.cs": {
+    "mtime": 1782740515.2014651,
+    "ast_hash": "177b4feae222c846464c52ae8bcd1a59",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/Quiz System/Online/QuizPackOnlineDTO.cs": {
+    "mtime": 1782740510.9414043,
+    "ast_hash": "faad7a2cd8de23cd3eefe9cf1b696648",
+    "semantic_hash": ""
+  },
+  "Assets/Tests/EditMode/OnlineQuizTests.cs": {
+    "mtime": 1782758130.1354897,
+    "ast_hash": "e5f4a4e1a08f62cbb762b1dd3089021a",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1782740843.1708531,
+    "ast_hash": "5d25ff392ae9d49aff8b993e3c89673b",
+    "semantic_hash": ""
+  },
+  "Assets/Editor/FixUrpBuildSettings.cs": {
+    "mtime": 1783346288.3501441,
+    "ast_hash": "27c42196a15d7ca0bb90d54efe298a14",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/cache-v2-c5bd40f0ccfd64c8eaa7.json": {
+    "mtime": 1783348741.054394,
+    "ast_hash": "97ef6784071818e54936cd7516c58efb",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/cmakeFiles-v1-8a1108f8fe92a5179fcd.json": {
+    "mtime": 1783348741.0706532,
+    "ast_hash": "bdaa87e26a27b3576943323067e3ed02",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/codemodel-v2-48bc308f659269ad8331.json": {
+    "mtime": 1783348741.1381054,
+    "ast_hash": "35e73dac2338e278c332f3dd5450389e",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/index-2026-07-06T14-39-01-0151.json": {
+    "mtime": 1783348741.1513171,
+    "ast_hash": "af64d4e7697fea51178815232d82e647",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/target-game-RelWithDebInfo-7bca6f75dd568a3cbf92.json": {
+    "mtime": 1783348741.0849202,
+    "ast_hash": "a5074f5075fd1462d6ae7c5ea793b8b4",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/arm64-v8a/.cmake/api/v1/reply/target-swappywrapper-RelWithDebInfo-5f1b5e9b0cc6a6a1f18b.json": {
+    "mtime": 1783348741.09624,
+    "ast_hash": "162040509c061ce646dcbd5f0252b980",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/cache-v2-c511623248339ccf3fb1.json": {
+    "mtime": 1783348750.584002,
+    "ast_hash": "d80f4f9dc116ee8d3552a2ebc640dd36",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/cmakeFiles-v1-69389caf6c687f7aa6e2.json": {
+    "mtime": 1783348750.5993283,
+    "ast_hash": "db69706b32064f349ff0b742117636ab",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/codemodel-v2-9a65e7503a202d13c388.json": {
+    "mtime": 1783348750.6452534,
+    "ast_hash": "3498074f48592fac0ea16902f7616bff",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/index-2026-07-06T14-39-10-0657.json": {
+    "mtime": 1783348750.657014,
+    "ast_hash": "7559d7c99b3e60db9ac042b3afd072fe",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/target-game-RelWithDebInfo-f48eead5e6fe219c2e1d.json": {
+    "mtime": 1783348750.6117887,
+    "ast_hash": "bc97622b7f96abe6ea49409301ae3080",
+    "semantic_hash": ""
+  },
+  ".utmp/RelWithDebInfo/h6l3bm5i/armeabi-v7a/.cmake/api/v1/reply/target-swappywrapper-RelWithDebInfo-96302625626996ccaf56.json": {
+    "mtime": 1783348750.6242232,
+    "ast_hash": "ac39ff5717e3fbb2aed11a574ae3d3a9",
+    "semantic_hash": ""
+  }
+}

@@ -676,6 +676,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfPlayersToBeSpawned: 1
   QuizPack: {fileID: 0}
+  UseOnlineQuizPack: 0
+  SelectedOnlineQuizPackId: 
+  SelectedOnlineQuizPackName: 
+  SelectedOnlineQuizCategoryName: 
+  SelectedRuntimeQuizPack: {fileID: 0}
+  SelectedLocalQuizPack: {fileID: 0}
   level: {fileID: 0}
   AllLevels:
   - {fileID: 11400000, guid: 921605e9451b39a43a15e4286510aa25, type: 2}
@@ -5297,6 +5303,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4bbbea21855f9b428ceddd106738713, type: 2}
   - {fileID: 11400000, guid: b9284ba0f8200f84aad98a80cbffd63f, type: 2}
   - {fileID: 11400000, guid: 2581ce086b083094891ea4d388df1858, type: 2}
+  onlineQuizConfig: {fileID: 11400000, guid: 3156893a0765be74cbfbc0855589d792, type: 2}
   ChooseQuizPanel: {fileID: 1405404101}
   StoryModeButton: {fileID: 256535291}
   MultiplayerButton: {fileID: 73062124}
@@ -5335,6 +5342,7 @@ MonoBehaviour:
   tournamentContainer: {fileID: 1515516293}
   tournamentItemPrefab: {fileID: 2781718680509028920, guid: 9089ec56cd60c854fb2c9669a34b71f9, type: 3}
   refreshButton: {fileID: 821424407}
+  refreshStatusText: {fileID: 0}
   nameInput: {fileID: 856943866}
   startTimeDropdown: {fileID: 799172372}
   durationDropdown: {fileID: 809310151}
@@ -5360,6 +5368,8 @@ MonoBehaviour:
   accessDeniedMessageText: {fileID: 975179200}
   closeAccessDeniedButton: {fileID: 656342022}
   mainMenuUI: {fileID: 397948433}
+  autoRefreshInterval: 60
+  autoRefreshTimerText: {fileID: 0}
 --- !u!1 &402197293
 GameObject:
   m_ObjectHideFlags: 0
@@ -55499,6 +55509,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   foundButtons: []
   isPrivateRoom: 0
+  sessionNameInput: {fileID: 0}
   multiplayerSceneName: Multiplayer_Level_New
 --- !u!114 &8481595918579111401
 MonoBehaviour:

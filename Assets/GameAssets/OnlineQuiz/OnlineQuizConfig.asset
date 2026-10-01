@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2072fc396545f7c42bd0aaba10b2fff8, type: 3}
+  m_Name: OnlineQuizConfig
+  m_EditorClassIdentifier: Assembly-CSharp::OnlineQuizConfigSO
+  quizCatalogCustomDataId: cyberladder_quizzes
+  manifestCustomId: cyberladder_quiz_manifest
+  quizPackCustomIdPrefix: cyberladder_quiz_pack_
+  useOnlineQuizSystem: 1
+  useLocalQuizFallback: 1
+  useLocalJsonCache: 1
+  hideInactivePacksInGame: 1
+  defaultCategoryName: General
+  allowArchivedTournamentQuizPacks: 0
+  loadFullPackOnSelection: 1
+  loadFullPackOnGameStart: 1
+  localCacheFolderName: OnlineQuizCache

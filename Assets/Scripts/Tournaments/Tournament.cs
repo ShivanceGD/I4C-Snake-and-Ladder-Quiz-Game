@@ -21,6 +21,11 @@ public class TournamentData
     public List<CustomLeaderboardEntry> localLeaderboard = new List<CustomLeaderboardEntry>();
     
     public string selectedQuizPackName = "";
+    public string quizPackId = "";
+    public string quizPackDisplayName = "";
+    public string quizCategoryName = "";
+    public string quizVersion = "";
+    public bool usesOnlineQuizPack;
     
     // Helper properties for DateTime access
     public DateTime startTime
